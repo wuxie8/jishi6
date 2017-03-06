@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8412242A1E6D480300048188 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224291E6D480300048188 /* main.m */; };
+		8412242D1E6D480300048188 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412242C1E6D480300048188 /* AppDelegate.m */; };
+		841224301E6D480300048188 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412242F1E6D480300048188 /* ViewController.m */; };
+		841224331E6D480300048188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841224311E6D480300048188 /* Main.storyboard */; };
+		841224351E6D480300048188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841224341E6D480300048188 /* Assets.xcassets */; };
+		841224381E6D480300048188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841224361E6D480300048188 /* LaunchScreen.storyboard */; };
+		841224431E6D480300048188 /* jishiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224421E6D480300048188 /* jishiTests.m */; };
+		8412244E1E6D480300048188 /* jishiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412244D1E6D480300048188 /* jishiUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8412243F1E6D480300048188 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8412241D1E6D480300048188 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841224241E6D480300048188;
+			remoteInfo = jishi;
+		};
+		8412244A1E6D480300048188 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8412241D1E6D480300048188 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841224241E6D480300048188;
+			remoteInfo = jishi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		841224251E6D480300048188 /* jishi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jishi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		841224291E6D480300048188 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8412242B1E6D480300048188 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8412242C1E6D480300048188 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8412242E1E6D480300048188 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8412242F1E6D480300048188 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		841224321E6D480300048188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		841224341E6D480300048188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		841224371E6D480300048188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		841224391E6D480300048188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8412243E1E6D480300048188 /* jishiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jishiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		841224421E6D480300048188 /* jishiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jishiTests.m; sourceTree = "<group>"; };
+		841224441E6D480300048188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841224491E6D480300048188 /* jishiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jishiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8412244D1E6D480300048188 /* jishiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jishiUITests.m; sourceTree = "<group>"; };
+		8412244F1E6D480300048188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		841224221E6D480300048188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8412243B1E6D480300048188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841224461E6D480300048188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8412241C1E6D480300048188 = {
+			isa = PBXGroup;
+			children = (
+				841224271E6D480300048188 /* jishi */,
+				841224411E6D480300048188 /* jishiTests */,
+				8412244C1E6D480300048188 /* jishiUITests */,
+				841224261E6D480300048188 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		841224261E6D480300048188 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				841224251E6D480300048188 /* jishi.app */,
+				8412243E1E6D480300048188 /* jishiTests.xctest */,
+				841224491E6D480300048188 /* jishiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		841224271E6D480300048188 /* jishi */ = {
+			isa = PBXGroup;
+			children = (
+				8412242B1E6D480300048188 /* AppDelegate.h */,
+				8412242C1E6D480300048188 /* AppDelegate.m */,
+				8412242E1E6D480300048188 /* ViewController.h */,
+				8412242F1E6D480300048188 /* ViewController.m */,
+				841224311E6D480300048188 /* Main.storyboard */,
+				841224341E6D480300048188 /* Assets.xcassets */,
+				841224361E6D480300048188 /* LaunchScreen.storyboard */,
+				841224391E6D480300048188 /* Info.plist */,
+				841224281E6D480300048188 /* Supporting Files */,
+			);
+			path = jishi;
+			sourceTree = "<group>";
+		};
+		841224281E6D480300048188 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				841224291E6D480300048188 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		841224411E6D480300048188 /* jishiTests */ = {
+			isa = PBXGroup;
+			children = (
+				841224421E6D480300048188 /* jishiTests.m */,
+				841224441E6D480300048188 /* Info.plist */,
+			);
+			path = jishiTests;
+			sourceTree = "<group>";
+		};
+		8412244C1E6D480300048188 /* jishiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8412244D1E6D480300048188 /* jishiUITests.m */,
+				8412244F1E6D480300048188 /* Info.plist */,
+			);
+			path = jishiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		841224241E6D480300048188 /* jishi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841224521E6D480300048188 /* Build configuration list for PBXNativeTarget "jishi" */;
+			buildPhases = (
+				841224211E6D480300048188 /* Sources */,
+				841224221E6D480300048188 /* Frameworks */,
+				841224231E6D480300048188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jishi;
+			productName = jishi;
+			productReference = 841224251E6D480300048188 /* jishi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8412243D1E6D480300048188 /* jishiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841224551E6D480300048188 /* Build configuration list for PBXNativeTarget "jishiTests" */;
+			buildPhases = (
+				8412243A1E6D480300048188 /* Sources */,
+				8412243B1E6D480300048188 /* Frameworks */,
+				8412243C1E6D480300048188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				841224401E6D480300048188 /* PBXTargetDependency */,
+			);
+			name = jishiTests;
+			productName = jishiTests;
+			productReference = 8412243E1E6D480300048188 /* jishiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		841224481E6D480300048188 /* jishiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841224581E6D480300048188 /* Build configuration list for PBXNativeTarget "jishiUITests" */;
+			buildPhases = (
+				841224451E6D480300048188 /* Sources */,
+				841224461E6D480300048188 /* Frameworks */,
+				841224471E6D480300048188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8412244B1E6D480300048188 /* PBXTargetDependency */,
+			);
+			name = jishiUITests;
+			productName = jishiUITests;
+			productReference = 841224491E6D480300048188 /* jishiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8412241D1E6D480300048188 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Admin;
+				TargetAttributes = {
+					841224241E6D480300048188 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NUH99A3LBD;
+						ProvisioningStyle = Automatic;
+					};
+					8412243D1E6D480300048188 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NUH99A3LBD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 841224241E6D480300048188;
+					};
+					841224481E6D480300048188 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NUH99A3LBD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 841224241E6D480300048188;
+					};
+				};
+			};
+			buildConfigurationList = 841224201E6D480300048188 /* Build configuration list for PBXProject "jishi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8412241C1E6D480300048188;
+			productRefGroup = 841224261E6D480300048188 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				841224241E6D480300048188 /* jishi */,
+				8412243D1E6D480300048188 /* jishiTests */,
+				841224481E6D480300048188 /* jishiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		841224231E6D480300048188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841224381E6D480300048188 /* LaunchScreen.storyboard in Resources */,
+				841224351E6D480300048188 /* Assets.xcassets in Resources */,
+				841224331E6D480300048188 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8412243C1E6D480300048188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841224471E6D480300048188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		841224211E6D480300048188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841224301E6D480300048188 /* ViewController.m in Sources */,
+				8412242D1E6D480300048188 /* AppDelegate.m in Sources */,
+				8412242A1E6D480300048188 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8412243A1E6D480300048188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841224431E6D480300048188 /* jishiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841224451E6D480300048188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8412244E1E6D480300048188 /* jishiUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		841224401E6D480300048188 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841224241E6D480300048188 /* jishi */;
+			targetProxy = 8412243F1E6D480300048188 /* PBXContainerItemProxy */;
+		};
+		8412244B1E6D480300048188 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841224241E6D480300048188 /* jishi */;
+			targetProxy = 8412244A1E6D480300048188 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		841224311E6D480300048188 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				841224321E6D480300048188 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		841224361E6D480300048188 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				841224371E6D480300048188 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		841224501E6D480300048188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		841224511E6D480300048188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		841224531E6D480300048188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				INFOPLIST_FILE = jishi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Admin.jishi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		841224541E6D480300048188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				INFOPLIST_FILE = jishi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Admin.jishi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		841224561E6D480300048188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				INFOPLIST_FILE = jishiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Admin.jishiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jishi.app/jishi";
+			};
+			name = Debug;
+		};
+		841224571E6D480300048188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				INFOPLIST_FILE = jishiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Admin.jishiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jishi.app/jishi";
+			};
+			name = Release;
+		};
+		841224591E6D480300048188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				INFOPLIST_FILE = jishiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Admin.jishiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = jishi;
+			};
+			name = Debug;
+		};
+		8412245A1E6D480300048188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				INFOPLIST_FILE = jishiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Admin.jishiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = jishi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		841224201E6D480300048188 /* Build configuration list for PBXProject "jishi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841224501E6D480300048188 /* Debug */,
+				841224511E6D480300048188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841224521E6D480300048188 /* Build configuration list for PBXNativeTarget "jishi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841224531E6D480300048188 /* Debug */,
+				841224541E6D480300048188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		841224551E6D480300048188 /* Build configuration list for PBXNativeTarget "jishiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841224561E6D480300048188 /* Debug */,
+				841224571E6D480300048188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		841224581E6D480300048188 /* Build configuration list for PBXNativeTarget "jishiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841224591E6D480300048188 /* Debug */,
+				8412245A1E6D480300048188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8412241D1E6D480300048188 /* Project object */;
+}
