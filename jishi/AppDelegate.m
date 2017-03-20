@@ -7,7 +7,11 @@
 //
 
 #import "AppDelegate.h"
-
+#import "JishiyuViewController.h"
+#import "DaikuanViewController.h"
+#import "MineViewController.h"
+#import "BaseNC.h"
+#import "UMMobClick/MobClick.h"
 @interface AppDelegate ()
 
 @end
@@ -16,10 +20,59 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   
+    UMConfigInstance.appKey=@"58ca428499f0c742bf000286";
+     UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];
+    
+    self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+        //读取用户信息
+        Context.currentUser = [NSKeyedUnarchiver unarchiveObjectWithFile:DOCUMENT_FOLDER(@"loginedUser")];
+    }
+    
+    self.window.rootViewController=[AppDelegate setTabBarController];
     // Override point for customization after application launch.
     return YES;
 }
++(UITabBarController *)setTabBarController
+    {
+    
+    
+        JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
+        DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
+        MineViewController *mine=[[MineViewController alloc]init];
+        //步骤2：将视图控制器绑定到导航控制器上
+        BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
+        BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
+        BaseNC *nav3C=[[BaseNC alloc]initWithRootViewController:mine];
+        
+        
+        
+        UITabBarController *tabBarController=[[UITabBarController alloc]init];
+        
+        //改变tabBar的背景颜色
+        UIView *barBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 49)];
+        barBgView.backgroundColor = [UIColor whiteColor];
+        [tabBarController.tabBar insertSubview:barBgView atIndex:0];
+        tabBarController.tabBar.opaque = YES;
 
+        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
+        tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
+        NSArray *titles = @[@"及时雨",@"贷款",@"我",@"设置"];
+        NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
+        NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+        //绑定TabBar数据源
+        for (int i = 0; i<tabBarController.tabBar.items.count; i++) {
+            UITabBarItem *item = (UITabBarItem *)tabBarController.tabBar.items[i];
+            item.title = titles[i];
+                    item.image = [[UIImage imageNamed:[images objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    item.selectedImage = [[UIImage imageNamed:[selectedImages objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+            tabBarController.tabBar.tintColor = [UIColor blueColor];
+        }
+        return  tabBarController;
+    }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

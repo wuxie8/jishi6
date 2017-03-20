@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JishiyuViewController.h"
+#import "DaikuanViewController.h"
 
 @interface ViewController : UIViewController
 
