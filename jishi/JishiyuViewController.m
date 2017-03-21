@@ -354,15 +354,27 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
         }
         for (int i=0; i<4; i++) {
             UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/4*i, 0, WIDTH/4, SectionHeight-10)];
-            [but setImage:[UIImage imageNamed:@"WechatIMG5"] forState:UIControlStateNormal];
+//            [but setImage:[[UIImage imageNamed:@"WechatIMG5"]        imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  forState:UIControlStateNormal];
+            　UIImage *setImage = [UIImage imageNamed:@"WechatIMG5"];
+            　　UIImage *newSetImage = [setImage imageWithRenderingMode:UIImageRenderingModeAutomatic];
+//            [but setImage:[UIImage imageNamed:@"WechatIMG5"] forState:UIControlStateNormal];
+            [but setImage:newSetImage forState:UIControlStateNormal];
+            CGPoint point = but.center;
+            
+            int center_x = floor(point.x);
+            
+            int center_y = floor(point.y);
+            
+           but.center = CGPointMake(center_x, center_y);
+//            [but setBackgroundImage:[UIImage imageNamed:@"WechatIMG5"] forState:UIControlStateNormal];
             [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
             but.tag=i;
 
             [cell.contentView addSubview:but];
         }
-        UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, SectionHeight-10, WIDTH, 10)];
-        view.backgroundColor=kColorFromRGB(245, 245, 243);
-        [cell.contentView addSubview:view];
+//        UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, SectionHeight-10, WIDTH, 10)];
+//        view.backgroundColor=kColorFromRGB(245, 245, 243);
+//        [cell.contentView addSubview:view];
         return cell;
     }
 }
