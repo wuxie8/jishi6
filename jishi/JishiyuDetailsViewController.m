@@ -121,16 +121,10 @@
 {
     
     NSString * labelStr = self.product.shenqingtiaojian;
-    CGSize labelSize = {0, 0};
-//    labelSize=[UtilTools getTextHeight:labelStr width:WIDTH font:[UIFont systemFontOfSize:14]];
-    labelSize = [labelStr sizeWithFont:[UIFont systemFontOfSize:14]
-                 
-                     constrainedToSize:CGSizeMake(WIDTH, 5000)
-                 
-                         lineBreakMode:  NSLineBreakByWordWrapping];
-    //200为UILabel的宽度，5000是预设的一个高度，表示在这个范围内
-   
-
+  
+   CGSize labelSize=[UtilTools getTextHeight:labelStr width:WIDTH font:[UIFont systemFontOfSize:14]];
+ 
+  
     
     
     return labelSize.height+10;
@@ -159,15 +153,8 @@
         cell.selectionStyle=   UITableViewCellSelectionStyleNone;
     }
     NSString * labelStr = self.product.shenqingtiaojian;
-    CGSize labelSize = {0, 0};
-//    labelSize=[UtilTools getTextHeight:labelStr width:WIDTH font:[UIFont systemFontOfSize:14]];
-    labelSize = [labelStr sizeWithFont:[UIFont systemFontOfSize:15]
 
-                     constrainedToSize:CGSizeMake(WIDTH, 5000)
-                 
-                         lineBreakMode:  NSLineBreakByWordWrapping];
-    //200为UILabel的宽度，5000是预设的一个高度，表示在这个范围内
-  
+     CGSize labelSize =[UtilTools getTextHeight:labelStr width:WIDTH font:[UIFont systemFontOfSize:14]];
     
 
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(20, 20 , WIDTH-40, labelSize.height)];

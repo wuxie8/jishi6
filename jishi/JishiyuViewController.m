@@ -18,6 +18,7 @@
 #define  ScrollviewWeight 50
 #define  ScrollviewHeight 180
 #define SectionHeight 110
+#define SectionHeadHeight 60
 @interface JishiyuViewController ()<UITableViewDelegate,UITableViewDataSource,WSPageViewDelegate,WSPageViewDataSource>
 @property(strong, nonatomic) UIScrollView *scrollview;
 @property(strong, nonatomic)NSMutableArray *productArray;
@@ -32,7 +33,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"及时雨";
+ 
+ 
+
+self.title=@"及时雨";
 
 page=1;
     
@@ -43,7 +47,7 @@ page=1;
 tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
 tab.delegate=self;
 tab.dataSource=self;
-   
+    tab.backgroundColor=AppPageColor;
     tab.tableHeaderView=[self creatUI];
     
 [self.view addSubview:tab];
@@ -251,30 +255,33 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)] ;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320,  SectionHeadHeight)] ;
     
     [view setBackgroundColor:[UIColor whiteColor]];//改变标题的颜色，也可用图片
+    view .backgroundColor=AppPageColor;
+    UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(WIDTH/2-100, 10, 200, 40)];
+    [image setContentMode:UIViewContentModeScaleAspectFit];
+    [image setClipsToBounds:YES];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 100, 30)];
-    
-    label.textColor = [UIColor blackColor];
-    
-    label.backgroundColor = [UIColor clearColor];
-    
-    label.text = @"为您推荐";
-    
-    [view addSubview:label];
+    [image setImage:[UIImage imageNamed:@"PopularFastloan"]];
+    [view addSubview:image];
     
     
-    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-100, 5, 80, 30)];
-    [but setTitle:@"换一批" forState:UIControlStateNormal];
-    [but setTitleColor:AppBackColor forState:UIControlStateNormal];
-    but.titleLabel.font=[UIFont systemFontOfSize:15];
+    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-60, 30, 50, 25)];
+    [but setImage:[UIImage imageNamed:@"change"] forState:UIControlStateNormal];
+   
+    [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [but.imageView setClipsToBounds:YES];
+    
+    but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
+    
+    but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
+
     [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:but];
     
     
-    UIView *backgroundview=[[UIView alloc]initWithFrame:CGRectMake(0, 38, WIDTH, 2)];
+    UIView *backgroundview=[[UIView alloc]initWithFrame:CGRectMake(0, 58, WIDTH, 2)];
     backgroundview.backgroundColor=kColorFromRGB(245, 245, 243);
     [view addSubview:backgroundview];
     
@@ -284,7 +291,7 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section==1) {
-        return 40;
+        return  SectionHeadHeight;
     }
     else
     {
@@ -352,21 +359,23 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        for (int i=0; i<4; i++) {
-            UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/4*i, 0, WIDTH/4, SectionHeight-10)];
-//            [but setImage:[[UIImage imageNamed:@"WechatIMG5"]        imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  forState:UIControlStateNormal];
-            　UIImage *setImage = [UIImage imageNamed:@"WechatIMG5"];
-            　　UIImage *newSetImage = [setImage imageWithRenderingMode:UIImageRenderingModeAutomatic];
-//            [but setImage:[UIImage imageNamed:@"WechatIMG5"] forState:UIControlStateNormal];
-            [but setImage:newSetImage forState:UIControlStateNormal];
-            CGPoint point = but.center;
+        NSArray *images=@[@"Fastloan",@"recommend",@"Creditcardreport"];
+        for (int i=0; i<images.count; i++) {
+            UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/images.count*i, 10, WIDTH/images.count, SectionHeight-20)];
+               [but setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
+//            CGPoint point = but.center;
+//            
+//            int center_x = floor(point.x);
+//            
+//            int center_y = floor(point.y);
+//            
+//           but.center = CGPointMake(center_x, center_y);
+            [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
+            [but.imageView setClipsToBounds:YES];
+         
+             but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
             
-            int center_x = floor(point.x);
-            
-            int center_y = floor(point.y);
-            
-           but.center = CGPointMake(center_x, center_y);
-//            [but setBackgroundImage:[UIImage imageNamed:@"WechatIMG5"] forState:UIControlStateNormal];
+            but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
             [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
             but.tag=i;
 

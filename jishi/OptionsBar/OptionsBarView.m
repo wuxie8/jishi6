@@ -45,7 +45,7 @@
 /**
  *  获取字符串的长度
  *
- *  @param title
+ *  @param titles
  *
  *  @return size
  */

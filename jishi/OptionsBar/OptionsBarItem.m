@@ -45,11 +45,7 @@
     return result;
 }
 
-/**
- *  设置title并且设置titleLabel的显示内容
- *
- *  @param title
- */
+
 -(void)setTitle:(NSString *)title{
     _title=title;
     _titleLabel.text=_title;
