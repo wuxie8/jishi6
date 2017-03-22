@@ -273,6 +273,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
      static NSString *CellIdentifier                    = @"cell";
     
     LoanClassification *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
