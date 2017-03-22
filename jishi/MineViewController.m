@@ -21,6 +21,7 @@
     UILabel *label;
     NSArray *arr;
     NSArray *imagesArr;
+    UITableView *tab;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -43,19 +44,20 @@
     self.view.backgroundColor=AppPageColor;
     
     arr=@[@"浏览记录",@"我的消息",@"设置"];
- imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
+    imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
     
     [self loadTableview];
 }
 -(void)loadTableview
 {
-    UITableView *tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) ];
+   tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) ];
     tab.delegate=self;
     tab.dataSource=self;
-    tab. separatorStyle= UITableViewCellSeparatorStyleSingleLineEtched ;
-//    [tab setSeparatorInset:UIEdgeInsetsZero];
-////   tab.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
-//    [tab setSeparatorColor:[UIColor grayColor]];
+    tab.scrollEnabled=NO;
+    tab.separatorInset = UIEdgeInsetsZero;
+    tab.layoutMargins = UIEdgeInsetsZero;
+    tab.tableFooterView=[[UIView alloc]init];
+   
     [self.view addSubview:tab];
 
 }
@@ -102,6 +104,7 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle=   UITableViewCellSelectionStyleNone;
           cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+         cell.layoutMargins = UIEdgeInsetsZero;
     }
     if (indexPath.section==0) {
         cell.textLabel.text=@"张乐乐";
