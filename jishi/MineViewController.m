@@ -65,7 +65,7 @@
 
 #define mark
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;              // Default is 1 if not
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;          
 {
     return 2;
 }

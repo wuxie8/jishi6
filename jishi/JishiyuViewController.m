@@ -15,6 +15,7 @@
 #import "JishiyuTableViewCell.h"
 #import "LoanClasssificationVC.h"
 #import "LoginViewController.h"
+#import <UMSocialCore/UMSocialCore.h>
 #define  ScrollviewWeight 50
 #define  ScrollviewHeight 180
 #define SectionHeight 110
@@ -38,6 +39,20 @@
 
 self.title=@"及时雨";
 
+    
+//    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+//    //设置文本
+//    messageObject.text = @"社会化组件UShare将各大社交平台接入您的应用，快速武装App。";
+//    
+//    //调用分享接口
+//    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_QQ  messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+//        if (error) {
+//            NSLog(@"************Share fail with error %@*********",error);
+//        }else{
+//            NSLog(@"response data is %@",data);
+//        }
+//    }];
+    
 page=1;
     
     self.view.backgroundColor=[UIColor grayColor];

@@ -21,19 +21,40 @@ PODS:
   - RealReachability/Connection (1.1.8)
   - RealReachability/Ping (1.1.8)
   - UMengAnalytics-NO-IDFA (4.2.5)
+  - UMengUShare/Core (6.4.0):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.0)
+  - UMengUShare/Social/QQ (6.4.0):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedQQ (6.4.0):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.0):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.4.0):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (6.4.0):
+    - UMengUShare/Core
 
 DEPENDENCIES:
   - AFNetworking
   - ElementParser (~> 0.0.1)
   - RealReachability (~> 1.1.7)
   - UMengAnalytics-NO-IDFA
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   ElementParser: b814be726be6172a8bfb64a8f229f62f634471e7
   RealReachability: e6c8a2bbffa316006e8c282efc1ee2567d61a920
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
+  UMengUShare: 83f849f356db0db9f18488cfbc2055a20b150481
 
-PODFILE CHECKSUM: 95b3168f2ae054b20237fd8c967a57a7917d8aa2
+PODFILE CHECKSUM: 1f1459e92a3e299ab6917fed866d6354b5396dfc
 
 COCOAPODS: 1.2.0

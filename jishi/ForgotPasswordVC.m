@@ -55,7 +55,7 @@
                 break;
         }
         text.placeholder=arr1[i];
-        //        text.delegate=self;
+      
         [view addSubview:text];
         
         UIView *backView=[[UIView alloc]initWithFrame:CGRectMake(5, 39, WIDTH-10, 1)];
