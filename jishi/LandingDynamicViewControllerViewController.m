@@ -117,7 +117,7 @@
         //回调主线程，在主线程中操作UI
         dispatch_async(dispatch_get_main_queue(), ^{
             if (second >= 0) {
-                [but setTitle:[NSString stringWithFormat:@"%ld秒",second] forState:UIControlStateNormal];
+                [but setTitle:[NSString stringWithFormat:@"%ld秒",(long)second] forState:UIControlStateNormal];
                 second--;
                 [but setEnabled:NO];
                 but.alpha=0.4;

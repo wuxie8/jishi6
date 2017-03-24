@@ -29,12 +29,12 @@
     /* 打开调试日志 */
     [[UMSocialManager defaultManager] openLog:YES];
     
-//    /* 设置友盟appkey */
-//    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
-//    
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:@"58ca428499f0c742bf000286"];
+    
     [self configUSharePlatforms];
-//
-//    [self confitUShareSettings];
+    
+
   
 
     self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -54,7 +54,8 @@
      */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105985531"/*设置QQ平台的appID*/  appSecret:@"HLzX8EjjILNgPcIj" redirectURL:@"http://mobile.umeng.com/social"];
 
-
+    /* 设置微信的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
 
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
