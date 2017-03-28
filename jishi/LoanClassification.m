@@ -32,7 +32,7 @@
     [self.contentView addSubview:_image];
     
     _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 20, 100, 20)];
-    _titleLabel.font=[UIFont systemFontOfSize:16];
+    _titleLabel.font=[UIFont systemFontOfSize:14];
     [self.contentView addSubview:_titleLabel];
     
     UIImageView *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(WIDTH-40, 20, 20, 20)];
@@ -58,7 +58,8 @@
 
 -(void)setProduct:(ProductModel *)product
 {
-    [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,product.smeta]]];
+//    [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,product.smeta]]];
+    [self.image setImage:[UIImage imageNamed:product.smeta]];
     [self.titleLabel setText:product.post_title];
     [self.feliv_Label setText:[NSString stringWithFormat:@"费率%@",product.feilv]];
     

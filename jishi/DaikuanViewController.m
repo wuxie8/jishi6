@@ -176,51 +176,61 @@
 -(void)businessFilter
 {
     
-    NSDictionary*dic1=@{@"page":@"1",
-                        @"count":@"10"};
-    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"shoujidaikuanjieqiankuai",@"code",
-                       @"1.0.0",@"version",
-                       dic1,@"PAGINATION",
-                        @"1",@"career",
-                      self.business_money,@"money",
-                       self.business_time,@"time",
-                       nil];
+//    NSDictionary*dic1=@{@"page":@"1",
+//                        @"count":@"10"};
+//    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+//                       @"shoujidaikuanjieqiankuai",@"code",
+//                       @"1.0.0",@"version",
+//                       dic1,@"PAGINATION",
+//                        @"1",@"career",
+//                      self.business_money,@"money",
+//                       self.business_time,@"time",
+//                       nil];
 
-    self.productArray =nil;
     
-   
-    [[NetWorkManager sharedManager]postJSON:filter parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSDictionary *dic=(NSDictionary *)responseObject;
-        if ([dic[@"status"]boolValue]) {
-            NSArray *arr=dic[@"list"];
-            for (NSDictionary *diction  in arr  ) {
-                            ProductModel *pro=[[ProductModel alloc]init];
-                NSString *jsonString=diction[@"smeta"];
-                NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-                NSError *err;
-                NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                         options:NSJSONReadingMutableContainers
-                                                                           error:&err];
-
-                pro.smeta=imagedic[@"thumb"];
-                pro.link=diction[@"link"];
-                pro.edufanwei=diction[@"edufanwei"];
-                pro.qixianfanwei=diction[@"qixianfanwei"];
-                pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
-                pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
-                pro.post_title=diction[@"post_title"];
-                pro.post_hits=diction[@"post_hits"];
-                pro.feilv=diction[@"feilv"];
-                [self.productArray addObject:pro];
-            }
-            [table reloadData];
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
-        
-        
-    }];
+    
+    self.productArray=nil;
+    NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
+    for (int i=0; i<array.count; i++) {
+        ProductModel *pro=[[ProductModel alloc]init];
+        pro.post_title=array[i];
+        pro.smeta=@"icon";
+        pro.post_hits=[NSString stringWithFormat:@"%d",[UtilTools getRandomNumber:500000 to:1000000]];
+        pro.feilv=@"0.3%/天";
+        [self.productArray addObject:pro];
+    }
+    [table reloadData];
+//    [[NetWorkManager sharedManager]postJSON:filter parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+//        NSDictionary *dic=(NSDictionary *)responseObject;
+//        if ([dic[@"status"]boolValue]) {
+//            NSArray *arr=dic[@"list"];
+//            for (NSDictionary *diction  in arr  ) {
+//                            ProductModel *pro=[[ProductModel alloc]init];
+//                NSString *jsonString=diction[@"smeta"];
+//                NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+//                NSError *err;
+//                NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
+//                                                                         options:NSJSONReadingMutableContainers
+//                                                                           error:&err];
+//
+//                pro.smeta=imagedic[@"thumb"];
+//                pro.link=diction[@"link"];
+//                pro.edufanwei=diction[@"edufanwei"];
+//                pro.qixianfanwei=diction[@"qixianfanwei"];
+//                pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
+//                pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
+//                pro.post_title=diction[@"post_title"];
+//                pro.post_hits=diction[@"post_hits"];
+//                pro.feilv=diction[@"feilv"];
+//                [self.productArray addObject:pro];
+//            }
+//            [table reloadData];
+//        }
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        NSLog(@"%@",error);
+//        
+//        
+//    }];
 
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -259,10 +269,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
-    JishiyuDetailsViewController *jishiyu=[[JishiyuDetailsViewController alloc]init];
-    jishiyu.product=pro;
-    [self.navigationController pushViewController:jishiyu animated:YES];
+//    ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
+//    JishiyuDetailsViewController *jishiyu=[[JishiyuDetailsViewController alloc]init];
+//    jishiyu.product=pro;
+//    [self.navigationController pushViewController:jishiyu animated:YES];
 }
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

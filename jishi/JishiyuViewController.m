@@ -65,7 +65,8 @@ tab.dataSource=self;
     for (int i=0; i<array.count; i++) {
           ProductModel *pro=[[ProductModel alloc]init];
         pro.post_title=array[i];
-        pro.smeta=@"";
+         pro.smeta=@"icon";
+        pro.feilv=@"0.3%/天";
         pro.post_hits=[NSString stringWithFormat:@"%d",[UtilTools getRandomNumber:500000 to:1000000]];
          [self.productArray addObject:pro];
     }
