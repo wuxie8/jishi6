@@ -107,7 +107,7 @@
     [manager POST:[NSString stringWithFormat:@"%@%@",SERVERE,dologin]  parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        
    NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"%@",resultDic);
+      
         if ([resultDic[@"status"] boolValue] ) {
             User *user=[[User alloc]init];
             user.token=resultDic[@"token"];
@@ -127,8 +127,7 @@
                     }
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error%@",error);
-
+      
     }];
 }
 -(void)click:(UIButton *)sender

@@ -107,8 +107,7 @@
         UIView *view1=[self.view viewWithTag:100+i];
         
         UITextField *text1=(UITextField *)[view1 viewWithTag:1000+i];
-        NSLog(@"text%d%@",i,text1.text);
-        [registerDic setObject:text1.text forKey:[NSString stringWithFormat:@"%d",i]];
+             [registerDic setObject:text1.text forKey:[NSString stringWithFormat:@"%d",i]];
 
     }
     if (![registerDic[@"1"] isEqualToString:registerDic[@"2"]]) {
@@ -131,7 +130,6 @@
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];
@@ -142,7 +140,7 @@
     UIView *view1=[self.view viewWithTag:100];
     
     UITextField *text1=(UITextField *)[view1 viewWithTag:1000];
-    NSLog(@"text%@",text1.text);
+  
     if (text1.text.length==0) {
         [MessageAlertView showErrorMessage:@"请输入手机号"];
         return;
@@ -153,7 +151,7 @@
         return;
     }
     
-       __block NSInteger second = 10;
+       __block NSInteger second = 60;
     //全局队列    默认优先级
     dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     //定时器模式  事件源
@@ -199,8 +197,7 @@
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
-        
+          
         
     }];
 }

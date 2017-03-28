@@ -22,19 +22,16 @@
     NSArray *arr;
     NSArray *imagesArr;
     UITableView *tab;
+    UILabel *lab;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
-         [but setTitle:@"退出登录" forState:UIControlStateNormal];
-         [label setText:Context.currentUser.username];
-     }
-    else
-    {
-     [but setTitle:@"登录" forState:UIControlStateNormal];
-        [label setText:nil];
-    }
+//     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+//    [tab reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    
+    [tab reloadData];
+   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +43,7 @@
     arr=@[@"浏览记录",@"我的消息",@"设置"];
     imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
     
-    [self loadInitView];
+    [self loadTableview];
 }
 -(void)loadTableview
 {
@@ -94,21 +91,46 @@
     else
         return 20.0f;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0) {
+        [self denglu];
+    }
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString *CellIdentifier                    = @"cell";
+//    static NSString *CellIdentifier                    = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
     
-  UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle=   UITableViewCellSelectionStyleNone;
-          cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
-         cell.layoutMargins = UIEdgeInsetsZero;
-    }
+//  UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%ld",(long)indexPath.section]];
+//    if (!cell) {
+//        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%ld",(long)indexPath.section]];
+//        cell.selectionStyle=   UITableViewCellSelectionStyleNone;
+//          cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+//         cell.layoutMargins = UIEdgeInsetsZero;
+//    }
+    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%ld",indexPath.section]];
+    cell.selectionStyle=   UITableViewCellSelectionStyleNone;
+    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+    cell.layoutMargins = UIEdgeInsetsZero;
     if (indexPath.section==0) {
-        cell.textLabel.text=@"张乐乐";
-        [cell.imageView setImage:[UIImage imageNamed:@"HeadPortrait"]];
+        
+        UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 40, 40)];
+        image.image=[UIImage imageNamed:@"HeadPortrait"];
+        [cell.contentView addSubview:image];
+        lab=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(image.frame)+20, 10, 150, 40)];
+        [lab setText:nil];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+           
+            [lab setText:Context.currentUser.username];
+        }
+        else
+        {
+            [lab setText:@"点击登陆"];
+        }
+      
+        [cell.contentView addSubview:lab];
+
     }
     else{
     cell.textLabel.text=arr[indexPath.row];

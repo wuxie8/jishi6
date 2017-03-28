@@ -66,7 +66,7 @@
 -(void)loadData
 {
   
-    [[NetWorkManager sharedManager]postJSON:filter_para parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[NetWorkManager sharedManager]postNoTipJSON:filter_para parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
             NSDictionary *data=dic[@"data"];
@@ -86,14 +86,13 @@
                 [self.monthArray addObject:timedic[@"property_name"]];
                  [self.monthDic setObject:timedic[@"property_id"] forKey:timedic[@"property_name"]];
             }
-            NSLog(@"%@",self.moneyArray);
-            self.business_career=[self.careerDic objectForKey:self.careerArray[0]];
+                       self.business_career=[self.careerDic objectForKey:self.careerArray[0]];
             self.business_money=[self.moneyDic objectForKey:self.moneyArray[0]];
             self.business_time=[self.moneyDic objectForKey:self.monthArray[0]];
             [self configData];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
+      
         
         
     }];
@@ -227,8 +226,7 @@
 //            [table reloadData];
 //        }
 //    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        NSLog(@"%@",error);
-//        
+//      //        
 //        
 //    }];
 
@@ -245,7 +243,7 @@
 }
 -(void)butClick:(UIButton *)sender
 {
-    NSLog(@"tTitle)%@",sender.currentTitle);
+   
     if ([sender.currentTitle isEqualToString:@"上班族"]) {
         [but1 setTitleColor:AppBackColor forState:UIControlStateNormal];
          [but2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];

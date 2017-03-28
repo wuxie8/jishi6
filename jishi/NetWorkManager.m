@@ -397,9 +397,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         failure(task, error);
-        //NSLog(@"%@请求失败信息：%@",url,[error localizedDescription]);
-        
-    }];
+          }];
 }
 #pragma mark 家购物网络请求
 

@@ -325,7 +325,7 @@ static SystemSoundID shake_sound_enter_id = 0;
     NSInteger interval = [zone secondsFromGMTForDate: inputDate];
     
     NSDate *localeDate = [inputDate dateByAddingTimeInterval: interval];
-    NSLog(@"date = %@", localeDate);
+   
     
     //取两个日期对象的时间间隔：
     //这里的NSTimeInterval 并不是对象，是基本型，其实是double类型，是由c定义的:typedef double NSTimeInterval;
@@ -519,7 +519,7 @@ static SystemSoundID shake_sound_enter_id = 0;
     
     CGImageRef image = [gen copyCGImageAtTime:time actualTime:&actualTime error:&error];
     if(error){
-        NSLog(@"截取视频缩略图时发生错误，错误信息：%@",error.localizedDescription);
+        DLog(@"截取视频缩略图时发生错误，错误信息：%@",error.localizedDescription);
     }
     CMTimeShow(actualTime);
     UIImage *thumbImg = [[UIImage alloc] initWithCGImage:image];

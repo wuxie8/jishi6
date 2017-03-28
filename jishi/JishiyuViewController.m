@@ -107,7 +107,7 @@ tab.dataSource=self;
 //            pro.post_hits=diction[@"post_hits"];
 //            pro.feilv=diction[@"feilv"];
 //            [self.productArray addObject:pro];
-//            NSLog(@"pro.post_title%@",pro.post_title);
+//         
 //
 //        }
 //        [tab reloadData];

@@ -94,8 +94,7 @@
     UIView *view1=[self.view viewWithTag:100];
     
     UITextField *text1=(UITextField *)[view1 viewWithTag:1000];
-    NSLog(@"text%@",text1.text);
-    if (text1.text.length==0) {
+      if (text1.text.length==0) {
         [MessageAlertView showErrorMessage:@"请输入手机号"];
         return;
     }
@@ -105,7 +104,7 @@
         return;
     }
     __block NSString * string=text1.text;
-    __block NSInteger second = 10;
+    __block NSInteger second = 60;
     //全局队列    默认优先级
     dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     //定时器模式  事件源
@@ -157,7 +156,6 @@
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];
@@ -189,8 +187,7 @@
             if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
                 //保存用户登录状态以及登录成功通知
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
-                NSLog(@"%@",Context.currentUser.username);
-
+              
                 if (self.backblock) {
                     self.backblock();
                 }
@@ -198,7 +195,6 @@
             }
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];
