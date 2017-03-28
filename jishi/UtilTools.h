@@ -243,6 +243,11 @@
 +(NSString *)intervalSinceNow: (NSString *) theDate;
 
 #pragma  mark  封装方法
+
+
+//获取一个随机整数，范围在[from,to），包括from，包括to
++ (int)getRandomNumber:(int)from to:(int)to;
+
 /**
  *  刷新UITableView指定cell
  *

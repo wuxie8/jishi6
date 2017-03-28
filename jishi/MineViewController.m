@@ -46,7 +46,7 @@
     arr=@[@"浏览记录",@"我的消息",@"设置"];
     imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
     
-    [self loadTableview];
+    [self loadInitView];
 }
 -(void)loadTableview
 {

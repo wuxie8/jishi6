@@ -31,7 +31,7 @@
     [self.contentView addSubview:_image];
     
     _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 20, 100, 20)];
-    _titleLabel.font=[UIFont systemFontOfSize:16];
+    _titleLabel.font=[UIFont systemFontOfSize:14];
     [self.contentView addSubview:_titleLabel];
     
     _post_hits_Label=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 40, 200, 40   )];

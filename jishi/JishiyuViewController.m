@@ -41,40 +41,6 @@
 
 self.title=@"及时雨";
 
-    //创建分享消息对象
-    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-    
-    //创建网页内容对象
-    NSString* thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用【友盟+】社会化组件U-Share" descr:@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！" thumImage:thumbURL];
-    //设置网页地址
-    shareObject.webpageUrl = @"http://mobile.umeng.com/social";
-    
-    //分享消息对象设置分享内容对象
-    messageObject.shareObject = shareObject;
-    
-    //调用分享接口
-    [[UMSocialManager defaultManager] shareToPlatform:  UMSocialPlatformType_QQ messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        if (error) {
-            UMSocialLogInfo(@"************Share fail with error %@*********",error);
-        }else{
-            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
-                UMSocialShareResponse *resp = data;
-                //分享结果消息
-                UMSocialLogInfo(@"response message is %@",resp.message);
-                //第三方原始返回的数据
-                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
-                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:resp.message message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-                [alert show];
-                
-            }else{
-                UMSocialLogInfo(@"response data is %@",data);
-            }
-        }
-          }];
-
-    
-
     
 page=1;
     
@@ -94,54 +60,62 @@ tab.dataSource=self;
 
 -(void)getList
 {
-    
-    
-    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"shoujidaikuanjieqiankuai",@"code",
-                       @"1.0.0",@"version",
-                      [NSString stringWithFormat:@"%d",page],@"page",
-                       nil];
-    self.productArray=nil;
-[[NetWorkManager sharedManager]postJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-    NSDictionary *dic=(NSDictionary *)responseObject;
-    if ([dic[@"status"]boolValue]) {
-      
-        NSArray *arr=dic[@"list"];
-        page_count=[dic[@"page_count"] intValue];
-        ++page;
-        if (page>page_count) {
-            page=1;
-        }
-        for (NSDictionary *diction in arr) {
-            ProductModel *pro=[[ProductModel alloc]init];
-            
-            NSString *jsonString=diction[@"smeta"];
-            NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *err;
-            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                options:NSJSONReadingMutableContainers
-                                                                  error:&err];
-        
-            pro.smeta=imagedic[@"thumb"];
-            pro.link=diction[@"link"];
-            pro.edufanwei=diction[@"edufanwei"];
-            pro.qixianfanwei=diction[@"qixianfanwei"];
-            pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
-            pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
-            pro.post_title=diction[@"post_title"];
-            pro.post_hits=diction[@"post_hits"];
-            pro.feilv=diction[@"feilv"];
-            [self.productArray addObject:pro];
-            NSLog(@"pro.post_title%@",pro.post_title);
-
-        }
-        [tab reloadData];
-        
+     self.productArray=nil;
+    NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
+    for (int i=0; i<array.count; i++) {
+          ProductModel *pro=[[ProductModel alloc]init];
+        pro.post_title=array[i];
+        pro.smeta=@"";
+        pro.post_hits=[NSString stringWithFormat:@"%d",[UtilTools getRandomNumber:500000 to:1000000]];
+         [self.productArray addObject:pro];
     }
-} failure:^(NSURLSessionDataTask *task, NSError *error) {
-    
-
-}];
+      [tab reloadData];
+//    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+//                       @"shoujidaikuanjieqiankuai",@"code",
+//                       @"1.0.0",@"version",
+//                      [NSString stringWithFormat:@"%d",page],@"page",
+//                       nil];
+//   
+//[[NetWorkManager sharedManager]postJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+//    NSDictionary *dic=(NSDictionary *)responseObject;
+//    if ([dic[@"status"]boolValue]) {
+//      
+//        NSArray *arr=dic[@"list"];
+//        page_count=[dic[@"page_count"] intValue];
+//        ++page;
+//        if (page>page_count) {
+//            page=1;
+//        }
+//        for (NSDictionary *diction in arr) {
+//            ProductModel *pro=[[ProductModel alloc]init];
+//            
+//            NSString *jsonString=diction[@"smeta"];
+//            NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+//            NSError *err;
+//            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
+//                                                                options:NSJSONReadingMutableContainers
+//                                                                  error:&err];
+//        
+//            pro.smeta=imagedic[@"thumb"];
+//            pro.link=diction[@"link"];
+//            pro.edufanwei=diction[@"edufanwei"];
+//            pro.qixianfanwei=diction[@"qixianfanwei"];
+//            pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
+//            pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
+//            pro.post_title=diction[@"post_title"];
+//            pro.post_hits=diction[@"post_hits"];
+//            pro.feilv=diction[@"feilv"];
+//            [self.productArray addObject:pro];
+//            NSLog(@"pro.post_title%@",pro.post_title);
+//
+//        }
+//        [tab reloadData];
+//        
+//    }
+//} failure:^(NSURLSessionDataTask *task, NSError *error) {
+//    
+//
+//}];
   
     
 }
@@ -175,11 +149,11 @@ tab.dataSource=self;
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
    
-    WebVC *vc = [[WebVC alloc] init];
-    [vc setNavTitle:@"及时雨"];
-    [vc loadFromURLStr:@"http://api.51ygdai.com/act/light-loan?source_tag=jsy"];
-    vc.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:vc animated:NO];
+//    WebVC *vc = [[WebVC alloc] init];
+//    [vc setNavTitle:@"及时雨"];
+//    [vc loadFromURLStr:@"http://api.51ygdai.com/act/light-loan?source_tag=jsy"];
+//    vc.hidesBottomBarWhenPushed=YES;
+//    [self.navigationController pushViewController:vc animated:NO];
 }
 
 #pragma mark NewPagedFlowView Datasource
@@ -315,7 +289,7 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
     
     but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
 
-    [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
+//    [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:but];
     
     
@@ -414,7 +388,7 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
              but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
             
             but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
+//            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
             but.tag=i;
 
             [cell.contentView addSubview:but];
@@ -439,28 +413,62 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
         [self.navigationController pushViewController:login animated:YES];
     
     }
+//    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
+//        //创建分享消息对象
+//        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+//        
+//        //创建网页内容对象
+//        NSString* thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
+//        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用【友盟+】社会化组件U-Share" descr:@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！" thumImage:thumbURL];
+//        //设置网页地址
+//        shareObject.webpageUrl = @"http://mobile.umeng.com/social";
+//        
+//        //分享消息对象设置分享内容对象
+//        messageObject.shareObject = shareObject;
+//        
+//        //调用分享接口
+//        [[UMSocialManager defaultManager] shareToPlatform:  UMSocialPlatformType_QQ messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+//            if (error) {
+//                UMSocialLogInfo(@"************Share fail with error %@*********",error);
+//            }else{
+//                if ([data isKindOfClass:[UMSocialShareResponse class]]) {
+//                    UMSocialShareResponse *resp = data;
+//                    //分享结果消息
+//                    UMSocialLogInfo(@"response message is %@",resp.message);
+//                    //第三方原始返回的数据
+//                    UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
+//                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:resp.message message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+//                    [alert show];
+//                    
+//                }else{
+//                    UMSocialLogInfo(@"response data is %@",data);
+//                }
+//            }
+//        }];
+//    }
+    
   
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
-    {
-        ProductModel *product=(ProductModel *)self.productArray[indexPath.row];
-        
-        JishiyuDetailsViewController *jishiyuDetail=[[JishiyuDetailsViewController alloc]init];
-        jishiyuDetail.product=product;
-        jishiyuDetail.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:jishiyuDetail animated:YES];
-
-        
-    }
-    else
-    {
-        LoginViewController *login=[[LoginViewController alloc]init];
-        [self.navigationController pushViewController:login animated:YES];
-        
-    }
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
+//    {
+//        ProductModel *product=(ProductModel *)self.productArray[indexPath.row];
+//        
+//        JishiyuDetailsViewController *jishiyuDetail=[[JishiyuDetailsViewController alloc]init];
+//        jishiyuDetail.product=product;
+//        jishiyuDetail.hidesBottomBarWhenPushed=YES;
+//        [self.navigationController pushViewController:jishiyuDetail animated:YES];
+//
+//        
+//    }
+//    else
+//    {
+//        LoginViewController *login=[[LoginViewController alloc]init];
+//        [self.navigationController pushViewController:login animated:YES];
+//        
+//    }
 }
 
 -(NSMutableArray *)productArray

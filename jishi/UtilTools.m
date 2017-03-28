@@ -441,7 +441,13 @@ static SystemSoundID shake_sound_enter_id = 0;
     return timeString;
 }
 #pragma  mark  封装方法
++ (int)getRandomNumber:(int)from to:(int)to
 
+{
+    
+    return (int)(from + (arc4random() % (to-from + 1)));
+    
+}
 
 +(void)refresh:(UITableView *)tableview Integer:(NSInteger)interger
 {
