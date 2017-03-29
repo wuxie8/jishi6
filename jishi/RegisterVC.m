@@ -121,9 +121,9 @@
                        nil];
     [[NetWorkManager sharedManager]postJSON:doregister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
-        if ([dic[@"state "]boolValue]) {
+        if ([dic[@"state"]boolValue]) {
             
-            
+            [self.navigationController popViewControllerAnimated:YES];
         }else
         {
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];

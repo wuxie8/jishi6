@@ -27,11 +27,18 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-//    [tab reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+
     
-    [tab reloadData];
-   
+
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+        
+        [self loadTableview];
+    }
+    else
+    {
+        [self denglu];
+        
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,8 +49,7 @@
     
     arr=@[@"浏览记录",@"我的消息",@"设置"];
     imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
-    
-    [self loadTableview];
+   
 }
 -(void)loadTableview
 {

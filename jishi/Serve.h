@@ -32,7 +32,7 @@
 //登陆
 #define dologin  @"&m=login&a=dologin"
 //重置密码
-#define reset_password  @"m=register&a=reset_password"
+#define reset_password  @"&m=register&a=reset_password"
 //贷款参数
 #define filter_para @"&m=business&a=filter_para"
 

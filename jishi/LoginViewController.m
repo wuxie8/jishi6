@@ -25,10 +25,18 @@
     return UIRectEdgeNone;
 }
 #endif
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.hidesBackButton =YES;
+    self.navigationItem.leftBarButtonItem=nil;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title=@"登录" ;
+    
+
     LandingDynamicViewControllerViewController *landing=[[ LandingDynamicViewControllerViewController alloc]init];
     [landing setRegisterblock:^()
     {
@@ -75,6 +83,12 @@
     //将触摸事件添加到当前view
     [self.view addGestureRecognizer:tapGestureRecognizer];
        // Do any additional setup after loading the view.
+}
+
+-(void)backAction
+{
+
+
 }
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [self.view endEditing:YES];

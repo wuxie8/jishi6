@@ -389,7 +389,7 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
              but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
             
             but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-//            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
+            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
             but.tag=i;
 
             [cell.contentView addSubview:but];
@@ -402,19 +402,36 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
 }
 -(void)butClick:(UIButton *)sender
 {
-      if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
-      {
-          LoanClasssificationVC *loanClass=[[ LoanClasssificationVC alloc]init];
-          [self.navigationController pushViewController:loanClass animated:YES];
+    switch (sender.tag) {
+        case 0:
+            
+            break;
+        case 1:
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
+            {
+                LoanClasssificationVC *loanClass=[[ LoanClasssificationVC alloc]init];
+                [self.navigationController pushViewController:loanClass animated:YES];
+                
+            }
+            else
+            {
+                LoginViewController *login=[[LoginViewController alloc]init];
+                [self.navigationController pushViewController:login animated:YES];
+                
+            }
 
-      }
-    else
-    {
-        LoginViewController *login=[[LoginViewController alloc]init];
-        [self.navigationController pushViewController:login animated:YES];
-    
+            break;
+        case 2:
+        {  WebVC *vc = [[WebVC alloc] init];
+                [vc setNavTitle:@"信用卡查询"];
+                [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
+                vc.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:vc animated:NO];}
+            break;
+        default:
+            break;
     }
-//    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
+    //    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
 //        //创建分享消息对象
 //        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
 //        
