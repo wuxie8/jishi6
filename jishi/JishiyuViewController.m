@@ -16,7 +16,7 @@
 #import "LoanClasssificationVC.h"
 #import "LoginViewController.h"
 #import <UMSocialCore/UMSocialCore.h>
-
+#import "AmountClassificationViewController.h"
 
 #define  ScrollviewWeight 50
 #define  ScrollviewHeight 180
@@ -404,7 +404,10 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
 {
     switch (sender.tag) {
         case 0:
-            
+        {
+            AmountClassificationViewController *amount=[[AmountClassificationViewController alloc]init];
+            [self.navigationController pushViewController:amount animated:YES];
+        }
             break;
         case 1:
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])

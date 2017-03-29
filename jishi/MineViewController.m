@@ -7,7 +7,7 @@
 //
 
 #import "MineViewController.h"
-
+#import "SetupViewController.h"
 #import "LoginViewController.h"
 #define InitialHeight  64
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -99,9 +99,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (indexPath.section==0) {
-//        [self denglu];
-//    }
+    if (indexPath.section==1&&indexPath.row==2) {
+        SetupViewController *setup=[[SetupViewController alloc]init];
+        [self.navigationController pushViewController:setup animated:YES];
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
