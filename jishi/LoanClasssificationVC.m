@@ -29,46 +29,59 @@
 }
 -(void)loadData
 {
-    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"shoujidaikuanjieqiankuai",@"code",
-                       @"1.0.0",@"version",
-                       @"1",@"page",
-                       nil];
-    [[NetWorkManager sharedManager]postJSON:loan parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSDictionary *dic=(NSDictionary *)responseObject;
-        if ([dic[@"status"]boolValue]) {
-            NSArray *arr=dic[@"list"];
-            for (NSDictionary *diction in arr) {
-                ProductModel *pro=[[ProductModel alloc]init];
-                
-                NSString *jsonString=diction[@"smeta"];
-                NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-                NSError *err;
-                NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                         options:NSJSONReadingMutableContainers
-                                                                           error:&err];
-                
-                pro.smeta=imagedic[@"thumb"];
-                pro.link=diction[@"link"];
-                pro.edufanwei=diction[@"edufanwei"];
-                pro.qixianfanwei=diction[@"qixianfanwei"];
-                pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
-                pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
-                pro.post_title=diction[@"post_title"];
-                pro.post_hits=diction[@"post_hits"];
-                pro.feilv=diction[@"feilv"];
-                [self.productArray addObject:pro];
-                
-                
-            }
-          
-            
-            [tab reloadData];
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-               
-        
-    }];
+    
+    
+    self.productArray=nil;
+    NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
+    for (int i=0; i<array.count; i++) {
+        ProductModel *pro=[[ProductModel alloc]init];
+        pro.post_title=array[i];
+        pro.smeta=@"icon";
+        pro.feilv=@"0.3%/天";
+        pro.post_hits=[NSString stringWithFormat:@"%d",[UtilTools getRandomNumber:500000 to:1000000]];
+        [self.productArray addObject:pro];
+    }
+    [tab reloadData];
+//    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+//                       @"shoujidaikuanjieqiankuai",@"code",
+//                       @"1.0.0",@"version",
+//                       @"1",@"page",
+//                       nil];
+//    [[NetWorkManager sharedManager]postJSON:loan parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+//        NSDictionary *dic=(NSDictionary *)responseObject;
+//        if ([dic[@"status"]boolValue]) {
+//            NSArray *arr=dic[@"list"];
+//            for (NSDictionary *diction in arr) {
+//                ProductModel *pro=[[ProductModel alloc]init];
+//                
+//                NSString *jsonString=diction[@"smeta"];
+//                NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+//                NSError *err;
+//                NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
+//                                                                         options:NSJSONReadingMutableContainers
+//                                                                           error:&err];
+//                
+//                pro.smeta=imagedic[@"thumb"];
+//                pro.link=diction[@"link"];
+//                pro.edufanwei=diction[@"edufanwei"];
+//                pro.qixianfanwei=diction[@"qixianfanwei"];
+//                pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
+//                pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
+//                pro.post_title=diction[@"post_title"];
+//                pro.post_hits=diction[@"post_hits"];
+//                pro.feilv=diction[@"feilv"];
+//                [self.productArray addObject:pro];
+//                
+//                
+//            }
+//          
+//            
+//            [tab reloadData];
+//        }
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//               
+//        
+//    }];
     
     
 }

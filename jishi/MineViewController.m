@@ -99,9 +99,9 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section==0) {
-        [self denglu];
-    }
+//    if (indexPath.section==0) {
+//        [self denglu];
+//    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
