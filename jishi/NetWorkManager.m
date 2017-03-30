@@ -197,7 +197,7 @@
         return nil;
     }
     
-    [self configNetManager:name];
+//    [self configNetManager:name];
     
     NSString *url = [NSString stringWithFormat:@"%@%@",SERVERE, name];
     

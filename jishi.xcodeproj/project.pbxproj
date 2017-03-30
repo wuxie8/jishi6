@@ -58,6 +58,8 @@
 		847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D91E779E9F0026F585 /* LoanClasssificationVC.m */; };
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
 		847199E01E77CA410026F585 /* UserInfoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DF1E77CA410026F585 /* UserInfoContext.m */; };
+		84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */; };
+		84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */; };
 		84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FF81381E7155EE0096AE87 /* RegisterVC.m */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +186,10 @@
 		847199DC1E77C92B0026F585 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		847199DE1E77CA410026F585 /* UserInfoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoContext.h; sourceTree = "<group>"; };
 		847199DF1E77CA410026F585 /* UserInfoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoContext.m; sourceTree = "<group>"; };
+		84B4779A1E8C9EE600DDF4AB /* LoanClickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClickViewController.h; sourceTree = "<group>"; };
+		84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanClickViewController.m; sourceTree = "<group>"; };
+		84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessViewController.h; sourceTree = "<group>"; };
+		84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessViewController.m; sourceTree = "<group>"; };
 		84FF81371E7155EE0096AE87 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		84FF81381E7155EE0096AE87 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		FF093DB6F47C31EC084AE4D6 /* Pods-jishi.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jishi.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-jishi/Pods-jishi.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +308,8 @@
 				840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */,
 				8442AAB31E8B8B7A00655887 /* AmountClassificationViewController.h */,
 				8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */,
+				84B4779A1E8C9EE600DDF4AB /* LoanClickViewController.h */,
+				84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */,
 				8442AABF1E8BAC1C00655887 /* AmountTableViewCell.h */,
 				8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */,
 				8442AABC1E8BA4FF00655887 /* AmountViewController.h */,
@@ -437,6 +445,8 @@
 				8442AAB71E8B8F4200655887 /* SetupViewController.m */,
 				8442AAB91E8B992600655887 /* AboutUsViewController.h */,
 				8442AABA1E8B992600655887 /* AboutUsViewController.m */,
+				84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */,
+				84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */,
 				840FE9521E6F9F3E0050C444 /* LoginViewController.h */,
 				840FE9531E6F9F3E0050C444 /* LoginViewController.m */,
 				840FE9791E6FA8570050C444 /* LandingDynamicViewControllerViewController.h */,
@@ -658,8 +668,10 @@
 				841224671E6D490100048188 /* MineViewController.m in Sources */,
 				841224661E6D490100048188 /* XinyongkaViewController.m in Sources */,
 				840FE97E1E6FA88B0050C444 /* PasswordLandingViewViewController.m in Sources */,
+				84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */,
 				847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */,
 				840FE9831E6FCE430050C444 /* NetWorkManager.m in Sources */,
+				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
 				840FE96C1E6FA18D0050C444 /* OptionBarController.m in Sources */,
 				840FE9941E6FF3900050C444 /* WebVC.m in Sources */,
 				841224731E6D49E100048188 /* BaseVC.m in Sources */,

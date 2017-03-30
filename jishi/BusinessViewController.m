@@ -1,31 +1,26 @@
 //
-//  AboutUsViewController.m
+//  BusinessViewController.m
 //  jishi
 //
-//  Created by Admin on 2017/3/29.
+//  Created by Admin on 2017/3/30.
 //  Copyright © 2017年 Admin. All rights reserved.
 //
 
-#import "AboutUsViewController.h"
+#import "BusinessViewController.h"
 
-@interface AboutUsViewController ()
+@interface BusinessViewController ()
 
 @end
 
-@implementation AboutUsViewController
+@implementation BusinessViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title=@"关于我们";
-    self.view.backgroundColor=AppPageColor;
-    UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, WIDTH,HEIGHT-64)];
-    [image setImage:[UIImage imageNamed:@"About-Us"]];
-    [self.view addSubview:image];
-    
-    
-
-    
+    self.title=@"商务合作";
+    self.view.backgroundColor=[UIColor whiteColor];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-100, 100, 200, 100)];
+    label.text=@"邮箱：bd@jishiyu11.cn";
+    [self.view addSubview:label];
     // Do any additional setup after loading the view.
 }
 

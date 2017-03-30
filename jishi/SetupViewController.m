@@ -9,6 +9,7 @@
 #import "SetupViewController.h"
 #import "LoginViewController.h"
 #import "AboutUsViewController.h"
+#import "BusinessViewController.h"
 @interface SetupViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -22,8 +23,11 @@
     [super viewDidLoad];
     self.title=@"设置";
     self.view.backgroundColor=AppPageColor;
-    array=@[@"High praise",@"BusinessCooperation",@"AboutUs",@"feedback"];
-    arr=@[@"好评",@"商务合作",@"关于我们",@"意见反馈"];
+//    array=@[@"High praise",@"BusinessCooperation",@"AboutUs",@"feedback"];
+     array=@[@"BusinessCooperation",@"AboutUs"];
+//    arr=@[@"好评",@"商务合作",@"关于我们",@"意见反馈"];
+    arr=@[@"商务合作",@"关于我们"];
+
     UITableView *tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 20, WIDTH, HEIGHT)];
     tab.delegate=self;
     tab.dataSource=self;
@@ -83,7 +87,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-        case 2:
+            
+        case 0:
+        {
+            BusinessViewController *Business=[[BusinessViewController alloc]init];
+            [self.navigationController pushViewController:Business animated:YES];
+        }
+            break;
+        case 1:
         {
             AboutUsViewController *aboutus=[[AboutUsViewController alloc]init];
             [self.navigationController pushViewController:aboutus animated:YES];

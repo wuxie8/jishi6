@@ -8,6 +8,7 @@
 
 #import "AmountClassificationViewController.h"
 #import "AmountTableViewCell.h"
+#import "LoanClickViewController.h"
 @interface AmountClassificationViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -57,7 +58,13 @@
     cell.backgroundColor=AppPageColor;
     return cell;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 
+    LoanClickViewController *loanclick=[[LoanClickViewController alloc]init];
+    loanclick.location=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    [self.navigationController pushViewController:loanclick animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

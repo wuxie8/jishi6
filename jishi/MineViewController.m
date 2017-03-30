@@ -47,8 +47,11 @@
     
     self.view.backgroundColor=AppPageColor;
     
-    arr=@[@"浏览记录",@"我的消息",@"设置"];
-    imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
+//    arr=@[@"浏览记录",@"我的消息",@"设置"];
+     arr=@[@"设置"];
+//    imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
+    imagesArr=@[@"SetUp"];
+
    
 }
 -(void)loadTableview
@@ -87,7 +90,7 @@
         return 1    ;
         
     }
-    return 3;
+    return arr.count;
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -99,7 +102,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section==1&&indexPath.row==2) {
+    if (indexPath.section==1&&indexPath.row==0) {
         SetupViewController *setup=[[SetupViewController alloc]init];
         [self.navigationController pushViewController:setup animated:YES];
     }
