@@ -88,14 +88,15 @@ typedef enum{
 /**
  *  获取可重复使用的Cell
  *
- *  @return
+ *  @return 获取可重复使用的Cell
  */
 - (UIView *)dequeueReusableCell;
+
 
 /**
  *  滚动到指定的页面
  *
- *  @param pageNumber
+ *  @param pageNumber 滚动到指定的页面
  */
 - (void)scrollToPage:(NSUInteger)pageNumber;
 
@@ -138,7 +139,7 @@ typedef enum{
  *  @param subView 点击的控件
  *  @param subIndex    点击控件的index
  *
- *  @return
+ *
  */
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex;
 

@@ -119,7 +119,7 @@
 //          cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
 //         cell.layoutMargins = UIEdgeInsetsZero;
 //    }
-    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%ld",indexPath.section]];
+    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%ld",(long)indexPath.section]];
     cell.selectionStyle=   UITableViewCellSelectionStyleNone;
     cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     cell.layoutMargins = UIEdgeInsetsZero;

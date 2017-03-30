@@ -42,10 +42,11 @@
     }
 }
 
+
 /**
  *  获取字符串的长度
  *
- *  @param titles
+ *  @param title 获取字符串的长度
  *
  *  @return size
  */
@@ -57,7 +58,7 @@
 /**
  *  设置titles
  *
- *  @param titles
+ *  @param titles 设置titles
  */
 -(void)setTitles:(NSArray *)titles{
     if(_titles!=titles){
@@ -69,7 +70,7 @@
 /**
  *  设置ItemWidths
  *
- *  @param titles
+ *  @param titles 设置titles
  */
 -(void)setItemWidthsWith:(NSArray *)titles{
     itemWidths=[NSMutableArray array];
