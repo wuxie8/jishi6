@@ -180,7 +180,7 @@
         [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")];
     }
        LoginViewController *login=[[LoginViewController alloc]init];
-    login.hidesBottomBarWhenPushed=YES;
+    
     [self.navigationController pushViewController:login animated:YES];
    
 }
