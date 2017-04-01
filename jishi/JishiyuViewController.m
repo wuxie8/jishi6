@@ -393,7 +393,7 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
              but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
             
             but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
+//            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
             but.tag=i;
 
             [cell.contentView addSubview:but];

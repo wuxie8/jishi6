@@ -8,7 +8,6 @@
 
 #import "DaikuanViewController.h"
 #import "YTUITextField.h"
-#import "DaikuanTableViewCell.h"
 #import "AFNetworking.h"
 #import "JishiyuDetailsViewController.h"
 #import "ProductModel.h"

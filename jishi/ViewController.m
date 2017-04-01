@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "BaseNC.h"
 @interface ViewController ()
 
 @end

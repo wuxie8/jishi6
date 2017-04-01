@@ -42,9 +42,7 @@
 		841224741E6D49E100048188 /* GestureBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412246D1E6D49E100048188 /* GestureBaseVC.m */; };
 		841224751E6D49E100048188 /* GestureNavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412246F1E6D49E100048188 /* GestureNavBaseVC.m */; };
 		841224761E6D49E100048188 /* NavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224711E6D49E100048188 /* NavBaseVC.m */; };
-		8416C9E21E7A29180055D0D2 /* CreditInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416C9E11E7A29180055D0D2 /* CreditInquiryViewController.m */; };
 		8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */; };
-		8419CA341E72801C00EAE23C /* JishiyuButtonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA331E72801C00EAE23C /* JishiyuButtonDetailViewController.m */; };
 		8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3D1E729C4B00EAE23C /* YTUITextField.m */; };
 		8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */; };
 		8442AAB51E8B8B7A00655887 /* AmountClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */; };
@@ -154,12 +152,8 @@
 		841224701E6D49E100048188 /* NavBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavBaseVC.h; sourceTree = "<group>"; };
 		841224711E6D49E100048188 /* NavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavBaseVC.m; sourceTree = "<group>"; };
 		841224781E6D4B2E00048188 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		8416C9E01E7A29180055D0D2 /* CreditInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditInquiryViewController.h; sourceTree = "<group>"; };
-		8416C9E11E7A29180055D0D2 /* CreditInquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditInquiryViewController.m; sourceTree = "<group>"; };
 		8419CA2F1E72393900EAE23C /* JishiyuDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuDetailsViewController.h; sourceTree = "<group>"; };
 		8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuDetailsViewController.m; sourceTree = "<group>"; };
-		8419CA321E72801C00EAE23C /* JishiyuButtonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuButtonDetailViewController.h; sourceTree = "<group>"; };
-		8419CA331E72801C00EAE23C /* JishiyuButtonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuButtonDetailViewController.m; sourceTree = "<group>"; };
 		8419CA3C1E729C4B00EAE23C /* YTUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTUITextField.h; sourceTree = "<group>"; };
 		8419CA3D1E729C4B00EAE23C /* YTUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUITextField.m; sourceTree = "<group>"; };
 		8419CA3E1E729C4B00EAE23C /* YTUIToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTUIToolbar.h; sourceTree = "<group>"; };
@@ -300,30 +294,9 @@
 		840FE99B1E7006990050C444 /* JishiyuHomepage */ = {
 			isa = PBXGroup;
 			children = (
-				840FE98F1E6FDCCA0050C444 /* ProductModel.h */,
-				840FE9901E6FDCCA0050C444 /* ProductModel.m */,
-				8412245C1E6D490100048188 /* JishiyuViewController.h */,
-				8412245D1E6D490100048188 /* JishiyuViewController.m */,
-				840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */,
-				840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */,
-				8442AAB31E8B8B7A00655887 /* AmountClassificationViewController.h */,
-				8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */,
-				84B4779A1E8C9EE600DDF4AB /* LoanClickViewController.h */,
-				84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */,
-				8442AABF1E8BAC1C00655887 /* AmountTableViewCell.h */,
-				8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */,
-				8442AABC1E8BA4FF00655887 /* AmountViewController.h */,
-				8442AABD1E8BA4FF00655887 /* AmountViewController.m */,
-				847199D81E779E9F0026F585 /* LoanClasssificationVC.h */,
-				847199D91E779E9F0026F585 /* LoanClasssificationVC.m */,
-				847199D51E778F2E0026F585 /* LoanClassification.h */,
-				847199D61E778F2E0026F585 /* LoanClassification.m */,
-				8416C9E01E7A29180055D0D2 /* CreditInquiryViewController.h */,
-				8416C9E11E7A29180055D0D2 /* CreditInquiryViewController.m */,
-				8419CA321E72801C00EAE23C /* JishiyuButtonDetailViewController.h */,
-				8419CA331E72801C00EAE23C /* JishiyuButtonDetailViewController.m */,
-				8419CA2F1E72393900EAE23C /* JishiyuDetailsViewController.h */,
-				8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */,
+				84C06F351E8FA6AE00038420 /* Model */,
+				84C06F361E8FA6BD00038420 /* Controller */,
+				84C06F371E8FA6F800038420 /* View */,
 			);
 			name = JishiyuHomepage;
 			sourceTree = "<group>";
@@ -353,21 +326,13 @@
 		841224271E6D480300048188 /* jishi */ = {
 			isa = PBXGroup;
 			children = (
-				8412242B1E6D480300048188 /* AppDelegate.h */,
-				8412242C1E6D480300048188 /* AppDelegate.m */,
-				8412242E1E6D480300048188 /* ViewController.h */,
-				8412242F1E6D480300048188 /* ViewController.m */,
+				84C06F341E8FA61A00038420 /* Appdelegate */,
 				840FE9891E6FCFF50050C444 /* Utils */,
 				840FE9851E6FCE480050C444 /* NetWork */,
 				840AB3541E6E599600532231 /* 第三方轮播 */,
 				841224771E6D49E500048188 /* Base */,
 				840FE99B1E7006990050C444 /* JishiyuHomepage */,
-				8412245E1E6D490100048188 /* DaikuanViewController.h */,
-				8412245F1E6D490100048188 /* DaikuanViewController.m */,
-				844B8FF71E769275007C3207 /* DaikuanTableViewCell.h */,
-				844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */,
-				841224601E6D490100048188 /* XinyongkaViewController.h */,
-				841224611E6D490100048188 /* XinyongkaViewController.m */,
+				84C06F331E8FA5EE00038420 /* daikuan */,
 				84FF81321E70F7E50096AE87 /* Login */,
 				84FF81331E7145300096AE87 /* Register */,
 				844B8FF31E766A64007C3207 /* ForgotpasswordVC */,
@@ -434,6 +399,71 @@
 				844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */,
 			);
 			name = ForgotpasswordVC;
+			sourceTree = "<group>";
+		};
+		84C06F331E8FA5EE00038420 /* daikuan */ = {
+			isa = PBXGroup;
+			children = (
+				8412245E1E6D490100048188 /* DaikuanViewController.h */,
+				8412245F1E6D490100048188 /* DaikuanViewController.m */,
+				844B8FF71E769275007C3207 /* DaikuanTableViewCell.h */,
+				844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */,
+				841224601E6D490100048188 /* XinyongkaViewController.h */,
+				841224611E6D490100048188 /* XinyongkaViewController.m */,
+			);
+			name = daikuan;
+			sourceTree = "<group>";
+		};
+		84C06F341E8FA61A00038420 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8412242B1E6D480300048188 /* AppDelegate.h */,
+				8412242C1E6D480300048188 /* AppDelegate.m */,
+				8412242E1E6D480300048188 /* ViewController.h */,
+				8412242F1E6D480300048188 /* ViewController.m */,
+			);
+			name = Appdelegate;
+			sourceTree = "<group>";
+		};
+		84C06F351E8FA6AE00038420 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				840FE98F1E6FDCCA0050C444 /* ProductModel.h */,
+				840FE9901E6FDCCA0050C444 /* ProductModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		84C06F361E8FA6BD00038420 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8442AAB31E8B8B7A00655887 /* AmountClassificationViewController.h */,
+				8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */,
+				84B4779A1E8C9EE600DDF4AB /* LoanClickViewController.h */,
+				84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */,
+				8442AABC1E8BA4FF00655887 /* AmountViewController.h */,
+				8442AABD1E8BA4FF00655887 /* AmountViewController.m */,
+				847199D81E779E9F0026F585 /* LoanClasssificationVC.h */,
+				847199D91E779E9F0026F585 /* LoanClasssificationVC.m */,
+				8419CA2F1E72393900EAE23C /* JishiyuDetailsViewController.h */,
+				8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */,
+				8412245C1E6D490100048188 /* JishiyuViewController.h */,
+				8412245D1E6D490100048188 /* JishiyuViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		84C06F371E8FA6F800038420 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				847199D51E778F2E0026F585 /* LoanClassification.h */,
+				847199D61E778F2E0026F585 /* LoanClassification.m */,
+				8442AABF1E8BAC1C00655887 /* AmountTableViewCell.h */,
+				8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */,
+				840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */,
+				840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		84FF81321E70F7E50096AE87 /* Login */ = {
@@ -695,7 +725,6 @@
 				840FE96D1E6FA18D0050C444 /* OptionsBarItem.m in Sources */,
 				8442AABE1E8BA4FF00655887 /* AmountViewController.m in Sources */,
 				840AB3531E6E50DA00532231 /* WSPageView.m in Sources */,
-				8419CA341E72801C00EAE23C /* JishiyuButtonDetailViewController.m in Sources */,
 				840FE9841E6FCE440050C444 /* NetWorkUtil.m in Sources */,
 				840FE99A1E6FFEA10050C444 /* JishiyuTableViewCell.m in Sources */,
 				840FE98E1E6FD2650050C444 /* UtilTools.m in Sources */,
@@ -704,7 +733,6 @@
 				847199D71E778F2E0026F585 /* LoanClassification.m in Sources */,
 				84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */,
 				840FE96E1E6FA18D0050C444 /* OptionsBarView.m in Sources */,
-				8416C9E21E7A29180055D0D2 /* CreditInquiryViewController.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,
 				8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */,
 				8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */,
