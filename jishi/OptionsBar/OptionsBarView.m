@@ -175,7 +175,7 @@
 /**
  *  判断点击的方向
  *
- *  @param item <#item description#>
+ *  @param index  asd
  */
 -(void)adjustSelectedCurrentIndex:(NSInteger)index{
     if(index>_currentIndex){

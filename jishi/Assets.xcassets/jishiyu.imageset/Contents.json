@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "首页24.png",
+      "filename" : "我要借款.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "首页48.png",
+      "filename" : "我要借款@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "首页72.png",
+      "filename" : "我要借款@3x.png",
       "scale" : "3x"
     }
   ],

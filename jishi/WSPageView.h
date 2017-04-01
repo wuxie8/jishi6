@@ -115,22 +115,12 @@ typedef enum{
 
 @protocol  WSPageViewDelegate<NSObject>
 
-/**
- *  单个子控件的Size
- *
- *  @param flowView
- *
- *  @return CGSize
- */
+
 - (CGSize)sizeForPageInFlowView:(WSPageView *)flowView;
 
 @optional
-/**
- *  滚动到了某一列
- *
- *  @param pageNumber
- *  @param flowView
- */
+
+
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(WSPageView *)flowView;
 
 /**
@@ -151,20 +141,13 @@ typedef enum{
 /**
  *  返回显示View的个数
  *
- *  @param flowView
+ *  @param flowView sds
  *
- *  @return
+ *  @return nsinteger
  */
 - (NSInteger)numberOfPagesInFlowView:(WSPageView *)flowView;
 
-/**
- *  给某一列设置属性
- *
- *  @param flowView
- *  @param index
- *
- *  @return   
- */
+
 - (UIView *)flowView:(WSPageView *)flowView cellForPageAtIndex:(NSInteger)index;
 
 
