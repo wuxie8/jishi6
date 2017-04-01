@@ -37,11 +37,11 @@
     [imageview setImage:[UIImage imageNamed:@"arrow"]];
     [self.contentView addSubview:imageview];
     
-    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 60,WIDTH, 20)];
-    view.backgroundColor=[UIColor blueColor];
-    
-    
-    [self.contentView addSubview:view];
+//    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 60,WIDTH, 20)];
+//    view.backgroundColor=[UIColor blueColor];
+//    
+//    
+//    [self.contentView addSubview:view];
     _post_hits_Label=[[UILabel alloc]initWithFrame:CGRectMake(0, 40, 200, 40   )];
     _post_hits_Label.font=[UIFont systemFontOfSize:12];
     

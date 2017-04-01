@@ -41,7 +41,7 @@
     
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, viewHeight, WIDTH, 30)];
     view.backgroundColor=AppBackColor;
-    
+
     
     [self.contentView addSubview:view];
     _post_hits_Label=[[UILabel alloc]initWithFrame:CGRectMake(20,viewHeight, 200, 30   )];

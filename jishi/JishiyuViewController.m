@@ -52,7 +52,7 @@ tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
 tab.delegate=self;
 tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
-    tab.tableHeaderView=[self creatUI];
+//    tab.tableHeaderView=[self creatUI];
     
 [self.view addSubview:tab];
 // Do any additional setup after loading the view.
@@ -284,19 +284,19 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
     [view addSubview:image];
     
     
-    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-60, 30, 50, 25)];
-    [but setImage:[UIImage imageNamed:@"change"] forState:UIControlStateNormal];
-   
-    [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [but.imageView setClipsToBounds:YES];
-    
-    but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
-    
-    but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-
-    [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:but];
-    
+//    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-60, 30, 50, 25)];
+//    [but setImage:[UIImage imageNamed:@"change"] forState:UIControlStateNormal];
+//   
+//    [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
+//    [but.imageView setClipsToBounds:YES];
+//    
+//    but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
+//    
+//    but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
+//
+////    [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
+//    [view addSubview:but];
+//    
     
     UIView *backgroundview=[[UIView alloc]initWithFrame:CGRectMake(0, 58, WIDTH, 2)];
     backgroundview.backgroundColor=kColorFromRGB(245, 245, 243);
@@ -429,11 +429,14 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
 
             break;
         case 2:
-        {  WebVC *vc = [[WebVC alloc] init];
-                [vc setNavTitle:@"信用卡查询"];
-                [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
-                vc.hidesBottomBarWhenPushed=YES;
-            [self.navigationController pushViewController:vc animated:NO];}
+        {
+            
+//            WebVC *vc = [[WebVC alloc] init];
+//                [vc setNavTitle:@"信用卡查询"];
+//                [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
+//                vc.hidesBottomBarWhenPushed=YES;
+//            [self.navigationController pushViewController:vc animated:NO];
+        }
             break;
         default:
             break;

@@ -90,7 +90,7 @@
 
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
-        NSArray *titles = @[@"及时雨",@"贷款",@"我",@"设置"];
+        NSArray *titles = @[@"首页",@"贷款",@"个人中心",@"设置"];
 //               NSArray *titles = @[@"贷款",@"我",@"设置"];
                 NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
 //        NSArray *images=@[@"lending",@"Mineing"];
