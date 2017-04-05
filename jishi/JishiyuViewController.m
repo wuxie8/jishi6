@@ -39,10 +39,10 @@
  
  
 
-self.title=@"及时雨";
+    self.title=@"手机贷上钱";
 
     
-page=1;
+     page=1;
     
     self.view.backgroundColor=[UIColor grayColor];
     
@@ -52,7 +52,7 @@ tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
 tab.delegate=self;
 tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
-//    tab.tableHeaderView=[self creatUI];
+    tab.tableHeaderView=[self creatUI];
     
 [self.view addSubview:tab];
 // Do any additional setup after loading the view.
