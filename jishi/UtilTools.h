@@ -340,7 +340,6 @@
 #pragma mark - 获取字符串的字符数
 + (NSInteger)characterCountOfStr:(NSString *)str;
 
-#pragma mark - 图片本地存储，获取md5值
-//+ (NSString *)getPhotosMd5:(UIImage *)image result:(void(^)(NSString *path,int progress))result;
+
 
 @end

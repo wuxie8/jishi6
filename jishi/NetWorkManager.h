@@ -107,17 +107,7 @@
 
 
 
-//手环请求方法
-- (NSURLSessionDataTask *)postNoTipJSONBracelet:(NSString *)name
-                             parameters:(NSDictionary *)parameters
-                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                                failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
-
-- (NSURLSessionDataTask *)getNoTipJSONBracelet:(NSString *)name
-                            parameters:(NSDictionary *)parameters
-                               success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                               failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 
 @end

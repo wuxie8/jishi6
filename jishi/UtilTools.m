@@ -845,38 +845,6 @@ static SystemSoundID shake_sound_enter_id = 0;
     return [data length];
 }
 
-#pragma mark - 图片本地存储，获取md5值
-//+ (NSString *)getPhotosMd5:(UIImage *)image result:(void(^)(NSString *path,int progress))result
-//{
-//    
-//    //根据当前系统时间生成图片名称
-//    NSDate *date = [NSDate date];
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-//    NSString *dateString = [formatter stringFromDate:date];
-//    
-//    NSString *fileName = [NSString stringWithFormat:@"%@.png",dateString];
-//    NSData *imageData;
-//    imageData = UIImageJPEGRepresentation(image, 1);
-//    
-//    double scaleNum = (double)300*1024 / imageData.length;
-//    if (scaleNum < 1) {
-//        imageData = UIImageJPEGRepresentation(image, scaleNum);
-//    }
-//    
-//    //把图片临时存到本地（为了获取图片路径）
-//    NSString *photoTempPath = [WriteToFile localDataWriteToTempFilePath:@"png" fileName:fileName resourceType:@"HomeShoppingPicture" fileData:imageData];
-//    
-//    NSMutableArray * photoTempPatharray=[NSMutableArray arrayWithArray:[photoTempPath componentsSeparatedByString:@"Documents/"]];
-//    NSString *photoMd5Str = [NSString stringWithFormat:@"%@",[MyMD5 md5Str:[NSString stringWithFormat:@"%@",photoTempPatharray[1]]]];
-//    
-//    //把图片存到本地库
-//    [WriteToFile dataWriteToFilePath:@"png" fileName:photoMd5Str resourceType:@"TrustedFollowerOriginalImage" fileData:imageData result:^(NSString *path, int progress) {
-//        result(path,progress);
-//    }];
-//    
-//    return photoMd5Str;
-//}
 
 
 @end
