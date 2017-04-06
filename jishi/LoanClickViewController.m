@@ -26,7 +26,7 @@
     self.title=@"极速微贷";
     
     [self loadData];
-    // Do any additional setup after loading the view.
+   
 }
 -(void)loadData
 {
@@ -98,7 +98,7 @@
 -(void)loadTableView
 {
     
-    tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-44)];
+    tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64)];
     tab.delegate=self;
     tab.dataSource=self;
     [self.view addSubview:tab];

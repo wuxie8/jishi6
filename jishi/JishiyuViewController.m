@@ -392,44 +392,42 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
 }
 -(void)butClick:(UIButton *)sender
 {
-    switch (sender.tag) {
-        case 0:
-        {
-            AmountClassificationViewController *amount=[[AmountClassificationViewController alloc]init];
-            [self.navigationController pushViewController:amount animated:YES];
-        }
-            break;
-        case 1:
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+        switch (sender.tag) {
+            case 0:
             {
-                LoanClasssificationVC *loanClass=[[ LoanClasssificationVC alloc]init];
-                [self.navigationController pushViewController:loanClass animated:YES];
-                
+                AmountClassificationViewController *amount=[[AmountClassificationViewController alloc]init];
+                amount.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:amount animated:YES];
             }
-            else
+                break;
+            case 1:
+               
+            { LoanClasssificationVC *loanClass=[[ LoanClasssificationVC alloc]init];
+                    loanClass.hidesBottomBarWhenPushed=YES;
+                    [self.navigationController pushViewController:loanClass animated:YES];
+            }
+                break;
+            case 2:
             {
-                LoginViewController *login=[[LoginViewController alloc]init];
-                [self.navigationController pushViewController:login animated:YES];
-                
-            }
-
-            break;
-        case 2:
-        {
-            
-            WebVC *vc = [[WebVC alloc] init];
+                WebVC *vc = [[WebVC alloc] init];
                 [vc setNavTitle:@"信用卡查询"];
                 [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
                 vc.hidesBottomBarWhenPushed=YES;
-            [self.navigationController pushViewController:vc animated:NO];
+                [self.navigationController pushViewController:vc animated:NO];
+            }
+                break;
+            default:
+                break;
         }
-            break;
-        default:
-            break;
     }
-
-    
-  
+    else
+    {
+        LoginViewController *login=[[LoginViewController alloc]init];
+        login.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:login animated:YES];
+    }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

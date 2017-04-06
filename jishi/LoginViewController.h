@@ -10,4 +10,6 @@
 
 @interface LoginViewController : GestureNavBaseVC
 
+
+@property(assign, nonatomic)BOOL hidden;
 @end

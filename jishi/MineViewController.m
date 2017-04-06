@@ -104,6 +104,7 @@
 {
     if (indexPath.section==1&&indexPath.row==0) {
         SetupViewController *setup=[[SetupViewController alloc]init];
+        setup.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:setup animated:YES];
     }
 }
@@ -180,7 +181,7 @@
         [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")];
     }
        LoginViewController *login=[[LoginViewController alloc]init];
-    
+    login.hidden=YES;
     [self.navigationController pushViewController:login animated:YES];
    
 }

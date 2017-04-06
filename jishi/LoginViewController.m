@@ -28,8 +28,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton =YES;
-    self.navigationItem.leftBarButtonItem=nil;
+    if (self.hidden) {
+        self.navigationItem.hidesBackButton =YES;
+        self.navigationItem.leftBarButtonItem=nil;
+    }
+   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,11 +88,7 @@
        // Do any additional setup after loading the view.
 }
 
--(void)backAction
-{
 
-
-}
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [self.view endEditing:YES];
 }
