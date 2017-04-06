@@ -243,8 +243,10 @@
 +(NSString *)intervalSinceNow: (NSString *) theDate;
 
 #pragma  mark  封装方法
-
-
+ //检测是否安装qq
++(BOOL)haveQQ;
+//检测是否安装微信
++(BOOL)haveWeiXin;
 //获取一个随机整数，范围在[from,to），包括from，包括to
 + (int)getRandomNumber:(int)from to:(int)to;
 

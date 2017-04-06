@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>手机贷上钱</string>
+	<string>我来贷款王</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.zhenjianghaitian.jishiyu</string>
+	<string>com.haitian.wolaidaikuanwang</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -27,7 +27,7 @@
 			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1105985531</string>
+				<string>tencent1106001325</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,7 +37,7 @@
 			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ41ebfffb</string>
+				<string>QQ41ec3dad</string>
 			</array>
 		</dict>
 	</array>

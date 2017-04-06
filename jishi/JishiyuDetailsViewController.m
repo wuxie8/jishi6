@@ -36,8 +36,8 @@
         _headImageView=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 50, 50)];
         [_headImageView setContentMode:UIViewContentModeScaleAspectFill];
         _headImageView.clipsToBounds=YES;
-        [_headImageView setImage:[UIImage imageNamed:self.product.smeta]];
-//        [_headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,self.product.smeta]]];
+
+        [_headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,self.product.smeta]]];
         [_headView addSubview:_headImageView];
         
         UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame)+20, 10, 150, 50)];

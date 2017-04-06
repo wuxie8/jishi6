@@ -61,16 +61,8 @@ tab.dataSource=self;
 -(void)getList
 {
      self.productArray=nil;
-    NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
-//    for (int i=0; i<array.count; i++) {
-//          ProductModel *pro=[[ProductModel alloc]init];
-//        pro.post_title=array[i];
-//         pro.smeta=@"icon";
-//        pro.feilv=@"0.3%/天";
-//        pro.post_hits=[NSString stringWithFormat:@"%d",[UtilTools getRandomNumber:500000 to:1000000]];
-//         [self.productArray addObject:pro];
-//    }
-//      [tab reloadData];
+  
+
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                        @"shoujidaikuanjieqiankuai",@"code",
                        @"1.0.0",@"version",
@@ -92,22 +84,22 @@ tab.dataSource=self;
             NSDictionary *diction=arr[i];
             ProductModel *pro=[[ProductModel alloc]init];
             
-//            NSString *jsonString=diction[@"smeta"];
-//            NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-//            NSError *err;
-//            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
-//                                                                     options:NSJSONReadingMutableContainers
-//                                                                       error:&err];
-             pro.smeta=@"icon";
-//            pro.smeta=imagedic[@"thumb"];
+            NSString *jsonString=diction[@"smeta"];
+            NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            NSError *err;
+            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                     options:NSJSONReadingMutableContainers
+                                                                       error:&err];
+            
+            pro.smeta=imagedic[@"thumb"];
             pro.link=diction[@"link"];
             pro.edufanwei=diction[@"edufanwei"];
             pro.qixianfanwei=diction[@"qixianfanwei"];
             pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
             pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
-            //            pro.post_title=diction[@"post_title"];
-            int location=i%array.count;
-            pro.post_title=array[location];
+                        pro.post_title=diction[@"post_title"];
+//            int location=i%array.count;
+//            pro.post_title=array[location];
             pro.post_hits=diction[@"post_hits"];
             pro.feilv=diction[@"feilv"];
             [self.productArray addObject:pro];
@@ -380,20 +372,14 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
         for (int i=0; i<images.count; i++) {
             UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/images.count*i, 10, WIDTH/images.count, SectionHeight-20)];
                [but setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
-//            CGPoint point = but.center;
-//            
-//            int center_x = floor(point.x);
-//            
-//            int center_y = floor(point.y);
-//            
-//           but.center = CGPointMake(center_x, center_y);
+
             [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
             [but.imageView setClipsToBounds:YES];
          
              but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
             
             but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-//            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
+            [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];
             but.tag=i;
 
             [cell.contentView addSubview:but];
@@ -431,49 +417,17 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
         case 2:
         {
             
-//            WebVC *vc = [[WebVC alloc] init];
-//                [vc setNavTitle:@"信用卡查询"];
-//                [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
-//                vc.hidesBottomBarWhenPushed=YES;
-//            [self.navigationController pushViewController:vc animated:NO];
+            WebVC *vc = [[WebVC alloc] init];
+                [vc setNavTitle:@"信用卡查询"];
+                [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
+                vc.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:vc animated:NO];
         }
             break;
         default:
             break;
     }
-    //    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
-//        //创建分享消息对象
-//        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-//        
-//        //创建网页内容对象
-//        NSString* thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
-//        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用【友盟+】社会化组件U-Share" descr:@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！" thumImage:thumbURL];
-//        //设置网页地址
-//        shareObject.webpageUrl = @"http://mobile.umeng.com/social";
-//        
-//        //分享消息对象设置分享内容对象
-//        messageObject.shareObject = shareObject;
-//        
-//        //调用分享接口
-//        [[UMSocialManager defaultManager] shareToPlatform:  UMSocialPlatformType_QQ messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-//            if (error) {
-//                UMSocialLogInfo(@"************Share fail with error %@*********",error);
-//            }else{
-//                if ([data isKindOfClass:[UMSocialShareResponse class]]) {
-//                    UMSocialShareResponse *resp = data;
-//                    //分享结果消息
-//                    UMSocialLogInfo(@"response message is %@",resp.message);
-//                    //第三方原始返回的数据
-//                    UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
-//                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:resp.message message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-//                    [alert show];
-//                    
-//                }else{
-//                    UMSocialLogInfo(@"response data is %@",data);
-//                }
-//            }
-//        }];
-//    }
+
     
   
 }

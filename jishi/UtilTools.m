@@ -441,6 +441,15 @@ static SystemSoundID shake_sound_enter_id = 0;
     return timeString;
 }
 #pragma  mark  封装方法
+
++(BOOL)haveQQ
+{
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"mqq://"]];
+}
++(BOOL)haveWeiXin
+{
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"wechat://"]];
+}
 + (int)getRandomNumber:(int)from to:(int)to
 
 {

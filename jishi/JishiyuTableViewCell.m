@@ -54,8 +54,8 @@
 
 -(void)setModel:(ProductModel *)model
 {
-//    [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,model.smeta]]];
-    [self.image setImage:[UIImage imageNamed:model.smeta]];
+    [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,model.smeta]]];
+//    [self.image setImage:[UIImage imageNamed:model.smeta]];
     [self.titleLabel setText:model.post_title];
     [self.feliv_Label setText:model.feilv];
     
