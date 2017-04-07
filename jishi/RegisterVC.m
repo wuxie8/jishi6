@@ -121,8 +121,8 @@
                        nil];
     [[NetWorkManager sharedManager]postJSON:doregister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
-        if ([dic[@"state"]boolValue]) {
-            
+        if ([dic[@"status"]boolValue]) {
+            [MessageAlertView showSuccessMessage:@"注册成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else
         {
@@ -190,8 +190,7 @@
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
             [MessageAlertView showSuccessMessage:@"发送成功"];
-            
-        }
+                   }
         else
         {
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];

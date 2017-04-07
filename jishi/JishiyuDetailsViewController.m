@@ -7,11 +7,12 @@
 //
 
 #import "JishiyuDetailsViewController.h"
-
+#import "WebVC.h"
 @interface JishiyuDetailsViewController ()
 
 @property(strong, nonatomic)UIView *headView;
 
+@property(strong, nonatomic)UIView*footView;
 @property(strong, nonatomic)UIImageView*headImageView;
 @end
 
@@ -19,11 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title=self.product.post_title;
     UITableView *tab=[[UITableView alloc]initWithFrame:self.view.bounds];
     tab.delegate=self;
     tab.dataSource=self;
     tab.tableHeaderView=self.headView;
+    tab.tableFooterView=self.footView;
     tab.separatorStyle= UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tab];
     // Do any additional setup after loading the view.
@@ -112,6 +114,32 @@
     return _headView;
     
 }
+-(UIView *)footView
+
+{
+    if (_footView==nil) {
+        _footView                     = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
+        
+        UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(20, 50, WIDTH-40, 30)];
+        but.clipsToBounds=YES;
+        [but addTarget:self action:@selector(jumplanding) forControlEvents:UIControlEventTouchUpInside];
+        but.layer.cornerRadius=5;
+        but.backgroundColor=AppBackColor;
+        [but setTitle:@"马上申请" forState:UIControlStateNormal];
+        [_footView addSubview:but];
+    }
+    return _footView;
+    
+}
+-(void)jumplanding
+{
+        WebVC *vc = [[WebVC alloc] init];
+        [vc setNavTitle:self.product.post_title];
+        [vc loadFromURLStr:self.product.link];
+        vc.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:vc animated:NO];
+
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
@@ -124,16 +152,9 @@
     NSString * labelStr = self.product.shenqingtiaojian;
   
    CGSize labelSize=[UtilTools getTextHeight:labelStr width:WIDTH font:[UIFont systemFontOfSize:14]];
- 
-  
-    
     
     return labelSize.height+10;
-    
-    //delta 是Cell除了自适应控件UILabel外的其它控件所占的高度。
-    
-    
-    
+
 }
 
 #pragma mark 返回每组头标题名称

@@ -39,7 +39,7 @@
  
  
 
-    self.title=@"手机贷上钱";
+    self.title=@"我来贷款王";
 
     
      page=1;
