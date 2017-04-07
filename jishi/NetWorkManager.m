@@ -34,20 +34,20 @@
         return nil;
     }
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-    manager.responseSerializer.stringEncoding = NSUTF8StringEncoding;
-    manager.requestSerializer.timeoutInterval = TIMEOUT;
+   
+    self.responseSerializer = [AFHTTPResponseSerializer serializer];
+    self.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+    self.responseSerializer.stringEncoding = NSUTF8StringEncoding;
+    self.requestSerializer.timeoutInterval = TIMEOUT;
 //    [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
 //        [manager.requestSerializer setValue:Context.currentUser.Token forHTTPHeaderField:@"X-EEXUU-Token"];
     }
-    manager.responseSerializer.acceptableContentTypes = [self.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    self.responseSerializer.acceptableContentTypes = [self.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",SERVERE, name];
     
-    return [manager POST:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+    return [self POST:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         
         __unused   NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
 
@@ -76,8 +76,7 @@
         return nil;
     }
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer=[AFHTTPResponseSerializer serializer];
+      self.responseSerializer=[AFHTTPResponseSerializer serializer];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
 //        [manager.requestSerializer setValue:Context.currentUser.Token forHTTPHeaderField:@"X-EEXUU-Token"];
     }
