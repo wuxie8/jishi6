@@ -38,6 +38,9 @@
 
 #define filter @"&m=business&a=filter"
 
+//贷款
+#define code @"shoujidaishangqian"
+
 #define APIHelp @"http://v2api20160516.eexuu.com/swagger"
 
 #endif /* Serve_h */

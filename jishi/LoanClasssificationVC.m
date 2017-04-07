@@ -35,7 +35,7 @@
  
  NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"wolaidaikuanwang",@"code",
+                      code,@"code",
                        @"1.0.0",@"version",
                        @"1",@"page",
                        nil];

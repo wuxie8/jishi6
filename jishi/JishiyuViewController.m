@@ -39,7 +39,7 @@
  
  
 
-    self.title=@"我来贷款王";
+    self.title=@"仓鼠贷";
 
     
      page=1;
@@ -64,7 +64,7 @@ tab.dataSource=self;
   
 
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"wolaidaikuanwang",@"code",
+                       code,@"code",
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];
@@ -79,8 +79,12 @@ tab.dataSource=self;
         if (page>page_count) {
             page=1;
         }
-       
-         [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+        if ([UtilTools isBlankString:dic[@"review"]]) {
+             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
+        }else
+        {
+            [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+        }
         
                  if (![UtilTools isBlankArray:arr]) {
             for (int i=0; i<arr.count; i++) {
