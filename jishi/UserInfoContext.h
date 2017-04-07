@@ -27,8 +27,7 @@
 //该账户绑定的子用户
 @property (nonatomic, strong) NSMutableArray *subUsers;
 
-//紧急联系人数量
-@property(nonatomic, assign)int emergencyContactCount;
+@property(assign, nonatomic)BOOL review;
 
 @property (nonatomic, strong)NSString *longitude;//经度
 @property (nonatomic, strong)NSString *latitude;//纬度

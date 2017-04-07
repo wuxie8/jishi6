@@ -58,8 +58,14 @@
 
 -(void)setProduct:(ProductModel *)product
 {
-    [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,product.smeta]]];
-//    [self.image setImage:[UIImage imageNamed:product.smeta]];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        [self.image setImage:[UIImage imageNamed:product.smeta]];
+        
+    }
+    else
+    {
+        [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,product.smeta]]];
+    }
     [self.titleLabel setText:product.post_title];
     [self.feliv_Label setText:[NSString stringWithFormat:@"费率%@",product.feilv]];
     

@@ -178,7 +178,7 @@
     NSDictionary*dic1=@{@"page":@"1",
                         @"count":@"10"};
     NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"shoujidaikuanjieqiankuai",@"code",
+                       @"wolaidaikuanwang",@"code",
                        @"1.0.0",@"version",
                        dic1,@"PAGINATION",
                         @"1",@"career",
@@ -187,7 +187,7 @@
 
                        nil];
 
-  
+   NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
     self.productArray=nil;
         AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.responseSerializer=[AFHTTPResponseSerializer   serializer];
@@ -199,23 +199,31 @@
             for (int i=0; i<arr.count; i++) {
                 NSDictionary *diction=arr[i];
                 ProductModel *pro=[[ProductModel alloc]init];
+                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                    pro.smeta=@"icon";
+                    
+                    int location=i%array.count;
+                    pro.post_title=array[location];
+                }
+                else
+                {
+                    NSString *jsonString=diction[@"smeta"];
+                    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+                    NSError *err;
+                    NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                             options:NSJSONReadingMutableContainers
+                                                                               error:&err];
+                    pro.smeta=imagedic[@"thumb"];
+                    pro.post_title=diction[@"post_title"];
+                }
+
                 
-                            NSString *jsonString=diction[@"smeta"];
-                            NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-                            NSError *err;
-                            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                                     options:NSJSONReadingMutableContainers
-                                                                                       error:&err];
-                
-                            pro.smeta=imagedic[@"thumb"];
                 pro.link=diction[@"link"];
                 pro.edufanwei=diction[@"edufanwei"];
                 pro.qixianfanwei=diction[@"qixianfanwei"];
                 pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
                 pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
-                            pro.post_title=diction[@"post_title"];
-//                int location=i%array.count;
-//                pro.post_title=array[location];
+   
                 pro.post_hits=diction[@"post_hits"];
                 pro.feilv=diction[@"feilv"];
                 [self.productArray addObject:pro];

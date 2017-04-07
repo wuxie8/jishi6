@@ -25,7 +25,9 @@
     tab.delegate=self;
     tab.dataSource=self;
     tab.tableHeaderView=self.headView;
+   if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
     tab.tableFooterView=self.footView;
+   }
     tab.separatorStyle= UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tab];
     // Do any additional setup after loading the view.
@@ -38,8 +40,15 @@
         _headImageView=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 50, 50)];
         [_headImageView setContentMode:UIViewContentModeScaleAspectFill];
         _headImageView.clipsToBounds=YES;
-
-        [_headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,self.product.smeta]]];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+            [_headImageView setImage:[UIImage imageNamed:self.product.smeta]];
+            
+        }
+        else
+        {
+            [_headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,self.product.smeta]]];
+        }
+  
         [_headView addSubview:_headImageView];
         
         UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame)+20, 10, 150, 50)];

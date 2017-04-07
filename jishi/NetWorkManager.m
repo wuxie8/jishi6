@@ -202,9 +202,11 @@
     
     return [self POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+            DLog(@"参数%@\n%@返回结果：%@",parameters,url,responseObject);
+        
         success(task, responseObject);
         
-        DLog(@"参数%@\n%@返回结果：%@",parameters,url,responseObject);
+ 
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

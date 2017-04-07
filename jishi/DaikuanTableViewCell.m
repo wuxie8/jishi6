@@ -57,8 +57,14 @@
 }
 -(void)setModel:(ProductModel *)model
 {
-
-    [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,model.smeta]]];
+ if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+     [self.image setImage:[UIImage imageNamed:model.smeta]];
+ 
+ }
+    else
+    {
+        [self.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMG_PATH,model.smeta]]];
+    }
     [self.titleLabel setText:model.post_title];
     [self.feliv_Label setText:model.feilv];
     
