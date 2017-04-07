@@ -155,13 +155,41 @@ tab.dataSource=self;
 }
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
-    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+  
+        switch (subIndex) {
+            case 0:
+            {   WebVC *vc = [[WebVC alloc] init];
+                [vc setNavTitle:@"融360"];
+                [vc loadFromURLStr:@"http://m.rong360.com/express?from=sem21&utm_source=union1&utm_medium=jsy"];
+                vc.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:vc animated:NO];
+                
+            }
+                break;
+            case 1:
+            {WebVC *vc = [[WebVC alloc] init];
+                [vc setNavTitle:@"现金巴士"];
+                [vc loadFromURLStr:@"https://weixin.cashbus.com/#/events/promo/13201"];
+                vc.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:vc animated:NO];
+                
+            }
+                break;
+            case 2:
+            {
+                WebVC *vc = [[WebVC alloc] init];
+                [vc setNavTitle:@"简单借款"];
+                [vc loadFromURLStr:@"https://activity.jiandanjiekuan.com/html/register_getNewUser.html?channelCode=98a33dcdc909492b9eb0b5cffb5d7d80"];
+                vc.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:vc animated:NO];
+            }
+                break;
+            default:
+                break;
+        }
+    }
    
-//    WebVC *vc = [[WebVC alloc] init];
-//    [vc setNavTitle:@"及时雨"];
-//    [vc loadFromURLStr:@"http://api.51ygdai.com/act/light-loan?source_tag=jsy"];
-//    vc.hidesBottomBarWhenPushed=YES;
-//    [self.navigationController pushViewController:vc animated:NO];
 }
 
 #pragma mark NewPagedFlowView Datasource
