@@ -284,7 +284,7 @@
             isChecked = NO;
         }
         
-        if ([[parameters objectForKey:@"password"] isEqualToString:@"1"]) {
+       else  if ([[parameters objectForKey:@"logintype"] isEqualToString:@"1"]) {
             if ([UtilTools isBlankString:[parameters objectForKey:@"password"]])
             {
                 message=@"请输入密码";

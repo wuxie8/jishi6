@@ -102,33 +102,63 @@
                        diction[@"1"],@"password",
                        @"1",@"logintype",
                        nil];
-    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
-    manager.responseSerializer=[AFHTTPResponseSerializer   serializer];
-    [manager POST:[NSString stringWithFormat:@"%@%@",SERVERE,dologin]  parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       
-   NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-      
+
+    [[NetWorkManager sharedManager]postJSON:dologin parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSDictionary *resultDic=(NSDictionary *)responseObject;
+        
         if ([resultDic[@"status"] boolValue] ) {
             User *user=[[User alloc]init];
             user.token=resultDic[@"token"];
             user.uid=resultDic[@"uid"];
             user.username=resultDic[@"username"];
-           Context.currentUser=user;
+            Context.currentUser=user;
             if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
-                 //保存用户登录状态以及登录成功通知
+                //保存用户登录状态以及登录成功通知
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
                 
                 if (self.backblock) {
                     self.backblock();
-                }
-
             }
-           
-                    }
-
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-      
+                
+            }
+        }
+        else
+        {
+            [MessageAlertView showErrorMessage:resultDic[@"info"]];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+        
+        
     }];
+
+//    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+//    manager.responseSerializer=[AFHTTPResponseSerializer   serializer];
+//    [manager POST:[NSString stringWithFormat:@"%@%@",SERVERE,dologin]  parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//       
+//   NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+//      
+//        if ([resultDic[@"status"] boolValue] ) {
+//            User *user=[[User alloc]init];
+//            user.token=resultDic[@"token"];
+//            user.uid=resultDic[@"uid"];
+//            user.username=resultDic[@"username"];
+//           Context.currentUser=user;
+//            if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
+//                 //保存用户登录状态以及登录成功通知
+//                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
+//                
+//                if (self.backblock) {
+//                    self.backblock();
+//                }
+//
+//            }
+//           
+//                    }
+//
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//      
+//    }];
 }
 -(void)click:(UIButton *)sender
 {

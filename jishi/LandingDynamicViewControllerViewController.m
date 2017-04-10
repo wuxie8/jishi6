@@ -148,7 +148,7 @@
     [[NetWorkManager sharedManager]postJSON:verificationCodeLogin parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
-            
+            [MessageAlertView showSuccessMessage:@"发送成功"];
             
         }
         else
@@ -193,6 +193,10 @@
                 }
 
             }
+        }
+        else
+        {
+            [MessageAlertView showErrorMessage:resultDic[@"info"]];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
