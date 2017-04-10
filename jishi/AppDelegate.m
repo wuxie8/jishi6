@@ -75,11 +75,11 @@
     
     
         JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
-//       DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
+       DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
         MineViewController *mine=[[MineViewController alloc]init];
         //步骤2：将视图控制器绑定到导航控制器上
      BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
-//     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
+     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
         BaseNC *nav3C=[[BaseNC alloc]initWithRootViewController:mine];
      
         
@@ -92,15 +92,15 @@
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
 
-        tabBarController.viewControllers=@[nav1C,nav3C];
+        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
 //        NSArray *titles = @[@"我来贷款王",@"贷款",@"个人中心",@"设置"];
                NSArray *titles = @[@"仓鼠贷",@"我",@"设置"];
-//                NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
-        NSArray *images=@[@"jishiyu",@"Mineing"];
+                NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
+//        NSArray *images=@[@"jishiyu",@"Mineing"];
 
-//        NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-         NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
+        NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+//         NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
        
         //绑定TabBar数据源
         for (int i = 0; i<tabBarController.tabBar.items.count; i++) {

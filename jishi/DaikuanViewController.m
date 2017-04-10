@@ -165,7 +165,7 @@
     [self.view addSubview:text2];
 
     
-  table=[[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(text2.frame), WIDTH, HEIGHT-100)];
+  table=[[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(text2.frame), WIDTH, HEIGHT-44-5-64-CGRectGetMaxY(text2.frame))];
     table.delegate=self;
     table.dataSource=self;
     table.separatorStyle=NO;
@@ -227,7 +227,6 @@
                 pro.post_hits=diction[@"post_hits"];
                 pro.feilv=diction[@"feilv"];
                 [self.productArray addObject:pro];
-                
             }
 
             [table reloadData];
