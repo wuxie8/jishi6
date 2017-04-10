@@ -39,7 +39,7 @@
                        @"1.0.0",@"version",
                        @"1",@"page",
                        nil];
-    [[NetWorkManager sharedManager]postJSON:loan parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[NetWorkManager sharedManager]postNoTipJSON:loan parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
             NSArray *arr=dic[@"list"];
