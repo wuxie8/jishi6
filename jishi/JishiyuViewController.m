@@ -84,6 +84,7 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+     
         }
         
                  if (![UtilTools isBlankArray:arr]) {
@@ -319,19 +320,19 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
     [view addSubview:image];
     
     
-//    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-60, 30, 50, 25)];
-//    [but setImage:[UIImage imageNamed:@"change"] forState:UIControlStateNormal];
-//   
-//    [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
-//    [but.imageView setClipsToBounds:YES];
-//    
-//    but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
-//    
-//    but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
-//
-////    [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
-//    [view addSubview:but];
-//    
+    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-60, 30, 50, 25)];
+    [but setImage:[UIImage imageNamed:@"change"] forState:UIControlStateNormal];
+   
+    [but.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [but.imageView setClipsToBounds:YES];
+    
+    but.contentHorizontalAlignment= UIControlContentHorizontalAlignmentFill;
+    
+    but.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
+
+    [but addTarget:self action:@selector(getList) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:but];
+    
     
     UIView *backgroundview=[[UIView alloc]initWithFrame:CGRectMake(0, 58, WIDTH, 2)];
     backgroundview.backgroundColor=kColorFromRGB(245, 245, 243);
