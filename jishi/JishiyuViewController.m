@@ -39,7 +39,7 @@
  
  
 
-    self.title=@"仓鼠贷";
+    self.title=@"简单借款秒借版";
 
     
      page=1;
@@ -48,7 +48,7 @@
     
     [self getList];
 
-tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
+  tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
 tab.delegate=self;
 tab.dataSource=self;
     tab.backgroundColor=AppPageColor;

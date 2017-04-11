@@ -55,7 +55,7 @@
    
     [self loadData];
     
-    self.title=@"贷款";
+    self.title=@"简单借款秒借版";
     
      self.view.backgroundColor=[UIColor whiteColor];
     
@@ -64,6 +64,33 @@
 
 -(void)loadData
 {
+    
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                       code,@"code",
+                       @"1.0.0",@"version",
+                       @"1",@"page",
+                       nil];
+   
+    [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSDictionary *dic=(NSDictionary *)responseObject;
+        if ([dic[@"status"]boolValue]) {
+            
+        
+           
+            if ([UtilTools isBlankString:dic[@"review"]]) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
+            }else
+            {
+                [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+                
+            }
+            
+                   }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        
+    }];
+
   
     [[NetWorkManager sharedManager]postNoTipJSON:filter_para parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
