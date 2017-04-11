@@ -825,7 +825,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PROVISIONING_PROFILE = "c383b636-8ee5-41d4-a07e-114131fef8a9";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -870,7 +870,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PROVISIONING_PROFILE = "c383b636-8ee5-41d4-a07e-114131fef8a9";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -931,7 +931,7 @@
 				DEVELOPMENT_TEAM = NUH99A3LBD;
 				INFOPLIST_FILE = jishiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -948,7 +948,7 @@
 				DEVELOPMENT_TEAM = NUH99A3LBD;
 				INFOPLIST_FILE = jishiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -964,7 +964,7 @@
 				DEVELOPMENT_TEAM = NUH99A3LBD;
 				INFOPLIST_FILE = jishiUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -981,7 +981,7 @@
 				DEVELOPMENT_TEAM = NUH99A3LBD;
 				INFOPLIST_FILE = jishiUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1028,7 +1028,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PROVISIONING_PROFILE = "c383b636-8ee5-41d4-a07e-114131fef8a9";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1067,7 +1067,7 @@
 				DEVELOPMENT_TEAM = NUH99A3LBD;
 				INFOPLIST_FILE = jishiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1083,7 +1083,7 @@
 				DEVELOPMENT_TEAM = NUH99A3LBD;
 				INFOPLIST_FILE = jishiUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.jiandanjiekuanmiaojieban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
