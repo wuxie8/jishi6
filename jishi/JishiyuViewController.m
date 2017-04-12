@@ -202,6 +202,8 @@ tab.dataSource=self;
     return 3;
 }
 
+
+
 - (UIView *)flowView:(WSPageView *)flowView cellForPageAtIndex:(NSInteger)index{
     WSIndexBanner *bannerView = (WSIndexBanner *)[flowView dequeueReusableCell];
     if (!bannerView) {
@@ -219,52 +221,6 @@ tab.dataSource=self;
 
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(WSPageView *)flowView {
     
-}
-
-
-
--(UIScrollView *)scrollview
-{
-if(_scrollview==nil)
-{
-_scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+ScrollviewWeight)];
-    CGFloat imageW = _scrollview.frame.size.width;
-    //    CGFloat imageW = 300;
-    //    图片高
-    CGFloat imageH = _scrollview.frame.size.height;
-    //    图片的Y
-    CGFloat imageY = 0;
-    //    图片中数
-    NSInteger totalCount = 5;
-    //   1.添加5张图片
-    for (int i = 0; i < totalCount; i++) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        //        图片X
-        CGFloat imageX = i * imageW;
-        //        设置frame
-        imageView.frame = CGRectMake(imageX, imageY, imageW, imageH);
-        //        设置图片
-        NSString *name = [NSString stringWithFormat:@"singInHome"];
-        imageView.image = [UIImage imageNamed:name];
-        //        隐藏指示条
-        _scrollview.showsHorizontalScrollIndicator = NO;
-        
-        [_scrollview addSubview:imageView];
-    }
-    
-    
-    CGFloat contentW = totalCount *imageW;
-    //不允许在垂直方向上进行滚动
-    _scrollview.contentSize = CGSizeMake(contentW, 0);
-    
-    //    3.设置分页
-    _scrollview.pagingEnabled = YES;
-    
-    //    4.监听scrollview的滚动
-    _scrollview.delegate = self;
-
-}
-    return _scrollview;
 }
 
 

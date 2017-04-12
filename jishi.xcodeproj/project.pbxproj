@@ -36,11 +36,6 @@
 		841224641E6D490100048188 /* JishiyuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412245D1E6D490100048188 /* JishiyuViewController.m */; };
 		841224651E6D490100048188 /* DaikuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412245F1E6D490100048188 /* DaikuanViewController.m */; };
 		841224671E6D490100048188 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224631E6D490100048188 /* MineViewController.m */; };
-		841224721E6D49E100048188 /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224691E6D49E100048188 /* BaseNC.m */; };
-		841224731E6D49E100048188 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412246B1E6D49E100048188 /* BaseVC.m */; };
-		841224741E6D49E100048188 /* GestureBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412246D1E6D49E100048188 /* GestureBaseVC.m */; };
-		841224751E6D49E100048188 /* GestureNavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412246F1E6D49E100048188 /* GestureNavBaseVC.m */; };
-		841224761E6D49E100048188 /* NavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224711E6D49E100048188 /* NavBaseVC.m */; };
 		8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */; };
 		8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3D1E729C4B00EAE23C /* YTUITextField.m */; };
 		8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */; };
@@ -56,6 +51,11 @@
 		847199E01E77CA410026F585 /* UserInfoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DF1E77CA410026F585 /* UserInfoContext.m */; };
 		84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */; };
 		84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */; };
+		84B9DC261E9DCCB10066A92D /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC1D1E9DCCB10066A92D /* BaseNC.m */; };
+		84B9DC271E9DCCB10066A92D /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC1F1E9DCCB10066A92D /* BaseVC.m */; };
+		84B9DC281E9DCCB10066A92D /* GestureBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC211E9DCCB10066A92D /* GestureBaseVC.m */; };
+		84B9DC291E9DCCB10066A92D /* GestureNavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC231E9DCCB10066A92D /* GestureNavBaseVC.m */; };
+		84B9DC2A1E9DCCB10066A92D /* NavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC251E9DCCB10066A92D /* NavBaseVC.m */; };
 		84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FF81381E7155EE0096AE87 /* RegisterVC.m */; };
 /* End PBXBuildFile section */
 
@@ -137,16 +137,6 @@
 		8412245F1E6D490100048188 /* DaikuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaikuanViewController.m; sourceTree = "<group>"; };
 		841224621E6D490100048188 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		841224631E6D490100048188 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		841224681E6D49E100048188 /* BaseNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNC.h; sourceTree = "<group>"; };
-		841224691E6D49E100048188 /* BaseNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNC.m; sourceTree = "<group>"; };
-		8412246A1E6D49E100048188 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		8412246B1E6D49E100048188 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
-		8412246C1E6D49E100048188 /* GestureBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureBaseVC.h; sourceTree = "<group>"; };
-		8412246D1E6D49E100048188 /* GestureBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureBaseVC.m; sourceTree = "<group>"; };
-		8412246E1E6D49E100048188 /* GestureNavBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureNavBaseVC.h; sourceTree = "<group>"; };
-		8412246F1E6D49E100048188 /* GestureNavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureNavBaseVC.m; sourceTree = "<group>"; };
-		841224701E6D49E100048188 /* NavBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavBaseVC.h; sourceTree = "<group>"; };
-		841224711E6D49E100048188 /* NavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavBaseVC.m; sourceTree = "<group>"; };
 		841224781E6D4B2E00048188 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8419CA2F1E72393900EAE23C /* JishiyuDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuDetailsViewController.h; sourceTree = "<group>"; };
 		8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuDetailsViewController.m; sourceTree = "<group>"; };
@@ -178,6 +168,16 @@
 		84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanClickViewController.m; sourceTree = "<group>"; };
 		84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessViewController.h; sourceTree = "<group>"; };
 		84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessViewController.m; sourceTree = "<group>"; };
+		84B9DC1C1E9DCCB10066A92D /* BaseNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseNC.h; path = Base/BaseNC.h; sourceTree = "<group>"; };
+		84B9DC1D1E9DCCB10066A92D /* BaseNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseNC.m; path = Base/BaseNC.m; sourceTree = "<group>"; };
+		84B9DC1E1E9DCCB10066A92D /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseVC.h; path = Base/BaseVC.h; sourceTree = "<group>"; };
+		84B9DC1F1E9DCCB10066A92D /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseVC.m; path = Base/BaseVC.m; sourceTree = "<group>"; };
+		84B9DC201E9DCCB10066A92D /* GestureBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureBaseVC.h; path = Base/GestureBaseVC.h; sourceTree = "<group>"; };
+		84B9DC211E9DCCB10066A92D /* GestureBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestureBaseVC.m; path = Base/GestureBaseVC.m; sourceTree = "<group>"; };
+		84B9DC221E9DCCB10066A92D /* GestureNavBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureNavBaseVC.h; path = Base/GestureNavBaseVC.h; sourceTree = "<group>"; };
+		84B9DC231E9DCCB10066A92D /* GestureNavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestureNavBaseVC.m; path = Base/GestureNavBaseVC.m; sourceTree = "<group>"; };
+		84B9DC241E9DCCB10066A92D /* NavBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavBaseVC.h; path = Base/NavBaseVC.h; sourceTree = "<group>"; };
+		84B9DC251E9DCCB10066A92D /* NavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavBaseVC.m; path = Base/NavBaseVC.m; sourceTree = "<group>"; };
 		84FF81371E7155EE0096AE87 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		84FF81381E7155EE0096AE87 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		FF093DB6F47C31EC084AE4D6 /* Pods-jishi.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jishi.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-jishi/Pods-jishi.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
@@ -372,16 +372,16 @@
 		841224771E6D49E500048188 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				841224681E6D49E100048188 /* BaseNC.h */,
-				841224691E6D49E100048188 /* BaseNC.m */,
-				8412246A1E6D49E100048188 /* BaseVC.h */,
-				8412246B1E6D49E100048188 /* BaseVC.m */,
-				8412246C1E6D49E100048188 /* GestureBaseVC.h */,
-				8412246D1E6D49E100048188 /* GestureBaseVC.m */,
-				8412246E1E6D49E100048188 /* GestureNavBaseVC.h */,
-				8412246F1E6D49E100048188 /* GestureNavBaseVC.m */,
-				841224701E6D49E100048188 /* NavBaseVC.h */,
-				841224711E6D49E100048188 /* NavBaseVC.m */,
+				84B9DC1C1E9DCCB10066A92D /* BaseNC.h */,
+				84B9DC1D1E9DCCB10066A92D /* BaseNC.m */,
+				84B9DC1E1E9DCCB10066A92D /* BaseVC.h */,
+				84B9DC1F1E9DCCB10066A92D /* BaseVC.m */,
+				84B9DC201E9DCCB10066A92D /* GestureBaseVC.h */,
+				84B9DC211E9DCCB10066A92D /* GestureBaseVC.m */,
+				84B9DC221E9DCCB10066A92D /* GestureNavBaseVC.h */,
+				84B9DC231E9DCCB10066A92D /* GestureNavBaseVC.m */,
+				84B9DC241E9DCCB10066A92D /* NavBaseVC.h */,
+				84B9DC251E9DCCB10066A92D /* NavBaseVC.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -693,12 +693,10 @@
 				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
 				840FE96C1E6FA18D0050C444 /* OptionBarController.m in Sources */,
 				840FE9941E6FF3900050C444 /* WebVC.m in Sources */,
-				841224731E6D49E100048188 /* BaseVC.m in Sources */,
 				8412242D1E6D480300048188 /* AppDelegate.m in Sources */,
 				840FE97B1E6FA8570050C444 /* LandingDynamicViewControllerViewController.m in Sources */,
 				840FE9911E6FDCCA0050C444 /* ProductModel.m in Sources */,
 				847199E01E77CA410026F585 /* UserInfoContext.m in Sources */,
-				841224741E6D49E100048188 /* GestureBaseVC.m in Sources */,
 				841224641E6D490100048188 /* JishiyuViewController.m in Sources */,
 				8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */,
 				8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */,
@@ -706,11 +704,10 @@
 				840AB3521E6E50DA00532231 /* WSIndexBanner.m in Sources */,
 				840FE9881E6FCFEE0050C444 /* MessageAlertView.m in Sources */,
 				8442AAB51E8B8B7A00655887 /* AmountClassificationViewController.m in Sources */,
-				841224751E6D49E100048188 /* GestureNavBaseVC.m in Sources */,
 				841224651E6D490100048188 /* DaikuanViewController.m in Sources */,
-				841224721E6D49E100048188 /* BaseNC.m in Sources */,
+				84B9DC2A1E9DCCB10066A92D /* NavBaseVC.m in Sources */,
 				8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */,
-				841224761E6D49E100048188 /* NavBaseVC.m in Sources */,
+				84B9DC271E9DCCB10066A92D /* BaseVC.m in Sources */,
 				840FE96D1E6FA18D0050C444 /* OptionsBarItem.m in Sources */,
 				840AB3531E6E50DA00532231 /* WSPageView.m in Sources */,
 				840FE9841E6FCE440050C444 /* NetWorkUtil.m in Sources */,
@@ -719,6 +716,9 @@
 				840FE9541E6F9F3E0050C444 /* LoginViewController.m in Sources */,
 				844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */,
 				847199D71E778F2E0026F585 /* LoanClassification.m in Sources */,
+				84B9DC261E9DCCB10066A92D /* BaseNC.m in Sources */,
+				84B9DC291E9DCCB10066A92D /* GestureNavBaseVC.m in Sources */,
+				84B9DC281E9DCCB10066A92D /* GestureBaseVC.m in Sources */,
 				84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */,
 				840FE96E1E6FA18D0050C444 /* OptionsBarView.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,
