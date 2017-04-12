@@ -17,7 +17,7 @@
 #import "LoginViewController.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "AmountClassificationViewController.h"
-
+#import <UShareUI/UShareUI.h>
 #define  ScrollviewWeight 50
 #define  ScrollviewHeight 180
 #define SectionHeight 110
@@ -466,6 +466,8 @@ _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200+Sc
                 {
                     [MessageAlertView showErrorMessage:@"服务器维护中"];
                 }
+                
+            
               
             }
                 break;

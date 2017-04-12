@@ -74,9 +74,6 @@
     [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
-            
-        
-           
             if ([UtilTools isBlankString:dic[@"review"]]) {
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
             }else
@@ -84,7 +81,6 @@
                 [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
                 
             }
-            
                    }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
