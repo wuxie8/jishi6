@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		33C4545660AC4EFE8DFC2306 /* libPods-jishi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0377890239EBC83944115186 /* libPods-jishi.a */; };
+		8402B9E01E9F2917000CDFF7 /* InviteFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */; };
+		8402B9EB1E9F321F000CDFF7 /* AddressBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9E21E9F321F000CDFF7 /* AddressBookVC.m */; };
+		8402B9EC1E9F321F000CDFF7 /* CDFInitialsAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9E41E9F321F000CDFF7 /* CDFInitialsAvatar.m */; };
+		8402B9ED1E9F321F000CDFF7 /* NSString+TKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9E61E9F321F000CDFF7 /* NSString+TKUtilities.m */; };
+		8402B9EE1E9F321F000CDFF7 /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9E81E9F321F000CDFF7 /* PersonCell.m */; };
+		8402B9EF1E9F321F000CDFF7 /* XHJAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9EA1E9F321F000CDFF7 /* XHJAddressBook.m */; };
+		8402B9F31E9F3252000CDFF7 /* AddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9F21E9F3252000CDFF7 /* AddressVC.m */; };
+		8402B9F61E9F3AF2000CDFF7 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9F51E9F3AF2000CDFF7 /* PersonModel.m */; };
 		840AB3521E6E50DA00532231 /* WSIndexBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AB34F1E6E50DA00532231 /* WSIndexBanner.m */; };
 		840AB3531E6E50DA00532231 /* WSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AB3511E6E50DA00532231 /* WSPageView.m */; };
 		840AB3571E6E660700532231 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 840AB3561E6E660700532231 /* libxml2.tbd */; };
@@ -80,6 +88,22 @@
 		0377890239EBC83944115186 /* libPods-jishi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jishi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		135956D68EBA3E15E510604C /* Pods-jishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-jishi/Pods-jishi.release.xcconfig"; sourceTree = "<group>"; };
 		323BDEF1C42090E0283F4D58 /* Pods-jishi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jishi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jishi/Pods-jishi.debug.xcconfig"; sourceTree = "<group>"; };
+		8402B9DE1E9F2917000CDFF7 /* InviteFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsViewController.h; sourceTree = "<group>"; };
+		8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsViewController.m; sourceTree = "<group>"; };
+		8402B9E11E9F321F000CDFF7 /* AddressBookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookVC.h; sourceTree = "<group>"; };
+		8402B9E21E9F321F000CDFF7 /* AddressBookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookVC.m; sourceTree = "<group>"; };
+		8402B9E31E9F321F000CDFF7 /* CDFInitialsAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFInitialsAvatar.h; sourceTree = "<group>"; };
+		8402B9E41E9F321F000CDFF7 /* CDFInitialsAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFInitialsAvatar.m; sourceTree = "<group>"; };
+		8402B9E51E9F321F000CDFF7 /* NSString+TKUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TKUtilities.h"; sourceTree = "<group>"; };
+		8402B9E61E9F321F000CDFF7 /* NSString+TKUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKUtilities.m"; sourceTree = "<group>"; };
+		8402B9E71E9F321F000CDFF7 /* PersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCell.h; sourceTree = "<group>"; };
+		8402B9E81E9F321F000CDFF7 /* PersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCell.m; sourceTree = "<group>"; };
+		8402B9E91E9F321F000CDFF7 /* XHJAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJAddressBook.h; sourceTree = "<group>"; };
+		8402B9EA1E9F321F000CDFF7 /* XHJAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJAddressBook.m; sourceTree = "<group>"; };
+		8402B9F11E9F3252000CDFF7 /* AddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressVC.h; sourceTree = "<group>"; };
+		8402B9F21E9F3252000CDFF7 /* AddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressVC.m; sourceTree = "<group>"; };
+		8402B9F41E9F3AF2000CDFF7 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		8402B9F51E9F3AF2000CDFF7 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		840AB34E1E6E50DA00532231 /* WSIndexBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSIndexBanner.h; sourceTree = "<group>"; };
 		840AB34F1E6E50DA00532231 /* WSIndexBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSIndexBanner.m; sourceTree = "<group>"; };
 		840AB3501E6E50DA00532231 /* WSPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPageView.h; sourceTree = "<group>"; };
@@ -210,6 +234,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8402B9F01E9F322C000CDFF7 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				8402B9E11E9F321F000CDFF7 /* AddressBookVC.h */,
+				8402B9E21E9F321F000CDFF7 /* AddressBookVC.m */,
+				8402B9E31E9F321F000CDFF7 /* CDFInitialsAvatar.h */,
+				8402B9E41E9F321F000CDFF7 /* CDFInitialsAvatar.m */,
+				8402B9E51E9F321F000CDFF7 /* NSString+TKUtilities.h */,
+				8402B9E61E9F321F000CDFF7 /* NSString+TKUtilities.m */,
+				8402B9E71E9F321F000CDFF7 /* PersonCell.h */,
+				8402B9E81E9F321F000CDFF7 /* PersonCell.m */,
+				8402B9E91E9F321F000CDFF7 /* XHJAddressBook.h */,
+				8402B9EA1E9F321F000CDFF7 /* XHJAddressBook.m */,
+			);
+			name = AddressBook;
+			sourceTree = "<group>";
+		};
 		840AB3541E6E599600532231 /* 第三方轮播 */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +506,13 @@
 				8442AAB71E8B8F4200655887 /* SetupViewController.m */,
 				8442AAB91E8B992600655887 /* AboutUsViewController.h */,
 				8442AABA1E8B992600655887 /* AboutUsViewController.m */,
+				8402B9DE1E9F2917000CDFF7 /* InviteFriendsViewController.h */,
+				8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */,
+				8402B9F11E9F3252000CDFF7 /* AddressVC.h */,
+				8402B9F21E9F3252000CDFF7 /* AddressVC.m */,
+				8402B9F41E9F3AF2000CDFF7 /* PersonModel.h */,
+				8402B9F51E9F3AF2000CDFF7 /* PersonModel.m */,
+				8402B9F01E9F322C000CDFF7 /* AddressBook */,
 				84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */,
 				84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */,
 				840FE9521E6F9F3E0050C444 /* LoginViewController.h */,
@@ -688,6 +736,7 @@
 				841224671E6D490100048188 /* MineViewController.m in Sources */,
 				840FE97E1E6FA88B0050C444 /* PasswordLandingViewViewController.m in Sources */,
 				84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */,
+				8402B9F31E9F3252000CDFF7 /* AddressVC.m in Sources */,
 				847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */,
 				840FE9831E6FCE430050C444 /* NetWorkManager.m in Sources */,
 				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
@@ -696,6 +745,7 @@
 				8412242D1E6D480300048188 /* AppDelegate.m in Sources */,
 				840FE97B1E6FA8570050C444 /* LandingDynamicViewControllerViewController.m in Sources */,
 				840FE9911E6FDCCA0050C444 /* ProductModel.m in Sources */,
+				8402B9E01E9F2917000CDFF7 /* InviteFriendsViewController.m in Sources */,
 				847199E01E77CA410026F585 /* UserInfoContext.m in Sources */,
 				841224641E6D490100048188 /* JishiyuViewController.m in Sources */,
 				8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */,
@@ -712,13 +762,19 @@
 				840AB3531E6E50DA00532231 /* WSPageView.m in Sources */,
 				840FE9841E6FCE440050C444 /* NetWorkUtil.m in Sources */,
 				840FE99A1E6FFEA10050C444 /* JishiyuTableViewCell.m in Sources */,
+				8402B9EF1E9F321F000CDFF7 /* XHJAddressBook.m in Sources */,
+				8402B9EE1E9F321F000CDFF7 /* PersonCell.m in Sources */,
 				840FE98E1E6FD2650050C444 /* UtilTools.m in Sources */,
+				8402B9ED1E9F321F000CDFF7 /* NSString+TKUtilities.m in Sources */,
+				8402B9EC1E9F321F000CDFF7 /* CDFInitialsAvatar.m in Sources */,
 				840FE9541E6F9F3E0050C444 /* LoginViewController.m in Sources */,
 				844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */,
 				847199D71E778F2E0026F585 /* LoanClassification.m in Sources */,
 				84B9DC261E9DCCB10066A92D /* BaseNC.m in Sources */,
 				84B9DC291E9DCCB10066A92D /* GestureNavBaseVC.m in Sources */,
 				84B9DC281E9DCCB10066A92D /* GestureBaseVC.m in Sources */,
+				8402B9F61E9F3AF2000CDFF7 /* PersonModel.m in Sources */,
+				8402B9EB1E9F321F000CDFF7 /* AddressBookVC.m in Sources */,
 				84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */,
 				840FE96E1E6FA18D0050C444 /* OptionsBarView.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,

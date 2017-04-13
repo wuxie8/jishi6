@@ -178,7 +178,11 @@
                        nil];
     
     [[NetWorkManager sharedManager]postJSON:reset_password  parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        
+        if ([responseObject[@"status"]boolValue]) {
+            
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
               
         

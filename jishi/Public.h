@@ -41,7 +41,7 @@
 
 #define AppPageColor kColorFromRGB(235,235,241)  //灰色
 #define AppThemeBackColor [UIColor colorWithRed:229.0/255 green:229.0/255 blue:229.0/255 alpha:1]
-#define AppBackColor [UIColor colorWithRed:10.0/255 green:96.0/255 blue:254.0/255 alpha:1]
+#define AppBackColor [UIColor colorWithRed:10.0/255 green:96.0/255 blue:254.0/255 alpha:1]  //蓝色
 #define AppThemeColor kColorFromRGBHex(0xFCAA1B)//
 #define PageColor kColorFromRGB(186,186,186)
 #define LineColor kColorFromRGBHex(0xafafaf)

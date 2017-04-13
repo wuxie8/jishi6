@@ -75,6 +75,8 @@
 		<string>wechat</string>
 		<string>weixin</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>访问你的通讯录</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>Localization native development regior </key>
