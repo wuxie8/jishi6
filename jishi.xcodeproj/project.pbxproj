@@ -379,9 +379,6 @@
 				844B8FF31E766A64007C3207 /* ForgotpasswordVC */,
 				840FE96F1E6FA1B50050C444 /* OptionsBar */,
 				84546F4B1EA5F36700AD0350 /* FastHandle */,
-				841224311E6D480300048188 /* Main.storyboard */,
-				841224361E6D480300048188 /* LaunchScreen.storyboard */,
-				841224391E6D480300048188 /* Info.plist */,
 				841224281E6D480300048188 /* Supporting Files */,
 			);
 			path = jishi;
@@ -470,6 +467,9 @@
 				8412242B1E6D480300048188 /* AppDelegate.h */,
 				8412242C1E6D480300048188 /* AppDelegate.m */,
 				84546F521EA5FECC00AD0350 /* Assets.xcassets */,
+				841224311E6D480300048188 /* Main.storyboard */,
+				841224361E6D480300048188 /* LaunchScreen.storyboard */,
+				841224391E6D480300048188 /* Info.plist */,
 				8412242E1E6D480300048188 /* ViewController.h */,
 				8412242F1E6D480300048188 /* ViewController.m */,
 			);
