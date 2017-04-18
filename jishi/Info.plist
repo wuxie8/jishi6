@@ -44,7 +44,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqOpensdkSSoLogin</string>
@@ -75,8 +75,6 @@
 		<string>wechat</string>
 		<string>weixin</string>
 	</array>
-	<key>NSContactsUsageDescription</key>
-	<string>访问你的通讯录</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>Localization native development regior </key>
@@ -86,6 +84,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSContactsUsageDescription</key>
+	<string>访问你的通讯录</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

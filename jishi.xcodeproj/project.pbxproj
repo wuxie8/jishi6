@@ -37,7 +37,6 @@
 		8412242D1E6D480300048188 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412242C1E6D480300048188 /* AppDelegate.m */; };
 		841224301E6D480300048188 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412242F1E6D480300048188 /* ViewController.m */; };
 		841224331E6D480300048188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841224311E6D480300048188 /* Main.storyboard */; };
-		841224351E6D480300048188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841224341E6D480300048188 /* Assets.xcassets */; };
 		841224381E6D480300048188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841224361E6D480300048188 /* LaunchScreen.storyboard */; };
 		841224431E6D480300048188 /* jishiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224421E6D480300048188 /* jishiTests.m */; };
 		8412244E1E6D480300048188 /* jishiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412244D1E6D480300048188 /* jishiUITests.m */; };
@@ -53,6 +52,9 @@
 		8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */; };
 		844B8FF61E766ABF007C3207 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */; };
 		844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */; };
+		84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */; };
+		84546F511EA5F37C00AD0350 /* FastHandleCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */; };
+		84546F531EA5FECC00AD0350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84546F521EA5FECC00AD0350 /* Assets.xcassets */; };
 		847199D71E778F2E0026F585 /* LoanClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D61E778F2E0026F585 /* LoanClassification.m */; };
 		847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D91E779E9F0026F585 /* LoanClasssificationVC.m */; };
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
@@ -145,7 +147,6 @@
 		8412242E1E6D480300048188 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8412242F1E6D480300048188 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		841224321E6D480300048188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		841224341E6D480300048188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841224371E6D480300048188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841224391E6D480300048188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8412243E1E6D480300048188 /* jishiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jishiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +181,11 @@
 		844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
 		844B8FF71E769275007C3207 /* DaikuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaikuanTableViewCell.h; sourceTree = "<group>"; };
 		844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaikuanTableViewCell.m; sourceTree = "<group>"; };
+		84546F4C1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardCollectionViewCell.h; sourceTree = "<group>"; };
+		84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardCollectionViewCell.m; sourceTree = "<group>"; };
+		84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardViewController.h; sourceTree = "<group>"; };
+		84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardViewController.m; sourceTree = "<group>"; };
+		84546F521EA5FECC00AD0350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847199D51E778F2E0026F585 /* LoanClassification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClassification.h; sourceTree = "<group>"; };
 		847199D61E778F2E0026F585 /* LoanClassification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanClassification.m; sourceTree = "<group>"; };
 		847199D81E779E9F0026F585 /* LoanClasssificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClasssificationVC.h; sourceTree = "<group>"; };
@@ -372,8 +378,8 @@
 				84FF81331E7145300096AE87 /* Register */,
 				844B8FF31E766A64007C3207 /* ForgotpasswordVC */,
 				840FE96F1E6FA1B50050C444 /* OptionsBar */,
+				84546F4B1EA5F36700AD0350 /* FastHandle */,
 				841224311E6D480300048188 /* Main.storyboard */,
-				841224341E6D480300048188 /* Assets.xcassets */,
 				841224361E6D480300048188 /* LaunchScreen.storyboard */,
 				841224391E6D480300048188 /* Info.plist */,
 				841224281E6D480300048188 /* Supporting Files */,
@@ -436,6 +442,17 @@
 			name = ForgotpasswordVC;
 			sourceTree = "<group>";
 		};
+		84546F4B1EA5F36700AD0350 /* FastHandle */ = {
+			isa = PBXGroup;
+			children = (
+				84546F4C1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.h */,
+				84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */,
+				84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */,
+				84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */,
+			);
+			name = FastHandle;
+			sourceTree = "<group>";
+		};
 		84C06F331E8FA5EE00038420 /* daikuan */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +469,7 @@
 			children = (
 				8412242B1E6D480300048188 /* AppDelegate.h */,
 				8412242C1E6D480300048188 /* AppDelegate.m */,
+				84546F521EA5FECC00AD0350 /* Assets.xcassets */,
 				8412242E1E6D480300048188 /* ViewController.h */,
 				8412242F1E6D480300048188 /* ViewController.m */,
 			);
@@ -657,7 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				841224381E6D480300048188 /* LaunchScreen.storyboard in Resources */,
-				841224351E6D480300048188 /* Assets.xcassets in Resources */,
+				84546F531EA5FECC00AD0350 /* Assets.xcassets in Resources */,
 				841224331E6D480300048188 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +749,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */,
 				8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */,
 				841224301E6D480300048188 /* ViewController.m in Sources */,
 				841224671E6D490100048188 /* MineViewController.m in Sources */,
@@ -738,6 +757,7 @@
 				84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */,
 				8402B9F31E9F3252000CDFF7 /* AddressVC.m in Sources */,
 				847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */,
+				84546F511EA5F37C00AD0350 /* FastHandleCardViewController.m in Sources */,
 				840FE9831E6FCE430050C444 /* NetWorkManager.m in Sources */,
 				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
 				840FE96C1E6FA18D0050C444 /* OptionBarController.m in Sources */,

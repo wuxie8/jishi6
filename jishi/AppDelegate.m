@@ -13,7 +13,7 @@
 #import "BaseNC.h"
 #import "UMMobClick/MobClick.h"
 #import <UMSocialCore/UMSocialCore.h>
-
+#import "FastHandleCardViewController.h"
 #define umeng_appkey @"58ca428499f0c742bf000286"
 @interface AppDelegate ()
 
@@ -43,8 +43,37 @@
         //读取用户信息
         Context.currentUser = [NSKeyedUnarchiver unarchiveObjectWithFile:DOCUMENT_FOLDER(@"loginedUser")];
     }
+   self.window.rootViewController = [UIViewController new];
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                       code,@"code",
+                       @"1.0.0",@"version",
+                      @"1",@"page",
+                       nil];
+    [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSDictionary *dic=(NSDictionary *)responseObject;
+        if ([dic[@"status"]boolValue]) {
+            
+          
+            if ([UtilTools isBlankString:dic[@"review"]]) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
+            }else
+            {
+                [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                self.window.rootViewController=[AppDelegate setTabBarController];
+                
+            });
+            
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        
+    }];
     
-    self.window.rootViewController=[AppDelegate setTabBarController];
+
     
   
     // Override point for customization after application launch.
@@ -104,10 +133,13 @@
     
         JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
        DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
+        FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
         MineViewController *mine=[[MineViewController alloc]init];
         //步骤2：将视图控制器绑定到导航控制器上
      BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
      BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
+        BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:fastVC];
+
         BaseNC *nav3C=[[BaseNC alloc]initWithRootViewController:mine];
      
         
@@ -119,12 +151,15 @@
         barBgView.backgroundColor = [UIColor whiteColor];
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
-
-        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
+       
+        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav1C,nav2C,nav4C,nav3C]:@[nav1C,nav2C,nav3C];
+//        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
-        NSArray *titles = @[@"简单借款秒借版",@"贷款",@"个人中心",@"设置"];
-         NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
-         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"简单借款秒借版",@"贷款",@"快速办卡",@"个人中心"]:@[@"简单借款秒借版",@"贷款",@"个人中心",@"设置"];
+          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"jishiyu",@"lending",@"FastHandleCard",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
+         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"jishiyuBlue",@"lendingBlue",@"FastHandleCardHeight",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+//         NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
+//         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
 //               NSArray *titles = @[@"简单借款秒借版",@"个人中心",@"设置"];
 //        NSArray *images=@[@"lending",@"Mineing"];
 //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];

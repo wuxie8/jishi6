@@ -25,7 +25,7 @@
     self.title=@"设置";
     self.view.backgroundColor=AppPageColor;
 //    array=@[@"High praise",@"BusinessCooperation",@"AboutUs",@"feedback"];
-     array=@[@"BusinessCooperation",@"BusinessCooperation",@"AboutUs"];
+     array=@[@"address",@"BusinessCooperation",@"AboutUs"];
 //    arr=@[@"好评",@"商务合作",@"关于我们",@"意见反馈"];
     arr=@[@"为好友注册",@"商务合作",@"关于我们"];
 

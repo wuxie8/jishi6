@@ -139,16 +139,16 @@ tab.dataSource=self;
     pageView.dataSource = self;
     pageView.minimumPageAlpha = 0.4;   //非当前页的透明比例
     pageView.minimumPageScale = 0.85;  //非当前页的缩放比例
-    pageView.orginPageCount = 3; //原始页数
+    pageView.orginPageCount = 1; //原始页数
 
     pageView.backgroundColor=[UIColor grayColor];
     //初始化pageControl
-    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, pageView.frame.size.height - 8 - 10, WIDTH, 8)];
-    pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    pageView.pageControl = pageControl;
-    [pageView addSubview:pageControl];
-    [pageView stopTimer];
+//    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, pageView.frame.size.height - 8 - 10, WIDTH, 8)];
+//    pageControl.pageIndicatorTintColor = [UIColor grayColor];
+//    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+//    pageView.pageControl = pageControl;
+//    [pageView addSubview:pageControl];
+//    [pageView stopTimer];
     [self.view addSubview:pageView];
     
     return pageView;
@@ -199,7 +199,7 @@ tab.dataSource=self;
 
 #pragma mark NewPagedFlowView Datasource
 - (NSInteger)numberOfPagesInFlowView:(WSPageView *)flowView {
-    return 3;
+    return 1;
 }
 
 
