@@ -14,7 +14,7 @@
 #import "UMMobClick/MobClick.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "FastHandleCardViewController.h"
-#define umeng_appkey @"58ca428499f0c742bf000286"
+#define umeng_appkey @"58f859ef677baa654e0007c8"
 @interface AppDelegate ()
 
 @end
@@ -26,7 +26,7 @@
   
       [self.window makeKeyAndVisible];
     
-    UMConfigInstance.appKey=@"58ca428499f0c742bf000286";
+    UMConfigInstance.appKey=umeng_appkey;
      UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     /* 打开调试日志 */
@@ -84,7 +84,7 @@
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106001325"/*设置QQ平台的appID*/  appSecret:@"7fuotXhPcKtuUdjM" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106092936"/*设置QQ平台的appID*/  appSecret:@"nr3dKzomEQBAoU7E" redirectURL:@"http://mobile.umeng.com/social"];
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */

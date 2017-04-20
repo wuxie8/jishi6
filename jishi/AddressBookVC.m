@@ -41,20 +41,7 @@
     });
 
 }
--(void)addContact:(NSString *)photo
-{
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:photo, @"MobilePhone",
-                         nil];
-    [[NetWorkManager sharedManager] postJSON:@"UserManage/AddEmergencyContact" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
 
-        [self.navigationController popViewControllerAnimated:NO];
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"联系人已添加" message:nil delegate:nil cancelButtonTitle:@"知道啦" otherButtonTitles: nil];
-        [alert show];
-    }];
-    
-}
 -(void)setTitleList
 {
     UILocalizedIndexedCollation *theCollation = [UILocalizedIndexedCollation currentCollation];
@@ -150,7 +137,6 @@
 {
     NSArray *sectionArr=[_listContent objectAtIndex:indexPath.section];
     self.people = (PersonModel *)[sectionArr objectAtIndex:indexPath.row];
-    [self addContact:_people.phoneNumber];
 }
 
 //开启右侧索引条

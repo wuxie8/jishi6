@@ -11,6 +11,7 @@
 #import "AboutUsViewController.h"
 #import "BusinessViewController.h"
 #import "AddressVC.h"
+#import "ShareFriendsViewController.h"
 @interface SetupViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -25,9 +26,9 @@
     self.title=@"设置";
     self.view.backgroundColor=AppPageColor;
 //    array=@[@"High praise",@"BusinessCooperation",@"AboutUs",@"feedback"];
-     array=@[@"address",@"BusinessCooperation",@"AboutUs"];
+     array=@[@"InviteFriends",@"address",@"BusinessCooperation",@"AboutUs"];
 //    arr=@[@"好评",@"商务合作",@"关于我们",@"意见反馈"];
-    arr=@[@"为好友注册",@"商务合作",@"关于我们"];
+    arr=@[@"邀请好友",@"为好友注册",@"商务合作",@"关于我们"];
 
     UITableView *tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 20, WIDTH, HEIGHT)];
     tab.delegate=self;
@@ -90,18 +91,25 @@
     switch (indexPath.row) {
         case 0:
         {
+           ShareFriendsViewController *shareFriends=[[ShareFriendsViewController alloc]init];
+            [self.navigationController pushViewController:shareFriends animated:YES];
+            
+        }
+            break;
+        case 1:
+        {
             AddressVC *adress=[[AddressVC alloc]init];
             [self.navigationController pushViewController:adress animated:YES];
       
         }
             break;
-        case 1:
+        case 2:
         {
             BusinessViewController *Business=[[BusinessViewController alloc]init];
             [self.navigationController pushViewController:Business animated:YES];
         }
             break;
-        case 2:
+        case 3:
         {
             AboutUsViewController *aboutus=[[AboutUsViewController alloc]init];
             [self.navigationController pushViewController:aboutus animated:YES];

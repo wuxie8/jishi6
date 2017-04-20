@@ -52,6 +52,7 @@
 		8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */; };
 		844B8FF61E766ABF007C3207 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */; };
 		844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */; };
+		8451AFC31EA89842002F04B6 /* ShareFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451AFC21EA89842002F04B6 /* ShareFriendsViewController.m */; };
 		84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */; };
 		84546F511EA5F37C00AD0350 /* FastHandleCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */; };
 		84546F531EA5FECC00AD0350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84546F521EA5FECC00AD0350 /* Assets.xcassets */; };
@@ -181,6 +182,8 @@
 		844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
 		844B8FF71E769275007C3207 /* DaikuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaikuanTableViewCell.h; sourceTree = "<group>"; };
 		844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaikuanTableViewCell.m; sourceTree = "<group>"; };
+		8451AFC11EA89842002F04B6 /* ShareFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareFriendsViewController.h; sourceTree = "<group>"; };
+		8451AFC21EA89842002F04B6 /* ShareFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareFriendsViewController.m; sourceTree = "<group>"; };
 		84546F4C1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardCollectionViewCell.h; sourceTree = "<group>"; };
 		84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardCollectionViewCell.m; sourceTree = "<group>"; };
 		84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardViewController.h; sourceTree = "<group>"; };
@@ -439,6 +442,20 @@
 			name = ForgotpasswordVC;
 			sourceTree = "<group>";
 		};
+		8451AFC01EA8963D002F04B6 /* RegistereForFriend */ = {
+			isa = PBXGroup;
+			children = (
+				8402B9DE1E9F2917000CDFF7 /* InviteFriendsViewController.h */,
+				8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */,
+				8402B9F21E9F3252000CDFF7 /* AddressVC.m */,
+				8402B9F11E9F3252000CDFF7 /* AddressVC.h */,
+				8402B9F41E9F3AF2000CDFF7 /* PersonModel.h */,
+				8402B9F51E9F3AF2000CDFF7 /* PersonModel.m */,
+				8402B9F01E9F322C000CDFF7 /* AddressBook */,
+			);
+			name = RegistereForFriend;
+			sourceTree = "<group>";
+		};
 		84546F4B1EA5F36700AD0350 /* FastHandle */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,13 +541,9 @@
 				8442AAB71E8B8F4200655887 /* SetupViewController.m */,
 				8442AAB91E8B992600655887 /* AboutUsViewController.h */,
 				8442AABA1E8B992600655887 /* AboutUsViewController.m */,
-				8402B9DE1E9F2917000CDFF7 /* InviteFriendsViewController.h */,
-				8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */,
-				8402B9F11E9F3252000CDFF7 /* AddressVC.h */,
-				8402B9F21E9F3252000CDFF7 /* AddressVC.m */,
-				8402B9F41E9F3AF2000CDFF7 /* PersonModel.h */,
-				8402B9F51E9F3AF2000CDFF7 /* PersonModel.m */,
-				8402B9F01E9F322C000CDFF7 /* AddressBook */,
+				8451AFC11EA89842002F04B6 /* ShareFriendsViewController.h */,
+				8451AFC21EA89842002F04B6 /* ShareFriendsViewController.m */,
+				8451AFC01EA8963D002F04B6 /* RegistereForFriend */,
 				84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */,
 				84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */,
 				840FE9521E6F9F3E0050C444 /* LoginViewController.h */,
@@ -769,6 +782,7 @@
 				847199E01E77CA410026F585 /* UserInfoContext.m in Sources */,
 				841224641E6D490100048188 /* JishiyuViewController.m in Sources */,
 				8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */,
+				8451AFC31EA89842002F04B6 /* ShareFriendsViewController.m in Sources */,
 				8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */,
 				8412242A1E6D480300048188 /* main.m in Sources */,
 				840AB3521E6E50DA00532231 /* WSIndexBanner.m in Sources */,

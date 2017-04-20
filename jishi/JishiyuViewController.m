@@ -84,6 +84,8 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+//            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
+
      
         }
         
