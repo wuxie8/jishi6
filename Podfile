@@ -6,6 +6,7 @@ target 'jishi' do
     
 pod 'ElementParser', '~> 0.0.1'
 pod 'AFNetworking'
+##  友盟统计
 pod 'UMengAnalytics-NO-IDFA'
 pod 'RealReachability', '~> 1.1.7'
 # U-Share SDK UI模块（分享面板，建议添加）

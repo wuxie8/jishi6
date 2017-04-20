@@ -58,7 +58,6 @@
     }
     return  theCollation;
 }
-
 -(NSMutableArray*)getAllPerson
 {
     // Create addressbook data model

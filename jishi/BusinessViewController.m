@@ -7,9 +7,7 @@
 //
 
 #import "BusinessViewController.h"
-#import <UMSocialCore/UMSocialCore.h>
-#import <UShareUI/UShareUI.h>
-#import <UMSocialCore/UMSocialCore.h>
+
 
 @interface BusinessViewController ()
 
