@@ -36,10 +36,7 @@
 
 
     [self configUSharePlatforms];
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"QQ41eda388"]]) {
-        
-        DLog(@"yes");
-    }
+    
 
   
 
