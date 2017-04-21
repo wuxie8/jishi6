@@ -40,7 +40,7 @@
     [self.contentView addSubview:imageview];
     
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, viewHeight, WIDTH, 30)];
-    view.backgroundColor=AppBackColor;
+    view.backgroundColor=kColorFromRGBHex(0x1a88ca);
 
     
     [self.contentView addSubview:view];
@@ -50,7 +50,7 @@
     [self.contentView addSubview:_post_hits_Label];
     
     _feliv_Label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH-200, viewHeight, 150, 30)];
-    [_feliv_Label setTextColor:[UIColor grayColor]];
+    [_feliv_Label setTextColor:[UIColor whiteColor]];
     _feliv_Label.textAlignment=NSTextAlignmentRight;
     _feliv_Label.font=[UIFont systemFontOfSize:12];
     [self.contentView addSubview:_feliv_Label];

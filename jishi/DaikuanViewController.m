@@ -314,9 +314,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
-     static NSString *CellIdentifier                    = @"cell";
+    static NSString *CellIdentifier                    = @"cell";
     
     LoanClassification *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
