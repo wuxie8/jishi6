@@ -14,7 +14,7 @@
 #import "UMMobClick/MobClick.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "FastHandleCardViewController.h"
-#define umeng_appkey @"58ca428499f0c742bf000286"
+#define umeng_appkey @"58f859ef677baa654e0007c8"
 @interface AppDelegate ()
 
 @end
@@ -26,7 +26,7 @@
   
       [self.window makeKeyAndVisible];
     
-    UMConfigInstance.appKey=@"58ca428499f0c742bf000286";
+    UMConfigInstance.appKey=@"58f859ef677baa654e0007c8";
      UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     /* 打开调试日志 */
