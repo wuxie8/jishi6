@@ -8,7 +8,7 @@
 
 #import "ShareFriendsViewController.h"
 #import <UShareUI/UShareUI.h>
-@interface ShareFriendsViewController ()
+@interface ShareFriendsViewController ()<UMSocialShareMenuViewDelegate>
 
 @end
 
@@ -33,11 +33,32 @@
 -(void)ShareFriendsClick
 {
     [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_QQ)]];
+    [UMSocialUIManager setShareMenuViewDelegate:self];
 
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        
-        // 根据获取的platformType确定所选平台进行下一步操作
-    }];
+    //加入copy的操作
+    //@see http://dev.umeng.com/social/ios/进阶文档#6
+    [UMSocialUIManager addCustomPlatformWithoutFilted:UMSocialPlatformType_UserDefine_Begin+2
+                                     withPlatformIcon:[UIImage imageNamed:@"icon_circle"]
+                                     withPlatformName:@"演示icon"];
+    
+    [UMSocialShareUIConfig shareInstance].sharePageGroupViewConfig.sharePageGroupViewPostionType = UMSocialSharePageGroupViewPositionType_Bottom;
+    [UMSocialShareUIConfig shareInstance].sharePageScrollViewConfig.shareScrollViewPageItemStyleType = UMSocialPlatformItemViewBackgroudType_None;
+#ifdef UM_Swift
+    [UMSocialSwiftInterface showShareMenuViewInWindowWithPlatformSelectionBlockWithSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary* userInfo) {
+#else
+        [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+#endif
+            //在回调里面获得点击的
+            if (platformType == UMSocialPlatformType_UserDefine_Begin+2) {
+                NSLog(@"点击演示添加Icon后该做的操作");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    
+                });
+            }
+            else{
+            }
+        }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
