@@ -39,7 +39,7 @@
  
  
 
-    self.title=@"简单借款秒借版";
+    self.title=@"仓鼠贷";
 
     
      page=1;

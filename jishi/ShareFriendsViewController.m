@@ -70,7 +70,7 @@
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         
         //创建网页内容对象
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"简单借款秒借版" descr:@"简单借款秒借版是一款理财类的app" thumImage:[UIImage imageNamed:@"appicon"]];
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"仓鼠贷" descr:@"仓鼠贷是一款理财类的app" thumImage:[UIImage imageNamed:@"appicon"]];
         //设置网页地址
         shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/";
         

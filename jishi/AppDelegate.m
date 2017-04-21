@@ -14,7 +14,7 @@
 #import "UMMobClick/MobClick.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "FastHandleCardViewController.h"
-#define umeng_appkey @"58f859ef677baa654e0007c8"
+#define umeng_appkey @"58f9cb23ae1bf80811002194"
 @interface AppDelegate ()
 
 @end
@@ -26,7 +26,7 @@
   
       [self.window makeKeyAndVisible];
     
-    UMConfigInstance.appKey=@"58f859ef677baa654e0007c8";
+    UMConfigInstance.appKey=umeng_appkey;
      UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     /* 打开调试日志 */
@@ -158,12 +158,13 @@
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
        
-        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav1C,nav2C,nav4C,nav3C]:@[nav1C,nav2C,nav3C];
+        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav2C,nav4C,nav3C]:@[nav1C,nav2C,nav3C];
 //        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
-        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"简单借款秒借版",@"贷款",@"快速办卡",@"个人中心"]:@[@"简单借款秒借版",@"贷款",@"个人中心",@"设置"];
-          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"jishiyu",@"lending",@"FastHandleCard",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
-         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"jishiyuBlue",@"lendingBlue",@"FastHandleCardHeight",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"仓鼠贷",@"快速办卡",@"个人中心"]:@[@"仓鼠贷",@"贷款",@"个人中心",@"设置"];
+          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"FastHandleCard",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
+         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
+                                                                                                @"lendingBlue",@"FastHandleCardHeight",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
 //         NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
 //         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
 //               NSArray *titles = @[@"简单借款秒借版",@"个人中心",@"设置"];
