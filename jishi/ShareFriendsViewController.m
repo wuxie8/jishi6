@@ -42,13 +42,13 @@
     if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_Qzone]) {
         [array addObject:@(UMSocialPlatformType_Qzone)];
     }
-//    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatSession]) {
-//        [array addObject:@(UMSocialPlatformType_WechatSession)];
-//    }
-//    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatTimeLine]) {
-//        [array addObject:@(UMSocialPlatformType_WechatTimeLine)];
-//    }
-    
+    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatSession]) {
+        [array addObject:@(UMSocialPlatformType_WechatSession)];
+    }
+    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatTimeLine]) {
+        [array addObject:@(UMSocialPlatformType_WechatTimeLine)];
+    }
+//
     [UMSocialUIManager setPreDefinePlatforms:array];
 
     [UMSocialUIManager setShareMenuViewDelegate:self];
@@ -72,8 +72,8 @@
         //创建网页内容对象
         UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"仓鼠贷" descr:@"仓鼠贷是一款理财类的app" thumImage:[UIImage imageNamed:@"appicon"]];
         //设置网页地址
-        shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/";
-        
+       shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/?id=1221761198";
+    
         //分享消息对象设置分享内容对象
         messageObject.shareObject = shareObject;
         
