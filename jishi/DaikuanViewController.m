@@ -55,7 +55,7 @@
    
     [self loadData];
     
-    self.title=@"仓鼠贷";
+    self.title=@"曹操贷款王";
     
      self.view.backgroundColor=[UIColor whiteColor];
     

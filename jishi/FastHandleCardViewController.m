@@ -10,6 +10,7 @@
 #import "WSPageView.h"
 #import "WSIndexBanner.h"
 #import "FastHandleCardCollectionViewCell.h"
+#import <WebKit/WKWebView.h>
 #define pageHeight 160
 #define kMargin 10
 
@@ -120,6 +121,13 @@ static NSString *const footerId = @"footerId";
     [cell.titleLabel setText:titleArray[indexPath.row]];
     [cell.detailLabel setText:describeArray[indexPath.row]];
     return cell;
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+//    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+//    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+//    [self.view addSubview:webView];
+
 }
 // 和UITableView类似，UICollectionView也可设置段头段尾
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath

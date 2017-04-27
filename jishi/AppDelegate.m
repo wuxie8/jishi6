@@ -86,7 +86,7 @@
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106116530"/*设置QQ平台的appID*/  appSecret:@"pSHfc4Cx6xPoLS7I" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106048363"/*设置QQ平台的appID*/  appSecret:@"ofOIaa8hRHgY3J5S" redirectURL:@"http://mobile.umeng.com/social"];
     
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106116530"/*设置QQ平台的appID*/  appSecret:@"pSHfc4Cx6xPoLS7I" redirectURL:@"http://mobile.umeng.com/social"];
@@ -139,12 +139,12 @@
     
         JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
        DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
-        FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
+//        FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
         MineViewController *mine=[[MineViewController alloc]init];
         //步骤2：将视图控制器绑定到导航控制器上
      BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
      BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
-        BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:fastVC];
+//        BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:fastVC];
 
         BaseNC *nav3C=[[BaseNC alloc]initWithRootViewController:mine];
      
@@ -158,13 +158,13 @@
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
        
-        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav2C,nav4C,nav3C]:@[nav1C,nav2C,nav3C];
+        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav2C,nav3C]:@[nav1C,nav2C,nav3C];
 //        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
-        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"仓鼠贷",@"快速办卡",@"个人中心"]:@[@"仓鼠贷",@"贷款",@"个人中心",@"设置"];
-          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"FastHandleCard",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
+        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"曹操贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
+          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
          NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
-                                                                                                @"lendingBlue",@"FastHandleCardHeight",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
 //         NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
 //         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
 //               NSArray *titles = @[@"简单借款秒借版",@"个人中心",@"设置"];

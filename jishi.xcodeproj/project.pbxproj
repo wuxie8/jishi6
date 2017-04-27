@@ -46,6 +46,7 @@
 		8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */; };
 		8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3D1E729C4B00EAE23C /* YTUITextField.m */; };
 		8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */; };
+		84361FD91EB1BD4E008595E7 /* CarkClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */; };
 		8442AAB51E8B8B7A00655887 /* AmountClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */; };
 		8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB71E8B8F4200655887 /* SetupViewController.m */; };
 		8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AABA1E8B992600655887 /* AboutUsViewController.m */; };
@@ -170,6 +171,8 @@
 		8419CA3D1E729C4B00EAE23C /* YTUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUITextField.m; sourceTree = "<group>"; };
 		8419CA3E1E729C4B00EAE23C /* YTUIToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTUIToolbar.h; sourceTree = "<group>"; };
 		8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUIToolbar.m; sourceTree = "<group>"; };
+		84361FD71EB1BD4E008595E7 /* CarkClickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarkClickViewController.h; sourceTree = "<group>"; };
+		84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarkClickViewController.m; sourceTree = "<group>"; };
 		8442AAB31E8B8B7A00655887 /* AmountClassificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountClassificationViewController.h; sourceTree = "<group>"; };
 		8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountClassificationViewController.m; sourceTree = "<group>"; };
 		8442AAB61E8B8F4200655887 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
@@ -463,6 +466,8 @@
 				84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */,
 				84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */,
 				84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */,
+				84361FD71EB1BD4E008595E7 /* CarkClickViewController.h */,
+				84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */,
 			);
 			name = FastHandle;
 			sourceTree = "<group>";
@@ -813,6 +818,7 @@
 				840FE96E1E6FA18D0050C444 /* OptionsBarView.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,
 				8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */,
+				84361FD91EB1BD4E008595E7 /* CarkClickViewController.m in Sources */,
 				8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */,
 				844B8FF61E766ABF007C3207 /* ForgotPasswordVC.m in Sources */,
 				840FE96B1E6FA18D0050C444 /* BottomLineView.m in Sources */,
@@ -1021,7 +1027,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haitian.caocaodaikuanwang-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1080,7 +1086,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haitian.caocaodaikuanwang-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1254,7 +1260,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.shoujidai;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haitian.caocaodaikuanwang-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
