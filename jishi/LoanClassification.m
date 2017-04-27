@@ -24,11 +24,11 @@
 {
 
     self.backgroundColor = [UIColor whiteColor];
-    _image = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 40, 50)];
+    _image = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 45, 45)];
     _image.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.500];
     _image.contentMode = UIViewContentModeScaleAspectFill;
-    _image.layer.cornerRadius=30;
-    _image.layer.masksToBounds=YES;
+//    _image.layer.cornerRadius=30;
+//    _image.layer.masksToBounds=YES;
     [self.contentView addSubview:_image];
     
     _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 20, 100, 20)];
