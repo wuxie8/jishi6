@@ -1027,7 +1027,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.haitian.caocaodaikuanwang-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.caocaodaikuanwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1086,7 +1086,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.haitian.caocaodaikuanwang-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.caocaodaikuanwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1260,7 +1260,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.haitian.caocaodaikuanwang-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.caocaodaikuanwang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

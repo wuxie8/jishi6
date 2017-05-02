@@ -84,39 +84,39 @@
 }
 
 #pragma mark - UITextFieldDelegate
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSTimeInterval animationDuration = 0.30f;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    CGRect rect = CGRectMake(0.0f, 20.0f, WIDTH, HEIGHT);
-    self.view.frame = rect;
-    [UIView commitAnimations];
-    [textField resignFirstResponder];
-    return YES;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    CGRect frame = [textField.superview convertRect:textField.frame toView:self.view];
-    int offset = frame.origin.y + 32 - (HEIGHT- 280.0);//键盘高度216
-    NSTimeInterval animationDuration = 0.30f;
-    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    if(offset > 0)
-    {
-        CGRect rect = CGRectMake(0.0f, -offset,WIDTH,HEIGHT);
-        self.view.frame = rect;
-    }
-    [UIView commitAnimations];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [UIView animateWithDuration:0.25 animations:^{
-        self.view.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
-    }];
-}
+//-(BOOL)textFieldShouldReturn:(UITextField *)textField
+//{
+//    NSTimeInterval animationDuration = 0.30f;
+//    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+//    [UIView setAnimationDuration:animationDuration];
+//    CGRect rect = CGRectMake(0.0f, 20.0f, WIDTH, HEIGHT);
+//    self.view.frame = rect;
+//    [UIView commitAnimations];
+//    [textField resignFirstResponder];
+//    return YES;
+//}
+//
+//- (void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    CGRect frame = [textField.superview convertRect:textField.frame toView:self.view];
+//    int offset = frame.origin.y + 32 - (HEIGHT- 280.0);//键盘高度216
+//    NSTimeInterval animationDuration = 0.30f;
+//    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+//    [UIView setAnimationDuration:animationDuration];
+//    if(offset > 0)
+//    {
+//        CGRect rect = CGRectMake(0.0f, -offset,WIDTH,HEIGHT);
+//        self.view.frame = rect;
+//    }
+//    [UIView commitAnimations];
+//}
+//
+//- (void)textFieldDidEndEditing:(UITextField *)textField
+//{
+//    [UIView animateWithDuration:0.25 animations:^{
+//        self.view.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+//    }];
+//}
 
 #pragma mark -UITextViewDelegate
 - (void)textViewDidBeginEditing:(UITextView *)textView

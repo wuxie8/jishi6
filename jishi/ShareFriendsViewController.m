@@ -42,13 +42,12 @@
     if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_Qzone]) {
         [array addObject:@(UMSocialPlatformType_Qzone)];
     }
-    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatSession]) {
-        [array addObject:@(UMSocialPlatformType_WechatSession)];
-    }
-    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatTimeLine]) {
-        [array addObject:@(UMSocialPlatformType_WechatTimeLine)];
-    }
-//
+//    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatSession]) {
+//        [array addObject:@(UMSocialPlatformType_WechatSession)];
+//    }
+//    if (  [[UMSocialManager defaultManager]isInstall:UMSocialPlatformType_WechatTimeLine]) {
+//        [array addObject:@(UMSocialPlatformType_WechatTimeLine)];
+//    }
     [UMSocialUIManager setPreDefinePlatforms:array];
 
     [UMSocialUIManager setShareMenuViewDelegate:self];

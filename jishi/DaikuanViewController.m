@@ -13,6 +13,15 @@
 #import "ProductModel.h"
 #import "LoanClassification.h"
 #define SectionHeight 90
+
+// iPhone5/5c/5s/SE 4英寸 屏幕宽高：320*568点 屏幕模式：2x 分辨率：1136*640像素
+#define iPhone5or5cor5sorSE ([UIScreen mainScreen].bounds.size.height == 568.0)
+
+// iPhone6/6s/7 4.7英寸 屏幕宽高：375*667点 屏幕模式：2x 分辨率：1334*750像素
+#define iPhone6or6sor7 ([UIScreen mainScreen].bounds.size.height == 667.0)
+
+// iPhone6 Plus/6s Plus/7 Plus 5.5英寸 屏幕宽高：414*736点 屏幕模式：3x 分辨率：1920*1080像素
+#define iPhone6Plusor6sPlusor7Plus ([UIScreen mainScreen].bounds.size.height == 736.0)
 @interface DaikuanViewController ()<YTUITextFieldPickerViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)NSMutableArray*careerArray;
@@ -125,7 +134,7 @@
 -(void)configData
 {
    
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(20 , 20, 100, 40)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(20 , 20, 80, 40)];
     [label setText:@"职业身份"];
     
     but1=[[UIButton alloc]initWithFrame:CGRectMake(120, 20, 120, 40)];
@@ -150,11 +159,12 @@
     [self.view addSubview:but1];
     [self.view addSubview:but2];
     
-    UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(label.frame), 100, 40)];
+    UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(label.frame), 80, 40)];
     [lab setText:@"贷款金额"];
     [self.view addSubview:lab];
     
-    YTUITextField *text=[[YTUITextField alloc]initDicPickerWithframe:CGRectMake(CGRectGetMaxX(lab.frame), CGRectGetMaxY(label.frame), (WIDTH-240)/2, 40) data:self.moneyArray];
+    YTUITextField *text=[[YTUITextField alloc]initDicPickerWithframe:CGRectMake(CGRectGetMaxX(lab.frame), CGRectGetMaxY(label.frame), WIDTH/2-CGRectGetMaxX(lab.frame), 40) data:self.moneyArray];
+    text.font=[UIFont systemFontOfSize:14];
 
     __block YTUITextField *yt=text;
     [text setFinishBlock:^(NSString *str){
@@ -163,18 +173,19 @@
         [self businessFilter];
     }];
     text.text=self.moneyArray[0];
-    text.textAlignment=NSTextAlignmentCenter;
+    text.textAlignment= iPhone5or5cor5sorSE? NSTextAlignmentLeft:NSTextAlignmentCenter;
     
     [self.view addSubview:text];
     
-    UILabel *lab2=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(text.frame)+10, CGRectGetMaxY(label.frame), 50, 40)];
+    UILabel *lab2=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(text.frame), CGRectGetMaxY(label.frame), 50, 40)];
     [lab2 setText:@"期限"];
     [self.view addSubview:lab2];
     
     
-    YTUITextField *text2=[[YTUITextField alloc]initDicPickerWithframe:CGRectMake(CGRectGetMaxX(lab2.frame), CGRectGetMaxY(label.frame), (WIDTH-240)/2, 40) data:self.monthArray];
-  
+    YTUITextField *text2=[[YTUITextField alloc]initDicPickerWithframe:CGRectMake(CGRectGetMaxX(lab2.frame), CGRectGetMaxY(label.frame), WIDTH-CGRectGetMaxX(lab2.frame), 40) data:self.monthArray];
+
     text2.text=self.monthArray[0];
+    text2.delegate=self;
     __block YTUITextField *yt2=text2;
     [text2 setFinishBlock:^(NSString *str){
         yt2.text=str;
@@ -182,7 +193,7 @@
          [self businessFilter];
     }];
     
-    text2.textAlignment=NSTextAlignmentCenter;
+    text2.textAlignment= iPhone5or5cor5sorSE? NSTextAlignmentLeft:NSTextAlignmentCenter;
     
    
     [self.view addSubview:text2];
@@ -259,16 +270,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
-
-    
-
-
-}
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    
-    
-
 }
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
