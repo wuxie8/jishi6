@@ -19,12 +19,15 @@
     [super viewDidLoad];
     self.title=@"商务合作";
     self.view.backgroundColor=[UIColor whiteColor];
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-100, 100, 200, 100)];
-    label.text=@"邮箱：bd@jishiyu11.cn";
+    
+    UILabel  *companylabel=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-200, 100, 400, 100)];
+    companylabel.text=@"公司:浙江海田网络科技有限公司";
+    companylabel.textAlignment=NSTextAlignmentCenter;
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-100, 250, 200, 100)];
+    label.text=@"公司邮箱：bd@jishiyu11.cn";
+    [self.view addSubview:companylabel];
     [self.view addSubview:label];
-//    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-//        // 根据获取的platformType确定所选平台进行下一步操作
-//    }];
+
 
 }
 - (void)didReceiveMemoryWarning {
