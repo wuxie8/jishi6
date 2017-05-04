@@ -38,7 +38,7 @@
         NSDictionary*dic1=@{@"page":@"1",
                             @"count":@"6"};
         NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
-                           code,@"code",
+                           appcode,@"code",
                            @"1.0.0",@"version",
                            dic1,@"PAGINATION",
 //                            @"1",@"career",

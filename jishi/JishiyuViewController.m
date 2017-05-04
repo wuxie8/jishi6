@@ -64,7 +64,7 @@ tab.dataSource=self;
   
 
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       code,@"code",
+                       appcode,@"code",
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];

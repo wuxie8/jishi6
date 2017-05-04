@@ -12,6 +12,7 @@
 //简讯的代理
 @protocol YTUITextFieldPickerViewDelegate <NSObject>
 
+@optional
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 
 @end

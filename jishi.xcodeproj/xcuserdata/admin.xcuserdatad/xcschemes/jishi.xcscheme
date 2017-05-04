@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "841224241E6D480300048188"
-               BuildableName = "jishi.app"
+               BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
                BlueprintName = "jishi"
                ReferencedContainer = "container:jishi.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "841224241E6D480300048188"
-            BuildableName = "jishi.app"
+            BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
             BlueprintName = "jishi"
             ReferencedContainer = "container:jishi.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "841224241E6D480300048188"
-            BuildableName = "jishi.app"
+            BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
             BlueprintName = "jishi"
             ReferencedContainer = "container:jishi.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "841224241E6D480300048188"
-            BuildableName = "jishi.app"
+            BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
             BlueprintName = "jishi"
             ReferencedContainer = "container:jishi.xcodeproj">
          </BuildableReference>
