@@ -155,11 +155,12 @@
                       _phoneTf.text,@"mobile",
                       _passTf.text,@"password",
                       _codeTf.text,@"code",
-                       @"QD0039",@"code",
+                       @"QD0039",@"no",
 
                        nil];
     [[NetWorkManager sharedManager]postJSON:doregister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
+        
         if ([dic[@"status"]boolValue]) {
             [MessageAlertView showSuccessMessage:@"注册成功"];
             UIViewController *viewCtl = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];

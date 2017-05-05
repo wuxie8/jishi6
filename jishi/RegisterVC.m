@@ -118,6 +118,8 @@
                       registerDic[@"0"],@"mobile",
                       registerDic[@"1"],@"password",
                        registerDic[@"3"],@"code",
+                       @"QD0039",@"no",
+
                        nil];
     [[NetWorkManager sharedManager]postJSON:doregister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;

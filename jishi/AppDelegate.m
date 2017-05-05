@@ -25,11 +25,10 @@
 #include <ifaddrs.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#define umeng_appkey @"58ca428499f0c742bf000286"
+#define umeng_appkey @"59015b7da40fa36fe50000bf"
 @interface AppDelegate ()
 
 @end
-
 @implementation AppDelegate
 
 
@@ -100,8 +99,8 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106048363"/*设置QQ平台的appID*/  appSecret:@"ofOIaa8hRHgY3J5S" redirectURL:@"http://mobile.umeng.com/social"];
     
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106116530"/*设置QQ平台的appID*/  appSecret:@"pSHfc4Cx6xPoLS7I" redirectURL:@"http://mobile.umeng.com/social"];
-
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106048363"/*设置QQ平台的appID*/  appSecret:@"ofOIaa8hRHgY3J5S" redirectURL:@"http://mobile.umeng.com/social"];
+//http://www.jishiyu007.com
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
