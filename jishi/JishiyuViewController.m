@@ -454,7 +454,27 @@ tab.dataSource=self;
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
     {
         ProductModel *product=(ProductModel *)self.productArray[indexPath.row];
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                           product.productID,@"id",
+                           nil];
         
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+        [manager.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        
+        NSString *urlStr = [NSString stringWithFormat:@"%@&m=toutiao&a=redirect",SERVERE];
+        [manager GET:urlStr parameters:dic progress:nil success:^(NSURLSessionDataTask *  task, id   responseObject) {
+            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                     options:NSJSONReadingMutableContainers
+                                                                       error:nil];
+            DLog(@"%@",imagedic);
+            
+        } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
+            DLog(@"%@",error);
+            
+        }];
+
 //        JishiyuDetailsViewController *jishiyuDetail=[[JishiyuDetailsViewController alloc]init];
 //        jishiyuDetail.product=product;
 //        jishiyuDetail.hidesBottomBarWhenPushed=YES;

@@ -22,27 +22,7 @@
     self.title=@"贷款详情";
     self.view.backgroundColor=AppPageColor;
     
-    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       @"98",@"id",
-                       nil];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-    [manager.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-
-    NSString *urlStr = [NSString stringWithFormat:@"%@&m=toutiao&a=redirect",SERVERE];
-    [manager GET:urlStr parameters:dic progress:nil success:^(NSURLSessionDataTask *  task, id   responseObject) {
-        NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                 options:NSJSONReadingMutableContainers
-                                                                   error:nil];
-        DLog(@"%@",imagedic);
-
-    } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
-        DLog(@"%@",error);
-
-    }];
-  
+     
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 5, WIDTH, 110)];
     view.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:view];
