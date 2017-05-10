@@ -18,6 +18,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import "AmountClassificationViewController.h"
 #import <UShareUI/UShareUI.h>
+#import "LoanDetailsViewController.h"
 #define  ScrollviewWeight 50
 #define  ScrollviewHeight 180
 #define SectionHeight 110
@@ -84,7 +85,7 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-//            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
      
         }
@@ -110,7 +111,7 @@ tab.dataSource=self;
                     pro.smeta=imagedic[@"thumb"];
                     pro.post_title=diction[@"post_title"];
                 }
-                              pro.link=diction[@"link"];
+                pro.link=diction[@"link"];
                 pro.edufanwei=diction[@"edufanwei"];
                 pro.qixianfanwei=diction[@"qixianfanwei"];
                 pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
@@ -118,6 +119,13 @@ tab.dataSource=self;
               
                 pro.post_hits=diction[@"post_hits"];
                 pro.feilv=diction[@"feilv"];
+                pro.productID=diction[@"id"];
+                pro.post_excerpt=diction[@"post_excerpt"];
+
+                pro.fv_unit=diction[@"fv_unit"];
+
+                pro.qx_unit=diction[@"qx_unit"];
+
                 [self.productArray addObject:pro];
                 
             }
@@ -447,11 +455,15 @@ tab.dataSource=self;
     {
         ProductModel *product=(ProductModel *)self.productArray[indexPath.row];
         
-        JishiyuDetailsViewController *jishiyuDetail=[[JishiyuDetailsViewController alloc]init];
-        jishiyuDetail.product=product;
-        jishiyuDetail.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:jishiyuDetail animated:YES];
-
+//        JishiyuDetailsViewController *jishiyuDetail=[[JishiyuDetailsViewController alloc]init];
+//        jishiyuDetail.product=product;
+//        jishiyuDetail.hidesBottomBarWhenPushed=YES;
+//        [self.navigationController pushViewController:jishiyuDetail animated:YES];
+        LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
+        load.hidesBottomBarWhenPushed=YES;
+        
+        load.product=product;
+        [self.navigationController pushViewController:load animated:YES];
         
     }
     else

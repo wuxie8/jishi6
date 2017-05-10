@@ -46,12 +46,15 @@
 		8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB71E8B8F4200655887 /* SetupViewController.m */; };
 		8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AABA1E8B992600655887 /* AboutUsViewController.m */; };
 		8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */; };
+		844885B61EC2A2FF0093424D /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844885B51EC2A2FF0093424D /* BtnView.m */; };
 		844B8FF61E766ABF007C3207 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */; };
 		844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */; };
 		8451AFC31EA89842002F04B6 /* ShareFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451AFC21EA89842002F04B6 /* ShareFriendsViewController.m */; };
 		84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */; };
 		84546F511EA5F37C00AD0350 /* FastHandleCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */; };
 		84546F531EA5FECC00AD0350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84546F521EA5FECC00AD0350 /* Assets.xcassets */; };
+		846ED6111EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */; };
+		846ED6141EC1BBBC00FE22BD /* LoanDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846ED6131EC1BBBC00FE22BD /* LoanDetailsViewController.m */; };
 		847199D71E778F2E0026F585 /* LoanClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D61E778F2E0026F585 /* LoanClassification.m */; };
 		847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D91E779E9F0026F585 /* LoanClasssificationVC.m */; };
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
@@ -174,6 +177,8 @@
 		8442AABA1E8B992600655887 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		8442AABF1E8BAC1C00655887 /* AmountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountTableViewCell.h; sourceTree = "<group>"; };
 		8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountTableViewCell.m; sourceTree = "<group>"; };
+		844885B41EC2A2FF0093424D /* BtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
+		844885B51EC2A2FF0093424D /* BtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
 		844B8FF41E766ABF007C3207 /* ForgotPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordVC.h; sourceTree = "<group>"; };
 		844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
 		844B8FF71E769275007C3207 /* DaikuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaikuanTableViewCell.h; sourceTree = "<group>"; };
@@ -185,6 +190,10 @@
 		84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardViewController.h; sourceTree = "<group>"; };
 		84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardViewController.m; sourceTree = "<group>"; };
 		84546F521EA5FECC00AD0350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846ED60F1EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuDetailsTableViewCell.h; sourceTree = "<group>"; };
+		846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuDetailsTableViewCell.m; sourceTree = "<group>"; };
+		846ED6121EC1BBBC00FE22BD /* LoanDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanDetailsViewController.h; sourceTree = "<group>"; };
+		846ED6131EC1BBBC00FE22BD /* LoanDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanDetailsViewController.m; sourceTree = "<group>"; };
 		847199D51E778F2E0026F585 /* LoanClassification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClassification.h; sourceTree = "<group>"; };
 		847199D61E778F2E0026F585 /* LoanClassification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanClassification.m; sourceTree = "<group>"; };
 		847199D81E779E9F0026F585 /* LoanClasssificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClasssificationVC.h; sourceTree = "<group>"; };
@@ -533,6 +542,10 @@
 				8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */,
 				8412245C1E6D490100048188 /* JishiyuViewController.h */,
 				8412245D1E6D490100048188 /* JishiyuViewController.m */,
+				846ED6121EC1BBBC00FE22BD /* LoanDetailsViewController.h */,
+				846ED6131EC1BBBC00FE22BD /* LoanDetailsViewController.m */,
+				844885B41EC2A2FF0093424D /* BtnView.h */,
+				844885B51EC2A2FF0093424D /* BtnView.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -546,6 +559,8 @@
 				8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */,
 				840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */,
 				840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */,
+				846ED60F1EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.h */,
+				846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -783,6 +798,7 @@
 				84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */,
 				8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */,
 				84A733481EB86C07008ABB7E /* XHJAddressBook.m in Sources */,
+				846ED6111EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m in Sources */,
 				841224301E6D480300048188 /* ViewController.m in Sources */,
 				841224671E6D490100048188 /* MineViewController.m in Sources */,
 				840FE97E1E6FA88B0050C444 /* PasswordLandingViewViewController.m in Sources */,
@@ -793,6 +809,7 @@
 				840FE9831E6FCE430050C444 /* NetWorkManager.m in Sources */,
 				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
 				840FE96C1E6FA18D0050C444 /* OptionBarController.m in Sources */,
+				844885B61EC2A2FF0093424D /* BtnView.m in Sources */,
 				84A733441EB86C07008ABB7E /* AddressBookVC.m in Sources */,
 				840FE9941E6FF3900050C444 /* WebVC.m in Sources */,
 				8412242D1E6D480300048188 /* AppDelegate.m in Sources */,
@@ -830,6 +847,7 @@
 				84A733461EB86C07008ABB7E /* NSString+TKUtilities.m in Sources */,
 				84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */,
 				840FE96E1E6FA18D0050C444 /* OptionsBarView.m in Sources */,
+				846ED6141EC1BBBC00FE22BD /* LoanDetailsViewController.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,
 				8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */,
 				84361FD91EB1BD4E008595E7 /* CarkClickViewController.m in Sources */,

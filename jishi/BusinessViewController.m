@@ -23,8 +23,9 @@
     UILabel  *companylabel=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-200, 100, 400, 100)];
     companylabel.text=@"公司:浙江海田网络科技有限公司";
     companylabel.textAlignment=NSTextAlignmentCenter;
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-100, 250, 200, 100)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-200, 250, 400, 100)];
     label.text=@"公司邮箱：bd@jishiyu11.cn";
+    label.textAlignment=NSTextAlignmentCenter;
     [self.view addSubview:companylabel];
     [self.view addSubview:label];
 

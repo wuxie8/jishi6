@@ -70,9 +70,15 @@
                 pro.qixianfanwei=diction[@"qixianfanwei"];
                 pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
                 pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
- 
+                
                 pro.post_hits=diction[@"post_hits"];
                 pro.feilv=diction[@"feilv"];
+                pro.productID=diction[@"id"];
+                pro.post_excerpt=diction[@"post_excerpt"];
+                
+                pro.fv_unit=diction[@"fv_unit"];
+                
+                pro.qx_unit=diction[@"qx_unit"];
                 [self.productArray addObject:pro];
                 
             }          

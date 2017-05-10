@@ -251,16 +251,20 @@
                     pro.post_title=diction[@"post_title"];
                 }
 
-                
                 pro.link=diction[@"link"];
                 pro.edufanwei=diction[@"edufanwei"];
                 pro.qixianfanwei=diction[@"qixianfanwei"];
                 pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
                 pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
-   
+                
                 pro.post_hits=diction[@"post_hits"];
                 pro.feilv=diction[@"feilv"];
-                [self.productArray addObject:pro];
+                pro.productID=diction[@"id"];
+                pro.post_excerpt=diction[@"post_excerpt"];
+                
+                pro.fv_unit=diction[@"fv_unit"];
+                
+                pro.qx_unit=diction[@"qx_unit"];                [self.productArray addObject:pro];
             }
 
             [table reloadData];

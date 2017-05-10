@@ -119,6 +119,18 @@
                 if (self.backblock) {
                     self.backblock();
             }
+                NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                                   resultDic[@"uid"],@"user_id",
+                                   @"1",@"type",
+                                   nil];
+                [[NetWorkManager sharedManager]postJSON:@"&m=business&a=record" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+                    DLog(@"%@",responseObject);
+                    
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    DLog(@"%@",error);
+                    
+                }];
+
                 
             }
         }
@@ -127,7 +139,6 @@
             [MessageAlertView showErrorMessage:resultDic[@"info"]];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];

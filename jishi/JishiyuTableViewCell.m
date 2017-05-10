@@ -30,7 +30,7 @@
 //    _image.layer.masksToBounds=YES;
     [self.contentView addSubview:_image];
     
-    _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 20, 100, 20)];
+    _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 20, WIDTH-CGRectGetMaxX(_image.frame)-20, 20)];
     _titleLabel.font=[UIFont systemFontOfSize:14];
     [self.contentView addSubview:_titleLabel];
     

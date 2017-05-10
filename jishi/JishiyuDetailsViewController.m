@@ -52,7 +52,7 @@
         [_headView addSubview:_headImageView];
         
         UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame)+20, 10, 150, 50)];
-        label.textColor=[UIColor blueColor];
+        label.textColor=AppBlue;
         label.text=self.product.post_title;
         [_headView addSubview:label];
         NSArray *arr=@[@"额度范围：",@"费率：",@"期限范围：",@"最快放款："];
@@ -142,6 +142,8 @@
 }
 -(void)jumplanding
 {
+  
+
         WebVC *vc = [[WebVC alloc] init];
         [vc setNavTitle:self.product.post_title];
         [vc loadFromURLStr:self.product.link];

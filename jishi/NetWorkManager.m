@@ -153,7 +153,7 @@
         return nil;
     }
     
-    [self configNetManager:name];
+//    [self configNetManager:name];
     
     [MessageAlertView showLoading:@""];
     
@@ -165,16 +165,9 @@
             [MessageAlertView dismissHud];
         });
         
-        int IsSuccess = [[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"IsSuccess"]] intValue];
-        
-        if (IsSuccess == 1) { //成功
+     
             success(task, responseObject);
-        } else {
-            NSString *message = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"Message"]];
-            [MessageAlertView showErrorMessage:message];
-            failure(task, nil);
-        }
-        
+               
         DLog(@"接口\n%@返回结果：%@",url,responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

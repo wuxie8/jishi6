@@ -27,4 +27,14 @@
 @property(strong, nonatomic)NSString * shenqingtiaojian ;
 //最快放款
 @property(strong, nonatomic)NSString*  zuikuaifangkuan;
+//业务ID
+@property(strong, nonatomic)NSString*  productID;
+//单位
+@property(strong, nonatomic)NSString*  fv_unit;
+//天／月
+@property(strong, nonatomic)NSString*  qx_unit;
+//介绍
+@property(strong, nonatomic)NSString*  post_excerpt;
+
+
 @end

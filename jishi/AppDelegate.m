@@ -25,6 +25,9 @@
 #include <ifaddrs.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <AdSupport/AdSupport.h>
+
+
 #define umeng_appkey @"59015b7da40fa36fe50000bf"
 @interface AppDelegate ()
 
@@ -46,15 +49,50 @@
 
 
     [self configUSharePlatforms];
-    
-    [AppDelegate requestTrackWithAppkey:umeng_appkey];
+   if (![[NSUserDefaults standardUserDefaults] boolForKey:@"FirstLG"])
+   {
+       NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+
+       NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                          adId,@"idfa",
+                         [self getMacAddress],@"mac",
+                          @"QD0039",@"channel",
+                          nil];
+       [[NetWorkManager sharedManager]postJSON:@"&m=toutiao&a=activate" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSDictionary *dic=(NSDictionary *)responseObject;
+           if ([dic[@"status"]boolValue]) {
+               
+               
+           }
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           
+           
+       }];
+
+   }
+       [AppDelegate requestTrackWithAppkey:umeng_appkey];
   
+    
 
     self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
         //读取用户信息
         Context.currentUser = [NSKeyedUnarchiver unarchiveObjectWithFile:DOCUMENT_FOLDER(@"loginedUser")];
     }
+    if (Context.currentUser.uid) {
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                           Context.currentUser.uid,@"user_id",
+                           @"1",@"type",
+                           nil];
+        [[NetWorkManager sharedManager]postJSON:@"&m=business&a=record" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+            DLog(@"%@",responseObject);
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            DLog(@"%@",error);
+            
+        }];
+    }
+
    self.window.rootViewController = [UIViewController new];
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                        appcode,@"code",
@@ -71,6 +109,8 @@
             }else
             {
                 [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
+
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -90,6 +130,57 @@
   
     // Override point for customization after application launch.
     return YES;
+}
+- (NSString *)getMacAddress {
+    int mib[6];
+    size_t len;
+    char *buf;
+    unsigned char *ptr;
+    struct if_msghdr *ifm;
+    struct sockaddr_dl *sdl;
+    
+    mib[0] = CTL_NET;
+    mib[1] = AF_ROUTE;
+    mib[2] = 0;
+    mib[3] = AF_LINK;
+    mib[4] = NET_RT_IFLIST;
+    
+    if ((mib[5] = if_nametoindex("en0")) == 0) {
+        printf("Error: if_nametoindex error/n");
+        return NULL;
+    }
+    
+    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 1/n");
+        return NULL;
+    }
+    
+    if ((buf = malloc(len)) == NULL) {
+        printf("Could not allocate memory. error!/n");
+        return NULL;
+    }
+    
+    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
+        free(buf);
+        printf("Error: sysctl, take 2");
+        return NULL;
+    }
+    
+    ifm = (struct if_msghdr *)buf;
+    sdl = (struct sockaddr_dl *)(ifm + 1);
+    ptr = (unsigned char *)LLADDR(sdl);
+    
+    // MAC地址带冒号
+     NSString *outstring = [NSString stringWithFormat:@"%02x:%02x:%02x:%02x:%02x:%02x", *ptr, *(ptr+1), *(ptr+2),
+     *(ptr+3), *(ptr+4), *(ptr+5)];
+    
+    // MAC地址不带冒号
+//    NSString *outstring = [NSString
+//                           stringWithFormat:@"%02x%02x%02x%02x%02x%02x", *ptr, *(ptr + 1), *(ptr + 2), *(ptr + 3), *(ptr + 4), *(ptr + 5)];
+    
+    free(buf);
+    
+    return [outstring uppercaseString];
 }
 -(void)configUSharePlatforms
 {
@@ -145,8 +236,8 @@
 
 +(UITabBarController *)setTabBarController
     {
-    
-    
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLG"];
+
         JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
        DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
 //        FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];

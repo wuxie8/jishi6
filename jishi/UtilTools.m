@@ -14,8 +14,6 @@ static SystemSoundID shake_sound_enter_id = 0;
 
 + (BOOL)isBlankString:(id)string
 {
-    string = [NSString stringWithFormat:@"%@",string];
-    
     if (string == nil) {
         return YES;
     }
@@ -26,6 +24,11 @@ static SystemSoundID shake_sound_enter_id = 0;
     if ([string isEqual:[NSNull null]]) {
         return YES;
     }
+    
+    string = [NSString stringWithFormat:@"%@",string];
+    
+  
+   
     if ([string isEqualToString:@"(null)"]) {
         return YES;
     }
