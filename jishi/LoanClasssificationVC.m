@@ -76,7 +76,12 @@
                 pro.feilv=diction[@"feilv"];
                 pro.productID=diction[@"id"];
                 pro.post_excerpt=diction[@"post_excerpt"];
-                
+                NSArray *tags=diction[@"tags"];
+                NSMutableArray *tagsArray=[NSMutableArray array];
+                for (NSDictionary *dic in tags) {
+                    [tagsArray addObject:dic[@"tag_name"]];
+                }
+                pro.tagsArray=tagsArray;
                 pro.fv_unit=diction[@"fv_unit"];
                 
                 pro.qx_unit=diction[@"qx_unit"];

@@ -45,7 +45,7 @@
 //    label.adjustsFontSizeToFitWidth=YES;
     [view addSubview:label];
 //    NSArray *titleArr = @[@"医德高尚",@"非常耐心",@"回复非常及时、满意",@"意见很有帮助",@"非常认真敬业",@"非常清楚"];
-    NSArray *titleArr = @[@"意见很有帮助",@"非常认真敬业",@"非常清楚"];
+    NSArray *titleArr = self.product.tagsArray;
 
     UIView *btnview=[BtnView creatBtnWithArray:titleArr frame:CGRectMake(CGRectGetMaxX(image.frame)+10, CGRectGetMaxY(label.frame), WIDTH-CGRectGetMaxX(image.frame)-10, 40)];
     [view addSubview:btnview];
@@ -134,8 +134,7 @@
     
     UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(margen+WIDTH/2, CGRectGetMaxY(textField.frame)+20, WIDTH/2-margen*2, 30)];
     label4.text=[NSString stringWithFormat:@"期限范围：%@%@",self.product.qixianfanwei,[self.product.fv_unit isEqualToString:@"1"]?@"天":@"月"];
-    label4.font=[UIFont systemFontOfSize:14];
-
+    label4.adjustsFontSizeToFitWidth=YES;
     [yellowView addSubview:label4];
     
     UIView *view4=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(yellowView.frame), WIDTH, 100)];
@@ -295,9 +294,13 @@
             NSArray *array = [self.product.edufanwei componentsSeparatedByString:@"-"]; //从字符A中分隔成2个元素的数组
             if ([textField.text intValue]<[array[0]intValue]) {
                 [MessageAlertView showErrorMessage:@"不能小于最小额度"];
+                textField.text=[NSString stringWithFormat:@"%d",edu];
+
             }
             if ([textField.text intValue]>[array[1]intValue]) {
                 [MessageAlertView showErrorMessage:@"不能大于最大额度"];
+                textField.text=[NSString stringWithFormat:@"%d",edu];
+
                 
             }else
             {
@@ -339,10 +342,13 @@
             NSArray *array = [self.product.qixianfanwei componentsSeparatedByString:@"-"]; //从字符A中分隔成2个元素的数组
             if ([textField.text intValue]<[array[0]intValue]) {
                 [MessageAlertView showErrorMessage:@"不能小于最小期限"];
+                textField.text=[NSString stringWithFormat:@"%d",qixian];
+
             }
             if ([textField.text intValue]>[array[1]intValue]) {
                 [MessageAlertView showErrorMessage:@"不能大于最大期限"];
-                
+                textField.text=[NSString stringWithFormat:@"%d",qixian];
+
             }
             else
             {

@@ -47,9 +47,7 @@
     
     self.view.backgroundColor=AppPageColor;
     
-//    arr=@[@"浏览记录",@"我的消息",@"设置"];
      arr=@[@"设置"];
-//    imagesArr=@[@"BrowsingHistory",@"MyNews",@"SetUp"];
     imagesArr=@[@"SetUp"];
 
    

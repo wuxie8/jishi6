@@ -40,7 +40,7 @@
     [self.contentView addSubview:imageview];
     
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, viewHeight, WIDTH, 30)];
-    view.backgroundColor=kColorFromRGBHex(0x1a88ca);
+    view.backgroundColor=AppBlue;
 
     
     [self.contentView addSubview:view];

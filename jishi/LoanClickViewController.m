@@ -93,7 +93,12 @@
                 pro.post_excerpt=diction[@"post_excerpt"];
                 
                 pro.fv_unit=diction[@"fv_unit"];
-                
+                NSArray *tags=diction[@"tags"];
+                NSMutableArray *tagsArray=[NSMutableArray array];
+                for (NSDictionary *dic in tags) {
+                    [tagsArray addObject:dic[@"tag_name"]];
+                }
+                pro.tagsArray=tagsArray;
                 pro.qx_unit=diction[@"qx_unit"];
                 [self.productArray addObject:pro];
                 

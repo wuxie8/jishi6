@@ -265,7 +265,14 @@
                 
                 pro.fv_unit=diction[@"fv_unit"];
                 
-                pro.qx_unit=diction[@"qx_unit"];                [self.productArray addObject:pro];
+                pro.qx_unit=diction[@"qx_unit"];
+                NSArray *tags=diction[@"tags"];
+                NSMutableArray *tagsArray=[NSMutableArray array];
+                for (NSDictionary *dic in tags) {
+                    [tagsArray addObject:dic[@"tag_name"]];
+                }
+                pro.tagsArray=tagsArray;
+                [self.productArray addObject:pro];
             }
 
             [table reloadData];
