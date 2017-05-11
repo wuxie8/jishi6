@@ -12,6 +12,7 @@
 #import "JishiyuDetailsViewController.h"
 #import "ProductModel.h"
 #import "LoanClassification.h"
+#import "LoanDetailsViewController.h"
 #define SectionHeight 90
 
 // iPhone5/5c/5s/SE 4英寸 屏幕宽高：320*568点 屏幕模式：2x 分辨率：1136*640像素
@@ -64,7 +65,7 @@
    
     [self loadData];
     
-    self.title=@"曹操贷款王";
+    self.title=@"我来贷款王";
     
      self.view.backgroundColor=[UIColor whiteColor];
     
@@ -306,9 +307,15 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
-    JishiyuDetailsViewController *jishiyu=[[JishiyuDetailsViewController alloc]init];
-    jishiyu.product=pro;
-    [self.navigationController pushViewController:jishiyu animated:YES];
+    
+    LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
+    load.hidesBottomBarWhenPushed=YES;
+    
+    load.product=pro;
+    [self.navigationController pushViewController:load animated:YES];
+//    JishiyuDetailsViewController *jishiyu=[[JishiyuDetailsViewController alloc]init];
+//    jishiyu.product=pro;
+//    [self.navigationController pushViewController:jishiyu animated:YES];
 }
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

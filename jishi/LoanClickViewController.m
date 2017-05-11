@@ -10,6 +10,7 @@
 #import "ProductModel.h"
 #import "LoanClassification.h"
 #import "JishiyuDetailsViewController.h"
+#import "LoanDetailsViewController.h"
 #define SectionHeight 90
 @interface LoanClickViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(strong, nonatomic)NSMutableArray*productArray;
@@ -147,9 +148,12 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
-    JishiyuDetailsViewController *jishiyu=[[JishiyuDetailsViewController alloc]init];
-    jishiyu.product=pro;
-    [self.navigationController pushViewController:jishiyu animated:YES];
+    LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
+    load.hidesBottomBarWhenPushed=YES;
+    
+    load.product=pro;
+    [self.navigationController pushViewController:load animated:YES];
+
 }
 -(NSMutableArray *)productArray
 {

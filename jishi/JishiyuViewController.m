@@ -40,7 +40,7 @@
  
  
 
-    self.title=@"曹操贷款王";
+    self.title=@"我来贷款王";
 
     
      page=1;
@@ -85,7 +85,6 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
      
         }
@@ -465,13 +464,9 @@ tab.dataSource=self;
         
         NSString *urlStr = [NSString stringWithFormat:@"%@&m=toutiao&a=redirect",SERVERE];
         [manager GET:urlStr parameters:dic progress:nil success:^(NSURLSessionDataTask *  task, id   responseObject) {
-            NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                     options:NSJSONReadingMutableContainers
-                                                                       error:nil];
-            DLog(@"%@",imagedic);
+          
             
         } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
-            DLog(@"%@",error);
             
         }];
 

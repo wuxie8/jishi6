@@ -1059,7 +1059,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.caocaodaikuanwang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
 				PRODUCT_NAME = "曹操贷款王";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1118,7 +1118,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.caocaodaikuanwang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
 				PRODUCT_NAME = "曹操贷款王";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1292,7 +1292,7 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.caocaodaikuanwang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
 				PRODUCT_NAME = "曹操贷款王";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

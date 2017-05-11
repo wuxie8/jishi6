@@ -39,7 +39,7 @@
 #define filter @"&m=business&a=filter"
 
 //贷款
-#define appcode @"cangshudai"
+#define appcode @"wolaidaikuanwang2"
 
 #define APIHelp @"http://v2api20160516.eexuu.com/swagger"
 

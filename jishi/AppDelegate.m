@@ -28,7 +28,7 @@
 #import <AdSupport/AdSupport.h>
 
 
-#define umeng_appkey @"59015b7da40fa36fe50000bf"
+#define umeng_appkey @"58ca428499f0c742bf000286"
 @interface AppDelegate ()
 
 @end
@@ -109,7 +109,6 @@
             }else
             {
                 [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
             }
             
@@ -187,10 +186,10 @@
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106048363"/*设置QQ平台的appID*/  appSecret:@"ofOIaa8hRHgY3J5S" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106038523"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
     
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106048363"/*设置QQ平台的appID*/  appSecret:@"ofOIaa8hRHgY3J5S" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106038523"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
 //http://www.jishiyu007.com
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
@@ -259,16 +258,16 @@
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
        
-        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav2C,nav3C]:@[nav1C,nav2C,nav3C];
-//        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
+//        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav2C,nav3C]:@[nav1C,nav2C,nav3C];
+        tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
-        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"曹操贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
-          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
-         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
-                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-//         NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
-//         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-//               NSArray *titles = @[@"简单借款秒借版",@"个人中心",@"设置"];
+//        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
+//          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
+//         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
+//                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+         NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
+         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+               NSArray *titles = @[@"我来贷款王",@"个人中心",@"设置"];
 //        NSArray *images=@[@"lending",@"Mineing"];
 //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
        

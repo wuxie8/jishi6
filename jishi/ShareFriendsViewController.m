@@ -69,11 +69,11 @@
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         
         //创建网页内容对象
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"曹操贷款王" descr:@"曹操贷款王是一款理财类的app" thumImage:[UIImage imageNamed:@"appicon"]];
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"我来贷款王" descr:@"我来贷款王是一款理财类的app" thumImage:[UIImage imageNamed:@"appicon"]];
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"review"])
     {
         //设置网页地址
-     shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/?id=1221761198";
+     shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/?id=1222224138";
     }
         //分享消息对象设置分享内容对象
         messageObject.shareObject = shareObject;
