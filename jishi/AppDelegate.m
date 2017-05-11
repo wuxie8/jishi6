@@ -267,7 +267,7 @@
 //                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
          NSArray *images=@[@"jishiyu",@"lending",@"Mineing"];
          NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-               NSArray *titles = @[@"我来贷款王",@"个人中心",@"设置"];
+               NSArray *titles = @[@"我来贷款王",@"贷款超市",@"个人中心"];
 //        NSArray *images=@[@"lending",@"Mineing"];
 //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
        

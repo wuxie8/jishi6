@@ -32,6 +32,11 @@
         self.navigationItem.hidesBackButton =YES;
         self.navigationItem.leftBarButtonItem=nil;
     }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+        [self.navigationController popViewControllerAnimated:NO];
+      
+    }
+    
    
 }
 - (void)viewDidLoad {

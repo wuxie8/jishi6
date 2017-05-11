@@ -180,7 +180,7 @@
         //用户信息归档
         [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")];
     }
-       LoginViewController *login=[[LoginViewController alloc]init];
+    LoginViewController *login=[[LoginViewController alloc]init];
     login.hidden=YES;
     [self.navigationController pushViewController:login animated:YES];
    
