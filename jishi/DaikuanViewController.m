@@ -65,7 +65,7 @@
    
     [self loadData];
     
-    self.title=@"我来贷款王";
+    self.title=@"小胖钱包";
     
      self.view.backgroundColor=[UIColor whiteColor];
     
