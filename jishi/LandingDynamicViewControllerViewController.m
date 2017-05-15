@@ -196,10 +196,8 @@
                                    @"1",@"type",
                                    nil];
                 [[NetWorkManager sharedManager]postJSON:@"&m=business&a=record" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-                    DLog(@"%@",responseObject);
 
                 } failure:^(NSURLSessionDataTask *task, NSError *error) {
-                    DLog(@"%@",error);
 
                 }];
                

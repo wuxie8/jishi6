@@ -178,7 +178,8 @@ tab.dataSource=self;
   
         switch (subIndex) {
             case 0:
-            {   WebVC *vc = [[WebVC alloc] init];
+            {
+                WebVC *vc = [[WebVC alloc] init];
                 [vc setNavTitle:@"融360"];
                 [vc loadFromURLStr:@"http://m.rong360.com/express?from=sem21&utm_source=union1&utm_medium=jsy"];
                 vc.hidesBottomBarWhenPushed=YES;

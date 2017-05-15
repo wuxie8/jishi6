@@ -81,9 +81,7 @@
         //调用分享接口
         [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
             if (error) {
-                DLog(@"************Share fail with error %@*********",error);
             }else{
-                DLog(@"response data is %@",data);
             }
         }];
     }

@@ -85,10 +85,8 @@
                            @"1",@"type",
                            nil];
         [[NetWorkManager sharedManager]postJSON:@"&m=business&a=record" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-            DLog(@"%@",responseObject);
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            DLog(@"%@",error);
             
         }];
     }
@@ -109,7 +107,6 @@
             }else
             {
                 [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -173,9 +170,6 @@
      NSString *outstring = [NSString stringWithFormat:@"%02x:%02x:%02x:%02x:%02x:%02x", *ptr, *(ptr+1), *(ptr+2),
      *(ptr+3), *(ptr+4), *(ptr+5)];
     
-    // MAC地址不带冒号
-//    NSString *outstring = [NSString
-//                           stringWithFormat:@"%02x%02x%02x%02x%02x%02x", *ptr, *(ptr + 1), *(ptr + 2), *(ptr + 3), *(ptr + 4), *(ptr + 5)];
     
     free(buf);
     
@@ -316,7 +310,7 @@
         NSString *network_operater = [[self carrierString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         // NSString *utdid = [UTDevice utdid];
-        
+
         size_t size;
         // Set 'oldp' parameter to NULL to get the size of the data
         // returned so we can allocate appropriate amount of space

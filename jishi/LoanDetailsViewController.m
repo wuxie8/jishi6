@@ -25,10 +25,19 @@
     self.title=@"贷款详情";
     self.view.backgroundColor=AppPageColor;
     
-     
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-50)];
+         [self.view addSubview:scrollView];
+       scrollView.contentSize = self.view.frame.size;
+    scrollView.showsHorizontalScrollIndicator = NO;
+        scrollView.showsVerticalScrollIndicator = NO;
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 5, WIDTH, 110)];
     view.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:view];
+    [scrollView addSubview:view];
     UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 90, 90)];
     image.backgroundColor=[UIColor whiteColor];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
@@ -43,8 +52,8 @@
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(image.frame)+10, 10, WIDTH-CGRectGetMaxX(image.frame)-20, 30)];
     label.text=self.product.post_title;
 //    label.adjustsFontSizeToFitWidth=YES;
+    label.font=[UIFont systemFontOfSize:14*Context.rectScaleX];
     [view addSubview:label];
-//    NSArray *titleArr = @[@"医德高尚",@"非常耐心",@"回复非常及时、满意",@"意见很有帮助",@"非常认真敬业",@"非常清楚"];
     NSArray *titleArr = self.product.tagsArray;
 
     UIView *btnview=[BtnView creatBtnWithArray:titleArr frame:CGRectMake(CGRectGetMaxX(image.frame)+10, CGRectGetMaxY(label.frame), WIDTH-CGRectGetMaxX(image.frame)-10, 40)];
@@ -59,7 +68,7 @@
     view1.backgroundColor=[UIColor whiteColor];
     view1.layer.borderWidth=1;
     view1.layer.borderColor=[UIColor grayColor].CGColor;
-    [self.view addSubview:view1];
+    [scrollView addSubview:view1];
     
     UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(20, 5, WIDTH-40, 20)];
     if (![UtilTools isBlankString:self.product.post_excerpt]) {
@@ -71,7 +80,7 @@
     
     UIView *yellowView=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(view1.frame)+10, WIDTH, 100)];
     yellowView.backgroundColor=kColorFromRGBHex(0xfffcf5);
-    [self.view addSubview:yellowView];
+    [scrollView addSubview:yellowView];
     
     UITextField *textField=[[UITextField alloc]initWithFrame:CGRectMake(margen, 20, WIDTH/2-margen*2, margen)];
     textField.delegate=self;
@@ -90,7 +99,6 @@
     }
     
   
-    DLog(@"%@",maxString);
     textField.text=maxString;
     edu=[maxString intValue];
     UILabel *unitLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(textField.frame)-30, 0, 30, 20)];
@@ -139,7 +147,7 @@
     
     UIView *view4=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(yellowView.frame), WIDTH, 100)];
     view4.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:view4];
+    [scrollView addSubview:view4];
     for (int i=0; i<3; i++) {
         UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/3*i, 30, WIDTH/3, 20)];
         label.textAlignment=NSTextAlignmentCenter;
@@ -186,7 +194,7 @@
     view5.layer.borderWidth=1;
     view5.layer.borderColor=[UIColor grayColor].CGColor;
     view5.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:view5];
+    [scrollView addSubview:view5];
     
     UILabel *label5=[[UILabel alloc]initWithFrame:CGRectMake(0, 5, WIDTH, 30)];
     label5.text=[self.product.fv_unit isEqualToString:@"1"]?@"按日计息，随借随还":@"参考月利率";
@@ -196,7 +204,7 @@
     
     UIView *view6=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(view5.frame)+20, WIDTH, HEIGHT-CGRectGetMaxY(view5.frame)-20)];
     view6.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:view6];
+    [scrollView addSubview:view6];
     UILabel *label6=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, WIDTH-20, 30)];
     label6.textAlignment=NSTextAlignmentCenter;
     label6.text=@"申请条件";
@@ -222,9 +230,9 @@
     }
     // Do any additional setup after loading the view.
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [self.view endEditing:YES];
-  
 }
 -(void)click
 {
@@ -304,14 +312,12 @@
                 
             }else
             {
-                DLog(@"%@",textField.text);
                 edu=[textField.text intValue];
                 UILabel *label=[self.view viewWithTag:1001];
                 float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
 
                 label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
                 
-            DLog(@"%f",edu*[self.product.feilv floatValue]);
             }
                     
 
@@ -360,7 +366,6 @@
                 
 
             }
-            DLog(@"%@",textField.text);
 
         }
     }
