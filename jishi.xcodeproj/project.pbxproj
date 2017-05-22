@@ -138,7 +138,7 @@
 		840FE9931E6FF3900050C444 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuTableViewCell.h; sourceTree = "<group>"; };
 		840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuTableViewCell.m; sourceTree = "<group>"; };
-		841224251E6D480300048188 /* 曹操贷款王.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "曹操贷款王.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841224251E6D480300048188 /* 小胖钱包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "小胖钱包.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		841224291E6D480300048188 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8412242B1E6D480300048188 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8412242C1E6D480300048188 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 		841224261E6D480300048188 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841224251E6D480300048188 /* 曹操贷款王.app */,
+				841224251E6D480300048188 /* 小胖钱包.app */,
 				8412243E1E6D480300048188 /* jishiTests.xctest */,
 				841224491E6D480300048188 /* jishiUITests.xctest */,
 			);
@@ -628,7 +628,7 @@
 			);
 			name = jishi;
 			productName = jishi;
-			productReference = 841224251E6D480300048188 /* 曹操贷款王.app */;
+			productReference = 841224251E6D480300048188 /* 小胖钱包.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8412243D1E6D480300048188 /* jishiTests */ = {
@@ -1059,8 +1059,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
-				PRODUCT_NAME = "曹操贷款王";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
+				PRODUCT_NAME = "小胖钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1118,8 +1118,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
-				PRODUCT_NAME = "曹操贷款王";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
+				PRODUCT_NAME = "小胖钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1292,8 +1292,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.wolaidaikuanwang;
-				PRODUCT_NAME = "曹操贷款王";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
+				PRODUCT_NAME = "小胖钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
