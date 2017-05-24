@@ -237,15 +237,16 @@
 -(void)click
 {
     
-    if ([self.product.post_title isEqualToString:@"及时雨贷款"]) {
+    if ([self.product.post_title isEqualToString:@"现金巴士"]) {
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-        
+      
+
         NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                            Context.currentUser.username,@"mobile",
-                           @"500",@"amount",
-                           @"7",@"loandays",
+                           [NSString stringWithFormat:@"%d",edu],@"amount",
+                            [NSString stringWithFormat:@"%d",qixian],@"loandays",
                            nil];
         NSString *urlStr = [NSString stringWithFormat:@"http://app.jishiyu11.cn:81/api/cashbus/url"];
         [manager POST:urlStr parameters:dic progress:nil success:^(NSURLSessionDataTask *  task, id   responseObject) {

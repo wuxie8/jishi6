@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "841224241E6D480300048188"
-               BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
+               BuildableName = "&#x5c0f;&#x80d6;&#x94b1;&#x5305;.app"
                BlueprintName = "jishi"
                ReferencedContainer = "container:jishi.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "841224241E6D480300048188"
-            BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
+            BuildableName = "&#x5c0f;&#x80d6;&#x94b1;&#x5305;.app"
             BlueprintName = "jishi"
             ReferencedContainer = "container:jishi.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "841224241E6D480300048188"
-            BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
+            BuildableName = "&#x5c0f;&#x80d6;&#x94b1;&#x5305;.app"
             BlueprintName = "jishi"
             ReferencedContainer = "container:jishi.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "841224241E6D480300048188"
-            BuildableName = "&#x66f9;&#x64cd;&#x8d37;&#x6b3e;&#x738b;.app"
+            BuildableName = "&#x5c0f;&#x80d6;&#x94b1;&#x5305;.app"
             BlueprintName = "jishi"
             ReferencedContainer = "container:jishi.xcodeproj">
          </BuildableReference>

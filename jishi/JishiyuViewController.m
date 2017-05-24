@@ -69,7 +69,7 @@ tab.dataSource=self;
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];
-    NSArray *array=@[@"小僧-社保贷",@"小僧-公积金贷",@"小僧-保单贷",@"小僧-供房贷",@"小僧-税金贷",@"小僧-学信贷"];
+    NSArray *array=@[@"小胖-社保贷",@"小胖-公积金贷",@"小胖-保单贷",@"小胖-供房贷",@"小胖-税金贷",@"小胖-学信贷"];
 [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
     NSDictionary *dic=(NSDictionary *)responseObject;
     if ([dic[@"status"]boolValue]) {
@@ -85,6 +85,7 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+
 
         }
         
@@ -179,8 +180,8 @@ tab.dataSource=self;
             case 0:
             {
                 WebVC *vc = [[WebVC alloc] init];
-                [vc setNavTitle:@"融360"];
-                [vc loadFromURLStr:@"http://m.rong360.com/express?from=sem21&utm_source=union1&utm_medium=jsy"];
+                [vc setNavTitle:@"玖富万卡"];
+                [vc loadFromURLStr:@"https://test.doraemoney.com/wkCubeNew/#/register?proId=jsyb42629ea5ddbbb838b9658e0e233a941"];
                 vc.hidesBottomBarWhenPushed=YES;
                 [self.navigationController pushViewController:vc animated:NO];
                 
