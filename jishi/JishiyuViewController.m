@@ -85,6 +85,7 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
 
         }
@@ -180,8 +181,8 @@ tab.dataSource=self;
             case 0:
             {
                 WebVC *vc = [[WebVC alloc] init];
-                [vc setNavTitle:@"玖富万卡"];
-                [vc loadFromURLStr:@"https://test.doraemoney.com/wkCubeNew/#/register?proId=jsyb42629ea5ddbbb838b9658e0e233a941"];
+                [vc setNavTitle:@"融360"];
+                [vc loadFromURLStr:@"http://m.rong360.com/express?from=sem21&utm_source=union1&utm_medium=jsy"];
                 vc.hidesBottomBarWhenPushed=YES;
                 [self.navigationController pushViewController:vc animated:NO];
                 

@@ -129,10 +129,10 @@ static NSString *const footerId = @"footerId";
 // 和UITableView类似，UICollectionView也可设置段头段尾
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UICollectionReusableView *headerView;
     if([kind isEqualToString:UICollectionElementKindSectionHeader])
     {
-        UICollectionReusableView *headerView = [_collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerId forIndexPath:indexPath];
+       headerView = [_collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerId forIndexPath:indexPath];
         if(headerView == nil)
         {
             headerView = [[UICollectionReusableView alloc] init];
@@ -142,10 +142,10 @@ static NSString *const footerId = @"footerId";
         UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 100, 20)];
         lab.text=@"快速办卡";
         [headerView addSubview:lab];
-        return headerView;
+        
     }
         
-    return nil;
+   return headerView;
 }
 #pragma mark UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
