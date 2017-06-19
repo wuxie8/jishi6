@@ -17,6 +17,7 @@
     return UIRectEdgeNone;
 }
 #endif
+#pragma clang diagnostic ignored"-Wdeprecated"
 
 #ifdef DEBUG
 #define DLog( s, ... ) NSLog( @"%s <第%d行> %@",__FUNCTION__,  __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )

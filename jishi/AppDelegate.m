@@ -92,37 +92,7 @@
     }
 
    self.window.rootViewController = [UIViewController new];
-    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                       appcode,@"code",
-                       @"1.0.0",@"version",
-                      @"1",@"page",
-                       nil];
-    [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSDictionary *dic=(NSDictionary *)responseObject;
-        if ([dic[@"status"]boolValue]) {
-            
-          
-            if ([UtilTools isBlankString:dic[@"review"]]) {
-                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
-            }else
-            {
-                [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                self.window.rootViewController=[AppDelegate setTabBarController];
-                
-            });
-            
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-        
-    }];
-    
-
-    
+    self.window.rootViewController=[AppDelegate setTabBarController];
   
     // Override point for customization after application launch.
     return YES;

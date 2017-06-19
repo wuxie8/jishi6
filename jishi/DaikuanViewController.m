@@ -68,7 +68,6 @@
     self.title=@"小胖钱包";
     
      self.view.backgroundColor=[UIColor whiteColor];
-    
        // Do any additional setup after loading the view.
 }
 
@@ -126,7 +125,8 @@
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
       
-        
+        DLog(@"%@",error);
+
         
     }];
 
@@ -216,7 +216,7 @@
                        appcode,@"code",
                        @"1.0.0",@"version",
                        dic1,@"PAGINATION",
-                        @"1",@"career",
+                       self.business_career,@"career",
                       self.business_money,@"money",
                        self.business_time,@"time",
 
@@ -229,6 +229,8 @@
     [manager POST:[NSString stringWithFormat:@"%@%@",SERVERE,filter]  parameters:dic2 progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        DLog(@"%@",dic);
+
         if ([dic[@"status"]boolValue]) {
             NSArray *arr=dic[@"list"];
             for (int i=0; i<arr.count; i++) {
@@ -280,7 +282,8 @@
 
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        DLog(@"%@",error);
+
     }];
 }
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView

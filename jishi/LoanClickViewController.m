@@ -27,31 +27,27 @@
     self.title=@"极速微贷";
     
     [self loadData];
-   
+    
 }
 -(void)loadData
 {
     
-
-    
-    
-    
-        NSDictionary*dic1=@{@"page":@"1",
-                            @"count":@"6"};
-        NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
-                           appcode,@"code",
-                           @"1.0.0",@"version",
-                           dic1,@"PAGINATION",
-//                            @"1",@"career",
-//                          self.business_money,@"money",
-//                           self.business_time,@"time",
-                          self.location,@"type",
-                           nil];
+    NSDictionary*dic1=@{@"page":@"1",
+                        @"count":@"6"};
+    NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
+                        appcode,@"code",
+                        @"1.0.0",@"version",
+                        dic1,@"PAGINATION",
+                        //                            @"1",@"career",
+                        //                          self.business_money,@"money",
+                        //                           self.business_time,@"time",
+                        self.location,@"type",
+                        nil];
     
     NSArray *array=@[@"小胖-社保贷",@"小胖-公积金贷",@"小胖-保单贷",@"小胖-供房贷",@"小胖-税金贷",@"小胖-学信贷"];
     
     self.productArray=nil;
-  
+    
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.responseSerializer=[AFHTTPResponseSerializer   serializer];
     [manager POST:[NSString stringWithFormat:@"%@%@",SERVERE,filter]  parameters:dic2 progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -64,10 +60,10 @@
                 ProductModel *pro=[[ProductModel alloc]init];
                 
                 if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-                      pro.smeta=@"icon";
+                    pro.smeta=@"icon";
                     
-                                    int location=i%array.count;
-                                    pro.post_title=array[location];
+                    int location=i%array.count;
+                    pro.post_title=array[location];
                 }
                 else
                 {
@@ -77,10 +73,10 @@
                     NSDictionary *imagedic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                                              options:NSJSONReadingMutableContainers
                                                                                error:&err];
-                   pro.smeta=imagedic[@"thumb"];
-                      pro.post_title=diction[@"post_title"];
+                    pro.smeta=imagedic[@"thumb"];
+                    pro.post_title=diction[@"post_title"];
                 }
-
+                
                 pro.link=diction[@"link"];
                 pro.edufanwei=diction[@"edufanwei"];
                 pro.qixianfanwei=diction[@"qixianfanwei"];
@@ -111,7 +107,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
-   
+    
     
     
 }
@@ -152,13 +148,13 @@
     return loancell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
+{   ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
     LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
     load.hidesBottomBarWhenPushed=YES;
     
     load.product=pro;
     [self.navigationController pushViewController:load animated:YES];
-
+    
 }
 -(NSMutableArray *)productArray
 {
@@ -176,13 +172,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

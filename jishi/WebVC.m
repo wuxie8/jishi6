@@ -92,24 +92,24 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     //定义JS字符串
-    NSString *script = [NSString stringWithFormat: @"var script = document.createElement('script');"
-                        "script.type = 'text/javascript';"
-                        "script.text = \"function ResizeImages() { "
-                        "var myimg;"
-                        "var maxwidth=%f;" //屏幕宽度
-                        "for(i=0;i <document.images.length;i++){"
-                        "myimg = document.images[i];"
-                        "myimg.height = maxwidth / (myimg.width/myimg.height);"
-                        "myimg.width = maxwidth;"
-                        "}"
-                        "}\";"
-                        "document.getElementsByTagName('p')[0].appendChild(script);",WIDTH];
-    
-    //添加JS
-    [webView stringByEvaluatingJavaScriptFromString:script];
-    
-    //添加调用JS执行的语句
-    [webView stringByEvaluatingJavaScriptFromString:@"ResizeImages();"];
+//    NSString *script = [NSString stringWithFormat: @"var script = document.createElement('script');"
+//                        "script.type = 'text/javascript';"
+//                        "script.text = \"function ResizeImages() { "
+//                        "var myimg;"
+//                        "var maxwidth=%f;" //屏幕宽度
+//                        "for(i=0;i <document.images.length;i++){"
+//                        "myimg = document.images[i];"
+//                        "myimg.height = maxwidth / (myimg.width/myimg.height);"
+//                        "myimg.width = maxwidth;"
+//                        "}"
+//                        "}\";"
+//                        "document.getElementsByTagName('p')[0].appendChild(script);",WIDTH];
+//    
+//    //添加JS
+//    [webView stringByEvaluatingJavaScriptFromString:script];
+//    
+//    //添加调用JS执行的语句
+//    [webView stringByEvaluatingJavaScriptFromString:@"ResizeImages();"];
     
     [webView setScalesPageToFit:YES];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

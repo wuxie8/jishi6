@@ -110,7 +110,7 @@
 
     UITextField *textField1=[[UITextField alloc]initWithFrame:CGRectMake(WIDTH/2+margen, 20, WIDTH/2-margen*2, 30)];
     textField1.delegate=self;
-    textField.tag=501;
+    textField1.tag=501;
     NSString *maxString1;
     if ([self.product.qixianfanwei rangeOfString:@"-"].location == NSNotFound) {
         NSArray *arr=   [self.product.qixianfanwei   componentsSeparatedByString:@","];
@@ -121,13 +121,21 @@
         NSRange range1=[self.product.qixianfanwei rangeOfString:@"-"];
         maxString1=[self.product.qixianfanwei substringFromIndex:(range1.location+1)];
     }
-
+    maxString1=[maxString1 substringToIndex:maxString1.length-1];
     textField1.text=maxString1;
     qixian=[maxString1 intValue];
+    if ([self.product.post_title isEqualToString:@"平安i贷"]) {
+        qixian=20;
+        textField1.text=@"20";
+
+    }
     textField1.borderStyle = UITextBorderStyleRoundedRect;
     textField1.keyboardType = UIKeyboardTypeNumberPad;
     UILabel *unitLabel1=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(textField1.frame)-30, 0, 30, 20)];
     unitLabel1.text=[self.product.fv_unit isEqualToString:@"1"]?@"天":@"月";
+    if ([self.product.post_title isEqualToString:@"平安i贷"]) {
+        unitLabel1.text=@"月";
+    }
     unitLabel1.textColor=[UIColor grayColor];
     [textField1 setRightView:unitLabel1];
     [textField1 setRightViewMode:UITextFieldViewModeAlways];
@@ -138,10 +146,10 @@
     label3.text=[NSString stringWithFormat:@"额度范围：%@元",self.product.edufanwei];
     label3.adjustsFontSizeToFitWidth=YES;
     [yellowView addSubview:label3];
-    
+
     
     UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(margen+WIDTH/2, CGRectGetMaxY(textField.frame)+20, WIDTH/2-margen*2, 30)];
-    label4.text=[NSString stringWithFormat:@"期限范围：%@%@",self.product.qixianfanwei,[self.product.fv_unit isEqualToString:@"1"]?@"天":@"月"];
+    label4.text=[NSString stringWithFormat:@"期限范围：%@",self.product.qixianfanwei];
     label4.adjustsFontSizeToFitWidth=YES;
     [yellowView addSubview:label4];
     
@@ -173,9 +181,25 @@
                 break;
             case 1:
             {
-                float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
                 
-                label.text=[NSString stringWithFormat:@"%d",(int)feilv];
+                if([self.product.feilv containsString:@"-"])
+                {
+                    NSArray *array = [self.product.feilv componentsSeparatedByString:@"-"]; //从字符A中分隔成2个元素的数组
+
+                    float feilv1=edu/qixian+edu*[[array firstObject] floatValue]/100;
+                    
+                    float feilv2=edu/qixian+edu*[[array lastObject] floatValue]/100;
+
+                    label.text=[NSString stringWithFormat:@"%d-%d",(int)feilv1,(int)feilv2];
+                }
+                else{
+                    
+                    float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
+                    
+                    label.text=[NSString stringWithFormat:@"%d",(int)feilv];
+                }
+                
+                
                 label1.text=[self.product.fv_unit isEqualToString:@"1"]?@"每日还款":@"每月还款";
 
             }
@@ -277,12 +301,21 @@
 
   
 }
-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    
+    if ([self.product.post_title isEqualToString:@"平安i贷"]&&textField.tag==501) {
+       
+        return NO;
+        
+    }
+    return YES;
+}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     
-    if (textField.tag==501) {
+    if (textField.tag==500) {
         //字条串是否包含有某字符串
         if ([self.product.edufanwei rangeOfString:@"-"].location == NSNotFound) {
             NSArray *arr=   [self.product.edufanwei   componentsSeparatedByString:@","];
@@ -294,9 +327,12 @@
             {
                 edu=[textField.text intValue];
                 UILabel *label=[self.view viewWithTag:1001];
-                float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
-                
-                label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                if (qixian) {
+                    float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
+                    
+                    label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                }
+        
 
             }
                   } else {
@@ -315,9 +351,12 @@
             {
                 edu=[textField.text intValue];
                 UILabel *label=[self.view viewWithTag:1001];
-                float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
-
-                label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                if (qixian) {
+                    float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
+                    
+                    label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                }
+           
                 
             }
                     
@@ -331,7 +370,7 @@
             
             NSArray *arr=   [self.product.edufanwei   componentsSeparatedByString:@","];
             if (![arr containsObject:textField.text]) {
-                [MessageAlertView  showLoading:@"请输入正确期限"];
+                [MessageAlertView  showErrorMessage:@"请输入正确期限"];
                 textField.text=[NSString stringWithFormat:@"%d",qixian];
 
             }
@@ -339,9 +378,12 @@
             {
                 qixian=[textField.text intValue];
                 UILabel *label=[self.view viewWithTag:1001];
-                float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
-                
-                label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                if (qixian) {
+                    float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
+                    
+                    label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                }
+              
                 
             }
 
@@ -361,9 +403,12 @@
             {
                 qixian=[textField.text intValue];
                 UILabel *label=[self.view viewWithTag:1001];
-                float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
-                
-                label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                if (qixian) {
+                    float feilv=edu/qixian+edu*[self.product.feilv floatValue]/100;
+                    
+                    label.text=[NSString stringWithFormat:@"%d",(int)feilv ];
+                }
+    
                 
 
             }

@@ -48,6 +48,7 @@
     self.view.backgroundColor=[UIColor grayColor];
     
     [self getList];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
   tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
 tab.delegate=self;
@@ -409,7 +410,7 @@ tab.dataSource=self;
 -(void)butClick:(UIButton *)sender
 {
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
         switch (sender.tag) {
             case 0:
             {
@@ -446,13 +447,13 @@ tab.dataSource=self;
             default:
                 break;
         }
-    }
-    else
-    {
-        LoginViewController *login=[[LoginViewController alloc]init];
-        login.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:login animated:YES];
-    }
+//    }
+//    else
+//    {
+//        LoginViewController *login=[[LoginViewController alloc]init];
+//        login.hidesBottomBarWhenPushed=YES;
+//        [self.navigationController pushViewController:login animated:YES];
+//    }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
