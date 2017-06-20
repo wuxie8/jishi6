@@ -48,7 +48,6 @@
     self.view.backgroundColor=[UIColor grayColor];
     
     [self getList];
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
   tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-40)];
 tab.delegate=self;
@@ -86,7 +85,6 @@ tab.dataSource=self;
         }else
         {
             [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"review"];
 
 
         }

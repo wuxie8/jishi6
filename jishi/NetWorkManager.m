@@ -158,7 +158,7 @@
     [MessageAlertView showLoading:@""];
     
     NSString *url = [NSString stringWithFormat:@"%@%@",SERVERE, name];
-    
+
     return [self GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -192,7 +192,8 @@
 //    [self configNetManager:name];
     
     NSString *url = [NSString stringWithFormat:@"%@%@",SERVERE, name];
-    
+    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", @"text/json", nil];
+
     return [self POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
             DLog(@"参数%@\n%@返回结果：%@",parameters,url,responseObject);

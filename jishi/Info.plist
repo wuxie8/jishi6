@@ -29,7 +29,7 @@
 			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1106038523</string>
+				<string>tencent1106221516</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,7 +39,7 @@
 			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ41eccefb</string>
+				<string>QQ41ef99cc</string>
 			</array>
 		</dict>
 		<dict>
@@ -52,7 +52,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>10</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqOpensdkSSoLogin</string>

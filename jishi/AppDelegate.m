@@ -49,28 +49,8 @@
 
 
     [self configUSharePlatforms];
-   if (![[NSUserDefaults standardUserDefaults] boolForKey:@"FirstLG"])
-   {
-       NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-
-       NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-                          adId,@"idfa",
-                         [self getMacAddress],@"mac",
-                          @"QD0039",@"channel",
-                          nil];
-       [[NetWorkManager sharedManager]postJSON:@"&m=toutiao&a=activate" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-           NSDictionary *dic=(NSDictionary *)responseObject;
-           if ([dic[@"status"]boolValue]) {
-               
-               
-           }
-       } failure:^(NSURLSessionDataTask *task, NSError *error) {
-           
-           
-       }];
-
-   }
-       [AppDelegate requestTrackWithAppkey:umeng_appkey];
+  
+    [AppDelegate requestTrackWithAppkey:umeng_appkey];
   
     
 
@@ -93,6 +73,10 @@
 
    self.window.rootViewController = [UIViewController new];
     self.window.rootViewController=[AppDelegate setTabBarController];
+
+
+
+    
   
     // Override point for customization after application launch.
     return YES;
@@ -150,10 +134,10 @@
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106038523"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106221516"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
     
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106038523"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106221516"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
 //http://www.jishiyu007.com
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
@@ -161,7 +145,7 @@
 //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
     /* 设置微信的appKey和appSecret */
     /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxed7adf75b1686f8d" appSecret:@"db613640a7efb0c0b93241e5ef3f11ec" redirectURL:@"http://mobile.umeng.com/social"];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxed7adf75b1686f8d" appSecret:@"db613640a7efb0c0b93241e5ef3f11ec" redirectURL:@"http://mobile.umeng.com/social"];
 }
 //#define __IPHONE_10_0    100000
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
@@ -222,7 +206,6 @@
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
        
-//        tabBarController.viewControllers=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[nav2C,nav3C]:@[nav1C,nav2C,nav3C];
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
 //        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];

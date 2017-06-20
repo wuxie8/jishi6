@@ -73,7 +73,7 @@
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"review"])
     {
         //设置网页地址
-     shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/?id=1222224138";
+     shareObject.webpageUrl =@"http://app.jishiyu11.cn:88/download/?id=1239285391";
     }
         //分享消息对象设置分享内容对象
         messageObject.shareObject = shareObject;
@@ -82,6 +82,7 @@
         [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
             if (error) {
             }else{
+                [MessageAlertView showSuccessMessage:@"分享成功"];
             }
         }];
     }
