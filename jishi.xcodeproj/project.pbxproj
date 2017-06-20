@@ -1013,6 +1013,7 @@
 			baseConfigurationReference = 323BDEF1C42090E0283F4D58 /* Pods-jishi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiaowa Tian (33CQCCKDU6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NUH99A3LBD;
@@ -1072,6 +1073,7 @@
 			baseConfigurationReference = 135956D68EBA3E15E510604C /* Pods-jishi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZheJiang HaiTian Network Technology Co., Ltd (NUH99A3LBD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NUH99A3LBD;
@@ -1246,6 +1248,7 @@
 			baseConfigurationReference = FF093DB6F47C31EC084AE4D6 /* Pods-jishi.ad hoc distribution.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZheJiang HaiTian Network Technology Co., Ltd (NUH99A3LBD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NUH99A3LBD;
