@@ -1060,8 +1060,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
-				PRODUCT_NAME = "小胖钱包";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
+				PRODUCT_NAME = "帮帮钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1120,8 +1120,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
-				PRODUCT_NAME = "小胖钱包";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
+				PRODUCT_NAME = "帮帮钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1295,8 +1295,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
-				PRODUCT_NAME = "小胖钱包";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
+				PRODUCT_NAME = "帮帮钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

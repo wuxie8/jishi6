@@ -5,19 +5,19 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>小胖钱包</string>
+	<string>帮帮钱包</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.haitian.bangbangqianbao</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>小胖钱包</string>
+	<string>帮帮钱包</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.3</string>
+	<string>1.0.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -52,7 +52,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>12</string>
+	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqOpensdkSSoLogin</string>
@@ -96,6 +96,8 @@
 	<string>相机权限</string>
 	<key>NSContactsUsageDescription</key>
 	<string>访问你的通讯录</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>获取位置权限</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>相册权限</string>
 	<key>UILaunchStoryboardName</key>

@@ -40,7 +40,7 @@
  
  
 
-    self.title=@"小胖钱包";
+    self.title=@"帮帮钱包";
 
     
      page=1;
@@ -69,7 +69,7 @@ tab.dataSource=self;
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];
-    NSArray *array=@[@"小胖-社保贷",@"小胖-公积金贷",@"小胖-保单贷",@"小胖-供房贷",@"小胖-税金贷",@"小胖-学信贷"];
+    NSArray *array=@[@"帮帮-社保贷",@"帮帮-公积金贷",@"帮帮-保单贷",@"帮帮-供房贷",@"帮帮-税金贷",@"帮帮-学信贷"];
 [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
     NSDictionary *dic=(NSDictionary *)responseObject;
     if ([dic[@"status"]boolValue]) {
@@ -426,17 +426,17 @@ tab.dataSource=self;
                 break;
             case 2:
             {
-                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
                     WebVC *vc = [[WebVC alloc] init];
                     [vc setNavTitle:@"信用卡查询"];
                     [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
                     vc.hidesBottomBarWhenPushed=YES;
                     [self.navigationController pushViewController:vc animated:NO];
-                }
-                else
-                {
-                    [MessageAlertView showErrorMessage:@"服务器维护中"];
-                }
+//                }
+//                else
+//                {
+//                    [MessageAlertView showErrorMessage:@"服务器维护中"];
+//                }
                 
             
               
