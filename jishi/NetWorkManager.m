@@ -220,12 +220,14 @@
     
     [self configNetManager:name];
     
-    NSString *url = [NSString stringWithFormat:@"%@%@",SERVERE, name];
-    
+    NSString *url = [NSString stringWithFormat:@"%@", name];
+//    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", @"text/json", nil];
+
     return [self GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         int IsSuccess = [[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"IsSuccess"]] intValue];
-        
+        success(task, responseObject);
+
         if (IsSuccess == 1) { //成功
             success(task, responseObject);
         } else {

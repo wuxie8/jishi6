@@ -138,7 +138,7 @@
 		840FE9931E6FF3900050C444 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuTableViewCell.h; sourceTree = "<group>"; };
 		840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuTableViewCell.m; sourceTree = "<group>"; };
-		841224251E6D480300048188 /* 小胖钱包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "小胖钱包.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841224251E6D480300048188 /* 小胖钱包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "小胖钱包.app"; path = "豆钱花.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		841224291E6D480300048188 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8412242B1E6D480300048188 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8412242C1E6D480300048188 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1060,8 +1060,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
-				PRODUCT_NAME = "帮帮钱包";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
+				PRODUCT_NAME = "豆钱花";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1120,8 +1120,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
-				PRODUCT_NAME = "帮帮钱包";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
+				PRODUCT_NAME = "豆钱花";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1295,8 +1295,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
-				PRODUCT_NAME = "帮帮钱包";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.xiaopangqianbao;
+				PRODUCT_NAME = "豆钱花";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

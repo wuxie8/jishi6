@@ -191,8 +191,8 @@
         MineViewController *mine=[[MineViewController alloc]init];
         //步骤2：将视图控制器绑定到导航控制器上
      BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
-     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
-        BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:fastVC];
+  __unused   BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
+ __unused       BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:fastVC];
 
         BaseNC *nav3C=[[BaseNC alloc]initWithRootViewController:mine];
      
@@ -206,15 +206,19 @@
         [tabBarController.tabBar insertSubview:barBgView atIndex:0];
         tabBarController.tabBar.opaque = YES;
        
-        tabBarController.viewControllers=@[nav1C,nav2C,nav4C,nav3C];
+        tabBarController.viewControllers=@[nav1C,nav3C];
         tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
 //        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
 //          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
 //         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
 //                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-         NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
-         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
-               NSArray *titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
+//         NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
+        NSArray *images=@[@"jishiyu",@"Mineing"];
+        NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
+        NSArray *titles = @[@"豆钱花",@"个人中心"];
+
+//         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
+//               NSArray *titles = @[@"豆钱花",@"贷款超市",@"信用卡",@"个人中心"];
 //        NSArray *images=@[@"lending",@"Mineing"];
 //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
        

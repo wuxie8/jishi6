@@ -40,7 +40,7 @@
  
  
 
-    self.title=@"帮帮钱包";
+    self.title=@"豆钱花";
 
     
      page=1;
@@ -69,7 +69,7 @@ tab.dataSource=self;
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];
-    NSArray *array=@[@"帮帮-社保贷",@"帮帮-公积金贷",@"帮帮-保单贷",@"帮帮-供房贷",@"帮帮-税金贷",@"帮帮-学信贷"];
+    NSArray *array=@[@"豆钱花-社保贷",@"豆钱花-公积金贷",@"豆钱花-保单贷",@"豆钱花-供房贷",@"豆钱花-税金贷",@"豆钱花-学信贷"];
 [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
     NSDictionary *dic=(NSDictionary *)responseObject;
     if ([dic[@"status"]boolValue]) {
@@ -174,11 +174,27 @@ tab.dataSource=self;
 }
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
+    
+    [[NetWorkManager sharedManager]getNoTipJSON:@"https://cubeapitest.9fbank.com/cubeLogin/unionLoginJSY?mobileEncod=SbKUYkD5RvrPHaXhesXI8BI6FhkbAxrSBVFQvVL8hGK0GjvHZ1mp4KTBB1AbYkEH4BJqc9LDXcMRNnw0ZwbPNUXvupLxOTdy3nMrjLLuTdhB3/IYoHKYnDANX2AKrLo/mNv0GbxJBFodTxOdawM1ik1FTa5UQ2Wma5CMjV7KnsE=&proIdEncod=AxQp8b0hC+pET7fXJJ4XRhv8EL3bXS4UqWKLis0YZ/fR5EOQeidLcYVvfl0cEcSgUs0lxTaLSZy8HDLUY9q7arcGIXdHB0MLlayah9+s/YtG+UxqPDWxgYPso2tzH0fyNKZ97lT6PYJDSjAOOJ+iAkU+IM7CXv0e1rV37+ah6xM=" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSString *url=[responseObject[@"data"] objectForKey:@"linkUrl"];
+        WebVC *vc = [[WebVC alloc] init];
+        [vc setNavTitle:@"叮当"];
+        [vc loadFromURLStr:url];
+        vc.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:vc animated:NO];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        DLog(@"%@",error);
+        
+    }];
+
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
   
         switch (subIndex) {
             case 0:
             {
+                
+             
+                
                 WebVC *vc = [[WebVC alloc] init];
                 [vc setNavTitle:@"融360"];
                 [vc loadFromURLStr:@"http://m.rong360.com/express?from=sem21&utm_source=union1&utm_medium=jsy"];

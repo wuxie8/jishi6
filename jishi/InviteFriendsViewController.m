@@ -155,7 +155,7 @@
                       _phoneTf.text,@"mobile",
                       _passTf.text,@"password",
                       _codeTf.text,@"code",
-                       @"QD0086",@"no",
+                       @"QD0087",@"no",
 
                        nil];
     [[NetWorkManager sharedManager]postJSON:doregister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
