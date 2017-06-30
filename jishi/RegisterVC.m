@@ -17,6 +17,7 @@
 @implementation RegisterVC
 {
     UIButton *but;
+    NSArray *arr;
 }
 #ifdef __IPHONE_7_0
 - (UIRectEdge)edgesForExtendedLayout
@@ -31,8 +32,10 @@
     self.view.backgroundColor=AppPageColor;
     
     
-    NSArray *arr=@[@"手机号",@"密码",@"确认",@"验证码"];
-    NSArray *arr1=@[@"请输入手机号",@"组合字母、数字",@"请确认密码",@"请输入验证码"];
+//    NSArray *arr=@[@"手机号",@"密码",@"确认",@"验证码"];
+//    NSArray *arr1=@[@"请输入手机号",@"组合字母、数字",@"请确认密码",@"请输入验证码"];
+   arr=@[@"手机号",@"验证码"];
+    NSArray *arr1=@[@"请输入手机号",@"请输入验证码"];
     for (int i=0; i<arr.count; i++) {
         UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 20+i*ViewHeight, WIDTH, ViewHeight)];
         view.backgroundColor=[UIColor whiteColor];
@@ -47,15 +50,15 @@
         text.tag=1000+i;
         switch (i) {
             case 0:
-            case 3:
+            case 1:
                 text.keyboardType=UIKeyboardTypeNumberPad;
                
                 break;
-               case 1:
-                case 2:
-                text.keyboardType=UIKeyboardTypeDefault;
-                text.secureTextEntry=YES;
-                break;
+//               case 1:
+//                case 2:
+//                text.keyboardType=UIKeyboardTypeDefault;
+//                text.secureTextEntry=YES;
+//                break;
                 
             default:
                 break;
@@ -103,25 +106,25 @@
 {
  
     NSMutableDictionary *registerDic=[NSMutableDictionary dictionary];
-    for (int i=0; i<4; i++) {
+    for (int i=0; i<arr.count; i++) {
         UIView *view1=[self.view viewWithTag:100+i];
         
         UITextField *text1=(UITextField *)[view1 viewWithTag:1000+i];
              [registerDic setObject:text1.text forKey:[NSString stringWithFormat:@"%d",i]];
 
     }
-    if (![registerDic[@"1"] isEqualToString:registerDic[@"2"]]) {
-        [MessageAlertView showErrorMessage:@"两次密码不一致"];
-        return;
-    }
+//    if (![registerDic[@"1"] isEqualToString:registerDic[@"2"]]) {
+//        [MessageAlertView showErrorMessage:@"两次密码不一致"];
+//        return;
+//    }
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                       registerDic[@"0"],@"mobile",
-                      registerDic[@"1"],@"password",
-                       registerDic[@"3"],@"code",
+//                      registerDic[@"1"],@"password",
+                       registerDic[@"1"],@"code",
                        @"QD0087",@"no",
 
                        nil];
-    [[NetWorkManager sharedManager]postJSON:doregister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[NetWorkManager sharedManager]postJSON:bycode parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
             [MessageAlertView showSuccessMessage:@"注册成功"];

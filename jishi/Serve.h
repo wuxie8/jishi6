@@ -29,6 +29,10 @@
 #define verificationCoderegister  @"&m=register&a=send_code"
 //注册
 #define doregister  @"&m=register&a=doregister"
+//无密码注册
+#define bycode  @"&m=register&a=bycode"
+
+
 //登陆
 #define dologin  @"&m=login&a=dologin"
 //重置密码

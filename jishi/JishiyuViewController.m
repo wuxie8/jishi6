@@ -53,7 +53,7 @@
 tab.delegate=self;
 tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
-    tab.tableHeaderView=[self creatUI];
+//    tab.tableHeaderView=[self creatUI];
     
 [self.view addSubview:tab];
 // Do any additional setup after loading the view.
@@ -175,18 +175,7 @@ tab.dataSource=self;
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
-    [[NetWorkManager sharedManager]getNoTipJSON:@"https://cubeapitest.9fbank.com/cubeLogin/unionLoginJSY?mobileEncod=SbKUYkD5RvrPHaXhesXI8BI6FhkbAxrSBVFQvVL8hGK0GjvHZ1mp4KTBB1AbYkEH4BJqc9LDXcMRNnw0ZwbPNUXvupLxOTdy3nMrjLLuTdhB3/IYoHKYnDANX2AKrLo/mNv0GbxJBFodTxOdawM1ik1FTa5UQ2Wma5CMjV7KnsE=&proIdEncod=AxQp8b0hC+pET7fXJJ4XRhv8EL3bXS4UqWKLis0YZ/fR5EOQeidLcYVvfl0cEcSgUs0lxTaLSZy8HDLUY9q7arcGIXdHB0MLlayah9+s/YtG+UxqPDWxgYPso2tzH0fyNKZ97lT6PYJDSjAOOJ+iAkU+IM7CXv0e1rV37+ah6xM=" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSString *url=[responseObject[@"data"] objectForKey:@"linkUrl"];
-        WebVC *vc = [[WebVC alloc] init];
-        [vc setNavTitle:@"叮当"];
-        [vc loadFromURLStr:url];
-        vc.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:vc animated:NO];
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        DLog(@"%@",error);
-        
-    }];
-
+   
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
   
         switch (subIndex) {
@@ -424,7 +413,7 @@ tab.dataSource=self;
 -(void)butClick:(UIButton *)sender
 {
     
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
         switch (sender.tag) {
             case 0:
             {
@@ -442,17 +431,17 @@ tab.dataSource=self;
                 break;
             case 2:
             {
-//                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
                     WebVC *vc = [[WebVC alloc] init];
                     [vc setNavTitle:@"信用卡查询"];
                     [vc loadFromURLStr:@"http://www.kuaicha.info/mobile/credit/credit.html"];
                     vc.hidesBottomBarWhenPushed=YES;
                     [self.navigationController pushViewController:vc animated:NO];
-//                }
-//                else
-//                {
-//                    [MessageAlertView showErrorMessage:@"服务器维护中"];
-//                }
+                }
+                else
+                {
+                    [MessageAlertView showErrorMessage:@"服务器维护中"];
+                }
                 
             
               
@@ -461,13 +450,13 @@ tab.dataSource=self;
             default:
                 break;
         }
-//    }
-//    else
-//    {
-//        LoginViewController *login=[[LoginViewController alloc]init];
-//        login.hidesBottomBarWhenPushed=YES;
-//        [self.navigationController pushViewController:login animated:YES];
-//    }
+    }
+    else
+    {
+        LoginViewController *login=[[LoginViewController alloc]init];
+        login.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:login animated:YES];
+    }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
