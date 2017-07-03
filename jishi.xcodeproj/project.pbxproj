@@ -362,8 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				84C06F351E8FA6AE00038420 /* Model */,
-				84C06F361E8FA6BD00038420 /* Controller */,
 				84C06F371E8FA6F800038420 /* View */,
+				84C06F361E8FA6BD00038420 /* Controller */,
 			);
 			name = JishiyuHomepage;
 			sourceTree = "<group>";

@@ -60,7 +60,7 @@
 {
 
     LoanClickViewController *loanclick=[[LoanClickViewController alloc]init];
-    loanclick.location=[NSString stringWithFormat:@"%ld",(long)indexPath.row+1];
+    loanclick.location=[NSString stringWithFormat:@"%ld",(long)indexPath.row+19];
     [self.navigationController pushViewController:loanclick animated:YES];
 }
 - (void)didReceiveMemoryWarning {

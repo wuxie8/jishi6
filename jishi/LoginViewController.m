@@ -60,6 +60,9 @@
      }];
     [landing setBackblock:^()
      {
+         if (self.tabBarController.selectedIndex==0) {
+             [self.navigationController popViewControllerAnimated:NO];
+         }
          self.tabBarController.selectedIndex = 0;
      }];
     
@@ -78,6 +81,9 @@
     [password setBackblock:^()
      {
        
+         if (self.tabBarController.selectedIndex==0) {
+             [self.navigationController popViewControllerAnimated:NO];
+         }
          self.tabBarController.selectedIndex = 0;
      }];
     

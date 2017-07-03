@@ -54,6 +54,26 @@
     [self.upSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
     [self.upSwipe setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:self.upSwipe];
+    self.navigationController.navigationBar.barTintColor=AppButtonbackgroundColor;
+    self.navigationController.navigationBar.tintColor=AppButtonbackgroundColor;
+    
+    self.upSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(backAction)];
+    [self.upSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
+    [self.upSwipe setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:self.upSwipe];
+    
+    self.navigationController.navigationBar.alpha = 1.0;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = AppButtonbackgroundColor;
+    
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes =textAttrs;
+    
+    UINavigationBar *appearance = [UINavigationBar appearance];
+    
+    [appearance setBarTintColor:AppButtonbackgroundColor];
 }
 
 - (void)backAction

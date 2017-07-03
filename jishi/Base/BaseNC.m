@@ -25,7 +25,8 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor blackColor], NSForegroundColorAttributeName,
       [UIFont fontWithName:@"微软雅黑" size:24], NSFontAttributeName, nil]];
-    
+    [self.navigationController.navigationBar setBarTintColor:AppButtonbackgroundColor];
+
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
