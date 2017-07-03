@@ -32,7 +32,7 @@
     [self.contentView addSubview:_image];
     
     _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame)+20, 20, 100, 20)];
-    _titleLabel.font=[UIFont systemFontOfSize:14];
+    self.titleLabel.adjustsFontSizeToFitWidth=YES;
     [self.contentView addSubview:_titleLabel];
     
     UIImageView *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(WIDTH-40, 20, 20, 20)];

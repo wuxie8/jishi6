@@ -34,34 +34,34 @@
     }
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
         [self.navigationController popViewControllerAnimated:NO];
-      
+        
     }
     
-   
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title=@"登录" ;
     
-
+    
     LandingDynamicViewControllerViewController *landing=[[ LandingDynamicViewControllerViewController alloc]init];
     [landing setRegisterblock:^()
-    {
-        RegisterVC *registerVC=[[RegisterVC alloc]init];
-        [self.navigationController pushViewController:registerVC animated:YES];
-    }];
+     {
+         RegisterVC *registerVC=[[RegisterVC alloc]init];
+         [self.navigationController pushViewController:registerVC animated:YES];
+     }];
     
     [landing setForgotblock:^()
-                             {
-                             
-                                 ForgotPasswordVC *forgot=[[ForgotPasswordVC alloc]init];
-                                 [self.navigationController pushViewController:forgot animated:YES];
-                             }];
+     {
+         
+         ForgotPasswordVC *forgot=[[ForgotPasswordVC alloc]init];
+         [self.navigationController pushViewController:forgot animated:YES];
+     }];
     [landing setBackblock:^()
-    {
-    [self.navigationController popViewControllerAnimated:YES];
-    }];
+     {
+         self.tabBarController.selectedIndex = 0;
+     }];
     
     PasswordLandingViewViewController *password=[[PasswordLandingViewViewController alloc]init];
     [password setRegisterblock:^()
@@ -76,12 +76,13 @@
          [self.navigationController pushViewController:forgot animated:YES];
      }];
     [password setBackblock:^()
-    {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+     {
+       
+         self.tabBarController.selectedIndex = 0;
+     }];
     
     NSArray *controllersArr = @[landing, password];
-
+    
     OptionBarController *navTabBarController = [[OptionBarController alloc] initWithSubViewControllers:controllersArr andParentViewController:self andshowSeperateLine:NO];
     navTabBarController.linecolor=AppBackColor;
     
@@ -90,7 +91,7 @@
     tapGestureRecognizer.cancelsTouchesInView = NO;
     //将触摸事件添加到当前view
     [self.view addGestureRecognizer:tapGestureRecognizer];
-       // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
 }
 
 
@@ -103,13 +104,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -24,15 +24,14 @@
         self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(frame.size.width/2-40, frame.size.height/2, 80, frame.size.height/4-10)];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor blackColor];
-    
-//        self.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.titleLabel.adjustsFontSizeToFitWidth=YES;
         [self.contentView addSubview:self.titleLabel];
         
         
         self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, frame.size.height/4*3-10, frame.size.width-20*2, frame.size.height/4)];
         self.detailLabel.textAlignment = NSTextAlignmentCenter;
-        self.detailLabel.font=[UIFont systemFontOfSize:8];
-       
+//        self.detailLabel.font=[UIFont systemFontOfSize:8];
+        self.detailLabel.adjustsFontSizeToFitWidth=YES;
         self.detailLabel.textColor = [UIColor  blackColor];
         
         [self.contentView addSubview:self.detailLabel];

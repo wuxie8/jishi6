@@ -93,20 +93,12 @@ static NSString *const footerId = @"footerId";
                 [imageArray addObject:diction[@"icon"]];
                 [titleArray addObject:diction[@"name"]];
                 [describeArray addObject:diction[@"describe"]];
-
+                [linkArray addObject:diction[@"link"]];
             }
             
         }
         [_collectionView reloadData];
-//        if ([dic[@"status"]boolValue]) {
-//            if ([UtilTools isBlankString:dic[@"review"]]) {
-//                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
-//            }else
-//            {
-//                [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-//                
-//            }
-//        }
+
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         
@@ -171,6 +163,7 @@ static NSString *const footerId = @"footerId";
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
 
     
     WebVC *vc = [[WebVC alloc] init];
@@ -178,6 +171,7 @@ static NSString *const footerId = @"footerId";
     [vc loadFromURLStr:linkArray[indexPath.row]];
     vc.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:vc animated:NO];
+    }
 }
 // 和UITableView类似，UICollectionView也可设置段头段尾
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath

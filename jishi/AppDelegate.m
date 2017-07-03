@@ -36,24 +36,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
-      [self.window makeKeyAndVisible];
+    
+    [self.window makeKeyAndVisible];
     
     UMConfigInstance.appKey=umeng_appkey;
-     UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     /* 打开调试日志 */
     [[UMSocialManager defaultManager] openLog:YES];
     
     [[UMSocialManager defaultManager] setUmSocialAppkey:umeng_appkey];
-
-
-    [self configUSharePlatforms];
-  
-    [AppDelegate requestTrackWithAppkey:umeng_appkey];
-  
     
-
+    
+    [self configUSharePlatforms];
+    
+    [AppDelegate requestTrackWithAppkey:umeng_appkey];
+    
+    
+    
     self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
         //读取用户信息
@@ -70,14 +70,14 @@
             
         }];
     }
-
-   self.window.rootViewController = [UIViewController new];
-    self.window.rootViewController=[AppDelegate setTabBarController];
-
-
-
     
-  
+    self.window.rootViewController = [UIViewController new];
+    self.window.rootViewController=[AppDelegate setTabBarController];
+    
+    
+    
+    
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -121,8 +121,8 @@
     ptr = (unsigned char *)LLADDR(sdl);
     
     // MAC地址带冒号
-     NSString *outstring = [NSString stringWithFormat:@"%02x:%02x:%02x:%02x:%02x:%02x", *ptr, *(ptr+1), *(ptr+2),
-     *(ptr+3), *(ptr+4), *(ptr+5)];
+    NSString *outstring = [NSString stringWithFormat:@"%02x:%02x:%02x:%02x:%02x:%02x", *ptr, *(ptr+1), *(ptr+2),
+                           *(ptr+3), *(ptr+4), *(ptr+5)];
     
     
     free(buf);
@@ -138,14 +138,14 @@
     
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106221516"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
-//http://www.jishiyu007.com
+    //http://www.jishiyu007.com
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
     /* 设置微信的appKey和appSecret */
     /* 设置微信的appKey和appSecret */
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxed7adf75b1686f8d" appSecret:@"db613640a7efb0c0b93241e5ef3f11ec" redirectURL:@"http://mobile.umeng.com/social"];
+    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxed7adf75b1686f8d" appSecret:@"db613640a7efb0c0b93241e5ef3f11ec" redirectURL:@"http://mobile.umeng.com/social"];
 }
 //#define __IPHONE_10_0    100000
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
@@ -182,57 +182,57 @@
 
 
 +(UITabBarController *)setTabBarController
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLG"];
-
-        JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
-       DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
-        FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
-        MineViewController *mine=[[MineViewController alloc]init];
-        //步骤2：将视图控制器绑定到导航控制器上
-     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
-  __unused   BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
- __unused       BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:fastVC];
-
-        BaseNC *nav3C=[[BaseNC alloc]initWithRootViewController:mine];
-     
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLG"];
+    
+    JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
+    DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
+    FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
+    MineViewController *mine=[[MineViewController alloc]init];
+    //步骤2：将视图控制器绑定到导航控制器上
+    BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
+    BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
+    BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
+    
+    BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
+    
+    
+    
+    UITabBarController *tabBarController=[[UITabBarController alloc]init];
+    
+    //改变tabBar的背景颜色
+    UIView *barBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 49)];
+    barBgView.backgroundColor = [UIColor whiteColor];
+    [tabBarController.tabBar insertSubview:barBgView atIndex:0];
+    tabBarController.tabBar.opaque = YES;
+    
+    tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
+    tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
+    //        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
+    //          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
+    //         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
+    //                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
+             NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
+//    NSArray *images=@[@"jishiyu",@"Mineing"];
+//    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
+//    NSArray *titles = @[@"豆钱花",@"个人中心"];
+    
+             NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
+                   NSArray *titles = @[@"豆钱花",@"贷款超市",@"信用卡",@"个人中心"];
+    //        NSArray *images=@[@"lending",@"Mineing"];
+    //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
+    
+    //绑定TabBar数据源
+    for (int i = 0; i<tabBarController.tabBar.items.count; i++) {
+        UITabBarItem *item = (UITabBarItem *)tabBarController.tabBar.items[i];
+        item.title = titles[i];
+        item.image = [[UIImage imageNamed:[images objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        item.selectedImage = [[UIImage imageNamed:[selectedImages objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        
-        UITabBarController *tabBarController=[[UITabBarController alloc]init];
-        
-        //改变tabBar的背景颜色
-        UIView *barBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 49)];
-        barBgView.backgroundColor = [UIColor whiteColor];
-        [tabBarController.tabBar insertSubview:barBgView atIndex:0];
-        tabBarController.tabBar.opaque = YES;
-       
-        tabBarController.viewControllers=@[nav1C,nav3C];
-        tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
-//        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
-//          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
-//         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
-//                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-//         NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
-        NSArray *images=@[@"jishiyu",@"Mineing"];
-        NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-        NSArray *titles = @[@"豆钱花",@"个人中心"];
-
-//         NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
-//               NSArray *titles = @[@"豆钱花",@"贷款超市",@"信用卡",@"个人中心"];
-//        NSArray *images=@[@"lending",@"Mineing"];
-//         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
-       
-        //绑定TabBar数据源
-        for (int i = 0; i<tabBarController.tabBar.items.count; i++) {
-            UITabBarItem *item = (UITabBarItem *)tabBarController.tabBar.items[i];
-            item.title = titles[i];
-                    item.image = [[UIImage imageNamed:[images objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                    item.selectedImage = [[UIImage imageNamed:[selectedImages objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            
-            tabBarController.tabBar.tintColor = [UIColor blueColor];
-        }
-        return  tabBarController;
+        tabBarController.tabBar.tintColor = [UIColor blueColor];
     }
+    return  tabBarController;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -267,7 +267,7 @@
         NSString *network_operater = [[self carrierString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         // NSString *utdid = [UTDevice utdid];
-
+        
         size_t size;
         // Set 'oldp' parameter to NULL to get the size of the data
         // returned so we can allocate appropriate amount of space
