@@ -7,6 +7,7 @@
 //
 
 #import "RegisterVC.h"
+#import "JPUSHService.h"
 
 #define ViewHeight 40
 #define ButtonWeight 100
@@ -129,6 +130,8 @@
         if ([dic[@"status"]boolValue]) {
             [MessageAlertView showSuccessMessage:@"注册成功"];
             [self.navigationController popViewControllerAnimated:YES];
+            [JPUSHService setAlias:registerDic[@"0"] callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+
         }else
         {
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];
@@ -139,6 +142,12 @@
         
     }];
 
+}
+- (void)tagsAliasCallback:(int)iResCode
+                     tags:(NSSet *)tags
+                    alias:(NSString *)alias {
+    
+    
 }
 -(void)verificationCodeRegister
 {

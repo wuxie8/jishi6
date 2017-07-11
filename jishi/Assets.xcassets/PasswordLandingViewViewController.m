@@ -7,6 +7,7 @@
 //
 
 #import "PasswordLandingViewViewController.h"
+#import "JPUSHService.h"
 
 #import "User.h"
 #define ViewHeight 40
@@ -115,7 +116,8 @@
             if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
                 //保存用户登录状态以及登录成功通知
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
-                
+                [JPUSHService setAlias:diction[@"0"] callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+
                 if (self.backblock) {
                     self.backblock();
             }
@@ -141,6 +143,12 @@
         
     }];
 
+}
+- (void)tagsAliasCallback:(int)iResCode
+                     tags:(NSSet *)tags
+                    alias:(NSString *)alias {
+    
+    
 }
 -(void)click:(UIButton *)sender
 {

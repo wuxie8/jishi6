@@ -24,4 +24,7 @@ pod ‘UMengUShare/Social/ReducedQQ'
 # 集成QQ(完整版7.6M)
 pod ‘UMengUShare/Social/QQ'
 
+pod 'JPush-iOS-SDK'
+
+
 end

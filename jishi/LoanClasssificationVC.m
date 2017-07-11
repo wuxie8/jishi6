@@ -34,7 +34,7 @@
     
     self.productArray=nil;
  
- NSArray *array=@[@"豆钱花-社保贷",@"豆钱花-公积金贷",@"豆钱花-保单贷",@"豆钱花-供房贷",@"豆钱花-税金贷",@"豆钱花-学信贷"];
+ NSArray *array=@[@"帮帮钱包-社保贷",@"帮帮钱包-公积金贷",@"帮帮钱包-保单贷",@"帮帮钱包-供房贷",@"帮帮钱包-税金贷",@"帮帮钱包-学信贷"];
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                       appcode,@"code",
                        @"1.0.0",@"version",

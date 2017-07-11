@@ -26,7 +26,8 @@
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <AdSupport/AdSupport.h>
-
+#import "RemindViewController.h"
+#import "AppDelegate+JPush.h"
 
 #define umeng_appkey @"58ca428499f0c742bf000286"
 @interface AppDelegate ()
@@ -38,7 +39,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self.window makeKeyAndVisible];
-    
+    [self registerJPush:application options:launchOptions];
+
     UMConfigInstance.appKey=umeng_appkey;
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
@@ -72,7 +74,33 @@
     }
     
     self.window.rootViewController = [UIViewController new];
-    self.window.rootViewController=[AppDelegate setTabBarController];
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                       appcode,@"code",
+                       @"1.0.0",@"version",
+                       @"1",@"page",
+                       nil];
+    [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSDictionary *dic=(NSDictionary *)responseObject;
+        if ([dic[@"status"]boolValue]) {
+            
+            
+            if ([UtilTools isBlankString:dic[@"review"]]) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"review"];
+            }else
+            {
+                [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
+                
+                
+            }
+            self.window.rootViewController=[AppDelegate setTabBarController];
+            
+            
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        
+    }];
+    
     
     
     
@@ -184,7 +212,7 @@
 +(UITabBarController *)setTabBarController
 {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLG"];
-    
+    RemindViewController*remind=[RemindViewController new];
     JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
     DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
     FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
@@ -193,8 +221,10 @@
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
     BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
+    __unused   BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
+    
     
     
     
@@ -205,20 +235,27 @@
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        tabBarController.viewControllers=@[nav5C,nav2C,nav3C,nav4C];
+        
+    }
+    else{
+        tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
+        
+    }
     
-    tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
     tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
     //        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];
     //          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
     //         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
     //                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-             NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
-//    NSArray *images=@[@"jishiyu",@"Mineing"];
-//    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-//    NSArray *titles = @[@"豆钱花",@"个人中心"];
+    NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
+    //    NSArray *images=@[@"jishiyu",@"Mineing"];
+    //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
+    //    NSArray *titles = @[@"帮帮钱包",@"个人中心"];
     
-             NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
-                   NSArray *titles = @[@"豆钱花",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
+    NSArray *titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
     //        NSArray *images=@[@"lending",@"Mineing"];
     //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
     

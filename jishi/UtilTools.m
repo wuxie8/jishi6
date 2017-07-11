@@ -406,6 +406,7 @@ static SystemSoundID shake_sound_enter_id = 0;
 {
     NSArray *timeArray=[theDate componentsSeparatedByString:@"."];
     theDate=[timeArray objectAtIndex:0];
+    theDate= [theDate stringByReplacingCharactersInRange:NSMakeRange(theDate.length-8, 8) withString:@"00:00:00"];
     
     NSDateFormatter *date=[[NSDateFormatter alloc] init];
     [date setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -413,34 +414,47 @@ static SystemSoundID shake_sound_enter_id = 0;
     
     NSTimeInterval late=[d timeIntervalSince1970]*1;
     
-    NSDate* dat = [NSDate date];
+    //    NSDate* dat = [NSDate date];
+    NSString *dateString = [date stringFromDate:[NSDate date]];
+    
+    // 打印结果：dateString = 年月日 2013/10/16 时间 05:15:43
+    dateString= [dateString stringByReplacingCharactersInRange:NSMakeRange(dateString.length-8, 8) withString:@"00:00:00"];
+    NSDate *dat=[date dateFromString:dateString];
+    
     NSTimeInterval now=[dat timeIntervalSince1970]*1;
     NSString *timeString=@"";
     
-    NSTimeInterval cha=now-late;
-    if (cha/60<=1) {
-        timeString=@"刚刚";
-    }
-    if (1<cha/60&&cha/3600<1) {
-        timeString = [NSString stringWithFormat:@"%f", cha/60];
-        timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@分钟前", timeString];
+    //    NSTimeInterval cha=now-late;
+    NSTimeInterval cha=late-now;
+    
+    int days=((int)cha)/(3600*24);
+    
+    if (0<=days&&days<1) {
+        
+        timeString=@"今";
         
     }
-    if (cha/3600>=1&&cha/86400<1) {
-        timeString = [NSString stringWithFormat:@"%f", cha/3600];
-        timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@小时前", timeString];
+    else if (1<=days&&days<2) {
+        //        timeString = [NSString stringWithFormat:@"%f", cha/3600];
+        //        timeString = [timeString substringToIndex:timeString.length-7];
+        //        timeString=[NSString stringWithFormat:@"%@小时前", timeString];
+        timeString=@"明";
+        
     }
-    if (cha/86400<2&&cha/86400>=1)
+    else if (2<=days&&days<3)
     {
-        timeString=@"昨天";
+        timeString=@"后";
         
     }
-    if (cha/86400>=2) {
-        timeString=[theDate substringWithRange:NSMakeRange(11, 5)];
+    else if (days>=3) {
+        timeString =[NSString stringWithFormat:@"%d",days];
         
     }
+    else if (cha<0)
+    {
+        timeString=[NSString stringWithFormat:@"%d",days];
+    }
+    
     return timeString;
 }
 #pragma  mark  封装方法

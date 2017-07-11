@@ -7,6 +7,8 @@
 //
 
 #import "LandingDynamicViewControllerViewController.h"
+#import "JPUSHService.h"
+
 #import "User.h"
 #define ViewHeight 40
 #define ButtonWeight 100
@@ -85,6 +87,12 @@
     UIView *lineView=[[UIView alloc]initWithFrame:CGRectMake(WIDTH/2, CGRectGetMaxY(backgroundView.frame)+20+5, 1, 30)];
     lineView.backgroundColor=PageColor;
     [self.view addSubview:lineView];
+    
+    
+}
+- (void)tagsAliasCallback:(int)iResCode
+                     tags:(NSSet *)tags
+                    alias:(NSString *)alias {
     
     
 }
@@ -187,7 +195,8 @@
             if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
                 //保存用户登录状态以及登录成功通知
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
-              
+                [JPUSHService setAlias:diction[@"0"] callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+
                 if (self.backblock) {
                     self.backblock();
                 }

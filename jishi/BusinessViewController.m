@@ -20,13 +20,10 @@
     self.title=@"商务合作";
     self.view.backgroundColor=[UIColor whiteColor];
     
-    UILabel  *companylabel=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-200, 100, 400, 100)];
-    companylabel.text=@"公司:北京海田冀网络科技有限公司";
-    companylabel.textAlignment=NSTextAlignmentCenter;
+
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-200, 250, 400, 100)];
     label.text=@"公司邮箱：bd@jishiyu11.cn";
     label.textAlignment=NSTextAlignmentCenter;
-    [self.view addSubview:companylabel];
     [self.view addSubview:label];
 
 

@@ -18,6 +18,8 @@
 // */
 #define SERVERE @"http://app.jishiyu11.cn/index.php?g=app"
 
+#define SERVEREURL SERVERE
+
 #define IMG_PATH  @"http://app.jishiyu11.cn/data/upload/"//品牌logo
 //贷款
 #define loan @"&m=business&a=index"
@@ -43,7 +45,7 @@
 #define filter @"&m=business&a=filter"
 
 //贷款
-#define appcode @"douqianhua"
+#define appcode @"bangbangqianbao"
 
 #define APIHelp @"http://v2api20160516.eexuu.com/swagger"
 

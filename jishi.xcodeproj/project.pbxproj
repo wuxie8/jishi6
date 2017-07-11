@@ -59,6 +59,7 @@
 		847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D91E779E9F0026F585 /* LoanClasssificationVC.m */; };
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
 		847199E01E77CA410026F585 /* UserInfoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DF1E77CA410026F585 /* UserInfoContext.m */; };
+		847DF4101F14BADC007DDB60 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */; };
 		84A733441EB86C07008ABB7E /* AddressBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333B1EB86C07008ABB7E /* AddressBookVC.m */; };
 		84A733451EB86C07008ABB7E /* CDFInitialsAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333D1EB86C07008ABB7E /* CDFInitialsAvatar.m */; };
 		84A733461EB86C07008ABB7E /* NSString+TKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333F1EB86C07008ABB7E /* NSString+TKUtilities.m */; };
@@ -71,6 +72,16 @@
 		84B9DC281E9DCCB10066A92D /* GestureBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC211E9DCCB10066A92D /* GestureBaseVC.m */; };
 		84B9DC291E9DCCB10066A92D /* GestureNavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC231E9DCCB10066A92D /* GestureNavBaseVC.m */; };
 		84B9DC2A1E9DCCB10066A92D /* NavBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC251E9DCCB10066A92D /* NavBaseVC.m */; };
+		84C467EB1F0CC63B000ECAD8 /* AddBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467DF1F0CC63B000ECAD8 /* AddBillViewController.m */; };
+		84C467ED1F0CC63B000ECAD8 /* NewRemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467E31F0CC63B000ECAD8 /* NewRemindViewController.m */; };
+		84C467EE1F0CC63B000ECAD8 /* RemindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467E51F0CC63B000ECAD8 /* RemindModel.m */; };
+		84C467EF1F0CC63B000ECAD8 /* RemindTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467E71F0CC63B000ECAD8 /* RemindTableViewCell.m */; };
+		84C467F01F0CC63B000ECAD8 /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467E91F0CC63B000ECAD8 /* RemindViewController.m */; };
+		84C467F81F0CC687000ECAD8 /* HcdDateTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467F31F0CC687000ECAD8 /* HcdDateTimePickerView.m */; };
+		84C467F91F0CC687000ECAD8 /* MXSCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467F51F0CC687000ECAD8 /* MXSCycleScrollView.m */; };
+		84C467FA1F0CC687000ECAD8 /* UIColor+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467F71F0CC687000ECAD8 /* UIColor+HcdCustom.m */; };
+		84C467FF1F0CC87D000ECAD8 /* YLSOPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467FE1F0CC87D000ECAD8 /* YLSOPickerView.m */; };
+		84C468011F0CCDDD000ECAD8 /* Remind.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C468001F0CCDDD000ECAD8 /* Remind.xcassets */; };
 		84D252581EBB000D004E598A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D252571EBB000D004E598A /* AdSupport.framework */; };
 		84D2525A1EBB0016004E598A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D252591EBB0016004E598A /* Security.framework */; };
 		84D2525D1EBB014D004E598A /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2525C1EBB014D004E598A /* OpenUDID.m */; };
@@ -138,7 +149,7 @@
 		840FE9931E6FF3900050C444 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuTableViewCell.h; sourceTree = "<group>"; };
 		840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuTableViewCell.m; sourceTree = "<group>"; };
-		841224251E6D480300048188 /* 小胖钱包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "小胖钱包.app"; path = "豆钱花.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841224251E6D480300048188 /* 帮帮钱包.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "帮帮钱包.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		841224291E6D480300048188 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8412242B1E6D480300048188 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8412242C1E6D480300048188 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -202,6 +213,9 @@
 		847199DC1E77C92B0026F585 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		847199DE1E77CA410026F585 /* UserInfoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoContext.h; sourceTree = "<group>"; };
 		847199DF1E77CA410026F585 /* UserInfoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoContext.m; sourceTree = "<group>"; };
+		847DF40D1F14B04C007DDB60 /* 帮帮钱包.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "帮帮钱包.entitlements"; sourceTree = "<group>"; };
+		847DF40E1F14BADC007DDB60 /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
+		847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		84A7333A1EB86C07008ABB7E /* AddressBookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressBookVC.h; path = Addressbook/AddressBookVC.h; sourceTree = "<group>"; };
 		84A7333B1EB86C07008ABB7E /* AddressBookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressBookVC.m; path = Addressbook/AddressBookVC.m; sourceTree = "<group>"; };
 		84A7333C1EB86C07008ABB7E /* CDFInitialsAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDFInitialsAvatar.h; path = Addressbook/CDFInitialsAvatar.h; sourceTree = "<group>"; };
@@ -226,6 +240,25 @@
 		84B9DC231E9DCCB10066A92D /* GestureNavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestureNavBaseVC.m; path = Base/GestureNavBaseVC.m; sourceTree = "<group>"; };
 		84B9DC241E9DCCB10066A92D /* NavBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavBaseVC.h; path = Base/NavBaseVC.h; sourceTree = "<group>"; };
 		84B9DC251E9DCCB10066A92D /* NavBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavBaseVC.m; path = Base/NavBaseVC.m; sourceTree = "<group>"; };
+		84C467DE1F0CC63B000ECAD8 /* AddBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBillViewController.h; sourceTree = "<group>"; };
+		84C467DF1F0CC63B000ECAD8 /* AddBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBillViewController.m; sourceTree = "<group>"; };
+		84C467E21F0CC63B000ECAD8 /* NewRemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRemindViewController.h; sourceTree = "<group>"; };
+		84C467E31F0CC63B000ECAD8 /* NewRemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRemindViewController.m; sourceTree = "<group>"; };
+		84C467E41F0CC63B000ECAD8 /* RemindModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindModel.h; sourceTree = "<group>"; };
+		84C467E51F0CC63B000ECAD8 /* RemindModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindModel.m; sourceTree = "<group>"; };
+		84C467E61F0CC63B000ECAD8 /* RemindTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindTableViewCell.h; sourceTree = "<group>"; };
+		84C467E71F0CC63B000ECAD8 /* RemindTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindTableViewCell.m; sourceTree = "<group>"; };
+		84C467E81F0CC63B000ECAD8 /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
+		84C467E91F0CC63B000ECAD8 /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
+		84C467F21F0CC687000ECAD8 /* HcdDateTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdDateTimePickerView.h; sourceTree = "<group>"; };
+		84C467F31F0CC687000ECAD8 /* HcdDateTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdDateTimePickerView.m; sourceTree = "<group>"; };
+		84C467F41F0CC687000ECAD8 /* MXSCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSCycleScrollView.h; sourceTree = "<group>"; };
+		84C467F51F0CC687000ECAD8 /* MXSCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSCycleScrollView.m; sourceTree = "<group>"; };
+		84C467F61F0CC687000ECAD8 /* UIColor+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HcdCustom.h"; sourceTree = "<group>"; };
+		84C467F71F0CC687000ECAD8 /* UIColor+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HcdCustom.m"; sourceTree = "<group>"; };
+		84C467FD1F0CC87D000ECAD8 /* YLSOPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLSOPickerView.h; sourceTree = "<group>"; };
+		84C467FE1F0CC87D000ECAD8 /* YLSOPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLSOPickerView.m; sourceTree = "<group>"; };
+		84C468001F0CCDDD000ECAD8 /* Remind.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Remind.xcassets; sourceTree = "<group>"; };
 		84D252571EBB000D004E598A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		84D252591EBB0016004E598A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		84D2525B1EBB014D004E598A /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
@@ -383,7 +416,7 @@
 		841224261E6D480300048188 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841224251E6D480300048188 /* 小胖钱包.app */,
+				841224251E6D480300048188 /* 帮帮钱包.app */,
 				8412243E1E6D480300048188 /* jishiTests.xctest */,
 				841224491E6D480300048188 /* jishiUITests.xctest */,
 			);
@@ -393,11 +426,13 @@
 		841224271E6D480300048188 /* jishi */ = {
 			isa = PBXGroup;
 			children = (
+				847DF40D1F14B04C007DDB60 /* 帮帮钱包.entitlements */,
 				84C06F341E8FA61A00038420 /* Appdelegate */,
 				840FE9891E6FCFF50050C444 /* Utils */,
 				840FE9851E6FCE480050C444 /* NetWork */,
 				840AB3541E6E599600532231 /* 第三方轮播 */,
 				841224771E6D49E500048188 /* Base */,
+				84C467FC1F0CC695000ECAD8 /* Remind */,
 				840FE99B1E7006990050C444 /* JishiyuHomepage */,
 				84C06F331E8FA5EE00038420 /* daikuan */,
 				84FF81321E70F7E50096AE87 /* Login */,
@@ -508,12 +543,15 @@
 			children = (
 				8412242B1E6D480300048188 /* AppDelegate.h */,
 				8412242C1E6D480300048188 /* AppDelegate.m */,
+				847DF40E1F14BADC007DDB60 /* AppDelegate+JPush.h */,
+				847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */,
 				84D2525B1EBB014D004E598A /* OpenUDID.h */,
 				84D2525C1EBB014D004E598A /* OpenUDID.m */,
 				84546F521EA5FECC00AD0350 /* Assets.xcassets */,
 				841224311E6D480300048188 /* Main.storyboard */,
 				841224361E6D480300048188 /* LaunchScreen.storyboard */,
 				841224391E6D480300048188 /* Info.plist */,
+				84C468001F0CCDDD000ECAD8 /* Remind.xcassets */,
 				8412242E1E6D480300048188 /* ViewController.h */,
 				8412242F1E6D480300048188 /* ViewController.m */,
 			);
@@ -563,6 +601,39 @@
 				846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		84C467F11F0CC66A000ECAD8 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				84C467FD1F0CC87D000ECAD8 /* YLSOPickerView.h */,
+				84C467FE1F0CC87D000ECAD8 /* YLSOPickerView.m */,
+				84C467F21F0CC687000ECAD8 /* HcdDateTimePickerView.h */,
+				84C467F31F0CC687000ECAD8 /* HcdDateTimePickerView.m */,
+				84C467F41F0CC687000ECAD8 /* MXSCycleScrollView.h */,
+				84C467F51F0CC687000ECAD8 /* MXSCycleScrollView.m */,
+				84C467F61F0CC687000ECAD8 /* UIColor+HcdCustom.h */,
+				84C467F71F0CC687000ECAD8 /* UIColor+HcdCustom.m */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		84C467FC1F0CC695000ECAD8 /* Remind */ = {
+			isa = PBXGroup;
+			children = (
+				84C467F11F0CC66A000ECAD8 /* ThirdParty */,
+				84C467DE1F0CC63B000ECAD8 /* AddBillViewController.h */,
+				84C467DF1F0CC63B000ECAD8 /* AddBillViewController.m */,
+				84C467E21F0CC63B000ECAD8 /* NewRemindViewController.h */,
+				84C467E31F0CC63B000ECAD8 /* NewRemindViewController.m */,
+				84C467E41F0CC63B000ECAD8 /* RemindModel.h */,
+				84C467E51F0CC63B000ECAD8 /* RemindModel.m */,
+				84C467E61F0CC63B000ECAD8 /* RemindTableViewCell.h */,
+				84C467E71F0CC63B000ECAD8 /* RemindTableViewCell.m */,
+				84C467E81F0CC63B000ECAD8 /* RemindViewController.h */,
+				84C467E91F0CC63B000ECAD8 /* RemindViewController.m */,
+			);
+			name = Remind;
 			sourceTree = "<group>";
 		};
 		84FF81321E70F7E50096AE87 /* Login */ = {
@@ -628,7 +699,7 @@
 			);
 			name = jishi;
 			productName = jishi;
-			productReference = 841224251E6D480300048188 /* 小胖钱包.app */;
+			productReference = 841224251E6D480300048188 /* 帮帮钱包.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8412243D1E6D480300048188 /* jishiTests */ = {
@@ -678,8 +749,13 @@
 				TargetAttributes = {
 					841224241E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AHHJZDVPJ2;
+						DevelopmentTeam = NUH99A3LBD;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					8412243D1E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -722,6 +798,7 @@
 			files = (
 				841224381E6D480300048188 /* LaunchScreen.storyboard in Resources */,
 				84546F531EA5FECC00AD0350 /* Assets.xcassets in Resources */,
+				84C468011F0CCDDD000ECAD8 /* Remind.xcassets in Resources */,
 				841224331E6D480300048188 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,14 +883,19 @@
 				8402B9F31E9F3252000CDFF7 /* AddressVC.m in Sources */,
 				847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */,
 				84546F511EA5F37C00AD0350 /* FastHandleCardViewController.m in Sources */,
+				84C467FA1F0CC687000ECAD8 /* UIColor+HcdCustom.m in Sources */,
 				840FE9831E6FCE430050C444 /* NetWorkManager.m in Sources */,
 				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
+				84C467F91F0CC687000ECAD8 /* MXSCycleScrollView.m in Sources */,
+				84C467F01F0CC63B000ECAD8 /* RemindViewController.m in Sources */,
 				840FE96C1E6FA18D0050C444 /* OptionBarController.m in Sources */,
 				844885B61EC2A2FF0093424D /* BtnView.m in Sources */,
 				84A733441EB86C07008ABB7E /* AddressBookVC.m in Sources */,
+				84C467EF1F0CC63B000ECAD8 /* RemindTableViewCell.m in Sources */,
 				840FE9941E6FF3900050C444 /* WebVC.m in Sources */,
 				8412242D1E6D480300048188 /* AppDelegate.m in Sources */,
 				840FE97B1E6FA8570050C444 /* LandingDynamicViewControllerViewController.m in Sources */,
+				84C467FF1F0CC87D000ECAD8 /* YLSOPickerView.m in Sources */,
 				840FE9911E6FDCCA0050C444 /* ProductModel.m in Sources */,
 				8402B9E01E9F2917000CDFF7 /* InviteFriendsViewController.m in Sources */,
 				847199E01E77CA410026F585 /* UserInfoContext.m in Sources */,
@@ -829,13 +911,16 @@
 				84B9DC2A1E9DCCB10066A92D /* NavBaseVC.m in Sources */,
 				8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */,
 				84B9DC271E9DCCB10066A92D /* BaseVC.m in Sources */,
+				84C467F81F0CC687000ECAD8 /* HcdDateTimePickerView.m in Sources */,
 				840FE96D1E6FA18D0050C444 /* OptionsBarItem.m in Sources */,
 				840AB3531E6E50DA00532231 /* WSPageView.m in Sources */,
+				84C467ED1F0CC63B000ECAD8 /* NewRemindViewController.m in Sources */,
 				840FE9841E6FCE440050C444 /* NetWorkUtil.m in Sources */,
 				840FE99A1E6FFEA10050C444 /* JishiyuTableViewCell.m in Sources */,
 				84A733451EB86C07008ABB7E /* CDFInitialsAvatar.m in Sources */,
 				840FE98E1E6FD2650050C444 /* UtilTools.m in Sources */,
 				840FE9541E6F9F3E0050C444 /* LoginViewController.m in Sources */,
+				84C467EB1F0CC63B000ECAD8 /* AddBillViewController.m in Sources */,
 				84A733471EB86C07008ABB7E /* PersonCell.m in Sources */,
 				844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */,
 				847199D71E778F2E0026F585 /* LoanClassification.m in Sources */,
@@ -844,9 +929,11 @@
 				84B9DC281E9DCCB10066A92D /* GestureBaseVC.m in Sources */,
 				84D2525D1EBB014D004E598A /* OpenUDID.m in Sources */,
 				8402B9F61E9F3AF2000CDFF7 /* PersonModel.m in Sources */,
+				847DF4101F14BADC007DDB60 /* AppDelegate+JPush.m in Sources */,
 				84A733461EB86C07008ABB7E /* NSString+TKUtilities.m in Sources */,
 				84FF81391E7155EE0096AE87 /* RegisterVC.m in Sources */,
 				840FE96E1E6FA18D0050C444 /* OptionsBarView.m in Sources */,
+				84C467EE1F0CC63B000ECAD8 /* RemindModel.m in Sources */,
 				846ED6141EC1BBBC00FE22BD /* LoanDetailsViewController.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,
 				8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */,
@@ -934,6 +1021,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = NUH99A3LBD;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -987,6 +1075,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NUH99A3LBD;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1014,9 +1103,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "jishi/帮帮钱包.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiaowa Tian (33CQCCKDU6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AHHJZDVPJ2;
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/jishi/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1060,8 +1151,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.dounihua;
-				PRODUCT_NAME = "豆钱花";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
+				PRODUCT_NAME = "帮帮钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1074,9 +1165,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "jishi/帮帮钱包.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZheJiang HaiTian Network Technology Co., Ltd (NUH99A3LBD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AHHJZDVPJ2;
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/jishi/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1120,8 +1213,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.dounihua;
-				PRODUCT_NAME = "豆钱花";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
+				PRODUCT_NAME = "帮帮钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1222,6 +1315,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NUH99A3LBD;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1249,9 +1343,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "jishi/帮帮钱包.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZheJiang HaiTian Network Technology Co., Ltd (NUH99A3LBD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AHHJZDVPJ2;
+				DEVELOPMENT_TEAM = NUH99A3LBD;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/jishi/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1295,8 +1391,8 @@
 					"\"UShareUI\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.dounihua;
-				PRODUCT_NAME = "豆钱花";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.bangbangqianbao;
+				PRODUCT_NAME = "帮帮钱包";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
