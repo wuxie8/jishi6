@@ -84,8 +84,8 @@
 //        balancelab.text=@"余额";
 //        balancelab.textColor=[UIColor whiteColor];
 //        [_headView addSubview:balancelab];
-        [_headView addSubview:image];
-//        
+//        [_headView addSubview:image];
+//
 //        UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(image.frame)+10,  150  , 64, 15)];
 //        lab.text=@"166.66";
 //        [_headView addSubview:lab];

@@ -28,7 +28,7 @@
 #import <AdSupport/AdSupport.h>
 #import "RemindViewController.h"
 #import "AppDelegate+JPush.h"
-
+#import "AmountClassificationViewController.h"
 #define umeng_appkey @"58ca428499f0c742bf000286"
 @interface AppDelegate ()
 
@@ -40,7 +40,7 @@
     
     [self.window makeKeyAndVisible];
     [self registerJPush:application options:launchOptions];
-
+    
     UMConfigInstance.appKey=umeng_appkey;
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
@@ -90,7 +90,7 @@
             {
                 [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
                 
-                
+
             }
             self.window.rootViewController=[AppDelegate setTabBarController];
             
@@ -216,6 +216,8 @@
     JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
     DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
     FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
+    AmountClassificationViewController *amount=[[AmountClassificationViewController alloc]init];
+
     MineViewController *mine=[[MineViewController alloc]init];
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
@@ -224,8 +226,8 @@
     __unused   BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
-    
-    
+    BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
+
     
     
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
@@ -235,13 +237,25 @@
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
+    NSArray *titles = @[@"贷款花",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
+    //    NSArray *images=@[@"jishiyu",@"Mineing"];
+    //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
+    //    NSArray *titles = @[@"贷款花",@"个人中心"];
+    
+    NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav5C,nav2C,nav3C,nav4C];
+        tabBarController.viewControllers=@[nav6C,nav4C];
+        titles = @[@"贷款花",@"个人中心"];
+        images=@[@"jishiyu",@"Mineing"];
         
+        selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        
+        titles = @[@"贷款花",@"贷款超市",@"信用卡",@"个人中心"];
+        images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
+        selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }
     
     tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
@@ -249,13 +263,7 @@
     //          NSArray *images=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"lending",@"Mineing"]:@[@"jishiyu",@"lending",@"Mineing"];
     //         NSArray *selectedImages=[[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[
     //                                                                                                @"lendingBlue",@"MineingBlue"]:@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
-    NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
-    //    NSArray *images=@[@"jishiyu",@"Mineing"];
-    //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"帮帮钱包",@"个人中心"];
     
-    NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
-    NSArray *titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
     //        NSArray *images=@[@"lending",@"Mineing"];
     //         NSArray *selectedImages=@[@"lendingBlue",@"MineingBlue"];
     
@@ -502,11 +510,6 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
 
 

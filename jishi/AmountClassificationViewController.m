@@ -9,6 +9,7 @@
 #import "AmountClassificationViewController.h"
 #import "AmountTableViewCell.h"
 #import "LoanClickViewController.h"
+#import "LoanDetailsViewController.h"
 @interface AmountClassificationViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -19,6 +20,7 @@
     NSArray *array;
       NSArray *amountarray;
     NSArray *describearray;
+    NSMutableArray *productArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,12 +30,102 @@
      array=@[@"极速微额贷款",@"热门极速贷",@"学生贷"];
      amountarray=@[@"2000元以下",@"2000-10000元",@"1万-10万"];
     describearray=@[@"有手机服务密码就能贷 \n微额快速，闪电放款",@"有手机服务密码就能贷 \n 1分钟申请，10分钟放款",@"放款快，学生的最爱 \n额度高，利率低，如你所想"];
+    [self getData];
     UITableView *tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 10, WIDTH, HEIGHT)];
     tab.delegate=self;
     tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
     [self.view addSubview:tab];
     // Do any additional setup after loading the view.
+}
+-(void)getData
+{
+    productArray=[NSMutableArray array];
+    for (int i=0; i<3; i++) {
+        ProductModel *pro=[[ProductModel alloc]init];
+        
+            pro.smeta=@"icon";
+            
+//            pro.post_title=array[location];
+       
+        
+//        pro.link=diction[@"link"];
+//        pro.edufanwei=diction[@"edufanwei"];
+//        pro.qixianfanwei=diction[@"qixianfanwei"];
+//        pro.shenqingtiaojian=diction[@"shenqingtiaojian"];
+//        pro.zuikuaifangkuan=diction[@"zuikuaifangkuan"];
+        switch (i) {
+            case 0:
+            {
+                pro.edufanwei=@"500-2000";
+                pro.qixianfanwei=@"1-6月";
+                pro.shenqingtiaojian=@"身份证";
+                pro.zuikuaifangkuan=@"立即放款";
+                        pro.post_title=@"小额贷款";
+pro.post_hits=@"957714";
+                pro.feilv=@"0.5%月";
+                pro.fv_unit=@"2";
+                pro.tagsArray=@[@"有公积金就能贷",@"用淘宝贷款"];
+
+                pro.qx_unit=@"1";
+
+            }
+                break;
+            case 1:
+            {
+                pro.edufanwei=@"2000-10000";
+                pro.qixianfanwei=@"3-36月";
+                pro.shenqingtiaojian=@"身份证";
+                pro.zuikuaifangkuan=@"立即放款";
+                pro.post_title=@"极速贷款";
+                pro.post_hits=@"1057714";
+                pro.feilv=@"0.5%";
+                pro.fv_unit=@"1";
+                pro.tagsArray=@[@"有公积金就能贷"];
+                pro.qx_unit=@"1";
+
+                
+            }
+                break;
+            case 2:
+            {
+                pro.edufanwei=@"1000-3000";
+                pro.qixianfanwei=@"6-12月";
+                pro.shenqingtiaojian=@"身份证";
+                pro.zuikuaifangkuan=@"立即放款";
+                pro.post_title=@"极速贷款";
+                pro.post_hits=@"1057714";
+                pro.feilv=@"0.5%";
+                pro.fv_unit=@"1";
+                pro.tagsArray=@[@"有身份证就能贷",@"用淘宝贷款"];
+                
+                pro.qx_unit=@"1";
+
+            }
+                break;
+            default:
+                break;
+        }
+                pro.post_excerpt=@"芝麻分620，借款5000元";
+
+//        pro.post_hits=diction[@"post_hits"];
+//        pro.feilv=diction[@"feilv"];
+//        pro.productID=diction[@"id"];
+//        pro.post_excerpt=diction[@"post_excerpt"];
+//        
+//        pro.fv_unit=diction[@"fv_unit"];
+//        NSArray *tags=diction[@"tags"];
+//        NSMutableArray *tagsArray=[NSMutableArray array];
+//        for (NSDictionary *dic in tags) {
+//            [tagsArray addObject:dic[@"tag_name"]];
+//        }
+//        pro.tagsArray=tagsArray;
+//        pro.qx_unit=diction[@"qx_unit"];
+        [productArray addObject:pro];
+    }
+   
+    
+
 }
 -(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -58,10 +150,20 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        ProductModel  *product=[productArray objectAtIndex:indexPath.row];
+    LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
+    load.hidesBottomBarWhenPushed=YES;
+        load.product=product;
+   
+    [self.navigationController pushViewController:load animated:YES];
+    }
+    else{
     LoanClickViewController *loanclick=[[LoanClickViewController alloc]init];
+    loanclick.hidesBottomBarWhenPushed=YES;
     loanclick.location=[NSString stringWithFormat:@"%ld",(long)indexPath.row+19];
     [self.navigationController pushViewController:loanclick animated:YES];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

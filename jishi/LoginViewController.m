@@ -36,7 +36,8 @@
         [self.navigationController popViewControllerAnimated:NO];
         
     }
-    
+  
+
     
 }
 - (void)viewDidLoad {
@@ -49,6 +50,13 @@
     [landing setRegisterblock:^()
      {
          RegisterVC *registerVC=[[RegisterVC alloc]init];
+         [registerVC setBackblock:^()
+          {
+              if (self.tabBarController.selectedIndex==0) {
+                  [self.navigationController popViewControllerAnimated:NO];
+              }
+              self.tabBarController.selectedIndex = 0;
+          }];
          [self.navigationController pushViewController:registerVC animated:YES];
      }];
     
@@ -70,6 +78,13 @@
     [password setRegisterblock:^()
      {
          RegisterVC *registerVC=[[RegisterVC alloc]init];
+         [registerVC setBackblock:^()
+          {
+              if (self.tabBarController.selectedIndex==0) {
+                  [self.navigationController popViewControllerAnimated:NO];
+              }
+              self.tabBarController.selectedIndex = 0;
+          }];
          [self.navigationController pushViewController:registerVC animated:YES];
      }];
     

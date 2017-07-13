@@ -203,7 +203,8 @@ type=6;
                        rep_id,@"rep_id",
                        rem_id,@"rem_id",
                        remark,@"remark",
-                      
+                       @"3",@"appid",
+
 
                        nil];
     NSMutableDictionary *dic1=[NSMutableDictionary dictionaryWithDictionary:dic];

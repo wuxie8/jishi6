@@ -7,7 +7,10 @@
 //
 
 #import "GestureNavBaseVC.h"
+typedef void (^back)();
 
 @interface RegisterVC : GestureNavBaseVC
+
+@property(strong, nonatomic)back backblock;
 
 @end

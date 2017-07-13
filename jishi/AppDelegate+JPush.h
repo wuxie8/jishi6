@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import "JPUSHService.h"
 
-static NSString *pushAppKey = @"90f347350b8253c1d5edd026";
-static NSString *pushChannel = @"bangbangqianbao";
-static BOOL isProduction = NO;
+static NSString *pushAppKey = @"22cad97195dbc8ca77e227ed";
+static NSString *pushChannel = @"douqianhua";
+static BOOL isProduction = YES;
 
 @interface AppDelegate (JPush)<JPUSHRegisterDelegate>
 /**

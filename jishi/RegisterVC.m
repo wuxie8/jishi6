@@ -8,7 +8,7 @@
 
 #import "RegisterVC.h"
 #import "JPUSHService.h"
-
+#import "User.h"
 #define ViewHeight 40
 #define ButtonWeight 100
 @interface RegisterVC ()
@@ -26,6 +26,7 @@
     return UIRectEdgeNone;
 }
 #endif
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -105,7 +106,7 @@
 
 -(void)registerClick
 {
- 
+   
     NSMutableDictionary *registerDic=[NSMutableDictionary dictionary];
     for (int i=0; i<arr.count; i++) {
         UIView *view1=[self.view viewWithTag:100+i];
@@ -114,13 +115,9 @@
              [registerDic setObject:text1.text forKey:[NSString stringWithFormat:@"%d",i]];
 
     }
-//    if (![registerDic[@"1"] isEqualToString:registerDic[@"2"]]) {
-//        [MessageAlertView showErrorMessage:@"两次密码不一致"];
-//        return;
-//    }
+
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                       registerDic[@"0"],@"mobile",
-//                      registerDic[@"1"],@"password",
                        registerDic[@"1"],@"code",
                        @"QD0087",@"no",
 
@@ -131,7 +128,28 @@
             [MessageAlertView showSuccessMessage:@"注册成功"];
             [self.navigationController popViewControllerAnimated:YES];
             [JPUSHService setAlias:registerDic[@"0"] callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+            User *user=[[User alloc]init];
+            user.token=dic[@"token"];
+            user.uid=dic[@"uid"];
+            user.username=dic[@"username"];
+            Context.currentUser=user;
+            if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
+                //保存用户登录状态以及登录成功通知
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
+                if (self.backblock) {
+                    self.backblock();
+                }
+                NSDictionary *dic1=[NSDictionary dictionaryWithObjectsAndKeys:
+                                  dic[@"token"],@"user_id",
+                                   @"1",@"type",
+                                   nil];
+                [[NetWorkManager sharedManager]postJSON:@"&m=business&a=record" parameters:dic1 success:^(NSURLSessionDataTask *task, id responseObject) {
+                    
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                }];
 
+            }
         }else
         {
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];
