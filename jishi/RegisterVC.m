@@ -119,7 +119,7 @@
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                       registerDic[@"0"],@"mobile",
                        registerDic[@"1"],@"code",
-                       @"QD0087",@"no",
+                       appNo,@"no",
 
                        nil];
     [[NetWorkManager sharedManager]postJSON:bycode parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {

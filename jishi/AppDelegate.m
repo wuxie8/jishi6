@@ -30,6 +30,9 @@
 #import "AppDelegate+JPush.h"
 #import "AmountClassificationViewController.h"
 #define umeng_appkey @"58ca428499f0c742bf000286"
+#import "HomePageViewController.h"
+#import "iflyMSC/IFlyFaceSDK.h"
+
 @interface AppDelegate ()
 
 @end
@@ -48,9 +51,12 @@
     [[UMSocialManager defaultManager] openLog:YES];
     
     [[UMSocialManager defaultManager] setUmSocialAppkey:umeng_appkey];
-    
-    
     [self configUSharePlatforms];
+
+    //讯飞人脸识别
+    [self makeConfiguration];
+    [self.window makeKeyAndVisible];
+
     
     [AppDelegate requestTrackWithAppkey:umeng_appkey];
     
@@ -92,12 +98,14 @@
                 
 
             }
+
             self.window.rootViewController=[AppDelegate setTabBarController];
             
             
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
+        self.window.rootViewController=[AppDelegate setTabBarController];
+
         
     }];
     
@@ -109,6 +117,28 @@
     // Override point for customization after application launch.
     return YES;
 }
+#pragma mark --- 配置文件
+-(void)makeConfiguration
+{
+    //设置log等级，此处log为默认在app沙盒目录下的msc.log文件
+    [IFlySetting setLogFile:LVL_NONE];
+    
+    //输出在console的log开关
+    [IFlySetting showLogcat:NO];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [paths objectAtIndex:0];
+    //设置msc.log的保存路径
+    [IFlySetting setLogFilePath:cachePath];
+    
+    //创建语音配置,appid必须要传入，仅执行一次则可
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@,",USER_APPID];
+    
+    //所有服务启动前，需要确保执行createUtility
+    [IFlySpeechUtility createUtility:initString];
+}
+
+
 - (NSString *)getMacAddress {
     int mib[6];
     size_t len;
@@ -212,7 +242,7 @@
 +(UITabBarController *)setTabBarController
 {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLG"];
-    RemindViewController*remind=[RemindViewController new];
+    HomePageViewController*remind=[HomePageViewController new];
     JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
     DaikuanViewController *treatVC = [[DaikuanViewController alloc] init]; //已处理
     FastHandleCardViewController *fastVC=[[FastHandleCardViewController alloc]init];
@@ -223,7 +253,7 @@
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
     BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
-    __unused   BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
+      BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
     BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
@@ -245,9 +275,9 @@
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav6C,nav4C];
-        titles = @[@"贷款花",@"个人中心"];
-        images=@[@"jishiyu",@"Mineing"];
+        tabBarController.viewControllers=@[nav5C,nav3C,nav4C];
+        titles = @[@"贷款花",@"信用卡",@"个人中心"];
+        images=@[@"jishiyu",@"lending",@"Mineing"];
         
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
     }

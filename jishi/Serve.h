@@ -34,6 +34,7 @@
 //无密码注册
 #define bycode  @"&m=register&a=bycode"
 
+#define USER_APPID           @"596d63d5"
 
 //登陆
 #define dologin  @"&m=login&a=dologin"
@@ -45,7 +46,10 @@
 #define filter @"&m=business&a=filter"
 
 //贷款
-#define appcode @"daikuanhua"
+#define appcode @"bangbangqianbao"
+
+#define appNo @"QD0086"
+
 
 
 #endif /* Serve_h */

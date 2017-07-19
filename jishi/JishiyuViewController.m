@@ -53,7 +53,9 @@
 tab.delegate=self;
 tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
-//    tab.tableHeaderView=[self creatUI];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+    tab.tableHeaderView=[self creatUI];
+    }
     
 [self.view addSubview:tab];
 // Do any additional setup after loading the view.
@@ -88,7 +90,7 @@ tab.dataSource=self;
 
 
         }
-        
+
                  if (![UtilTools isBlankArray:arr]) {
             for (int i=0; i<arr.count; i++) {
                 NSDictionary *diction=arr[i];

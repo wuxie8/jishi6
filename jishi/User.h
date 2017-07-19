@@ -16,4 +16,9 @@
 
 @property(strong, nonatomic)NSString*username;
 
+@property(assign, nonatomic)BOOL idcard_auth;
+
+@property(assign, nonatomic)BOOL zhima_auth;
+
+
 @end

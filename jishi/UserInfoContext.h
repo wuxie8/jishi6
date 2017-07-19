@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
+#import "IDInfo.h"
 
 
 @interface UserInfoContext : NSObject
@@ -24,6 +25,8 @@
 //当前登录的用户
 @property (nonatomic, strong) User *currentUser;
 
+//身份证信息
+@property(strong, nonatomic)IDInfo *idInfo;
 //该账户绑定的子用户
 @property (nonatomic, strong) NSMutableArray *subUsers;
 

@@ -84,7 +84,8 @@
 
 #pragma  mark   转换方法
 
-
+//url转义
++(NSString *)URLEncodedString:(NSString *)string;
 
 /**
  *  日期转换成倒计时字符串

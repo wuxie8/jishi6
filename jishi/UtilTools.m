@@ -115,6 +115,24 @@ static SystemSoundID shake_sound_enter_id = 0;
 
 
 #pragma  mark   转换方法
+
+//url转义
++(NSString *)URLEncodedString:(NSString *)string
+{
+    // CharactersToBeEscaped = @":/?&=;+!@#$()~',*";
+    // CharactersToLeaveUnescaped = @"[].";
+    
+    NSString *unencodedString = string;
+    NSString *encodedString = (NSString *)
+    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                              (CFStringRef)unencodedString,
+                                                              NULL,
+                                                              (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                              kCFStringEncodingUTF8));
+    
+    return encodedString;
+}
+
 //格式化时间字符串
 +(NSString *)getNowTimeWithString:(NSString *)aTimeString{
     

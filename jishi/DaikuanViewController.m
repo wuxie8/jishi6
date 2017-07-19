@@ -229,7 +229,6 @@
     [manager POST:[NSString stringWithFormat:@"%@%@",SERVERE,filter]  parameters:dic2 progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        DLog(@"%@",dic);
 
         if ([dic[@"status"]boolValue]) {
             NSArray *arr=dic[@"list"];
