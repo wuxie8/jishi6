@@ -17,7 +17,6 @@
 		840D0FCA1F1D9BE9008303C1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 840D0FC91F1D9BE9008303C1 /* libc++.tbd */; };
 		840D0FCC1F1D9BFE008303C1 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 840D0FCB1F1D9BFE008303C1 /* libstdc++.tbd */; };
 		840D0FCD1F1DA26A008303C1 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44BAB1F1CD04D006C921C /* AVCaptureViewController.m */; };
-		840D0FD31F1DB390008303C1 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840D0FD21F1DB390008303C1 /* Contacts.framework */; };
 		840D0FD61F1DB964008303C1 /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840D0FD51F1DB964008303C1 /* libexidcardios.a */; };
 		840D0FD81F1DBDE7008303C1 /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 840D0FD71F1DBDE7008303C1 /* zocr0.lib */; };
 		840FE9541E6F9F3E0050C444 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840FE9531E6F9F3E0050C444 /* LoginViewController.m */; };
@@ -48,7 +47,6 @@
 		8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3D1E729C4B00EAE23C /* YTUITextField.m */; };
 		8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */; };
 		84361FD91EB1BD4E008595E7 /* CarkClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */; };
-		8438D4081F1EF127002BD392 /* ZMCreditSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8438D4071F1EF127002BD392 /* ZMCreditSDK.framework */; };
 		8442AAB51E8B8B7A00655887 /* AmountClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */; };
 		8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB71E8B8F4200655887 /* SetupViewController.m */; };
 		8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AABA1E8B992600655887 /* AboutUsViewController.m */; };
@@ -67,6 +65,8 @@
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
 		847199E01E77CA410026F585 /* UserInfoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DF1E77CA410026F585 /* UserInfoContext.m */; };
 		847DF4101F14BADC007DDB60 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */; };
+		8492F8BF1F207BA1003E5CEA /* ZMCreditSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */; };
+		8492F8C01F207BA1003E5CEA /* ZMDependUponSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */; };
 		84A733441EB86C07008ABB7E /* AddressBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333B1EB86C07008ABB7E /* AddressBookVC.m */; };
 		84A733451EB86C07008ABB7E /* CDFInitialsAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333D1EB86C07008ABB7E /* CDFInitialsAvatar.m */; };
 		84A733461EB86C07008ABB7E /* NSString+TKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333F1EB86C07008ABB7E /* NSString+TKUtilities.m */; };
@@ -118,7 +118,6 @@
 		84C467FA1F0CC687000ECAD8 /* UIColor+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467F71F0CC687000ECAD8 /* UIColor+HcdCustom.m */; };
 		84C467FF1F0CC87D000ECAD8 /* YLSOPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C467FE1F0CC87D000ECAD8 /* YLSOPickerView.m */; };
 		84C468011F0CCDDD000ECAD8 /* Remind.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C468001F0CCDDD000ECAD8 /* Remind.xcassets */; };
-		84C874EE1F1CECC4002A0B8B /* ZMDependUponSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C874ED1F1CECC4002A0B8B /* ZMDependUponSDK.framework */; };
 		84C874F21F1CF143002A0B8B /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C874F11F1CF143002A0B8B /* iflyMSC.framework */; };
 		84C874F41F1CF1E4002A0B8B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C874F31F1CF1E4002A0B8B /* CoreLocation.framework */; };
 		84C874F61F1CF1FB002A0B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C874F51F1CF1FB002A0B8B /* AVFoundation.framework */; };
@@ -169,7 +168,6 @@
 		840D0FC91F1D9BE9008303C1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		840D0FCB1F1D9BFE008303C1 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		840D0FD11F1DAD59008303C1 /* commondef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = commondef.h; path = ../commondef.h; sourceTree = "<group>"; };
-		840D0FD21F1DB390008303C1 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		840D0FD51F1DB964008303C1 /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
 		840D0FD71F1DBDE7008303C1 /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
 		840FE9521E6F9F3E0050C444 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 		8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUIToolbar.m; sourceTree = "<group>"; };
 		84361FD71EB1BD4E008595E7 /* CarkClickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarkClickViewController.h; sourceTree = "<group>"; };
 		84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarkClickViewController.m; sourceTree = "<group>"; };
-		8438D4071F1EF127002BD392 /* ZMCreditSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMCreditSDK.framework; sourceTree = "<group>"; };
 		8442AAB31E8B8B7A00655887 /* AmountClassificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountClassificationViewController.h; sourceTree = "<group>"; };
 		8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountClassificationViewController.m; sourceTree = "<group>"; };
 		8442AAB61E8B8F4200655887 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
@@ -269,6 +266,8 @@
 		847DF40E1F14BADC007DDB60 /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
 		847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		847DF4121F14E282007DDB60 /* 帮帮钱包.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "帮帮钱包.entitlements"; sourceTree = "<group>"; };
+		8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMCreditSDK.framework; sourceTree = "<group>"; };
+		8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMDependUponSDK.framework; sourceTree = "<group>"; };
 		84A7333A1EB86C07008ABB7E /* AddressBookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressBookVC.h; path = Addressbook/AddressBookVC.h; sourceTree = "<group>"; };
 		84A7333B1EB86C07008ABB7E /* AddressBookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressBookVC.m; path = Addressbook/AddressBookVC.m; sourceTree = "<group>"; };
 		84A7333C1EB86C07008ABB7E /* CDFInitialsAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDFInitialsAvatar.h; path = Addressbook/CDFInitialsAvatar.h; sourceTree = "<group>"; };
@@ -360,7 +359,6 @@
 		84C467FD1F0CC87D000ECAD8 /* YLSOPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLSOPickerView.h; sourceTree = "<group>"; };
 		84C467FE1F0CC87D000ECAD8 /* YLSOPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLSOPickerView.m; sourceTree = "<group>"; };
 		84C468001F0CCDDD000ECAD8 /* Remind.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Remind.xcassets; sourceTree = "<group>"; };
-		84C874ED1F1CECC4002A0B8B /* ZMDependUponSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMDependUponSDK.framework; sourceTree = "<group>"; };
 		84C874F11F1CF143002A0B8B /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		84C874F31F1CF1E4002A0B8B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		84C874F51F1CF1FB002A0B8B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -386,7 +384,6 @@
 			files = (
 				84C875021F1CF233002A0B8B /* CoreGraphics.framework in Frameworks */,
 				84C874FC1F1CF21B002A0B8B /* QuartzCore.framework in Frameworks */,
-				840D0FD31F1DB390008303C1 /* Contacts.framework in Frameworks */,
 				840D0FCC1F1D9BFE008303C1 /* libstdc++.tbd in Frameworks */,
 				840D0FD61F1DB964008303C1 /* libexidcardios.a in Frameworks */,
 				840D0FCA1F1D9BE9008303C1 /* libc++.tbd in Frameworks */,
@@ -401,13 +398,13 @@
 				84C874F21F1CF143002A0B8B /* iflyMSC.framework in Frameworks */,
 				84C44BDF1F1CD580006C921C /* libz.tbd in Frameworks */,
 				84C44BDD1F1CD56E006C921C /* CoreMotion.framework in Frameworks */,
-				8438D4081F1EF127002BD392 /* ZMCreditSDK.framework in Frameworks */,
+				8492F8C01F207BA1003E5CEA /* ZMDependUponSDK.framework in Frameworks */,
 				84C44BDB1F1CD562006C921C /* AssetsLibrary.framework in Frameworks */,
 				84C44BD91F1CD559006C921C /* EventKit.framework in Frameworks */,
 				84C44BD71F1CD54E006C921C /* MessageUI.framework in Frameworks */,
+				8492F8BF1F207BA1003E5CEA /* ZMCreditSDK.framework in Frameworks */,
 				84C44BD51F1CD534006C921C /* CFNetwork.framework in Frameworks */,
 				84C44BD31F1CD52A006C921C /* MobileCoreServices.framework in Frameworks */,
-				84C874EE1F1CECC4002A0B8B /* ZMDependUponSDK.framework in Frameworks */,
 				84D2525A1EBB0016004E598A /* Security.framework in Frameworks */,
 				84D252581EBB000D004E598A /* AdSupport.framework in Frameworks */,
 				840AB3571E6E660700532231 /* libxml2.tbd in Frameworks */,
@@ -463,8 +460,6 @@
 		840AB3551E6E660700532231 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8438D4071F1EF127002BD392 /* ZMCreditSDK.framework */,
-				840D0FD21F1DB390008303C1 /* Contacts.framework */,
 				840D0FCB1F1D9BFE008303C1 /* libstdc++.tbd */,
 				840D0FC91F1D9BE9008303C1 /* libc++.tbd */,
 				84C875011F1CF233002A0B8B /* CoreGraphics.framework */,
@@ -480,7 +475,8 @@
 				84C44BE21F1CD5A1006C921C /* CoreTelephony.framework */,
 				84C44BE01F1CD594006C921C /* SystemConfiguration.framework */,
 				84C44BDE1F1CD580006C921C /* libz.tbd */,
-				84C874ED1F1CECC4002A0B8B /* ZMDependUponSDK.framework */,
+				8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */,
+				8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */,
 				84C44BCC1F1CD38D006C921C /* H5Service.bundle */,
 				84C44BDC1F1CD56E006C921C /* CoreMotion.framework */,
 				84C44BDA1F1CD562006C921C /* AssetsLibrary.framework */,
@@ -949,7 +945,7 @@
 				TargetAttributes = {
 					841224241E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XQ37MWJJTH;
+						DevelopmentTeam = AHHJZDVPJ2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1337,7 +1333,7 @@
 				CODE_SIGN_ENTITLEMENTS = "jishi/帮帮钱包.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiaowa Tian (33CQCCKDU6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XQ37MWJJTH;
+				DEVELOPMENT_TEAM = AHHJZDVPJ2;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1393,7 +1389,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.daikuanhua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.bangbangqianbao;
 				PRODUCT_NAME = daikuanhua;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1413,7 +1409,7 @@
 				CODE_SIGN_ENTITLEMENTS = "jishi/帮帮钱包.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Hai Tian Ji Network Technology Co., Ltd. (AHHJZDVPJ2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XQ37MWJJTH;
+				DEVELOPMENT_TEAM = AHHJZDVPJ2;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1469,7 +1465,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.daikuanhua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.bangbangqianbao;
 				PRODUCT_NAME = daikuanhua;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1609,7 +1605,7 @@
 				CODE_SIGN_ENTITLEMENTS = "jishi/帮帮钱包.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZheJiang HaiTian Network Technology Co., Ltd (NUH99A3LBD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XQ37MWJJTH;
+				DEVELOPMENT_TEAM = AHHJZDVPJ2;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1665,7 +1661,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitian.daikuanhua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.bangbangqianbao;
 				PRODUCT_NAME = daikuanhua;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

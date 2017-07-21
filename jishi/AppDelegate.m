@@ -72,7 +72,7 @@
                            Context.currentUser.uid,@"user_id",
                            @"1",@"type",
                            nil];
-        [[NetWorkManager sharedManager]postJSON:@"&m=business&a=record" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        [[NetWorkManager sharedManager]postNoTipJSON:@"&m=business&a=record" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
@@ -253,10 +253,10 @@
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
     BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
-      BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
+   __unused   BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
-    BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
+   BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
     
     
@@ -267,23 +267,23 @@
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"贷款花",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"贷款花",@"个人中心"];
+    //    NSArray *titles = @[@"帮帮钱包",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav5C,nav3C,nav4C];
-        titles = @[@"贷款花",@"信用卡",@"个人中心"];
+        tabBarController.viewControllers=@[nav6C,nav3C,nav4C];
+        titles = @[@"帮帮钱包",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"Mineing"];
         
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"贷款花",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }
