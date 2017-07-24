@@ -24,9 +24,9 @@
 #else
 #define DLog( s, ... )
 #endif
-#ifndef __OPTIMIZE__
-#define NSLog(...) printf(" %s\n",[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
-#endif
+//#ifndef __OPTIMIZE__
+//#define NSLog(...) printf(" %s\n",[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+//#endif
 #pragma mark ScreenWH
 
 #define SCREEN_BOUNDS [[UIScreen mainScreen] bounds]

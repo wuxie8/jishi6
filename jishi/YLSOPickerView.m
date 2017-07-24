@@ -60,7 +60,7 @@
     [self.doneBtn setTitle:@"完成" forState:UIControlStateNormal];
     [self.doneBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.doneBtn setFrame:YLSRect(320/375, 5/667, 50/375, 40/667)];
-    [self.doneBtn addTarget:self action:@selector(quit) forControlEvents:UIControlEventTouchUpInside];
+    [self.doneBtn addTarget:self action:@selector(quitAndResult) forControlEvents:UIControlEventTouchUpInside];
     [self.topView addSubview:self.doneBtn];
     
     UILabel *titlelb = [[UILabel alloc]initWithFrame:YLSRect(100/375, 0, 175/375, 50/667)];
@@ -105,7 +105,6 @@
     }];
     [view addSubview:self];
 }
-
 -(void)quit
 {
     [UIView animateWithDuration:0.2 animations:^{
@@ -117,7 +116,24 @@
         if (!self.result) {
             self.result = self.array[0];
         }
-      
+        
+        //        [[NSNotificationCenter defaultCenter]postNotificationName:self.title object:self.result];
+        [self removeFromSuperview];
+    }];
+}
+
+-(void)quitAndResult
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.alpha = 0;
+        CGPoint point = self.center;
+        point.y += 250;
+        self.center = point;
+    } completion:^(BOOL finished) {
+        if (!self.result) {
+            self.result = self.array[0];
+        }
+        
         [[NSNotificationCenter defaultCenter]postNotificationName:self.title object:self.result];
         [self removeFromSuperview];
     }];

@@ -9,6 +9,8 @@
 #import "HomePageViewController.h"
 #import "ASValueTrackingSlider.h"
 #import "CertificationViewController.h"
+#import "BaseViewController.h"
+#import "OtherContactsViewController.h"
 #define ImageHeight 220
 #define viewHeight 80
 @interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource,ASValueTrackingSliderDataSource>
@@ -162,7 +164,7 @@
 }
 -(void)applyForLoan
 {
-    CertificationViewController *certification=[[CertificationViewController alloc]init];
+    BaseViewController *certification=[[BaseViewController alloc]init];
     certification.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:certification animated:YES];
 }

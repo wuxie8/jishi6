@@ -331,6 +331,9 @@
 
 
 #pragma mark 加密算法
+
++(NSString *)base64EncodedString:(NSString *)baseString;
+
 + (NSString *) encode:(NSString *)str key:(NSString *)key;
 
 + (NSString *) decode:(NSString *)str key:(NSString *)key;

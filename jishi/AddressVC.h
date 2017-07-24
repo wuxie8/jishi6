@@ -13,10 +13,13 @@
 
 typedef void(^telBlock)(NSString * tel);
 
+typedef void(^personBlock)(PersonModel *person);
+
 @interface AddressVC : NavBaseVC<UITableViewDataSource,UITableViewDelegate>
 
 
 @property(nonatomic, copy)telBlock clickBlock;
+@property(nonatomic, copy)personBlock clickPersonBlock;
 
 @property (nonatomic, copy)NSString *location;
 @property(nonatomic,strong)NSMutableArray *listContent;

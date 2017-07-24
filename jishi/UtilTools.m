@@ -620,7 +620,11 @@ static SystemSoundID shake_sound_enter_id = 0;
     
 }
 #pragma mark 加密算法
-
++(NSString *)base64EncodedString:(NSString *)baseString
+{
+    NSData *data = [baseString dataUsingEncoding:NSUTF8StringEncoding];
+    return [data base64EncodedStringWithOptions:0];
+}
 + (NSString *) encode:(NSString *)str key:(NSString *)key
 {
     // doCipher 不能编汉字，所以要进行 url encode
