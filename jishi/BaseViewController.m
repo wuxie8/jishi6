@@ -49,14 +49,23 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getValue:) name:@"是否婚配" object:nil];
 
     placeArr=@[@"请填写姓名",@"请填写身份证号码",@"请填写性别",@"请选择"];
-
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(boardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = YES;
+    
     UITableView *tab=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     tab.delegate=self;
     tab.dataSource=self;
-    
+    tab.tableFooterView=[UIView new];
     [self.view addSubview:tab];
     [self.view addSubview:self.footView];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     // Do any additional setup after loading the view.
+}
+- (void)boardHide:(UITapGestureRecognizer *)tap
+{
+    [self.view endEditing:YES];
+    
 }
 -(UIView *)footView
 {
@@ -106,8 +115,20 @@
 
 }
 -(void)nextStep{
-
-    [self.navigationController pushViewController:[OperatorViewController new] animated:YES];
+    if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1000] text]]) {
+        [MessageAlertView showErrorMessage:@"姓名不能为空"];
+    }
+    else if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1001] text]]){
+        [MessageAlertView showErrorMessage:@"身份证不能为空"];
+    }
+    else if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1002] text]]){
+        [MessageAlertView showErrorMessage:@"性别不能为空"];
+    }
+    else if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1003] text]]){
+        [MessageAlertView showErrorMessage:@"是否婚配不能为空"];
+    }
+    else{
+        [self.navigationController pushViewController:[OperatorViewController new] animated:YES];}
 
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

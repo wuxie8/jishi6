@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>贷款用</string>
+	<string>蚂蚁花呗</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.haitianhuatian.mayihuabei</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>贷款用</string>
+	<string>蚂蚁花呗</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -128,6 +128,7 @@
 	<key>WKBackgroundModes</key>
 	<array>
 		<string>App downloads content from the network</string>
+		<string>App downloads content in response to push notifications</string>
 		<string>App downloads content in response to push notifications</string>
 	</array>
 </dict>

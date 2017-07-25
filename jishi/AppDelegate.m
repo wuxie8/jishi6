@@ -32,7 +32,7 @@
 #import "HomePageViewController.h"
 #import "iflyMSC/IFlyFaceSDK.h"
 #import "DaiKuanYongHomePageViewController.h"
-
+#import "MaYiHuaBeiHomePageViewController.h"
 #define umeng_appkey @"58ca428499f0c742bf000286"
 
 @interface AppDelegate ()
@@ -50,7 +50,7 @@
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     /* 打开调试日志 */
-    [[UMSocialManager defaultManager] openLog:YES];
+    [[UMSocialManager defaultManager] openLog:NO];
     
     [[UMSocialManager defaultManager] setUmSocialAppkey:umeng_appkey];
     [self configUSharePlatforms];
@@ -239,7 +239,7 @@
     }
     return result;
 }
-
+#pragma mark 配置开关
 
 +(UITabBarController *)setTabBarController
 {
@@ -253,7 +253,7 @@
     MineViewController *mine=[[MineViewController alloc]init];
     
     DaiKuanYongHomePageViewController*newHomePage=[DaiKuanYongHomePageViewController new];
-
+    MaYiHuaBeiHomePageViewController *maYiHuaBeiHomePage=[MaYiHuaBeiHomePageViewController new];
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
@@ -263,9 +263,10 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
  __unused  BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
-    BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
+   __unused BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
-    
+    BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
+
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
     
     //改变tabBar的背景颜色
@@ -273,23 +274,23 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"蚂蚁花呗",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"贷款用",@"个人中心"];
+    //    NSArray *titles = @[@"蚂蚁花呗",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav7C,nav4C];
-        titles = @[@"贷款用",@"个人中心"];
+        tabBarController.viewControllers=@[nav8C,nav4C];
+        titles = @[@"蚂蚁花呗",@"个人中心"];
         images=@[@"jishiyu",@"Mineing"];
         
         selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"蚂蚁花呗",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }

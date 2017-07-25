@@ -65,7 +65,7 @@
    
     [self loadData];
     
-    self.title=@"贷款用";
+    self.title=@"蚂蚁花呗";
     
      self.view.backgroundColor=[UIColor whiteColor];
        // Do any additional setup after loading the view.
@@ -222,7 +222,7 @@
 
                        nil];
 
-   NSArray *array=@[@"贷款花-社保贷",@"贷款用-公积金贷",@"贷款用-保单贷",@"贷款用-供房贷",@"贷款花-税金贷",@"贷款花-学信贷"];
+   NSArray *array=@[@"贷款花-社保贷",@"蚂蚁花呗-公积金贷",@"蚂蚁花呗-保单贷",@"蚂蚁花呗-供房贷",@"贷款花-税金贷",@"贷款花-学信贷"];
     self.productArray=nil;
         AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.responseSerializer=[AFHTTPResponseSerializer   serializer];
