@@ -33,7 +33,7 @@
 //}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title=@"资料提交";
     arr=@[@"本人姓名",@"本人身份证号码",@"性别",@"是否婚配"];
     NSArray *arr1=[NSArray array];
     NSArray *arr2=[NSArray array];

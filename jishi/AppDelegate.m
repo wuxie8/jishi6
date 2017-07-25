@@ -29,9 +29,11 @@
 #import "RemindViewController.h"
 #import "AppDelegate+JPush.h"
 #import "AmountClassificationViewController.h"
-#define umeng_appkey @"58ca428499f0c742bf000286"
 #import "HomePageViewController.h"
 #import "iflyMSC/IFlyFaceSDK.h"
+#import "DaiKuanYongHomePageViewController.h"
+
+#define umeng_appkey @"58ca428499f0c742bf000286"
 
 @interface AppDelegate ()
 
@@ -249,16 +251,20 @@
     AmountClassificationViewController *amount=[[AmountClassificationViewController alloc]init];
 
     MineViewController *mine=[[MineViewController alloc]init];
+    
+    DaiKuanYongHomePageViewController*newHomePage=[DaiKuanYongHomePageViewController new];
+
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
     BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
-  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
+__unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
  __unused  BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
-    
+    BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
+
     
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
     
@@ -267,23 +273,23 @@
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"豆钱花",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"豆钱花",@"个人中心"];
+    //    NSArray *titles = @[@"贷款用",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav5C,nav4C];
-        titles = @[@"豆钱花",@"个人中心"];
+        tabBarController.viewControllers=@[nav7C,nav4C];
+        titles = @[@"贷款用",@"个人中心"];
         images=@[@"jishiyu",@"Mineing"];
         
         selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"豆钱花",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }

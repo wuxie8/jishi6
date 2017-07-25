@@ -52,6 +52,7 @@
 		8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AABA1E8B992600655887 /* AboutUsViewController.m */; };
 		8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */; };
 		844885B61EC2A2FF0093424D /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844885B51EC2A2FF0093424D /* BtnView.m */; };
+		8449F17F1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8449F17E1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m */; };
 		844B8FF61E766ABF007C3207 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */; };
 		844B8FF91E769275007C3207 /* DaikuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B8FF81E769275007C3207 /* DaikuanTableViewCell.m */; };
 		8451AFC31EA89842002F04B6 /* ShareFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451AFC21EA89842002F04B6 /* ShareFriendsViewController.m */; };
@@ -64,6 +65,7 @@
 		847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D91E779E9F0026F585 /* LoanClasssificationVC.m */; };
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
 		847199E01E77CA410026F585 /* UserInfoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DF1E77CA410026F585 /* UserInfoContext.m */; };
+		847BBC3C1F26D56400DDFDE2 /* NewHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BBC3B1F26D56400DDFDE2 /* NewHomePageViewController.m */; };
 		847DF4101F14BADC007DDB60 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */; };
 		8492F8BF1F207BA1003E5CEA /* ZMCreditSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */; };
 		8492F8C01F207BA1003E5CEA /* ZMDependUponSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */; };
@@ -245,6 +247,8 @@
 		8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountTableViewCell.m; sourceTree = "<group>"; };
 		844885B41EC2A2FF0093424D /* BtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
 		844885B51EC2A2FF0093424D /* BtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
+		8449F17D1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiKuanYongHomePageViewController.h; sourceTree = "<group>"; };
+		8449F17E1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiKuanYongHomePageViewController.m; sourceTree = "<group>"; };
 		844B8FF41E766ABF007C3207 /* ForgotPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordVC.h; sourceTree = "<group>"; };
 		844B8FF51E766ABF007C3207 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
 		844B8FF71E769275007C3207 /* DaikuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaikuanTableViewCell.h; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 		847199DC1E77C92B0026F585 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		847199DE1E77CA410026F585 /* UserInfoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoContext.h; sourceTree = "<group>"; };
 		847199DF1E77CA410026F585 /* UserInfoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoContext.m; sourceTree = "<group>"; };
+		847BBC3A1F26D56400DDFDE2 /* NewHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomePageViewController.h; sourceTree = "<group>"; };
+		847BBC3B1F26D56400DDFDE2 /* NewHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomePageViewController.m; sourceTree = "<group>"; };
 		847DF40E1F14BADC007DDB60 /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
 		847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		847DF4121F14E282007DDB60 /* 帮帮钱包.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "帮帮钱包.entitlements"; sourceTree = "<group>"; };
@@ -568,6 +574,10 @@
 				84CD37771F26052D0087941C /* OtherContactsViewController.m */,
 				84CD377C1F261C520087941C /* AuditViewController.h */,
 				84CD377D1F261C520087941C /* AuditViewController.m */,
+				847BBC3A1F26D56400DDFDE2 /* NewHomePageViewController.h */,
+				847BBC3B1F26D56400DDFDE2 /* NewHomePageViewController.m */,
+				8449F17D1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.h */,
+				8449F17E1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m */,
 				84C44B8D1F1CCCCF006C921C /* HomePageViewController.h */,
 				84C44B8E1F1CCCCF006C921C /* HomePageViewController.m */,
 				84CD37711F25F1F00087941C /* BaseViewController.h */,
@@ -968,7 +978,7 @@
 				TargetAttributes = {
 					841224241E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AHHJZDVPJ2;
+						DevelopmentTeam = GDPN4BAKG5;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1138,6 +1148,7 @@
 				847199E01E77CA410026F585 /* UserInfoContext.m in Sources */,
 				841224641E6D490100048188 /* JishiyuViewController.m in Sources */,
 				8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */,
+				8449F17F1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m in Sources */,
 				8451AFC31EA89842002F04B6 /* ShareFriendsViewController.m in Sources */,
 				8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */,
 				84C44B9B1F1CCD68006C921C /* BankCardAuthenticationViewController.m in Sources */,
@@ -1152,6 +1163,7 @@
 				8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */,
 				84B9DC271E9DCCB10066A92D /* BaseVC.m in Sources */,
 				84C467F81F0CC687000ECAD8 /* HcdDateTimePickerView.m in Sources */,
+				847BBC3C1F26D56400DDFDE2 /* NewHomePageViewController.m in Sources */,
 				84C44B951F1CCD1D006C921C /* ASValueTrackingSlider.m in Sources */,
 				840FE96D1E6FA18D0050C444 /* OptionsBarItem.m in Sources */,
 				840AB3531E6E50DA00532231 /* WSPageView.m in Sources */,
@@ -1357,7 +1369,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AHHJZDVPJ2;
+				DEVELOPMENT_TEAM = GDPN4BAKG5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1413,7 +1425,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.dounihua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
 				PRODUCT_NAME = daikuanhua;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1431,7 +1443,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AHHJZDVPJ2;
+				DEVELOPMENT_TEAM = GDPN4BAKG5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1487,7 +1499,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.dounihua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
 				PRODUCT_NAME = daikuanhua;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1624,7 +1636,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AHHJZDVPJ2;
+				DEVELOPMENT_TEAM = GDPN4BAKG5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1680,7 +1692,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianji.dounihua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
 				PRODUCT_NAME = daikuanhua;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
