@@ -36,16 +36,14 @@
         [self.navigationController popViewControllerAnimated:NO];
         
     }
-  
 
-    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"登录" ;
+    self.title=@"登录";
     
-    
+
     LandingDynamicViewControllerViewController *landing=[[ LandingDynamicViewControllerViewController alloc]init];
     [landing setRegisterblock:^()
      {

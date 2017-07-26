@@ -34,7 +34,6 @@
     qixian=12;
     [self.view addSubview:self.loadHeadView];
     [self.view addSubview:self.loadMiddleView];
-    // Do any additional setup after loading the view.
 }
 -(UIView *)loadHeadView
 {
@@ -96,7 +95,6 @@
         _loadMiddleView=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.loadHeadView.frame), WIDTH, 520)];
         UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, WIDTH-20, 20)];
         lab.text=@"立即申请，马上用钱";
-        //        lab.font=[UIFont systemFontOfSize:14];
         [_loadMiddleView  addSubview:lab];
         UIView *view=[[UIView alloc]initWithFrame:CGRectMake(21,  40, WIDTH-21*2, viewHeight)];
         view.backgroundColor=[UIColor whiteColor];
