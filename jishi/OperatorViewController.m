@@ -95,8 +95,7 @@
                            @"api.mobile.area",@"method",
                            @"0618854278903691",@"apiKey",
                            @"1.0.0",@"version",
-                           //                                                      @"371102199303215716",@"identityCardNo",
-                           //                                                      @"吴公胜",@"identityName",
+                       
                            diction[@"0"],@"mobileNo",
                            
                            
@@ -334,7 +333,6 @@
                 }];
                 
                 UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                    NSLog(@"The \"Secure Text Entry\" alert's other action occured.");
                     if ([UtilTools isBlankString:otherInfo]) {
                         [MessageAlertView  showErrorMessage:@"验证码不能为空"];
                         return ;
@@ -516,14 +514,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

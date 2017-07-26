@@ -36,8 +36,8 @@ static MessageAlertView *alertView;
 -(void)checkHidenLink{
     chekcFlag=200;
     linkP2=[CADisplayLink displayLinkWithTarget:self selector:@selector(hudIshiden)];
-    linkP2.preferredFramesPerSecond=6;
-//    linkP2.frameInterval=6;
+//    linkP2.preferredFramesPerSecond=6;
+    linkP2.frameInterval=6;
     [linkP2 addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     
 }
@@ -81,7 +81,7 @@ static MessageAlertView *alertView;
         
     }else{
         linkP=[CADisplayLink displayLinkWithTarget:self selector:@selector(jiancount)];
-        linkP.preferredFramesPerSecond=6;
+        linkP.frameInterval=6;
         [linkP addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     }
 }

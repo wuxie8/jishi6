@@ -33,6 +33,7 @@
 #import "iflyMSC/IFlyFaceSDK.h"
 #import "DaiKuanYongHomePageViewController.h"
 #import "MaYiHuaBeiHomePageViewController.h"
+#import "JishiyudaikuanViewController.h"
 #define umeng_appkey @"58ca428499f0c742bf000286"
 
 @interface AppDelegate ()
@@ -254,6 +255,7 @@
     
     DaiKuanYongHomePageViewController*newHomePage=[DaiKuanYongHomePageViewController new];
     MaYiHuaBeiHomePageViewController *maYiHuaBeiHomePage=[MaYiHuaBeiHomePageViewController new];
+    JishiyudaikuanViewController*Jishiyudaikuan=[JishiyudaikuanViewController new];
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
@@ -265,7 +267,9 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
 
    __unused BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
-    BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
+ __unused   BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
+    BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
+
 
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
     
@@ -274,23 +278,23 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"蚂蚁花呗",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"及时雨贷款",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"蚂蚁花呗",@"个人中心"];
+    //    NSArray *titles = @[@"及时雨贷款",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav8C,nav4C];
-        titles = @[@"蚂蚁花呗",@"个人中心"];
+        tabBarController.viewControllers=@[nav9C,nav4C];
+        titles = @[@"及时雨贷款",@"个人中心"];
         images=@[@"jishiyu",@"Mineing"];
         
         selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"蚂蚁花呗",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"及时雨贷款",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }

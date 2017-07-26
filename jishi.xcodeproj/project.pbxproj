@@ -74,6 +74,7 @@
 		84A733461EB86C07008ABB7E /* NSString+TKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7333F1EB86C07008ABB7E /* NSString+TKUtilities.m */; };
 		84A733471EB86C07008ABB7E /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A733411EB86C07008ABB7E /* PersonCell.m */; };
 		84A733481EB86C07008ABB7E /* XHJAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A733431EB86C07008ABB7E /* XHJAddressBook.m */; };
+		84A7D0861F2879DE004E95C3 /* JishiyudaikuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7D0851F2879DE004E95C3 /* JishiyudaikuanViewController.m */; };
 		84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */; };
 		84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */; };
 		84B9DC261E9DCCB10066A92D /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DC1D1E9DCCB10066A92D /* BaseNC.m */; };
@@ -206,7 +207,7 @@
 		840FE9931E6FF3900050C444 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuTableViewCell.h; sourceTree = "<group>"; };
 		840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuTableViewCell.m; sourceTree = "<group>"; };
-		841224251E6D480300048188 /* daikuanhua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daikuanhua.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		841224251E6D480300048188 /* xianjinkadai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xianjinkadai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841224291E6D480300048188 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8412242B1E6D480300048188 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8412242C1E6D480300048188 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -289,6 +290,8 @@
 		84A733411EB86C07008ABB7E /* PersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonCell.m; path = Addressbook/PersonCell.m; sourceTree = "<group>"; };
 		84A733421EB86C07008ABB7E /* XHJAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHJAddressBook.h; path = Addressbook/XHJAddressBook.h; sourceTree = "<group>"; };
 		84A733431EB86C07008ABB7E /* XHJAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XHJAddressBook.m; path = Addressbook/XHJAddressBook.m; sourceTree = "<group>"; };
+		84A7D0841F2879DE004E95C3 /* JishiyudaikuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyudaikuanViewController.h; sourceTree = "<group>"; };
+		84A7D0851F2879DE004E95C3 /* JishiyudaikuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyudaikuanViewController.m; sourceTree = "<group>"; };
 		84B4779A1E8C9EE600DDF4AB /* LoanClickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClickViewController.h; sourceTree = "<group>"; };
 		84B4779B1E8C9EE600DDF4AB /* LoanClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanClickViewController.m; sourceTree = "<group>"; };
 		84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessViewController.h; sourceTree = "<group>"; };
@@ -578,6 +581,8 @@
 				8449F1811F27465F0089DEB5 /* MaYiHuaBeiHomePageViewController.m */,
 				8449F17D1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.h */,
 				8449F17E1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m */,
+				84A7D0841F2879DE004E95C3 /* JishiyudaikuanViewController.h */,
+				84A7D0851F2879DE004E95C3 /* JishiyudaikuanViewController.m */,
 				84C44B8D1F1CCCCF006C921C /* HomePageViewController.h */,
 				84C44B8E1F1CCCCF006C921C /* HomePageViewController.m */,
 				84CD37711F25F1F00087941C /* BaseViewController.h */,
@@ -640,7 +645,7 @@
 		841224261E6D480300048188 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841224251E6D480300048188 /* daikuanhua.app */,
+				841224251E6D480300048188 /* xianjinkadai.app */,
 				8412243E1E6D480300048188 /* jishiTests.xctest */,
 				841224491E6D480300048188 /* jishiUITests.xctest */,
 			);
@@ -928,7 +933,7 @@
 			);
 			name = jishi;
 			productName = jishi;
-			productReference = 841224251E6D480300048188 /* daikuanhua.app */;
+			productReference = 841224251E6D480300048188 /* xianjinkadai.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8412243D1E6D480300048188 /* jishiTests */ = {
@@ -978,8 +983,8 @@
 				TargetAttributes = {
 					841224241E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = BGV3M7S2DU;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 763CMQA5Z2;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -1110,6 +1115,7 @@
 				840D0FCD1F1DA26A008303C1 /* AVCaptureViewController.m in Sources */,
 				84C44BA11F1CCD95006C921C /* DetectionSuccessfulViewController.m in Sources */,
 				84CD377E1F261C520087941C /* AuditViewController.m in Sources */,
+				84A7D0861F2879DE004E95C3 /* JishiyudaikuanViewController.m in Sources */,
 				84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */,
 				84C44BBC1F1CD07A006C921C /* IDInfo.m in Sources */,
 				8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */,
@@ -1368,8 +1374,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BGV3M7S2DU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 763CMQA5Z2;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1425,10 +1431,10 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.mayihuabei;
-				PRODUCT_NAME = mayihuabei;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xjjq.0725xjjq;
+				PRODUCT_NAME = xianjinkadai;
+				PROVISIONING_PROFILE = "b9ee5066-5e8d-47c0-9d97-2d2132563df0";
+				PROVISIONING_PROFILE_SPECIFIER = "com.xjjq.0725xjjq_App Store";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daikuanhua.app/daikuanhua";
 				VALID_ARCHS = "arm64 armv7";
@@ -1442,8 +1448,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BGV3M7S2DU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 763CMQA5Z2;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1499,10 +1505,10 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.mayihuabei;
-				PRODUCT_NAME = mayihuabei;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xjjq.0725xjjq;
+				PRODUCT_NAME = xianjinkadai;
+				PROVISIONING_PROFILE = "b9ee5066-5e8d-47c0-9d97-2d2132563df0";
+				PROVISIONING_PROFILE_SPECIFIER = "com.xjjq.0725xjjq_App Store";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daikuanhua.app/daikuanhua";
 				VALID_ARCHS = "arm64 armv7";
@@ -1635,8 +1641,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BGV3M7S2DU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 763CMQA5Z2;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1692,10 +1698,10 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.mayihuabei;
-				PRODUCT_NAME = mayihuabei;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xjjq.0725xjjq;
+				PRODUCT_NAME = xianjinkadai;
+				PROVISIONING_PROFILE = "b9ee5066-5e8d-47c0-9d97-2d2132563df0";
+				PROVISIONING_PROFILE_SPECIFIER = "com.xjjq.0725xjjq_App Store";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 			};
