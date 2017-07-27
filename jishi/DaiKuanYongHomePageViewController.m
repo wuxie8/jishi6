@@ -25,7 +25,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"安逸贷借款";
+    self.title=@"帮帮钱包";
     
     [self.view addSubview:self.loadHeadView];
     [self.view addSubview:self.loadMiddleView];
@@ -45,7 +45,7 @@
         [blueview addSubview:iconImageView];
         
         UILabel *appTitle=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(iconImageView.frame)+20, 20, 150, 30)];
-        appTitle.text=@"安逸贷借款";
+        appTitle.text=@"帮帮钱包";
         appTitle.font=[UIFont systemFontOfSize:16];
         [blueview addSubview:appTitle];
         

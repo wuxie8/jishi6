@@ -34,7 +34,7 @@
 #import "DaiKuanYongHomePageViewController.h"
 #import "MaYiHuaBeiHomePageViewController.h"
 #import "JishiyudaikuanViewController.h"
-#define umeng_appkey @"59787d4404e2051db8000587"
+#define umeng_appkey @"59794a929f06fd4447000799"
 
 @interface AppDelegate ()
 
@@ -263,12 +263,12 @@
 __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
- __unused  BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
+  BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
    __unused BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
  __unused   BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
-    BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
+    __unused BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
 
 
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
@@ -278,23 +278,23 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"安逸贷借款",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"安逸贷借款",@"个人中心"];
+    //    NSArray *titles = @[@"帮帮钱包",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav9C,nav4C];
-        titles = @[@"安逸贷借款",@"个人中心"];
+        tabBarController.viewControllers=@[nav6C,nav4C];
+        titles = @[@"帮帮钱包",@"个人中心"];
         images=@[@"jishiyu",@"Mineing"];
         
         selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"安逸贷借款",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }
