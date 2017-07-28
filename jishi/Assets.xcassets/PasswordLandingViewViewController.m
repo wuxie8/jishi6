@@ -10,7 +10,7 @@
 #import "JPUSHService.h"
 
 #import "User.h"
-#define ViewHeight 40
+#define ViewHeight1 40
 #define ButtonWeight 100
 @interface PasswordLandingViewViewController ()
 
@@ -26,7 +26,7 @@
     NSArray *arr1=@[@"请输入手机号",@"请输入密码"];
     self.view.backgroundColor=AppPageColor;
     for (int i=0; i<arr.count; i++) {
-        UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 20+i*ViewHeight, WIDTH, ViewHeight)];
+        UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 20+i*ViewHeight1, WIDTH, ViewHeight1)];
         view.backgroundColor=[UIColor whiteColor];
         view.tag=100+i;
         [self.view addSubview:view];
@@ -55,7 +55,7 @@
         [self.view addSubview:view];
     }
     
-    UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+2*ViewHeight+20, WIDTH-3*2, 50)];
+    UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+2*ViewHeight1+20, WIDTH-3*2, 50)];
     loginButton.backgroundColor=AppBackColor;
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     loginButton.clipsToBounds=YES;

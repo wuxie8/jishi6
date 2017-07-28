@@ -10,6 +10,7 @@
 #import "AmountTableViewCell.h"
 #import "LoanClickViewController.h"
 #import "LoanDetailsViewController.h"
+#import "WebVC.h"
 @interface AmountClassificationViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -36,6 +37,10 @@
     tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
     [self.view addSubview:tab];
+    
+    
+   
+
     // Do any additional setup after loading the view.
 }
 -(void)getData

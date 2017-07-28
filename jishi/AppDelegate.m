@@ -34,7 +34,9 @@
 #import "DaiKuanYongHomePageViewController.h"
 #import "MaYiHuaBeiHomePageViewController.h"
 #import "JishiyudaikuanViewController.h"
-#define umeng_appkey @"59794a929f06fd4447000799"
+#import "XianJinSuDaiViewController.h"
+#import "BBSViewController.h"
+#define umeng_appkey @"5979b7fb7f2c74180300100e"
 
 @interface AppDelegate ()
 
@@ -256,6 +258,8 @@
     DaiKuanYongHomePageViewController*newHomePage=[DaiKuanYongHomePageViewController new];
     MaYiHuaBeiHomePageViewController *maYiHuaBeiHomePage=[MaYiHuaBeiHomePageViewController new];
     JishiyudaikuanViewController*Jishiyudaikuan=[JishiyudaikuanViewController new];
+    XianJinSuDaiViewController *XianJinSuDai=[XianJinSuDaiViewController new];
+    BBSViewController *bbs=[BBSViewController new];
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
@@ -263,13 +267,15 @@
 __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
-  BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
+ __unused BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
    __unused BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
  __unused   BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
-    __unused BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
+     BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
 
+   __unused  BaseNC *nav10C=[[BaseNC alloc]initWithRootViewController:XianJinSuDai];
+      BaseNC *nav11C=[[BaseNC alloc]initWithRootViewController:bbs];
 
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
     
@@ -286,11 +292,11 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav6C,nav4C];
-        titles = @[@"帮帮钱包",@"个人中心"];
-        images=@[@"jishiyu",@"Mineing"];
+        tabBarController.viewControllers=@[nav9C,nav11C,nav4C];
+        titles = @[@"帮帮钱包",@"论坛",@"个人中心"];
+        images=@[@"jishiyu",@"BBS",@"Mineing"];
         
-        selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
+        selectedImages=@[@"jishiyuBlue",@"BBSBlue",@"MineingBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
