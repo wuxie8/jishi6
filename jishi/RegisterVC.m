@@ -74,7 +74,7 @@
         [view addSubview:backView];
         if (i==arr.count-1) {
             but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-90, 0, 90, ViewHeight)];
-            but.backgroundColor=AppBackColor;
+            but.backgroundColor=AppButtonbackgroundColor;
             [but setTitle:@"获取验证码" forState:UIControlStateNormal];
             but.titleLabel.font=[UIFont systemFontOfSize:14*Context.autoSizeScaleX];
             [but addTarget: self action:@selector(verificationCodeRegister) forControlEvents:UIControlEventTouchUpInside];
@@ -83,7 +83,7 @@
         [self.view addSubview:view];
     }
     UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+arr.count*ViewHeight+20, WIDTH-3*2, 50)];
-    loginButton.backgroundColor=AppBackColor;
+    loginButton.backgroundColor=AppButtonbackgroundColor;
     [loginButton setTitle:@"注册" forState:UIControlStateNormal];
     loginButton.clipsToBounds=YES;
     [loginButton addTarget:self action:@selector(registerClick ) forControlEvents:UIControlEventTouchUpInside];
@@ -137,9 +137,16 @@
             if ( [NSKeyedArchiver archiveRootObject:Context.currentUser toFile:DOCUMENT_FOLDER(@"loginedUser")]) {
                 //保存用户登录状态以及登录成功通知
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kIsLogin"];
-                if (self.backblock) {
-                    self.backblock();
+                if (self.isHidden) {
+                    [self.navigationController  popViewControllerAnimated:NO];
                 }
+                else{
+                
+                    if (self.backblock) {
+                        self.backblock();
+                    }
+                }
+               
                 NSDictionary *dic1=[NSDictionary dictionaryWithObjectsAndKeys:
                                     dic[@"token"],@"user_id",
                                     @"1",@"type",

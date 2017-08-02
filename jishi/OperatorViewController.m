@@ -23,6 +23,13 @@
     NSString *otherInfo;
 
 }
+-(void)viewWillDisappear:(BOOL)animated
+
+{
+    [super viewWillDisappear:animated];
+    [MessageAlertView dismissHud];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"运营商验证";
@@ -449,14 +456,14 @@
 
         }
         else{
-            [MessageAlertView dismissHud];
 
             [MessageAlertView showErrorMessage:responseObject[@"msg"]];
             
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);
-        
+        [MessageAlertView dismissHud];
+
         
     }];
 }
@@ -503,9 +510,11 @@
     textField.textAlignment=NSTextAlignmentLeft;
     textField.delegate=self;
     textField.tag=1000+indexPath.section;
+   
     textField.adjustsFontSizeToFitWidth=YES;
     textField.textColor=[UIColor grayColor];
     textField.placeholder=placeArr[indexPath.section];
+ 
     [cell.contentView addSubview:textField];
     return cell;
 }

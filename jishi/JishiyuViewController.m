@@ -40,7 +40,7 @@
  
  
 
-    self.title=@"帮帮钱包";
+    self.title=@"现金卡贷";
 
     
      page=1;
@@ -71,7 +71,7 @@ tab.dataSource=self;
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];
-    NSArray *array=@[@"帮帮钱包-社保贷",@"帮帮钱包-公积金贷",@"帮帮钱包-保单贷",@"帮帮钱包-供房贷",@"帮帮钱包-税金贷",@"帮帮钱包-学信贷"];
+    NSArray *array=@[@"现金卡贷-社保贷",@"现金卡贷-公积金贷",@"现金卡贷-保单贷",@"现金卡贷-供房贷",@"现金卡贷-税金贷",@"现金卡贷-学信贷"];
 [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
     NSDictionary *dic=(NSDictionary *)responseObject;
     if ([dic[@"status"]boolValue]) {

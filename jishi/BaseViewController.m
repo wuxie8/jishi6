@@ -24,6 +24,15 @@
     NSMutableDictionary *dic;
     UIButton *selectebutton;
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(complete)];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationItem.rightBarButtonItem = backItem;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getValue:) name:@"是否婚配" object:nil];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"资料提交";
@@ -32,14 +41,13 @@
     NSArray *arr2=[NSArray array];
     NSArray *arr3=[NSArray array];
     NSArray *arr4=@[@"是",@"否"];
+    [self getList];
     array=@[arr1,arr2,arr3,arr4];
     dic=[NSMutableDictionary dictionary];
     for (int i=0; i<arr.count; i++) {
         [dic setObject:array[i] forKey:arr[i]];
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getValue:) name:arr[i] object:nil];
         
     }
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getValue:) name:@"是否婚配" object:nil];
 
     placeArr=@[@"请填写姓名",@"请填写身份证号码",@"请填写性别",@"请选择"];
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(boardHide:)];
@@ -84,7 +92,7 @@
         clickLabel.userInteractionEnabled = YES;
         UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(label.frame)+10, WIDTH-20, 40 )];
         [but setTitle:@"下一步" forState:UIControlStateNormal];
-        [but addTarget:self action:@selector(nextStep) forControlEvents:UIControlEventTouchUpInside];
+        [but addTarget:self action:@selector(complete) forControlEvents:UIControlEventTouchUpInside];
         but.layer.cornerRadius =  20;
         //            //将多余的部分切掉
         but.layer.masksToBounds = YES;
@@ -185,33 +193,84 @@
     //    [self.dic setObject:notification.object forKey:@"10"];
     
 }
--(void)complete
+
+-(void)getList
 {
-    NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
-                        Context.currentUser.uid,@"uid",
-                        [(UITextField *) [self.view viewWithTag:1000] text],@"edu",
-                        [(UITextField *) [self.view viewWithTag:1001] text],@"creditcard",
-                        [(UITextField *) [self.view viewWithTag:1002] text],@"credit_record",
-                        [(UITextField *) [self.view viewWithTag:1003] text],@"liabilities_status",
-                        [(UITextField *) [self.view viewWithTag:1004] text],@"loan_record",
-                        [(UITextField *) [self.view viewWithTag:1005] text],@"taobao_id",
-                        [(UITextField *) [self.view viewWithTag:1006] text],@"loan_use",
+    NSDictionary *dic1=[NSDictionary dictionaryWithObjectsAndKeys:
                         
+                        Context.currentUser.uid,@"uid",
                         nil];
-    [[NetWorkManager sharedManager]postNoTipJSON:[NSString stringWithFormat:@"%@&m=userdetail&a=credit_add",SERVERE] parameters:dic2 success:^(NSURLSessionDataTask *task, id responseObject) {
-        if ([responseObject[@"code"]isEqualToString:@"0000"]) {
-            [MessageAlertView showSuccessMessage:@"上传成功"];
-                [self.navigationController popViewControllerAnimated:YES];
-        }
-        else
-        {
-            [MessageAlertView showErrorMessage:responseObject[@"msg"]];
+    
+    [[NetWorkManager sharedManager]postJSON:[NSString stringWithFormat:@"%@&m=userinfo&a=postDetail",SERVEREURL] parameters:dic1 success:^(NSURLSessionDataTask *task, id responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"0000"]) {
+            NSDictionary *diction=[responseObject[@"data"] objectForKey:@"data"];
+            if (![UtilTools isBlankDictionary:diction]) {
+                UITextField *text1=    [self.view viewWithTag:1000];
+                [text1 setText:[diction objectForKey:@"realname"]];
+                UITextField *text2=    [self.view viewWithTag:1001];
+                [text2 setText:[diction objectForKey:@"idcard"]];
+                if (![UtilTools isBlankString:[diction objectForKey:@"sex"]]) {
+                    UITextField *text3=    [self.view viewWithTag:1002];
+
+                    [text3  setText:[diction objectForKey:@"sex"]];
+                }
+                if (![UtilTools isBlankString:[diction objectForKey:@"is_married"]]) {
+                    UITextField *text4=    [self.view viewWithTag:1003];
+                    [text4 setText:[diction objectForKey:@"is_married"]];
+                }
+             
+            }
+            
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);
         
         
     }];
+    
+    
+}
+
+
+-(void)complete
+{
+    
+    if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1000] text]]) {
+        [MessageAlertView showErrorMessage:@"姓名不能为空"];
+    }
+    else if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1001] text]]){
+        [MessageAlertView showErrorMessage:@"身份证不能为空"];
+    }
+    else if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1002] text]]){
+        [MessageAlertView showErrorMessage:@"性别不能为空"];
+    }
+    else if ([UtilTools isBlankString: [(UITextField *) [self.view viewWithTag:1003] text]]){
+        [MessageAlertView showErrorMessage:@"是否婚配不能为空"];
+    }
+    else{
+        
+        NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
+                            Context.currentUser.uid,@"uid",
+                            [(UITextField *) [self.view viewWithTag:1000] text],@"realname",
+                            [(UITextField *) [self.view viewWithTag:1001] text],@"idcard",
+                            [(UITextField *) [self.view viewWithTag:1002] text],@"sex",
+                            [(UITextField *) [self.view viewWithTag:1003] text],@"is_married",
+                            
+                            nil];
+        [[NetWorkManager sharedManager]postNoTipJSON:[NSString stringWithFormat:@"%@&m=userinfo&a=postAdd",SERVERE] parameters:dic2 success:^(NSURLSessionDataTask *task, id responseObject) {
+            if ([responseObject[@"code"]isEqualToString:@"0000"]) {
+            }
+            else
+            {
+                [MessageAlertView showErrorMessage:responseObject[@"msg"]];
+            }
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"%@",error);
+            
+            
+        }];
+
+        [self.navigationController pushViewController:[OperatorViewController new] animated:YES];}
     
     
 }

@@ -157,7 +157,7 @@
         NSDictionary *dic=(NSDictionary *)responseObject;
         if ([dic[@"status"]boolValue]) {
             [MessageAlertView showSuccessMessage:@"发送成功"];
-            
+             
         }
         else
         {
@@ -182,7 +182,7 @@
                        diction[@"0"],@"username",
                 
                        diction[@"1"],@"code",
-                        @"2",@"logintype",
+                        @"1",@"logintype",
                        nil];
     [[NetWorkManager sharedManager]postJSON:dologin parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *resultDic=(NSDictionary *)responseObject;

@@ -48,6 +48,7 @@
     [landing setRegisterblock:^()
      {
          RegisterVC *registerVC=[[RegisterVC alloc]init];
+         registerVC.isHidden=NO;
          [registerVC setBackblock:^()
           {
               if (self.tabBarController.selectedIndex==0) {
@@ -76,6 +77,8 @@
     [password setRegisterblock:^()
      {
          RegisterVC *registerVC=[[RegisterVC alloc]init];
+         registerVC.isHidden=NO;
+
          [registerVC setBackblock:^()
           {
               if (self.tabBarController.selectedIndex==0) {

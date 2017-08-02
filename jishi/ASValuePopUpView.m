@@ -265,7 +265,7 @@ NSString *const FillColorAnimation = @"fillColor";
 
     _oldSize = self.bounds.size;
     _backgroundLayer.bounds = self.bounds;
-    
+
     CGFloat textHeight = [_textLayer.string size].height;
     CGRect textRect = CGRectMake(self.bounds.origin.x,
                                  (self.bounds.size.height-ARROW_LENGTH-textHeight)/2,

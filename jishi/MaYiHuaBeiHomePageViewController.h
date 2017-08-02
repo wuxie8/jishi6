@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Admin. All rights reserved.
 //
 
-#import "GestureBaseVC.h"
+#import "GestureNavBaseVC.h"
 
-@interface MaYiHuaBeiHomePageViewController : GestureBaseVC
+@interface MaYiHuaBeiHomePageViewController : GestureNavBaseVC
 
 @end

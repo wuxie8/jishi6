@@ -11,6 +11,7 @@ typedef void (^back)();
 
 @interface RegisterVC : GestureNavBaseVC
 
+@property(assign, nonatomic)BOOL isHidden;
 @property(strong, nonatomic)back backblock;
 
 @end

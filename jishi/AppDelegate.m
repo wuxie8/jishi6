@@ -36,7 +36,9 @@
 #import "JishiyudaikuanViewController.h"
 #import "XianJinSuDaiViewController.h"
 #import "BBSViewController.h"
-#define umeng_appkey @"5979b7fb7f2c74180300100e"
+#import "LoginVC.h"
+#import "XinJinKaDaiViewController.h"
+#define umeng_appkey @"59794a929f06fd4447000799"
 
 @interface AppDelegate ()
 
@@ -100,26 +102,36 @@
             }else
             {
                 [[NSUserDefaults standardUserDefaults] setBool:[dic[@"review"]boolValue] forKey:@"review"];
-                
+
+
+            }
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) { //商户是否登录
+                    
+                    LoginVC *signVC = [[LoginVC alloc] init];
+                    BaseNC *navC = [[BaseNC alloc] initWithRootViewController:signVC];
+                    self.window.rootViewController = navC;
+                    
+                } else {
+        
+                    
+                    self.window.rootViewController = [AppDelegate setTabBarController];
+                }
+
+            }
+            else{
+                self.window.rootViewController = [AppDelegate setTabBarController];
 
             }
 
-            self.window.rootViewController=[AppDelegate setTabBarController];
-            
             
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        self.window.rootViewController=[AppDelegate setTabBarController];
+//        self.window.rootViewController=[AppDelegate setTabBarController];
 
         
     }];
-    
-    
-    
-    
-    
-    
-    // Override point for customization after application launch.
+   
     return YES;
 }
 #pragma mark --- 配置文件
@@ -260,6 +272,8 @@
     JishiyudaikuanViewController*Jishiyudaikuan=[JishiyudaikuanViewController new];
     XianJinSuDaiViewController *XianJinSuDai=[XianJinSuDaiViewController new];
     BBSViewController *bbs=[BBSViewController new];
+    
+    XinJinKaDaiViewController *xinjinkadai=[XinJinKaDaiViewController new];
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
@@ -269,13 +283,16 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
  __unused BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
-   __unused BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
+  __unused  BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
  __unused   BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
-     BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
+  __unused   BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
 
    __unused  BaseNC *nav10C=[[BaseNC alloc]initWithRootViewController:XianJinSuDai];
       BaseNC *nav11C=[[BaseNC alloc]initWithRootViewController:bbs];
+    
+    BaseNC *nav12C=[[BaseNC alloc]initWithRootViewController:xinjinkadai];
+
 
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
     
@@ -284,23 +301,23 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"现金卡贷",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"帮帮钱包",@"个人中心"];
+    //    NSArray *titles = @[@"现金卡贷",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav9C,nav11C,nav4C];
-        titles = @[@"帮帮钱包",@"论坛",@"个人中心"];
-        images=@[@"jishiyu",@"BBS",@"Mineing"];
+        tabBarController.viewControllers=@[nav12C,nav11C];
+        titles = @[@"现金卡贷",@"论坛"];
+        images=@[@"jishiyu",@"BBS"];
         
-        selectedImages=@[@"jishiyuBlue",@"BBSBlue",@"MineingBlue"];
+        selectedImages=@[@"jishiyuBlue",@"BBSBlue"];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"帮帮钱包",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"现金卡贷",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     }

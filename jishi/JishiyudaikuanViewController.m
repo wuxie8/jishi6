@@ -224,7 +224,6 @@
         [view1 addSubview:asValue2];
 
         UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(asValue2.frame)+10, WIDTH, 50)];
-//        [but setImage:[UIImage imageNamed:@"ApplyImmediately"] forState:UIControlStateNormal];
         [but setTitle:@"立即申请借款" forState:UIControlStateNormal];
         but.backgroundColor=kColorFromRGBHex(0x348cdf);
         [but addTarget:self action:@selector(applyForLoan) forControlEvents:UIControlEventTouchUpInside];

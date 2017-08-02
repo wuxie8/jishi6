@@ -30,6 +30,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"首页";
     edu=4800;
     qixian=12;
     [self.view addSubview:self.loadHeadView];
