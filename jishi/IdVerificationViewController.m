@@ -200,77 +200,6 @@ return [titleArray objectAtIndex:section];
             break;
     }
 }
--(void)complete
-{
-
-
-    if (!Context.idInfo.IDPositiveImage) {
-        [MessageAlertView showErrorMessage:@"请上传身份证正面照"];
-        return ;
-    }
-    if (!Context.idInfo.IDOppositeImage) {
-        [MessageAlertView showErrorMessage:@"请上传身份证反面照"];
-
-        return ;
-    }
-//    if (!Context.currentUser.idcard_auth) {
-//        return;
-//    }
-
-    if (self.clickBlock) {
-        self.clickBlock();
-    }
-    [MessageAlertView showSuccessMessage:@"成功"];
-//    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
-//                       Context.currentUser.uid,@"uid",
-//                      nil];
-//    
-//    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
-//    manager.responseSerializer=[AFHTTPResponseSerializer serializer];
-//    [manager POST:[NSString stringWithFormat:@"%@&m=userdetail&a=idcard_add",UploadPath]parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//            //根据当前系统时间生成图片名称
-//        
-//            NSDate *date = [NSDate date];
-//            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//            [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-//            NSString *dateString = [formatter stringFromDate:date];
-//            NSString *  _headfileName = [NSString stringWithFormat:@"%@.png",dateString];
-//            NSData *     _headImageData = UIImageJPEGRepresentation(Context.idInfo.IDPositiveImage, 1);
-//            [formData appendPartWithFileData:_headImageData name:@"photo1" fileName:_headfileName mimeType:@"image/jpg/png/jpeg"];
-//        NSDate *date2 = [NSDate date];
-//        NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
-//        [formatter2 setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-//        NSString *dateString2 = [formatter2 stringFromDate:date2];
-//        NSString *  _headfileName2 = [NSString stringWithFormat:@"%@.png",dateString2];
-//        NSData *     _headImageData2 = UIImageJPEGRepresentation(Context.idInfo.IDOppositeImage, 1);
-//        [formData appendPartWithFileData:_headImageData2 name:@"photo2" fileName:_headfileName2 mimeType:@"image/jpg/png/jpeg"];
-//        
-//       
-//    } progress:^(NSProgress * _Nonnull uploadProgress) {
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        
-//        NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-//
-//        if ([resultDic[@"code"]isEqualToString:@"0000"]) {
-//            [MessageAlertView showSuccessMessage:@"提交成功"];
-//            [self.navigationController popViewControllerAnimated:YES];
-//            if (self.clickBlock) {
-//                self.clickBlock();
-//            }
-//            [self.navigationController popViewControllerAnimated:YES];
-//
-//        }
-//        else
-//        {
-//            [MessageAlertView showErrorMessage:resultDic[@"msg"]];
-//        }
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//    }];
-//    
-
-}
 #pragma mark 懒加载
 -(UIView *)headView
 {
@@ -298,6 +227,14 @@ return [titleArray objectAtIndex:section];
 //}
 
 #pragma mark 实现的方法
+-(void)complete
+{
+    
+    
+   
+        
+}
+
 -(void)nextStep
 {
    

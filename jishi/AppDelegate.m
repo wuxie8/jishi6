@@ -105,25 +105,7 @@
 
 
             }
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) { //商户是否登录
-                    
-                    LoginVC *signVC = [[LoginVC alloc] init];
-                    BaseNC *navC = [[BaseNC alloc] initWithRootViewController:signVC];
-                    self.window.rootViewController = navC;
-                    
-                } else {
-        
-                    
-                    self.window.rootViewController = [AppDelegate setTabBarController];
-                }
-
-            }
-            else{
-                self.window.rootViewController = [AppDelegate setTabBarController];
-
-            }
-
+            self.window.rootViewController = [AppDelegate setTabBarController];
             
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -283,7 +265,7 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
  __unused BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
-  __unused  BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
+    BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
  __unused   BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
   __unused   BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
@@ -291,7 +273,7 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
    __unused  BaseNC *nav10C=[[BaseNC alloc]initWithRootViewController:XianJinSuDai];
       BaseNC *nav11C=[[BaseNC alloc]initWithRootViewController:bbs];
     
-    BaseNC *nav12C=[[BaseNC alloc]initWithRootViewController:xinjinkadai];
+ __unused   BaseNC *nav12C=[[BaseNC alloc]initWithRootViewController:xinjinkadai];
 
 
     UITabBarController *tabBarController=[[UITabBarController alloc]init];
@@ -301,25 +283,29 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"现金卡贷",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"现金卡贷",@"个人中心"];
+    //    NSArray *titles = @[@"贷款用",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav12C,nav11C];
-        titles = @[@"现金卡贷",@"论坛"];
-        images=@[@"jishiyu",@"BBS"];
+        tabBarController.viewControllers=@[nav7C,nav11C,nav4C];
+        titles = @[@"贷款用",@"论坛",@"个人中心"];
+        images=@[@"DaikuanyongHomepage",@"DaikuanyongBBS",@"DaikuanyongMine"];
         
-        selectedImages=@[@"jishiyuBlue",@"BBSBlue"];
+    selectedImages=@[@"DaikuanyongHomepageBlue",@"DaikuanyongBBSBlue",@"DaikuanyongMineBlue"];
+        tabBarController.tabBar.tintColor = AppgreenColor;
+
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"现金卡贷",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
+        tabBarController.tabBar.tintColor = [UIColor blueColor];
+
     }
     
     tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
@@ -338,7 +324,7 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
         item.image = [[UIImage imageNamed:[images objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         item.selectedImage = [[UIImage imageNamed:[selectedImages objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        tabBarController.tabBar.tintColor = [UIColor blueColor];
+//        tabBarController.tabBar.tintColor = [UIColor blueColor];
     }
     return  tabBarController;
 }

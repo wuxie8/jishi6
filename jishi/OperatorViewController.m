@@ -68,7 +68,13 @@
         but.layer.masksToBounds = YES;
         
         //        but.enabled=NO;
-        but.backgroundColor=AppButtonbackgroundColor;
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+            but.backgroundColor=AppgreenColor;
+        }
+        else{
+            but.backgroundColor=AppButtonbackgroundColor;
+
+        }
         [_footView addSubview:but];
     }
     return _footView;
@@ -395,9 +401,9 @@
     [[NetWorkManager sharedManager]postJSON:@"http://api.tanzhishuju.com/api/gateway" parameters:paraDic success:^(NSURLSessionDataTask *task, id responseObject) {
         
         [MessageAlertView showSuccessMessage:@"认证成功"];
-        [self.navigationController pushViewController:[OtherContactsViewController new] animated:YES];
+//        [self.navigationController pushViewController:[OtherContactsViewController new] animated:YES];
 
-//        [self OperatorStatus];
+        [self OperatorStatus];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);
         
@@ -409,11 +415,12 @@
 {
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                        Context.currentUser.uid,@"uid",
-                       @"1",@"auth",
+                       @"1",@"status",
                        nil];
-    [[NetWorkManager sharedManager]postJSON:[NSString stringWithFormat:@"%@&m=userdetail&a=mobile_auth",SERVERE] parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[NetWorkManager sharedManager]postJSON:[NSString stringWithFormat:@"%@&m=Tempinfo&a=mobile_add",SERVERE] parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"0000"]) {
-          
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"CertificationStatus" object:@"4"];
+
             [self.navigationController popViewControllerAnimated:YES];
         }
         
@@ -458,7 +465,8 @@
         else{
 
             [MessageAlertView showErrorMessage:responseObject[@"msg"]];
-            
+            [MessageAlertView dismissHud];
+
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);

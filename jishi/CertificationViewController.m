@@ -10,7 +10,6 @@
 #import "IdVerificationViewController.h"
 #import "BankCardAuthenticationViewController.h"
 //#import "DataSubmittedViewController.h"
-#import "CreditSesameViewController.h"
 #import <ZMCreditSDK/ALCreditService.h>
 
 @interface CertificationViewController ()<UITableViewDelegate,UITableViewDataSource>

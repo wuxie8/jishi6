@@ -9,6 +9,8 @@
 #import "DaiKuanYongHomePageViewController.h"
 #import "ASValueTrackingSlider.h"
 #import "BaseViewController.h"
+#import "CertificationCenterViewController.h"
+#import "LoginViewController.h"
 #define viewHeight 80
 #define ImageHeight 220
 @interface DaiKuanYongHomePageViewController ()<ASValueTrackingSliderDataSource>
@@ -25,7 +27,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"现金卡贷";
+    self.title=@"贷款用";
     
     [self.view addSubview:self.loadHeadView];
     [self.view addSubview:self.loadMiddleView];
@@ -35,9 +37,9 @@
 {
     if (!_loadHeadView) {
         _loadHeadView=[[UIView alloc]initWithFrame:CGRectMake(0 , 0, WIDTH, 240)];
-        _loadHeadView.backgroundColor=AppButtonbackgroundColor;
+        _loadHeadView.backgroundColor=kColorFromRGBHex(0x4ed19d);
         UIView *blueview=[[UIView alloc]initWithFrame:CGRectMake(10, 50, WIDTH-10*2, 160)];
-        blueview.backgroundColor=kColorFromRGBHex(0xc7e4ff);
+        blueview.backgroundColor=kColorFromRGBHex(0x28a770);
         [_loadHeadView addSubview:blueview];
         
         UIImageView *iconImageView=[[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 50, 50)];
@@ -45,7 +47,7 @@
         [blueview addSubview:iconImageView];
         
         UILabel *appTitle=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(iconImageView.frame)+20, 20, 150, 30)];
-        appTitle.text=@"现金卡贷";
+        appTitle.text=@"贷款用";
         appTitle.font=[UIFont systemFontOfSize:16];
         [blueview addSubview:appTitle];
         
@@ -99,7 +101,7 @@
         //
         
         UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, WIDTH-20, 20)];
-        lab.text=@"立即申请，马上用钱";
+        lab.text=@"可借金额范围2000-10000元";
         lab.font=[UIFont systemFontOfSize:14];
         [_loadMiddleView  addSubview:lab];
         UIView *view=[[UIView alloc]initWithFrame:CGRectMake(21,  40, WIDTH-21*2, viewHeight)];
@@ -153,13 +155,20 @@
         [tempFormatter setNegativePrefix:@"¥"];
         [asValue setMaxFractionDigitsDisplayed:0];
         [asValue setNumberFormatter:tempFormatter];
-        asValue.popUpViewColor = [UIColor colorWithHue:0.55 saturation:0.8 brightness:0.9 alpha:0.7];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+            asValue.popUpViewColor=AppgreenColor;
+            asValue.textColor=[UIColor colorWithHue:0.55 saturation:1.0 brightness:0.5 alpha:1];
+        }
+        else{
+            asValue.popUpViewColor = [UIColor colorWithHue:0.55 saturation:0.8 brightness:0.9 alpha:0.7];
+            asValue.textColor = [UIColor colorWithHue:0.55 saturation:1.0 brightness:0.5 alpha:1];
+
+        }
         asValue.font = [UIFont fontWithName:@"GillSans-Bold" size:10];
         [asValue addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];// 针对值变化添加响应方法
         
         [asValue showPopUpView];
         [asValue setThumbImage:[UIImage imageNamed:@"dot"] forState:UIControlStateNormal];
-        asValue.textColor = [UIColor colorWithHue:0.55 saturation:1.0 brightness:0.5 alpha:1];
         [view1 addSubview:asValue];
         
         
@@ -181,16 +190,26 @@
         asValue2.value=asValue2.maximumValue;
         [asValue2 setMaxFractionDigitsDisplayed:0];
         [asValue2 setNumberFormatter:tempFormatter2];
-        asValue2.popUpViewColor = [UIColor colorWithHue:0.55 saturation:0.8 brightness:0.9 alpha:0.7];
         asValue2.font = [UIFont fontWithName:@"GillSans-Bold" size:10];
         asValue2.dataSource=self;
         [asValue2 showPopUpView];
         [asValue2  setThumbImage:[UIImage imageNamed:@"dot"] forState:UIControlStateNormal];
-        asValue2.textColor = [UIColor colorWithHue:0.55 saturation:1.0 brightness:0.5 alpha:1];
         [view1 addSubview:asValue2];
-        
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+            asValue2.popUpViewColor=AppgreenColor;
+            asValue2.textColor=[UIColor colorWithHue:0.55 saturation:1.0 brightness:0.5 alpha:1];
+        }
+        else{
+            asValue2.textColor = [UIColor colorWithHue:0.55 saturation:1.0 brightness:0.5 alpha:1];
+            asValue2.popUpViewColor = [UIColor colorWithHue:0.55 saturation:0.8 brightness:0.9 alpha:0.7];
+
+            
+        }
+    
         UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(18, CGRectGetMaxY(lab2.frame)+80, WIDTH-36, 50)];
-        [but setImage:[UIImage imageNamed:@"ApplyImmediately"] forState:UIControlStateNormal];
+//        [but setImage:[UIImage imageNamed:@"ApplyImmediately"] forState:UIControlStateNormal];
+        but.backgroundColor=AppgreenColor;
+        [but setTitle:@"立即申请借款" forState:0];
         [but addTarget:self action:@selector(applyForLoan) forControlEvents:UIControlEventTouchUpInside];
         [view1 addSubview:but];
         
@@ -204,9 +223,20 @@
 }
 -(void)applyForLoan
 {
-    BaseViewController *certification=[[BaseViewController alloc]init];
-    certification.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:certification animated:YES];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+
+    CertificationCenterViewController *certificationCenter=[CertificationCenterViewController new];
+    certificationCenter.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:certificationCenter animated:NO];
+    }
+    else
+    {
+        LoginViewController *login=[[LoginViewController alloc]init];
+        login.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:login animated:YES];
+
+    
+    }
 }
 - (void)sliderValueChanged:(id)sender {
     UISlider *slider = (UISlider *)sender;

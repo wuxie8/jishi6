@@ -182,7 +182,7 @@
                        diction[@"0"],@"username",
                 
                        diction[@"1"],@"code",
-                        @"1",@"logintype",
+                        @"2",@"logintype",
                        nil];
     [[NetWorkManager sharedManager]postJSON:dologin parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *resultDic=(NSDictionary *)responseObject;

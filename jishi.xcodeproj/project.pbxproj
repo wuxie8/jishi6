@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		33C4545660AC4EFE8DFC2306 /* libPods-jishi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0377890239EBC83944115186 /* libPods-jishi.a */; };
+		840271C61F31C63B001A85F5 /* CertificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271C51F31C63B001A85F5 /* CertificationCenterViewController.m */; };
+		840271C91F31CE67001A85F5 /* CertificationCenterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271C81F31CE67001A85F5 /* CertificationCenterCollectionViewCell.m */; };
+		840271CE1F31DAA5001A85F5 /* JobInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271CD1F31DAA5001A85F5 /* JobInformationViewController.m */; };
+		840271D71F31DC13001A85F5 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840271D01F31DC13001A85F5 /* Address.plist */; };
+		840271D81F31DC13001A85F5 /* LZCityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271D21F31DC13001A85F5 /* LZCityPickerController.m */; };
+		840271D91F31DC13001A85F5 /* LZCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271D41F31DC13001A85F5 /* LZCityPickerView.m */; };
+		840271DA1F31DC13001A85F5 /* LZPickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271D61F31DC13001A85F5 /* LZPickerModel.m */; };
+		840271DD1F31E05C001A85F5 /* IdentityInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271DC1F31E05C001A85F5 /* IdentityInformationViewController.m */; };
+		840271E01F31E4D7001A85F5 /* IncomeInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271DF1F31E4D7001A85F5 /* IncomeInformationViewController.m */; };
+		840271E31F31EB09001A85F5 /* ContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840271E21F31EB09001A85F5 /* ContactVC.m */; };
 		8402B9E01E9F2917000CDFF7 /* InviteFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */; };
 		8402B9F31E9F3252000CDFF7 /* AddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9F21E9F3252000CDFF7 /* AddressVC.m */; };
 		8402B9F61E9F3AF2000CDFF7 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402B9F51E9F3AF2000CDFF7 /* PersonModel.m */; };
@@ -45,7 +55,6 @@
 		8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA301E72393900EAE23C /* JishiyuDetailsViewController.m */; };
 		8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3D1E729C4B00EAE23C /* YTUITextField.m */; };
 		8419CA411E729C4B00EAE23C /* YTUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */; };
-		84361FD91EB1BD4E008595E7 /* CarkClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */; };
 		8442AAB51E8B8B7A00655887 /* AmountClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */; };
 		8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AAB71E8B8F4200655887 /* SetupViewController.m */; };
 		8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442AABA1E8B992600655887 /* AboutUsViewController.m */; };
@@ -64,13 +73,13 @@
 		84546F501EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */; };
 		84546F511EA5F37C00AD0350 /* FastHandleCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */; };
 		846724311F15BB37002F2F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846724301F15BB37002F2F57 /* Assets.xcassets */; };
-		846ED6111EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */; };
 		846ED6141EC1BBBC00FE22BD /* LoanDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846ED6131EC1BBBC00FE22BD /* LoanDetailsViewController.m */; };
 		847199D71E778F2E0026F585 /* LoanClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D61E778F2E0026F585 /* LoanClassification.m */; };
 		847199DA1E779E9F0026F585 /* LoanClasssificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199D91E779E9F0026F585 /* LoanClasssificationVC.m */; };
 		847199DD1E77C92B0026F585 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DC1E77C92B0026F585 /* User.m */; };
 		847199E01E77CA410026F585 /* UserInfoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 847199DF1E77CA410026F585 /* UserInfoContext.m */; };
 		847DF4101F14BADC007DDB60 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */; };
+		848BC4911F33063500D031EF /* Daikuanyong.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848BC4901F33063500D031EF /* Daikuanyong.xcassets */; };
 		8492F8BF1F207BA1003E5CEA /* ZMCreditSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */; };
 		8492F8C01F207BA1003E5CEA /* ZMDependUponSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */; };
 		849B27701F2EFCF600E58D08 /* PasswordLandingViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849B276F1F2EFCF600E58D08 /* PasswordLandingViewViewController.m */; };
@@ -94,7 +103,6 @@
 		84C44B9B1F1CCD68006C921C /* BankCardAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44B9A1F1CCD68006C921C /* BankCardAuthenticationViewController.m */; };
 		84C44B9E1F1CCD88006C921C /* IdVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44B9D1F1CCD88006C921C /* IdVerificationViewController.m */; };
 		84C44BA11F1CCD95006C921C /* DetectionSuccessfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44BA01F1CCD95006C921C /* DetectionSuccessfulViewController.m */; };
-		84C44BA71F1CCE10006C921C /* CreditSesameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44BA61F1CCE10006C921C /* CreditSesameViewController.m */; };
 		84C44BB51F1CD04D006C921C /* IDAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44BAD1F1CD04D006C921C /* IDAuthViewController.m */; };
 		84C44BB61F1CD04D006C921C /* IDAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C44BAE1F1CD04D006C921C /* IDAuthViewController.xib */; };
 		84C44BB71F1CD04D006C921C /* IDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C44BB01F1CD04D006C921C /* IDInfoViewController.m */; };
@@ -172,6 +180,25 @@
 		0377890239EBC83944115186 /* libPods-jishi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jishi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		135956D68EBA3E15E510604C /* Pods-jishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-jishi/Pods-jishi.release.xcconfig"; sourceTree = "<group>"; };
 		323BDEF1C42090E0283F4D58 /* Pods-jishi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jishi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jishi/Pods-jishi.debug.xcconfig"; sourceTree = "<group>"; };
+		840271C41F31C63B001A85F5 /* CertificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertificationCenterViewController.h; sourceTree = "<group>"; };
+		840271C51F31C63B001A85F5 /* CertificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificationCenterViewController.m; sourceTree = "<group>"; };
+		840271C71F31CE67001A85F5 /* CertificationCenterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertificationCenterCollectionViewCell.h; sourceTree = "<group>"; };
+		840271C81F31CE67001A85F5 /* CertificationCenterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificationCenterCollectionViewCell.m; sourceTree = "<group>"; };
+		840271CC1F31DAA5001A85F5 /* JobInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobInformationViewController.h; sourceTree = "<group>"; };
+		840271CD1F31DAA5001A85F5 /* JobInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobInformationViewController.m; sourceTree = "<group>"; };
+		840271D01F31DC13001A85F5 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		840271D11F31DC13001A85F5 /* LZCityPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCityPickerController.h; sourceTree = "<group>"; };
+		840271D21F31DC13001A85F5 /* LZCityPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCityPickerController.m; sourceTree = "<group>"; };
+		840271D31F31DC13001A85F5 /* LZCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCityPickerView.h; sourceTree = "<group>"; };
+		840271D41F31DC13001A85F5 /* LZCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCityPickerView.m; sourceTree = "<group>"; };
+		840271D51F31DC13001A85F5 /* LZPickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickerModel.h; sourceTree = "<group>"; };
+		840271D61F31DC13001A85F5 /* LZPickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerModel.m; sourceTree = "<group>"; };
+		840271DB1F31E05C001A85F5 /* IdentityInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityInformationViewController.h; sourceTree = "<group>"; };
+		840271DC1F31E05C001A85F5 /* IdentityInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityInformationViewController.m; sourceTree = "<group>"; };
+		840271DE1F31E4D7001A85F5 /* IncomeInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeInformationViewController.h; sourceTree = "<group>"; };
+		840271DF1F31E4D7001A85F5 /* IncomeInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeInformationViewController.m; sourceTree = "<group>"; };
+		840271E11F31EB09001A85F5 /* ContactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactVC.h; sourceTree = "<group>"; };
+		840271E21F31EB09001A85F5 /* ContactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactVC.m; sourceTree = "<group>"; };
 		8402B9DE1E9F2917000CDFF7 /* InviteFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsViewController.h; sourceTree = "<group>"; };
 		8402B9DF1E9F2917000CDFF7 /* InviteFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsViewController.m; sourceTree = "<group>"; };
 		8402B9F11E9F3252000CDFF7 /* AddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressVC.h; sourceTree = "<group>"; };
@@ -244,8 +271,6 @@
 		8419CA3D1E729C4B00EAE23C /* YTUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUITextField.m; sourceTree = "<group>"; };
 		8419CA3E1E729C4B00EAE23C /* YTUIToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTUIToolbar.h; sourceTree = "<group>"; };
 		8419CA3F1E729C4B00EAE23C /* YTUIToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUIToolbar.m; sourceTree = "<group>"; };
-		84361FD71EB1BD4E008595E7 /* CarkClickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarkClickViewController.h; sourceTree = "<group>"; };
-		84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarkClickViewController.m; sourceTree = "<group>"; };
 		8442AAB31E8B8B7A00655887 /* AmountClassificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountClassificationViewController.h; sourceTree = "<group>"; };
 		8442AAB41E8B8B7A00655887 /* AmountClassificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountClassificationViewController.m; sourceTree = "<group>"; };
 		8442AAB61E8B8F4200655887 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
@@ -280,8 +305,6 @@
 		84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardViewController.h; sourceTree = "<group>"; };
 		84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardViewController.m; sourceTree = "<group>"; };
 		846724301F15BB37002F2F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		846ED60F1EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JishiyuDetailsTableViewCell.h; sourceTree = "<group>"; };
-		846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JishiyuDetailsTableViewCell.m; sourceTree = "<group>"; };
 		846ED6121EC1BBBC00FE22BD /* LoanDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanDetailsViewController.h; sourceTree = "<group>"; };
 		846ED6131EC1BBBC00FE22BD /* LoanDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanDetailsViewController.m; sourceTree = "<group>"; };
 		847199D51E778F2E0026F585 /* LoanClassification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanClassification.h; sourceTree = "<group>"; };
@@ -295,6 +318,7 @@
 		847DF40E1F14BADC007DDB60 /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
 		847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		847DF4121F14E282007DDB60 /* 帮帮钱包.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "帮帮钱包.entitlements"; sourceTree = "<group>"; };
+		848BC4901F33063500D031EF /* Daikuanyong.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Daikuanyong.xcassets; sourceTree = "<group>"; };
 		8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMCreditSDK.framework; sourceTree = "<group>"; };
 		8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMDependUponSDK.framework; sourceTree = "<group>"; };
 		849B276E1F2EFCF600E58D08 /* PasswordLandingViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordLandingViewViewController.h; sourceTree = "<group>"; };
@@ -339,8 +363,6 @@
 		84C44B9D1F1CCD88006C921C /* IdVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdVerificationViewController.m; sourceTree = "<group>"; };
 		84C44B9F1F1CCD95006C921C /* DetectionSuccessfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectionSuccessfulViewController.h; sourceTree = "<group>"; };
 		84C44BA01F1CCD95006C921C /* DetectionSuccessfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectionSuccessfulViewController.m; sourceTree = "<group>"; };
-		84C44BA51F1CCE10006C921C /* CreditSesameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditSesameViewController.h; sourceTree = "<group>"; };
-		84C44BA61F1CCE10006C921C /* CreditSesameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditSesameViewController.m; sourceTree = "<group>"; };
 		84C44BAA1F1CD04D006C921C /* AVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
 		84C44BAB1F1CD04D006C921C /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
 		84C44BAC1F1CD04D006C921C /* IDAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDAuthViewController.h; sourceTree = "<group>"; };
@@ -481,6 +503,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840271CA1F31D9FD001A85F5 /* CashCows */ = {
+			isa = PBXGroup;
+			children = (
+				840271CF1F31DBDE001A85F5 /* LZCityPickerClass */,
+				840271CC1F31DAA5001A85F5 /* JobInformationViewController.h */,
+				840271CD1F31DAA5001A85F5 /* JobInformationViewController.m */,
+				840271DB1F31E05C001A85F5 /* IdentityInformationViewController.h */,
+				840271DC1F31E05C001A85F5 /* IdentityInformationViewController.m */,
+				840271DE1F31E4D7001A85F5 /* IncomeInformationViewController.h */,
+				840271DF1F31E4D7001A85F5 /* IncomeInformationViewController.m */,
+				840271E11F31EB09001A85F5 /* ContactVC.h */,
+				840271E21F31EB09001A85F5 /* ContactVC.m */,
+				840271C41F31C63B001A85F5 /* CertificationCenterViewController.h */,
+				840271C51F31C63B001A85F5 /* CertificationCenterViewController.m */,
+				840271C71F31CE67001A85F5 /* CertificationCenterCollectionViewCell.h */,
+				840271C81F31CE67001A85F5 /* CertificationCenterCollectionViewCell.m */,
+			);
+			name = CashCows;
+			sourceTree = "<group>";
+		};
+		840271CF1F31DBDE001A85F5 /* LZCityPickerClass */ = {
+			isa = PBXGroup;
+			children = (
+				840271D01F31DC13001A85F5 /* Address.plist */,
+				840271D11F31DC13001A85F5 /* LZCityPickerController.h */,
+				840271D21F31DC13001A85F5 /* LZCityPickerController.m */,
+				840271D31F31DC13001A85F5 /* LZCityPickerView.h */,
+				840271D41F31DC13001A85F5 /* LZCityPickerView.m */,
+				840271D51F31DC13001A85F5 /* LZPickerModel.h */,
+				840271D61F31DC13001A85F5 /* LZPickerModel.m */,
+			);
+			name = LZCityPickerClass;
+			sourceTree = "<group>";
+		};
 		8402B9F01E9F322C000CDFF7 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +659,7 @@
 			isa = PBXGroup;
 			children = (
 				84C4B7DF1F29DFE20000472E /* KLandscapePickerView */,
+				840271CA1F31D9FD001A85F5 /* CashCows */,
 				84CD37761F26052D0087941C /* OtherContactsViewController.h */,
 				84CD37771F26052D0087941C /* OtherContactsViewController.m */,
 				84CD377C1F261C520087941C /* AuditViewController.h */,
@@ -637,8 +694,6 @@
 				84C44B9D1F1CCD88006C921C /* IdVerificationViewController.m */,
 				84C44B9F1F1CCD95006C921C /* DetectionSuccessfulViewController.h */,
 				84C44BA01F1CCD95006C921C /* DetectionSuccessfulViewController.m */,
-				84C44BA51F1CCE10006C921C /* CreditSesameViewController.h */,
-				84C44BA61F1CCE10006C921C /* CreditSesameViewController.m */,
 				84C44BAA1F1CD04D006C921C /* AVCaptureViewController.h */,
 				84C44BAB1F1CD04D006C921C /* AVCaptureViewController.m */,
 				84C44BAC1F1CD04D006C921C /* IDAuthViewController.h */,
@@ -802,8 +857,6 @@
 				84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */,
 				84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */,
 				84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */,
-				84361FD71EB1BD4E008595E7 /* CarkClickViewController.h */,
-				84361FD81EB1BD4E008595E7 /* CarkClickViewController.m */,
 			);
 			name = FastHandle;
 			sourceTree = "<group>";
@@ -835,6 +888,7 @@
 				84C468001F0CCDDD000ECAD8 /* Remind.xcassets */,
 				84CD37741F25FFBB0087941C /* Information_authentication.xcassets */,
 				84499A221F30737C00063947 /* Setup.xcassets */,
+				848BC4901F33063500D031EF /* Daikuanyong.xcassets */,
 				8412242E1E6D480300048188 /* ViewController.h */,
 				8412242F1E6D480300048188 /* ViewController.m */,
 			);
@@ -880,8 +934,6 @@
 				8442AAC01E8BAC1C00655887 /* AmountTableViewCell.m */,
 				840FE9981E6FFEA10050C444 /* JishiyuTableViewCell.h */,
 				840FE9991E6FFEA10050C444 /* JishiyuTableViewCell.m */,
-				846ED60F1EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.h */,
-				846ED6101EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1047,7 +1099,7 @@
 				TargetAttributes = {
 					841224241E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = BGV3M7S2DU;
+						DevelopmentTeam = GDPN4BAKG5;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1103,7 +1155,9 @@
 				846724311F15BB37002F2F57 /* Assets.xcassets in Resources */,
 				841224331E6D480300048188 /* Main.storyboard in Resources */,
 				84C44BCD1F1CD38D006C921C /* H5Service.bundle in Resources */,
+				840271D71F31DC13001A85F5 /* Address.plist in Resources */,
 				840D0FD81F1DBDE7008303C1 /* zocr0.lib in Resources */,
+				848BC4911F33063500D031EF /* Daikuanyong.xcassets in Resources */,
 				84C44BB81F1CD04D006C921C /* IDInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1178,6 +1232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840D0FCD1F1DA26A008303C1 /* AVCaptureViewController.m in Sources */,
+				840271C91F31CE67001A85F5 /* CertificationCenterCollectionViewCell.m in Sources */,
 				84C44BA11F1CCD95006C921C /* DetectionSuccessfulViewController.m in Sources */,
 				84CD377E1F261C520087941C /* AuditViewController.m in Sources */,
 				84A7D0861F2879DE004E95C3 /* JishiyudaikuanViewController.m in Sources */,
@@ -1185,7 +1240,6 @@
 				84C44BBC1F1CD07A006C921C /* IDInfo.m in Sources */,
 				8442AABB1E8B992600655887 /* AboutUsViewController.m in Sources */,
 				84A733481EB86C07008ABB7E /* XHJAddressBook.m in Sources */,
-				846ED6111EC1B38B00FE22BD /* JishiyuDetailsTableViewCell.m in Sources */,
 				841224301E6D480300048188 /* ViewController.m in Sources */,
 				841224671E6D490100048188 /* MineViewController.m in Sources */,
 				84B4779C1E8C9EE600DDF4AB /* LoanClickViewController.m in Sources */,
@@ -1199,6 +1253,7 @@
 				84CD377B1F2606FE0087941C /* OperatorViewController.m in Sources */,
 				84C467FA1F0CC687000ECAD8 /* UIColor+HcdCustom.m in Sources */,
 				840FE9831E6FCE430050C444 /* NetWorkManager.m in Sources */,
+				840271D81F31DC13001A85F5 /* LZCityPickerController.m in Sources */,
 				84E5268D1F2B2F5D00D00CE4 /* BBSViewController.m in Sources */,
 				84C44BB91F1CD04D006C921C /* IdOpposite ViewController.m in Sources */,
 				84B4779F1E8CB30A00DDF4AB /* BusinessViewController.m in Sources */,
@@ -1209,11 +1264,11 @@
 				844885B61EC2A2FF0093424D /* BtnView.m in Sources */,
 				84CD37781F26052D0087941C /* OtherContactsViewController.m in Sources */,
 				84A733441EB86C07008ABB7E /* AddressBookVC.m in Sources */,
-				84C44BA71F1CCE10006C921C /* CreditSesameViewController.m in Sources */,
 				84C467EF1F0CC63B000ECAD8 /* RemindTableViewCell.m in Sources */,
 				84C4B7E81F29DFFA0000472E /* UIColor+Category.m in Sources */,
 				840FE9941E6FF3900050C444 /* WebVC.m in Sources */,
 				8412242D1E6D480300048188 /* AppDelegate.m in Sources */,
+				840271D91F31DC13001A85F5 /* LZCityPickerView.m in Sources */,
 				840FE97B1E6FA8570050C444 /* LandingDynamicViewControllerViewController.m in Sources */,
 				84C467FF1F0CC87D000ECAD8 /* YLSOPickerView.m in Sources */,
 				840FE9911E6FDCCA0050C444 /* ProductModel.m in Sources */,
@@ -1227,14 +1282,17 @@
 				8449F17F1F26F24B0089DEB5 /* DaiKuanYongHomePageViewController.m in Sources */,
 				8451AFC31EA89842002F04B6 /* ShareFriendsViewController.m in Sources */,
 				84499A1E1F30555100063947 /* LoginVC.m in Sources */,
+				840271E31F31EB09001A85F5 /* ContactVC.m in Sources */,
 				8442AAB81E8B8F4200655887 /* SetupViewController.m in Sources */,
 				84C44B9B1F1CCD68006C921C /* BankCardAuthenticationViewController.m in Sources */,
 				8412242A1E6D480300048188 /* main.m in Sources */,
+				840271E01F31E4D7001A85F5 /* IncomeInformationViewController.m in Sources */,
 				84C44B8F1F1CCCCF006C921C /* HomePageViewController.m in Sources */,
 				840AB3521E6E50DA00532231 /* WSIndexBanner.m in Sources */,
 				840FE9881E6FCFEE0050C444 /* MessageAlertView.m in Sources */,
 				8442AAB51E8B8B7A00655887 /* AmountClassificationViewController.m in Sources */,
 				84C44BB71F1CD04D006C921C /* IDInfoViewController.m in Sources */,
+				840271DA1F31DC13001A85F5 /* LZPickerModel.m in Sources */,
 				841224651E6D490100048188 /* DaikuanViewController.m in Sources */,
 				84B9DC2A1E9DCCB10066A92D /* NavBaseVC.m in Sources */,
 				8419CA311E72393900EAE23C /* JishiyuDetailsViewController.m in Sources */,
@@ -1269,16 +1327,18 @@
 				84C467EE1F0CC63B000ECAD8 /* RemindModel.m in Sources */,
 				846ED6141EC1BBBC00FE22BD /* LoanDetailsViewController.m in Sources */,
 				847199DD1E77C92B0026F585 /* User.m in Sources */,
+				840271C61F31C63B001A85F5 /* CertificationCenterViewController.m in Sources */,
 				8419CA401E729C4B00EAE23C /* YTUITextField.m in Sources */,
-				84361FD91EB1BD4E008595E7 /* CarkClickViewController.m in Sources */,
 				84C4B7E61F29DFFA0000472E /* KLandscapePickerView.m in Sources */,
 				84499A1B1F3050DB00063947 /* LeftMenuViewDemo.m in Sources */,
 				8442AAC11E8BAC1C00655887 /* AmountTableViewCell.m in Sources */,
+				840271DD1F31E05C001A85F5 /* IdentityInformationViewController.m in Sources */,
 				844B8FF61E766ABF007C3207 /* ForgotPasswordVC.m in Sources */,
 				840FE96B1E6FA18D0050C444 /* BottomLineView.m in Sources */,
 				84C44B941F1CCD1D006C921C /* ASValuePopUpView.m in Sources */,
 				84C44BC51F1CD168006C921C /* UIAlertController+Extend.m in Sources */,
 				84C44B9E1F1CCD88006C921C /* IdVerificationViewController.m in Sources */,
+				840271CE1F31DAA5001A85F5 /* JobInformationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1449,7 +1509,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BGV3M7S2DU;
+				DEVELOPMENT_TEAM = GDPN4BAKG5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1505,7 +1565,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.mayihuabei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
 				PRODUCT_NAME = xianjinkadai;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1523,7 +1583,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BGV3M7S2DU;
+				DEVELOPMENT_TEAM = GDPN4BAKG5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1579,7 +1639,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.mayihuabei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
 				PRODUCT_NAME = xianjinkadai;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1716,7 +1776,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BGV3M7S2DU;
+				DEVELOPMENT_TEAM = GDPN4BAKG5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1772,7 +1832,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.mayihuabei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
 				PRODUCT_NAME = xianjinkadai;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
