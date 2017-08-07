@@ -38,7 +38,7 @@
 #import "BBSViewController.h"
 #import "LoginVC.h"
 #import "XinJinKaDaiViewController.h"
-#define umeng_appkey @"59794a929f06fd4447000799"
+#define umeng_appkey @"598427f104e2051dac0004f7"
 
 @interface AppDelegate ()
 
@@ -394,7 +394,6 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
         if (responseData)
         {
             //
-            // NSLog(@"ok");
         }
     });
 }

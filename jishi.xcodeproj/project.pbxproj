@@ -304,6 +304,7 @@
 		84546F4D1EA5F37C00AD0350 /* FastHandleCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardCollectionViewCell.m; sourceTree = "<group>"; };
 		84546F4E1EA5F37C00AD0350 /* FastHandleCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastHandleCardViewController.h; sourceTree = "<group>"; };
 		84546F4F1EA5F37C00AD0350 /* FastHandleCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastHandleCardViewController.m; sourceTree = "<group>"; };
+		845CE2911F346C530085FD04 /* xianjinkadai.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xianjinkadai.entitlements; sourceTree = "<group>"; };
 		846724301F15BB37002F2F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846ED6121EC1BBBC00FE22BD /* LoanDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanDetailsViewController.h; sourceTree = "<group>"; };
 		846ED6131EC1BBBC00FE22BD /* LoanDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanDetailsViewController.m; sourceTree = "<group>"; };
@@ -317,7 +318,6 @@
 		847199DF1E77CA410026F585 /* UserInfoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoContext.m; sourceTree = "<group>"; };
 		847DF40E1F14BADC007DDB60 /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
 		847DF40F1F14BADC007DDB60 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
-		847DF4121F14E282007DDB60 /* 帮帮钱包.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "帮帮钱包.entitlements"; sourceTree = "<group>"; };
 		848BC4901F33063500D031EF /* Daikuanyong.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Daikuanyong.xcassets; sourceTree = "<group>"; };
 		8492F8BD1F207BA1003E5CEA /* ZMCreditSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMCreditSDK.framework; sourceTree = "<group>"; };
 		8492F8BE1F207BA1003E5CEA /* ZMDependUponSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZMDependUponSDK.framework; sourceTree = "<group>"; };
@@ -746,7 +746,7 @@
 		841224271E6D480300048188 /* jishi */ = {
 			isa = PBXGroup;
 			children = (
-				847DF4121F14E282007DDB60 /* 帮帮钱包.entitlements */,
+				845CE2911F346C530085FD04 /* xianjinkadai.entitlements */,
 				84C06F341E8FA61A00038420 /* Appdelegate */,
 				840FE9891E6FCFF50050C444 /* Utils */,
 				840FE9851E6FCE480050C444 /* NetWork */,
@@ -1103,7 +1103,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1507,6 +1507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = jishi/xianjinkadai.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GDPN4BAKG5;
@@ -1581,6 +1582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = jishi/xianjinkadai.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GDPN4BAKG5;
@@ -1774,6 +1776,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = jishi/xianjinkadai.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GDPN4BAKG5;

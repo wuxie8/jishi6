@@ -127,7 +127,6 @@ static NSString *const footerId = @"footer";
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];

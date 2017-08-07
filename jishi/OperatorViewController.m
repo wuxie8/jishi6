@@ -170,7 +170,6 @@
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];
@@ -234,7 +233,6 @@
                 
                 // Create the actions.
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                    NSLog(@"The \"Secure Text Entry\" alert's cancel action occured.");
                     
                     // Stop listening for text changed notifications.
                     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:alertController.textFields.firstObject];
@@ -286,14 +284,12 @@
                 
                 // Create the actions.
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                    NSLog(@"The \"Secure Text Entry\" alert's cancel action occured.");
                     
                     // Stop listening for text changed notifications.
                     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:alertController.textFields.firstObject];
                 }];
                 
                 UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                    NSLog(@"The \"Secure Text Entry\" alert's other action occured.");
                     if ([UtilTools isBlankString:otherInfo]) {
                         [MessageAlertView  showErrorMessage:@"身份证号码不能为空"];
                         return ;
@@ -339,7 +335,6 @@
                 
                 // Create the actions.
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                    NSLog(@"The \"Secure Text Entry\" alert's cancel action occured.");
                     
                     // Stop listening for text changed notifications.
                     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:alertController.textFields.firstObject];
@@ -382,7 +377,6 @@
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
         
         
     }];
