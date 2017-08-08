@@ -987,6 +987,7 @@
 		84FF81321E70F7E50096AE87 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8451AFC01EA8963D002F04B6 /* RegistereForFriend */,
 				841224621E6D490100048188 /* MineViewController.h */,
 				841224631E6D490100048188 /* MineViewController.m */,
 				8442AAB61E8B8F4200655887 /* SetupViewController.h */,
@@ -995,7 +996,6 @@
 				8442AABA1E8B992600655887 /* AboutUsViewController.m */,
 				8451AFC11EA89842002F04B6 /* ShareFriendsViewController.h */,
 				8451AFC21EA89842002F04B6 /* ShareFriendsViewController.m */,
-				8451AFC01EA8963D002F04B6 /* RegistereForFriend */,
 				84B4779D1E8CB30A00DDF4AB /* BusinessViewController.h */,
 				84B4779E1E8CB30A00DDF4AB /* BusinessViewController.m */,
 				84499A1C1F30555100063947 /* LoginVC.h */,
@@ -1099,7 +1099,7 @@
 				TargetAttributes = {
 					841224241E6D480300048188 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GDPN4BAKG5;
+						DevelopmentTeam = Q6VU56RL4N;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1510,7 +1510,7 @@
 				CODE_SIGN_ENTITLEMENTS = jishi/xianjinkadai.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GDPN4BAKG5;
+				DEVELOPMENT_TEAM = Q6VU56RL4N;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1566,7 +1566,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.xianjinjidai;
 				PRODUCT_NAME = xianjinkadai;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1585,7 +1585,7 @@
 				CODE_SIGN_ENTITLEMENTS = jishi/xianjinkadai.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GDPN4BAKG5;
+				DEVELOPMENT_TEAM = Q6VU56RL4N;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1641,7 +1641,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.xianjinjidai;
 				PRODUCT_NAME = xianjinkadai;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1779,7 +1779,7 @@
 				CODE_SIGN_ENTITLEMENTS = jishi/xianjinkadai.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ting Xu (AULKBDLWQ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GDPN4BAKG5;
+				DEVELOPMENT_TEAM = Q6VU56RL4N;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1835,7 +1835,7 @@
 					"-framework",
 					"\"UShareUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wugufengdeng.daikuanyong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haitianhuatian.xianjinjidai;
 				PRODUCT_NAME = xianjinkadai;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

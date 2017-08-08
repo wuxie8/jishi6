@@ -69,7 +69,7 @@
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         
         //创建网页内容对象
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"贷款用" descr:@"贷款用是一款理财类的app" thumImage:[UIImage imageNamed:@"icon"]];
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"现金及贷" descr:@"现金及贷是一款理财类的app" thumImage:[UIImage imageNamed:@"icon"]];
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"review"])
     {
         //设置网页地址

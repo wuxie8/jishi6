@@ -9,16 +9,10 @@
 #import "AddBillViewController.h"
 #import "NewRemindViewController.h"
 #import "WebVC.h"
-#define  APIKEY         @"9073253582026649"
-#define  UID            @"u123456"
-//#define  CALLBACKURL    @"http://192.168.117.239:8080/credit_callback.php"
 
 
-#define  APISECRET @"wTCzqpY30jF9DHd8saT3E2tQU0q7aUhK"
-#define  lm_url @"https://api.limuzhengxin.com"
-// UID: 区分不同的用户
-#define  UID            @"u123456"
-#define  CALLBACKURL    @"http://www.baidu.com"
+
+
 #define kMargin 10
 static NSString *const cellId = @"cellId1";
 static NSString *const headerId = @"headerId1";
@@ -66,6 +60,7 @@ NSArray *imageArr;
     [self.view addSubview:_LoadcollectionView];
     // Do any additional setup after loading the view.
 }
+#pragma mark UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return arr.count;
@@ -147,58 +142,6 @@ NSArray *imageArr;
    
 
 }
-#pragma mark 自定义全局通用的 SDK
-
-- (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseObj))success failure:(void (^)(NSError *error))failure{
-    
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    
-    NSMutableURLRequest *request= [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30];
-    
-    [request setHTTPMethod:@"POST"];
-    
-    NSMutableArray *array = [NSMutableArray array];
-    if (params) {
-        for (NSString *key in params) {
-            NSString *value = [params objectForKey:key];
-            [array addObject:[NSString stringWithFormat:@"%@=%@", key, value]];
-        }
-        NSString *body = [array componentsJoinedByString:@"&"];
-        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-    }else{
-        request.HTTPBody = nil;
-    }
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-                if (failure) {
-                    failure(error);
-                }
-            } else {
-                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableContainers) error:nil];
-                if (dict) {
-                    if (success) {
-                        success(dict);
-                    }
-                } else {
-                    NSString *jsonStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                    if (success) {
-                        success(jsonStr);
-                    }
-                    
-                }
-            }
-        });
-        
-    }];
-    [dataTask resume];
-    
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

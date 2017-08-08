@@ -50,7 +50,13 @@
         [view addSubview:backView];
         if (i==arr.count-1) {
             but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-90, 0, 90, ViewHeight)];
-            but.backgroundColor=AppBackColor;
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                but.backgroundColor=AppgreenColor;
+
+            }
+            else{
+                but.backgroundColor=AppBackColor;
+            }
             [but addTarget:self action:@selector(verificationCode) forControlEvents:UIControlEventTouchUpInside];
             [but setTitle:@"获取验证码" forState:UIControlStateNormal];
             but.titleLabel.font    = [UIFont systemFontOfSize:  FontSize];
@@ -61,7 +67,13 @@
     }
     
     UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(10, 20+2*ViewHeight+20, WIDTH-10*2, 50)];
-    loginButton.backgroundColor=AppBackColor;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        loginButton.backgroundColor=AppgreenColor;
+        
+    }
+    else{
+        loginButton.backgroundColor=AppBackColor;
+    }
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
     loginButton.clipsToBounds=YES;
@@ -76,7 +88,13 @@
     NSArray *arr2=@[@"注册账号",@"忘记密码"];
     for (int i=0; i<2; i++) {
         UIButton *but1=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/2-ButtonWeight+i*ButtonWeight, CGRectGetMaxY(backgroundView.frame)+20, ButtonWeight, 40)];
-        [but1 setTitleColor:AppBackColor forState:UIControlStateNormal];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+            [but1 setTitleColor:AppgreenColor forState:UIControlStateNormal];
+
+        }
+        else{
+            [but1 setTitleColor:AppBackColor forState:UIControlStateNormal];
+        }
         but1.tag=i;
         [but1 addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
        but1.titleLabel.font    = [UIFont systemFontOfSize:  FontSize];

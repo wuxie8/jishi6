@@ -23,7 +23,6 @@
         self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.bankimageView.frame), size.width, 40)];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor blackColor];
-//        self.titleLabel.adjustsFontSizeToFitWidth=YES;
         [self.contentView addSubview:self.titleLabel];
         
         

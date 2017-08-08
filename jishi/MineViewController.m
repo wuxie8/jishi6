@@ -36,7 +36,7 @@
     }
     else
     {
-        [self denglu];
+        [self login];
         
     }
 }
@@ -148,27 +148,8 @@
     return cell;
 
 }
--(void)loadInitView
-{
-    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 20, WIDTH, 60)];
-    view.backgroundColor=[UIColor whiteColor ];
-    
 
-    UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 40, 40)];
-    image.image=[UIImage imageNamed:@"Mine"];
-    [view addSubview:image];
-    
-    label =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(image.frame)+20, 10, 300, 40)];
-    [view addSubview:label];
-    but=[[UIButton alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame)+20, WIDTH, 40)];
-    
-    [but addTarget:self action:@selector(denglu) forControlEvents:UIControlEventTouchUpInside];
-    but.backgroundColor=[UIColor whiteColor];
-    [but setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [self.view addSubview:view];
-    [self.view addSubview:but];
-}
--(void)denglu
+-(void)login
 {
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {

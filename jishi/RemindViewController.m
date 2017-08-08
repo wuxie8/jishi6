@@ -67,7 +67,7 @@
 
     
 }
-
+#pragma mark 懒加载
 -(UIView *)headView
 {
     
@@ -107,6 +107,7 @@
     }
     return _footView;
 }
+#pragma  mark  UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 
 {
@@ -116,20 +117,6 @@
 {
     return 1;
     
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 10;
-}
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 20)];
-    view.backgroundColor=AppButtonbackgroundColor;
-    return  view;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -145,32 +132,14 @@
         
         [cell setData:remindList];
     }
-   
-
+    
+    
     return cell;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
--(void)addRemind
-{
-    
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
-        AddBillViewController *addBill=[AddBillViewController new];
-        addBill.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:addBill animated:YES];
-//    }
-//    else{
-//        [self.navigationController pushViewController:[LoginViewController new] animated:YES];
-//        
-//    }
-    
 }
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         if (tableView == tab) {
-          ReminndListModel *remindList=  [remindListArray objectAtIndex:indexPath.section];
+            ReminndListModel *remindList=  [remindListArray objectAtIndex:indexPath.section];
             NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                                remindList.msg_id,@"id",
                                
@@ -191,10 +160,42 @@
                 
             }];
             [remindListArray removeObjectAtIndex:indexPath.section];
-//            [tab deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+            //            [tab deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
             [tab reloadData];
         }
     }
+}
+
+#pragma  mark  UITableViewDelegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 10;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 20)];
+    view.backgroundColor=AppButtonbackgroundColor;
+    return  view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+-(void)addRemind
+{
+    
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
+        AddBillViewController *addBill=[AddBillViewController new];
+        addBill.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:addBill animated:YES];
+//    }
+//    else{
+//        [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+//        
+//    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

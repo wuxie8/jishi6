@@ -65,7 +65,7 @@ static NSString *const footerId = @"footerId";
 //    [pageView addSubview:pageControl];
 //    [pageView stopTimer];
     [self.view addSubview:pageView];
-    [self getBankList];
+    [self getBankDataList];
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(pageView.frame), WIDTH, HEIGHT-64-44-pageHeight) collectionViewLayout:[UICollectionViewFlowLayout new]];
     [_collectionView setBackgroundColor:kColorFromRGBHex(0xEBEBEB)];
     _collectionView.delegate = self;
@@ -79,7 +79,7 @@ static NSString *const footerId = @"footerId";
     [self.view addSubview:_collectionView];
     // Do any additional setup after loading the view.
 }
--(void)getBankList
+-(void)getBankDataList
 {
   
     

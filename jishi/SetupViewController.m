@@ -14,6 +14,7 @@
 #import "ShareFriendsViewController.h"
 @interface SetupViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property(strong, nonatomic)UIView *footview;
 @end
 
 @implementation SetupViewController
@@ -34,26 +35,12 @@
     tab.delegate=self;
     tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
-    tab.tableFooterView=[self Footview];
+    tab.tableFooterView=self.footview;
     [self.view addSubview:tab];
    
 }
--(UIView *)Footview
-{
-    UIView * footview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 80)];
-    footview.backgroundColor=AppPageColor;
-    
-  
-    
-    UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(0, 30, WIDTH, 50)];
-    [but setTitle:@"退出登录" forState:UIControlStateNormal];
-    [but setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    but.backgroundColor=[UIColor whiteColor];
-    [but addTarget:self action:@selector(exit) forControlEvents:UIControlEventTouchUpInside];
-    [footview addSubview:but];
-    return footview;
-}
--(void)exit
+
+-(void)logout
 {
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"]) {
@@ -89,13 +76,6 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-//        case 0:
-//        {
-//           ShareFriendsViewController *shareFriends=[[ShareFriendsViewController alloc]init];
-//            [self.navigationController pushViewController:shareFriends animated:YES];
-//            
-//        }
-//            break;
         case 0:
         {
             AddressVC *adress=[[AddressVC alloc]init];
@@ -120,7 +100,27 @@
             break;
     }
 }
+#pragma mark 懒加载
 
+-(UIView *)footview
+{
+    if (_footview==nil) {
+        _footview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 80)];
+
+        _footview.backgroundColor=AppPageColor;
+        
+        
+        
+        UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(0, 30, WIDTH, 50)];
+        [but setTitle:@"退出登录" forState:UIControlStateNormal];
+        [but setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        but.backgroundColor=[UIColor whiteColor];
+        [but addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+        [_footview addSubview:but];
+    }
+   
+    return _footview;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

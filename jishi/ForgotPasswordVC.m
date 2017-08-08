@@ -23,7 +23,13 @@
     
     self.title=@"重置密码登录";
     self.view.backgroundColor=AppPageColor;
+    [self setLoadView];
     
+    
+    // Do any additional setup after loading the view.
+}
+-(void)setLoadView
+{
     
     NSArray *arr=@[@"手机号",@"密码",@"确认",@"验证码"];
     NSArray *arr1=@[@"请输入手机号",@"组合字母、数字",@"请确认密码",@"请输入验证码"];
@@ -55,15 +61,20 @@
                 break;
         }
         text.placeholder=arr1[i];
-      
+        
         [view addSubview:text];
         
         UIView *backView=[[UIView alloc]initWithFrame:CGRectMake(5, 39, WIDTH-10, 1)];
         backView.backgroundColor=PageColor;
         [view addSubview:backView];
         if (i==arr.count-1) {
-           but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-120, 0, 120, ViewHeight)];
-            but.backgroundColor=AppBackColor;
+            but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-120, 0, 120, ViewHeight)];
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                but.backgroundColor=AppgreenColor;
+            }
+            else{
+                but.backgroundColor=AppButtonbackgroundColor;
+            }
             [but setTitle:@"获取验证码" forState:UIControlStateNormal];
             [but addTarget: self action:@selector(verificationCodeRegister) forControlEvents:UIControlEventTouchUpInside];
             [view addSubview:but];
@@ -71,7 +82,12 @@
         [self.view addSubview:view];
     }
     UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+arr.count*ViewHeight+20, WIDTH-3*2, 50)];
-    loginButton.backgroundColor=AppBackColor;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        loginButton.backgroundColor=AppgreenColor;
+    }
+    else{
+        loginButton.backgroundColor=AppButtonbackgroundColor;
+    }
     [loginButton setTitle:@"确认修改" forState:UIControlStateNormal];
     loginButton.clipsToBounds=YES;
     [loginButton addTarget:self action:@selector(ConfirmChange) forControlEvents:UIControlEventTouchUpInside];
@@ -79,10 +95,7 @@
     [self.view addSubview:loginButton];
     
     
- 
-   
     
-    // Do any additional setup after loading the view.
 }
 -(void)verificationCodeRegister
 {
@@ -126,7 +139,12 @@
                 [but setTitle:@"获取验证码" forState:UIControlStateNormal];
                 [but setEnabled:YES];
                 but.alpha=1;
-                but.backgroundColor=AppBackColor;
+                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                    but.backgroundColor=AppgreenColor;
+                }
+                else{
+                    but.backgroundColor=AppButtonbackgroundColor;
+                }
             }
         });
     });
@@ -144,12 +162,7 @@
     
     [[NetWorkManager sharedManager]postJSON:verificationCoderegister parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dic=(NSDictionary *)responseObject;
-        if ([dic[@"status"]boolValue]) {
-            
-            
-        }
-        else
-        {
+        if (![dic[@"status"]boolValue])        {
             [MessageAlertView showErrorMessage:[NSString stringWithFormat:@"%@",dic[@"info"]]];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

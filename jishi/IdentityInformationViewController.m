@@ -55,12 +55,65 @@
     
     // Do any additional setup after loading the view.
 }
+
+#pragma mark 实现方法
 - (void)keyboardHide:(UITapGestureRecognizer *)tap
 {
     YLSOPickerView *pickView=(YLSOPickerView *)tap.view;
     [pickView quit];
     
 }
+-(void)getValue:(NSNotification *)notification
+{
+    
+    
+    UITextField *text=[self.view viewWithTag:1000+[arr indexOfObject:notification.name]];
+    text.text=notification.object;
+    
+    //    [self.dic setObject:notification.object forKey:@"10"];
+    
+}
+-(void)complete
+{
+    for (int i=0; i<arr.count; i++) {
+        if ([UtilTools isBlankString:[(UITextField *) [self.view viewWithTag:1000+i] text]]) {
+            [MessageAlertView showErrorMessage:@"请补全信息"];
+            return;
+        }
+    }
+    NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
+                        Context.currentUser.uid,@"uid",
+                        [(UITextField *) [self.view viewWithTag:1000] text],@"industry",
+                        [(UITextField *) [self.view viewWithTag:1001] text],@"position",
+                        [(UITextField *) [self.view viewWithTag:1002] text],@"name",
+                        [(UITextField *) [self.view viewWithTag:1003] text],@"address",
+                        [(UITextField *) [self.view viewWithTag:1004] text],@"address",
+                        [(UITextField *) [self.view viewWithTag:1005] text],@"tel",
+                        
+                        nil];
+    [[NetWorkManager sharedManager]postNoTipJSON:[NSString stringWithFormat:@"%@&m=Tempinfo&a=work_add",SERVERE] parameters:dic2 success:^(NSURLSessionDataTask *task, id responseObject) {
+        if ([responseObject[@"code"]isEqualToString:@"0000"]) {
+            [MessageAlertView showSuccessMessage:@"上传成功"];
+            //            if (self.clickBlock) {
+            //                self.clickBlock();
+            //            }
+            [self.navigationController popViewControllerAnimated:YES];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"CertificationStatus" object:@"1"];
+            
+        }
+        else
+        {
+            [MessageAlertView showErrorMessage:responseObject[@"msg"]];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+        
+        
+    }];
+    
+    
+}
+
 -(void)getList
 {
     NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
@@ -108,6 +161,8 @@
     
     
 }
+#pragma mark UITableViewDataSource
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return arr.count;
@@ -143,6 +198,8 @@
     
     
 }
+#pragma mark UITextFieldDelegate
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     
@@ -191,46 +248,8 @@
     }
     return YES;
 }
--(void)complete
-{
-    for (int i=0; i<arr.count; i++) {
-        if ([UtilTools isBlankString:[(UITextField *) [self.view viewWithTag:1000+i] text]]) {
-            [MessageAlertView showErrorMessage:@"请补全信息"];
-            return;
-        }
-    }
-    NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
-                        Context.currentUser.uid,@"uid",
-                        [(UITextField *) [self.view viewWithTag:1000] text],@"industry",
-                        [(UITextField *) [self.view viewWithTag:1001] text],@"position",
-                        [(UITextField *) [self.view viewWithTag:1002] text],@"name",
-                        [(UITextField *) [self.view viewWithTag:1003] text],@"address",
-                        [(UITextField *) [self.view viewWithTag:1004] text],@"address",
-                        [(UITextField *) [self.view viewWithTag:1005] text],@"tel",
+#pragma mark 懒加载
 
-                        nil];
-    [[NetWorkManager sharedManager]postNoTipJSON:[NSString stringWithFormat:@"%@&m=Tempinfo&a=work_add",SERVERE] parameters:dic2 success:^(NSURLSessionDataTask *task, id responseObject) {
-        if ([responseObject[@"code"]isEqualToString:@"0000"]) {
-            [MessageAlertView showSuccessMessage:@"上传成功"];
-            //            if (self.clickBlock) {
-            //                self.clickBlock();
-            //            }
-            [self.navigationController popViewControllerAnimated:YES];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"CertificationStatus" object:@"1"];
-
-        }
-        else
-        {
-            [MessageAlertView showErrorMessage:responseObject[@"msg"]];
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
-        
-        
-    }];
-    
-    
-}
 -(UIView *)footView
 {
     if (!_footView) {
@@ -249,16 +268,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
--(void)getValue:(NSNotification *)notification
-{
-    
-    
-    UITextField *text=[self.view viewWithTag:1000+[arr indexOfObject:notification.name]];
-    text.text=notification.object;
-    
-    //    [self.dic setObject:notification.object forKey:@"10"];
-    
 }
 /*
  #pragma mark - Navigation

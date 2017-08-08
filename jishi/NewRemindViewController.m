@@ -112,6 +112,41 @@
     }];
     
 }
+#pragma  mark UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return array.count;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[array objectAtIndex:(section)] count];
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdenfer=@"addressCell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdenfer];
+    if(cell==nil)
+    {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdenfer];
+    }
+    
+    cell.textLabel.text=[[array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+    UITextField *textField=[[UITextField alloc]initWithFrame:CGRectMake(WIDTH-300, 0, 280, cell.frame.size.height)];
+    textField.textAlignment=NSTextAlignmentRight;
+    textField.placeholder=[[placeArray objectAtIndex:(indexPath.section)] objectAtIndex:indexPath.row];
+    textField.delegate=self;
+    textField.tag=1000+[[NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row] integerValue];
+    [cell.contentView addSubview:textField];
+    
+    return cell;
+}
+
+
+#pragma  mark UITableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView*view=[[UIView alloc]initWithFrame:CGRectMake(0 , 0 , WIDTH, 40)];
@@ -139,6 +174,7 @@
     view.backgroundColor=BaseColor;
     return view;
 }
+#pragma mark   懒加载
 -(UIView *)footView
 {
     if (_footView==nil) {
@@ -163,6 +199,7 @@
     
     return _footView;
 }
+#pragma  mark 实现方法
 -(void)addRemind
 {
     NSString *remark;
@@ -230,54 +267,7 @@ type=6;
     }];
 
 }
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    if ([textView.text isEqualToString:@"备注..."]) {
-        textView.text = @"";
-    }
-}
-- (void)textViewDidChange:(UITextView *)textView
-{
-    if ([UtilTools isBlankString:textView.text]) {
-        textView.text = @"备注...";
-
-    }
-}
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-}
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return array.count;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[array objectAtIndex:(section)] count];
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdenfer=@"addressCell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdenfer];
-    if(cell==nil)
-    {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdenfer];
-    }
-    
-    cell.textLabel.text=[[array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
-    UITextField *textField=[[UITextField alloc]initWithFrame:CGRectMake(WIDTH-300, 0, 280, cell.frame.size.height)];
-    textField.textAlignment=NSTextAlignmentRight;
-    textField.placeholder=[[placeArray objectAtIndex:(indexPath.section)] objectAtIndex:indexPath.row];
-    textField.delegate=self;
-    textField.tag=1000+[[NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row] integerValue];
-    [cell.contentView addSubview:textField];
-    
-      return cell;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60;
-}
-
+#pragma  mark UITextViewDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     
@@ -318,6 +308,24 @@ type=6;
     }
     return YES;
 }
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"备注..."]) {
+        textView.text = @"";
+    }
+}
+- (void)textViewDidChange:(UITextView *)textView
+{
+    if ([UtilTools isBlankString:textView.text]) {
+        textView.text = @"备注...";
+
+    }
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
 -(void)getValue:(NSNotification *)notification
 {
     if ([notification.name isEqualToString:RepeatType]) {

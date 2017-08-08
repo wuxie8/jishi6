@@ -58,7 +58,6 @@
     [[UMSocialManager defaultManager] openLog:NO];
     
     [[UMSocialManager defaultManager] setUmSocialAppkey:umeng_appkey];
-    [self configUSharePlatforms];
 
     //讯飞人脸识别
     [self makeConfiguration];
@@ -186,24 +185,6 @@
     
     return [outstring uppercaseString];
 }
--(void)configUSharePlatforms
-{
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106221516"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
-    
-    
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Qzone appKey:@"1106221516"/*设置QQ平台的appID*/  appSecret:@"JOVBDrWUDt0JIczB" redirectURL:@"http://mobile.umeng.com/social"];
-    //http://www.jishiyu007.com
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
-    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-    /* 设置微信的appKey和appSecret */
-    /* 设置微信的appKey和appSecret */
-    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxed7adf75b1686f8d" appSecret:@"db613640a7efb0c0b93241e5ef3f11ec" redirectURL:@"http://mobile.umeng.com/social"];
-}
 //#define __IPHONE_10_0    100000
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
@@ -283,16 +264,16 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"现金及贷",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"贷款用",@"个人中心"];
+    //    NSArray *titles = @[@"现金及贷",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
         tabBarController.viewControllers=@[nav7C,nav11C,nav4C];
-        titles = @[@"贷款用",@"论坛",@"个人中心"];
+        titles = @[@"现金及贷",@"论坛",@"个人中心"];
         images=@[@"DaikuanyongHomepage",@"DaikuanyongBBS",@"DaikuanyongMine"];
         
     selectedImages=@[@"DaikuanyongHomepageBlue",@"DaikuanyongBBSBlue",@"DaikuanyongMineBlue"];
@@ -301,7 +282,7 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     }
     else{
         tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"贷款用",@"贷款超市",@"信用卡",@"个人中心"];
+        titles = @[@"现金及贷",@"贷款超市",@"信用卡",@"个人中心"];
         images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
         selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
         tabBarController.tabBar.tintColor = [UIColor blueColor];

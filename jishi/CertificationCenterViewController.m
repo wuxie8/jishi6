@@ -33,6 +33,44 @@ static NSString *const footerId = @"footer";
     NSArray *imageBlueArray;
     NSMutableDictionary *statusDictionary;
 }
+- (void)viewDidLoad {
+    [super viewDidLoad];
+  self.title=@"信息认证";
+    titleArray=@[@"身份信息",@"工作信息",@"收入信息",@"联系人",@"运营商认证"];
+    statusDictionary=[NSMutableDictionary dictionary];
+    imageArray=@[@"Identity_Information",@"Job_information",@"Income_Information",@"Contact_Information",@"Operator_Information"];
+    imageBlueArray=@[@"Identity_InformationBlue",@"Job_informationBlue",@"Income_InformationBlue",@"Contact_InformationBlue",@"Operator_InformationBlue"];
+
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getStatus:) name:@"CertificationStatus" object:nil];
+
+    self.view.backgroundColor=[UIColor whiteColor];
+    [self getList];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, WIDTH, HEIGHT-64-44) collectionViewLayout:[UICollectionViewFlowLayout new]];
+    [_collectionView setBackgroundColor:[UIColor whiteColor]];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    self.collectionView.alwaysBounceVertical = NO;
+    // 注册cell、sectionHeader、sectionFooter
+    [_collectionView registerClass:[CertificationCenterCollectionViewCell class] forCellWithReuseIdentifier:cellId];
+    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
+    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
+    
+    [self.view addSubview:_collectionView];
+    [self.view addSubview:self.footView];
+    // Do any additional setup after loading the view.
+}
+#pragma mark 实现方法
+-(void)complete{
+    NSArray *valueArray=[statusDictionary allValues];
+    for (NSString *string in valueArray) {
+        if (![string isEqualToString:@"1"]) {
+            [MessageAlertView showErrorMessage:@"请先补全信息"];
+            return;
+        }
+    }
+    [self.navigationController pushViewController:[AuditViewController new] animated:YES];
+    
+}
 -(void)getStatus:(NSNotification *)notification
 {
     
@@ -61,32 +99,7 @@ static NSString *const footerId = @"footer";
     }
     
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
-  self.title=@"信息认证";
-    titleArray=@[@"身份信息",@"工作信息",@"收入信息",@"联系人",@"运营商认证"];
-    statusDictionary=[NSMutableDictionary dictionary];
-    imageArray=@[@"Identity_Information",@"Job_information",@"Income_Information",@"Contact_Information",@"Operator_Information"];
-    imageBlueArray=@[@"Identity_InformationBlue",@"Job_informationBlue",@"Income_InformationBlue",@"Contact_InformationBlue",@"Operator_InformationBlue"];
 
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getStatus:) name:@"CertificationStatus" object:nil];
-
-    self.view.backgroundColor=[UIColor whiteColor];
-    [self getList];
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, WIDTH, HEIGHT-64-44) collectionViewLayout:[UICollectionViewFlowLayout new]];
-    [_collectionView setBackgroundColor:[UIColor whiteColor]];
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
-    self.collectionView.alwaysBounceVertical = NO;
-    // 注册cell、sectionHeader、sectionFooter
-    [_collectionView registerClass:[CertificationCenterCollectionViewCell class] forCellWithReuseIdentifier:cellId];
-    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
-    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
-    
-    [self.view addSubview:_collectionView];
-    [self.view addSubview:self.footView];
-    // Do any additional setup after loading the view.
-}
 -(void)getList
 {
     NSDictionary *dic2=[NSDictionary dictionaryWithObjectsAndKeys:
@@ -284,17 +297,7 @@ static NSString *const footerId = @"footer";
     }
     return _footView;
 }
--(void)complete{
-    NSArray *valueArray=[statusDictionary allValues];
-    for (NSString *string in valueArray) {
-        if (![string isEqualToString:@"1"]) {
-            [MessageAlertView showErrorMessage:@"请先补全信息"];
-            return;
-        }
-    }
-    [self.navigationController pushViewController:[AuditViewController new] animated:YES];
 
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

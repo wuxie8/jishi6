@@ -32,10 +32,12 @@
     
     self.title=@"注册";
     self.view.backgroundColor=AppPageColor;
+    [self getloadView];
+       // Do any additional setup after loading the view.
+}
+-(void)getloadView
+{
     
-    
-    //    NSArray *arr=@[@"手机号",@"密码",@"确认",@"验证码"];
-    //    NSArray *arr1=@[@"请输入手机号",@"组合字母、数字",@"请确认密码",@"请输入验证码"];
     arr=@[@"手机号",@"验证码"];
     NSArray *arr1=@[@"请输入手机号",@"请输入验证码"];
     for (int i=0; i<arr.count; i++) {
@@ -56,11 +58,6 @@
                 text.keyboardType=UIKeyboardTypeNumberPad;
                 
                 break;
-                //               case 1:
-                //                case 2:
-                //                text.keyboardType=UIKeyboardTypeDefault;
-                //                text.secureTextEntry=YES;
-                //                break;
                 
             default:
                 break;
@@ -74,7 +71,13 @@
         [view addSubview:backView];
         if (i==arr.count-1) {
             but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-90, 0, 90, ViewHeight)];
-            but.backgroundColor=AppButtonbackgroundColor;
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+                but.backgroundColor=AppgreenColor;
+            }
+            else{
+                but.backgroundColor=AppButtonbackgroundColor;
+            }
+            
             [but setTitle:@"获取验证码" forState:UIControlStateNormal];
             but.titleLabel.font=[UIFont systemFontOfSize:14*Context.autoSizeScaleX];
             [but addTarget: self action:@selector(verificationCodeRegister) forControlEvents:UIControlEventTouchUpInside];
@@ -83,7 +86,12 @@
         [self.view addSubview:view];
     }
     UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+arr.count*ViewHeight+20, WIDTH-3*2, 50)];
-    loginButton.backgroundColor=AppButtonbackgroundColor;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        loginButton.backgroundColor=AppgreenColor;
+    }
+    else{
+        loginButton.backgroundColor=AppButtonbackgroundColor;
+    }
     [loginButton setTitle:@"注册" forState:UIControlStateNormal];
     loginButton.clipsToBounds=YES;
     [loginButton addTarget:self action:@selector(registerClick ) forControlEvents:UIControlEventTouchUpInside];
@@ -102,7 +110,7 @@
     //将触摸事件添加到当前view
     [self.view addGestureRecognizer:tapGestureRecognizer];
     
-    // Do any additional setup after loading the view.
+
 }
 
 -(void)registerClick

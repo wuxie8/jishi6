@@ -106,7 +106,14 @@
     NSArray *controllersArr = @[landing, password];
     
     OptionBarController *navTabBarController = [[OptionBarController alloc] initWithSubViewControllers:controllersArr andParentViewController:self andshowSeperateLine:NO];
-    navTabBarController.linecolor=AppBackColor;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+        navTabBarController.linecolor=AppgreenColor;
+
+    }
+    else{
+        navTabBarController.linecolor=AppBackColor;
+        
+    }
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
     //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
