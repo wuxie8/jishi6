@@ -11,7 +11,6 @@
 #import "AboutUsViewController.h"
 #import "BusinessViewController.h"
 #import "AddressVC.h"
-#import "ShareFriendsViewController.h"
 @interface SetupViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(strong, nonatomic)UIView *footview;

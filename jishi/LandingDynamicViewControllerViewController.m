@@ -24,9 +24,16 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-   self.title=  @"手机动态登录";
+   self.title=@"手机动态登录";
+    [self loadinitView];
+    
+    
+}
+-(void)loadinitView
+{
+
     NSArray *arr=@[@"手机号",@"验证码"];
-     NSArray *arr1=@[@"请输入手机号",@"请输入验证码"];
+    NSArray *arr1=@[@"请输入手机号",@"请输入验证码"];
     self.view.backgroundColor=AppPageColor;
     for (int i=0; i<arr.count; i++) {
         UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 20+i*ViewHeight, WIDTH, ViewHeight)];
@@ -52,7 +59,7 @@
             but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-90, 0, 90, ViewHeight)];
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
                 but.backgroundColor=AppgreenColor;
-
+                
             }
             else{
                 but.backgroundColor=AppBackColor;
@@ -60,7 +67,7 @@
             [but addTarget:self action:@selector(verificationCode) forControlEvents:UIControlEventTouchUpInside];
             [but setTitle:@"获取验证码" forState:UIControlStateNormal];
             but.titleLabel.font    = [UIFont systemFontOfSize:  FontSize];
-
+            
             [view addSubview:but];
         }
         [self.view addSubview:view];
@@ -90,14 +97,14 @@
         UIButton *but1=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/2-ButtonWeight+i*ButtonWeight, CGRectGetMaxY(backgroundView.frame)+20, ButtonWeight, 40)];
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
             [but1 setTitleColor:AppgreenColor forState:UIControlStateNormal];
-
+            
         }
         else{
             [but1 setTitleColor:AppBackColor forState:UIControlStateNormal];
         }
         but1.tag=i;
         [but1 addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-       but1.titleLabel.font    = [UIFont systemFontOfSize:  FontSize];
+        but1.titleLabel.font    = [UIFont systemFontOfSize:  FontSize];
         [but1 setTitle:arr2[i] forState:UIControlStateNormal];
         [self.view addSubview:but1];
     }
@@ -105,8 +112,6 @@
     UIView *lineView=[[UIView alloc]initWithFrame:CGRectMake(WIDTH/2, CGRectGetMaxY(backgroundView.frame)+20+5, 1, 30)];
     lineView.backgroundColor=PageColor;
     [self.view addSubview:lineView];
-    
-    
 }
 - (void)tagsAliasCallback:(int)iResCode
                      tags:(NSSet *)tags
@@ -161,10 +166,10 @@
     });
     //启动源
     dispatch_resume(timer);
-    [self sendCode:string];
+    [self sendSmsCode:string];
     
 }
--(void)sendCode:(NSString *)str
+-(void)sendSmsCode:(NSString *)str
 {
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                        str,@"mobile",

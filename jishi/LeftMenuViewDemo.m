@@ -55,15 +55,7 @@
     [headerView addSubview:loginButton];
     
     width                  = 15;
-//    UIImageView *arrow     = [[UIImageView alloc]initWithFrame:CGRectMake(Frame_Width - width - 10, (90 - width)/2, width, width)];
-//    arrow.contentMode      = UIViewContentModeScaleAspectFit;
-//    [arrow setImage:[UIImage imageNamed:@"person-icon0"]];
-//    [headerView addSubview:arrow];
-    
-//    UILabel *NameLabel = [[UILabel alloc]initWithFrame:CGRectMake(imageview.frame.size.width + imageview.frame.origin.x * 2, imageview.frame.origin.y, 90, imageview.frame.size.height)];
-//    [NameLabel setText:@"隔壁老王"];
-//    [headerView addSubview:NameLabel];
-//
+
   
     [self addSubview:headerView];
     

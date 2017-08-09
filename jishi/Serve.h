@@ -46,9 +46,9 @@
 #define filter @"&m=business&a=filter"
 
 //贷款
-#define appcode @"daikuanyong"
+#define appcode @"xianjinjidai"
 
-#define appNo @"QD0087"
+#define appNo @"QD0117"
 
 
 

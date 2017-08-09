@@ -105,13 +105,12 @@
     
     NSArray *controllersArr = @[landing, password];
     
-    OptionBarController *navTabBarController = [[OptionBarController alloc] initWithSubViewControllers:controllersArr andParentViewController:self andshowSeperateLine:NO];
+    OptionBarController *optionBar = [[OptionBarController alloc] initWithSubViewControllers:controllersArr andParentViewController:self andshowSeperateLine:NO];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        navTabBarController.linecolor=AppgreenColor;
-
+        optionBar.linecolor=AppgreenColor;
     }
     else{
-        navTabBarController.linecolor=AppBackColor;
+        optionBar.linecolor=AppBackColor;
         
     }
     
