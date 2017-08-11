@@ -452,14 +452,15 @@
             
         }
         else if ([responseObject[@"code"]isEqualToString:@"2038" ]){
-            [MessageAlertView showErrorMessage:@"客服密码不对"];
             [MessageAlertView dismissHud];
+
+            [MessageAlertView showErrorMessage:@"客服密码不对"];
 
         }
         else{
+            [MessageAlertView dismissHud];
 
             [MessageAlertView showErrorMessage:responseObject[@"msg"]];
-            [MessageAlertView dismissHud];
 
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
