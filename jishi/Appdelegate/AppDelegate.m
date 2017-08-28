@@ -219,8 +219,7 @@
 }
 #pragma mark 配置开关
 
-+(UITabBarController *)setTabBarController
-{
++(UITabBarController *)setTabBarController{
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLG"];
     HomePageViewController*remind=[HomePageViewController new];
     JishiyuViewController *jishiyu = [[JishiyuViewController alloc] init]; //未处理
@@ -240,19 +239,19 @@
     //步骤2：将视图控制器绑定到导航控制器上
     BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:jishiyu];
     BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:treatVC];
-    BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
+  __unused  BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:fastVC];
 __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     
     BaseNC *nav4C=[[BaseNC alloc]initWithRootViewController:mine];
  __unused BaseNC *nav6C=[[BaseNC alloc]initWithRootViewController:amount];
 
-    BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
+  __unused  BaseNC *nav7C=[[BaseNC alloc]initWithRootViewController:newHomePage];
 
  __unused   BaseNC *nav8C=[[BaseNC alloc]initWithRootViewController:maYiHuaBeiHomePage];
   __unused   BaseNC *nav9C=[[BaseNC alloc]initWithRootViewController:Jishiyudaikuan];
 
    __unused  BaseNC *nav10C=[[BaseNC alloc]initWithRootViewController:XianJinSuDai];
-      BaseNC *nav11C=[[BaseNC alloc]initWithRootViewController:bbs];
+  __unused    BaseNC *nav11C=[[BaseNC alloc]initWithRootViewController:bbs];
     
  __unused   BaseNC *nav12C=[[BaseNC alloc]initWithRootViewController:xinjinkadai];
 
@@ -264,30 +263,30 @@ __unused  BaseNC *nav5C=[[BaseNC alloc]initWithRootViewController:remind];
     barBgView.backgroundColor = [UIColor whiteColor];
     [tabBarController.tabBar insertSubview:barBgView atIndex:0];
     tabBarController.tabBar.opaque = YES;
-    NSArray *titles = @[@"现金及贷",@"贷款超市",@"信用卡",@"个人中心"];
+    NSArray *titles = @[@"小胖钱包",@"贷款超市",@"信用卡",@"个人中心"];
     NSArray *images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
     //    NSArray *images=@[@"jishiyu",@"Mineing"];
     //    NSArray *selectedImages=@[@"jishiyuBlue",@"MineingBlue"];
-    //    NSArray *titles = @[@"现金及贷",@"个人中心"];
+    //    NSArray *titles = @[@"小胖钱包",@"个人中心"];
     
     NSArray *selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        tabBarController.viewControllers=@[nav7C,nav11C,nav4C];
-        titles = @[@"现金及贷",@"论坛",@"个人中心"];
-        images=@[@"DaikuanyongHomepage",@"DaikuanyongBBS",@"DaikuanyongMine"];
-        
-    selectedImages=@[@"DaikuanyongHomepageBlue",@"DaikuanyongBBSBlue",@"DaikuanyongMineBlue"];
-        tabBarController.tabBar.tintColor = AppgreenColor;
-
-    }
-    else{
-        tabBarController.viewControllers=@[nav1C,nav2C,nav3C,nav4C];
-        titles = @[@"现金及贷",@"贷款超市",@"信用卡",@"个人中心"];
-        images=@[@"jishiyu",@"lending",@"lending",@"Mineing"];
-        selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"lendingBlue",@"MineingBlue"];
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//        tabBarController.viewControllers=@[nav7C,nav11C,nav4C];
+//        titles = @[@"小胖钱包",@"论坛",@"个人中心"];
+//        images=@[@"DaikuanyongHomepage",@"DaikuanyongBBS",@"DaikuanyongMine"];
+//        
+//    selectedImages=@[@"DaikuanyongHomepageBlue",@"DaikuanyongBBSBlue",@"DaikuanyongMineBlue"];
+//        tabBarController.tabBar.tintColor = AppgreenColor;
+//
+//    }
+//    else{
+        tabBarController.viewControllers=@[nav1C,nav2C,nav4C];
+        titles = @[@"小胖钱包",@"贷款超市",@"个人中心"];
+        images=@[@"jishiyu",@"lending",@"Mineing"];
+        selectedImages=@[@"jishiyuBlue",@"lendingBlue",@"MineingBlue"];
         tabBarController.tabBar.tintColor = [UIColor blueColor];
 
-    }
+//    }
     
     tabBarController.selectedIndex = 0; //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
     //        NSArray *titles = [[NSUserDefaults standardUserDefaults] boolForKey:@"review"]?@[@"我来贷款王",@"个人中心"]:@[@"曹操贷款王",@"贷款",@"个人中心",@"设置"];

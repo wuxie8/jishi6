@@ -42,14 +42,14 @@
     [self.view addSubview:optionBarView];
     optionBarView.delegate=self;
     optionBarView.showSeprateLine=_showLineView;
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        optionBarView.bottomLineColor=AppgreenColor;
-
-    }
-    else{
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//        optionBarView.bottomLineColor=AppgreenColor;
+//
+//    }
+//    else{
         optionBarView.bottomLineColor=AppBackColor;
 
-    }
+//    }
     UIScrollView *scrollerView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.lhOptionsBarView.frame), WIDTH,HEIGHT-44)];
     self.mainView=scrollerView;
     [self.view addSubview:scrollerView];

@@ -34,7 +34,7 @@
     
     self.productArray=nil;
  
- NSArray *array=@[@"现金及贷-社保贷",@"现金及贷-公积金贷",@"现金及贷-保单贷",@"现金及贷-供房贷",@"现金及贷-税金贷",@"现金及贷-学信贷"];
+ NSArray *array=@[@"小胖钱包-社保贷",@"小胖钱包-公积金贷",@"小胖钱包-保单贷",@"小胖钱包-供房贷",@"小胖钱包-税金贷",@"小胖钱包-学信贷"];
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                       appcode,@"code",
                        @"1.0.0",@"version",
@@ -135,7 +135,23 @@
     return loancell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
+{
+    
+    ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                       pro.productID,@"id",
+                       Context.currentUser.uid,@"uid",
+                       appNo,@"channel",
+                       
+                       nil];
+    
+    [[NetWorkManager sharedManager]getJSON:@"http://app.jishiyu11.cn/index.php?g=app&m=product&a=hits" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        
+    }];
+
     LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
     load.hidesBottomBarWhenPushed=YES;
     

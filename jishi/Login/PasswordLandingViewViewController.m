@@ -56,13 +56,13 @@
     }
     
     UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+2*ViewHeight1+20, WIDTH-3*2, 50)];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        loginButton.backgroundColor=AppgreenColor;
-        
-    }
-    else{
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//        loginButton.backgroundColor=AppgreenColor;
+//        
+//    }
+//    else{
         loginButton.backgroundColor=AppBackColor;
-    }
+//    }
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     loginButton.clipsToBounds=YES;
     [loginButton addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
@@ -77,17 +77,18 @@
     NSArray *arr2=@[@"注册账号",@"忘记密码"];
     for (int i=0; i<2; i++) {
         UIButton *but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH/2-ButtonWeight+i*ButtonWeight, CGRectGetMaxY(backgroundView.frame)+20, ButtonWeight, 40)];
-        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-            [but setTitleColor:AppgreenColor forState:UIControlStateNormal];
-
-        }
-        else{
+//        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//            [but setTitleColor:AppgreenColor forState:UIControlStateNormal];
+//
+//        }
+//        else{
             [but setTitleColor:AppBackColor forState:UIControlStateNormal];
 
-        }
+//        }
         but.tag=i;
         [but addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         
+        but.titleLabel.font    = [UIFont systemFontOfSize:  14];
 
         [but setTitle:arr2[i] forState:UIControlStateNormal];
         [self.view addSubview:but];

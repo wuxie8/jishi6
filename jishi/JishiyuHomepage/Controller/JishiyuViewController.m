@@ -40,7 +40,7 @@
  
  
 
-    self.title=@"现金及贷";
+    self.title=@"小胖钱包";
 
     
      page=1;
@@ -53,9 +53,11 @@
 tab.delegate=self;
 tab.dataSource=self;
     tab.backgroundColor=AppPageColor;
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
     tab.tableHeaderView=[self creatUI];
-    }
+//
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//    tab.tableHeaderView=[self creatUI];
+//    }
     
 [self.view addSubview:tab];
 // Do any additional setup after loading the view.
@@ -71,7 +73,7 @@ tab.dataSource=self;
                        @"1.0.0",@"version",
                       [NSString stringWithFormat:@"%d",page],@"page",
                        nil];
-    NSArray *array=@[@"现金及贷-社保贷",@"现金及贷-公积金贷",@"现金及贷-保单贷",@"现金及贷-供房贷",@"现金及贷-税金贷",@"现金及贷-学信贷"];
+    NSArray *array=@[@"小胖钱包-社保贷",@"小胖钱包-公积金贷",@"小胖钱包-保单贷",@"小胖钱包-供房贷",@"小胖钱包-税金贷",@"小胖钱包-学信贷"];
 [[NetWorkManager sharedManager]postNoTipJSON:exchange parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
     NSDictionary *dic=(NSDictionary *)responseObject;
     if ([dic[@"status"]boolValue]) {
@@ -468,25 +470,17 @@ tab.dataSource=self;
         ProductModel *product=(ProductModel *)self.productArray[indexPath.row];
         NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
                            product.productID,@"id",
+                           Context.currentUser.uid,@"uid",
+                           appNo,@"channel",
+                           
                            nil];
         
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-        [manager.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-        
-        NSString *urlStr = [NSString stringWithFormat:@"%@&m=toutiao&a=redirect",SERVERE];
-        [manager GET:urlStr parameters:dic progress:nil success:^(NSURLSessionDataTask *  task, id   responseObject) {
-          
+        [[NetWorkManager sharedManager]getJSON:@"http://app.jishiyu11.cn/index.php?g=app&m=product&a=hits" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
             
-        } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
             
         }];
-
-//        JishiyuDetailsViewController *jishiyuDetail=[[JishiyuDetailsViewController alloc]init];
-//        jishiyuDetail.product=product;
-//        jishiyuDetail.hidesBottomBarWhenPushed=YES;
-//        [self.navigationController pushViewController:jishiyuDetail animated:YES];
         LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
         load.hidesBottomBarWhenPushed=YES;
         

@@ -123,7 +123,6 @@
 		8411EBEB1F3D90150068F33E /* Remind.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8411EBE01F3D90150068F33E /* Remind.xcassets */; };
 		8411EBEC1F3D90150068F33E /* Setup.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8411EBE11F3D90150068F33E /* Setup.xcassets */; };
 		8411EBED1F3D90150068F33E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411EBE31F3D90150068F33E /* ViewController.m */; };
-		8411EBF01F3D94070068F33E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8411EBEF1F3D94070068F33E /* Info.plist */; };
 		8411EBF51F3D98EC0068F33E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8411EBF11F3D98EC0068F33E /* LaunchScreen.storyboard */; };
 		8411EBF61F3D98EC0068F33E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8411EBF31F3D98EC0068F33E /* Main.storyboard */; };
 		8412242A1E6D480300048188 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841224291E6D480300048188 /* main.m */; };
@@ -747,9 +746,6 @@
 		841224271E6D480300048188 /* jishi */ = {
 			isa = PBXGroup;
 			children = (
-				8411EBF11F3D98EC0068F33E /* LaunchScreen.storyboard */,
-				8411EBF31F3D98EC0068F33E /* Main.storyboard */,
-				8411EBEF1F3D94070068F33E /* Info.plist */,
 				845CE2911F346C530085FD04 /* xianjinkadai.entitlements */,
 				84C06F341E8FA61A00038420 /* Appdelegate */,
 				840FE9891E6FCFF50050C444 /* Utils */,
@@ -879,6 +875,9 @@
 		84C06F341E8FA61A00038420 /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
+				8411EBF11F3D98EC0068F33E /* LaunchScreen.storyboard */,
+				8411EBF31F3D98EC0068F33E /* Main.storyboard */,
+				8411EBEF1F3D94070068F33E /* Info.plist */,
 				8411EBD61F3D90150068F33E /* AppDelegate.h */,
 				8411EBD71F3D90150068F33E /* AppDelegate.m */,
 				8411EBD81F3D90150068F33E /* AppDelegate+JPush.h */,
@@ -1157,7 +1156,6 @@
 				8411EBF61F3D98EC0068F33E /* Main.storyboard in Resources */,
 				8411EBF51F3D98EC0068F33E /* LaunchScreen.storyboard in Resources */,
 				8411EB2C1F3D8A1B0068F33E /* IDInfoViewController.xib in Resources */,
-				8411EBF01F3D94070068F33E /* Info.plist in Resources */,
 				840D0FD81F1DBDE7008303C1 /* zocr0.lib in Resources */,
 				8411EBEB1F3D90150068F33E /* Remind.xcassets in Resources */,
 				8411EBEC1F3D90150068F33E /* Setup.xcassets in Resources */,

@@ -69,12 +69,12 @@
         [view addSubview:backView];
         if (i==arr.count-1) {
             but=[[UIButton alloc]initWithFrame:CGRectMake(WIDTH-120, 0, 120, ViewHeight)];
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-                but.backgroundColor=AppgreenColor;
-            }
-            else{
+//            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//                but.backgroundColor=AppgreenColor;
+//            }
+//            else{
                 but.backgroundColor=AppButtonbackgroundColor;
-            }
+//            }
             [but setTitle:@"获取验证码" forState:UIControlStateNormal];
             [but addTarget: self action:@selector(verificationCodeRegister) forControlEvents:UIControlEventTouchUpInside];
             [view addSubview:but];
@@ -82,12 +82,12 @@
         [self.view addSubview:view];
     }
     UIButton *loginButton=[[UIButton alloc]initWithFrame:CGRectMake(3, 20+arr.count*ViewHeight+20, WIDTH-3*2, 50)];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        loginButton.backgroundColor=AppgreenColor;
-    }
-    else{
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//        loginButton.backgroundColor=AppgreenColor;
+//    }
+//    else{
         loginButton.backgroundColor=AppButtonbackgroundColor;
-    }
+//    }
     [loginButton setTitle:@"确认修改" forState:UIControlStateNormal];
     loginButton.clipsToBounds=YES;
     [loginButton addTarget:self action:@selector(ConfirmChange) forControlEvents:UIControlEventTouchUpInside];
@@ -139,12 +139,12 @@
                 [but setTitle:@"获取验证码" forState:UIControlStateNormal];
                 [but setEnabled:YES];
                 but.alpha=1;
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-                    but.backgroundColor=AppgreenColor;
-                }
-                else{
+//                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//                    but.backgroundColor=AppgreenColor;
+//                }
+//                else{
                     but.backgroundColor=AppButtonbackgroundColor;
-                }
+//                }
             }
         });
     });

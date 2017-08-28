@@ -54,20 +54,20 @@
     [self.upSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
     [self.upSwipe setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:self.upSwipe];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
-        self.navigationController.navigationBar.barTintColor=AppgreenColor;
-        self.navigationController.navigationBar.tintColor=AppgreenColor;
-        UINavigationBar *appearance = [UINavigationBar appearance];
-        
-        [appearance setBarTintColor:AppgreenColor];
-    }
-    else{
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"review"]) {
+//        self.navigationController.navigationBar.barTintColor=AppgreenColor;
+//        self.navigationController.navigationBar.tintColor=AppgreenColor;
+//        UINavigationBar *appearance = [UINavigationBar appearance];
+//        
+//        [appearance setBarTintColor:AppgreenColor];
+//    }
+//    else{
     self.navigationController.navigationBar.barTintColor=AppButtonbackgroundColor;
     self.navigationController.navigationBar.tintColor=AppButtonbackgroundColor;
         UINavigationBar *appearance = [UINavigationBar appearance];
         
         [appearance setBarTintColor:AppButtonbackgroundColor];
-    }
+//    }
     self.upSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(backAction)];
     [self.upSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
     [self.upSwipe setNumberOfTouchesRequired:1];

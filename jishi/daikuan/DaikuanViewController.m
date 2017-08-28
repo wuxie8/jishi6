@@ -13,6 +13,7 @@
 #import "ProductModel.h"
 #import "LoanClassification.h"
 #import "LoanDetailsViewController.h"
+#import "LoginViewController.h"
 #define SectionHeight 90
 
 // iPhone5/5c/5s/SE 4英寸 屏幕宽高：320*568点 屏幕模式：2x 分辨率：1136*640像素
@@ -65,7 +66,7 @@
    
     [self loadData];
     
-    self.title=@"现金及贷";
+    self.title=@"小胖钱包";
     
      self.view.backgroundColor=[UIColor whiteColor];
        // Do any additional setup after loading the view.
@@ -222,7 +223,7 @@
 
                        nil];
 
-   NSArray *array=@[@"现金及贷-社保贷",@"现金及贷-公积金贷",@"现金及贷-保单贷",@"现金及贷-供房贷",@"现金及贷-税金贷",@"现金及贷-学信贷"];
+   NSArray *array=@[@"小胖钱包-社保贷",@"小胖钱包-公积金贷",@"小胖钱包-保单贷",@"小胖钱包-供房贷",@"小胖钱包-税金贷",@"小胖钱包-学信贷"];
     self.productArray=nil;
         AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.responseSerializer=[AFHTTPResponseSerializer   serializer];
@@ -315,16 +316,41 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
     
-    LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
-    load.hidesBottomBarWhenPushed=YES;
     
-    load.product=pro;
-    [self.navigationController pushViewController:load animated:YES];
-//    JishiyuDetailsViewController *jishiyu=[[JishiyuDetailsViewController alloc]init];
-//    jishiyu.product=pro;
-//    [self.navigationController pushViewController:jishiyu animated:YES];
+      if ([[NSUserDefaults standardUserDefaults] boolForKey:@"kIsLogin"])
+    {
+        ProductModel *pro=[self.productArray objectAtIndex:indexPath.row];
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:
+                           pro.productID,@"id",
+                           Context.currentUser.uid,@"uid",
+                           appNo,@"channel",
+                           
+                           nil];
+        
+        [[NetWorkManager sharedManager]getJSON:@"http://app.jishiyu11.cn/index.php?g=app&m=product&a=hits" parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+            
+        }];
+        
+        LoanDetailsViewController *load=[[LoanDetailsViewController alloc]init];
+        load.hidesBottomBarWhenPushed=YES;
+        
+        load.product=pro;
+        [self.navigationController pushViewController:load animated:YES];
+        
+    }
+    else
+    {
+        LoginViewController *login=[[LoginViewController alloc]init];
+        [self.navigationController pushViewController:login animated:YES];
+        
+    }
+
+
+    
 }
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
